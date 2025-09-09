@@ -16,7 +16,7 @@
     "platform": "WhatsApp",
     "username": "Message Me",
     "url": "https://wa.me/7317594114",
-    "icon": "MessageCircle",
+    "icon": "WhatsApp",
     "stats": [
         { "label": "Availability", "value": "Online" },
         { "label": "Response Time", "value": "Within 24h" }
