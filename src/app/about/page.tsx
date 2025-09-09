@@ -2,68 +2,87 @@ import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
 } from "@/components/ui/card";
 import { educationData } from "@/data/education";
 import { ImageDialog } from "@/components/ImageDialog";
+import Image from "next/image";
+import { Eye } from "lucide-react";
 
 export default function AboutPage() {
   return (
     <div className="container mx-auto max-w-5xl px-4 py-16 animate-in fade-in-0 slide-in-from-bottom-8 duration-1000">
-      <div className="space-y-8">
+      <div className="space-y-16">
         <div className="text-center">
           <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">
-            My Educational Journey
+            About Me
           </h1>
           <p className="mt-4 text-lg text-muted-foreground">
-            A timeline of my academic achievements and qualifications.
+            My educational journey and background
           </p>
+          <div className="mt-8 flex justify-center">
+            <Image
+              src="https://picsum.photos/200/200"
+              alt="John Doe"
+              width={200}
+              height={200}
+              className="rounded-full object-cover"
+              data-ai-hint="portrait professional"
+            />
+          </div>
+          <div className="mt-8 max-w-3xl mx-auto space-y-4 text-muted-foreground">
+            <p>
+              I&apos;m a passionate full-stack developer with a strong
+              foundation in computer science and a keen interest in artificial
+              intelligence and machine learning. My journey in technology began
+              during my undergraduate studies, where I discovered my love for
+              creating innovative solutions to complex problems.
+            </p>
+            <p>
+              Throughout my academic career, I&apos;ve maintained a strong focus
+              on both theoretical knowledge and practical application. I
+              believe in continuous learning and staying updated with the latest
+              technologies and industry trends.
+            </p>
+            <p>
+              When I&apos;m not coding, you can find me contributing to
+              open-source projects, participating in hackathons, or exploring
+              new technologies. I&apos;m always excited to take on new
+              challenges and collaborate with like-minded individuals.
+            </p>
+          </div>
         </div>
 
-        <div className="relative space-y-12">
-          <div className="absolute left-6 top-0 h-full w-0.5 -translate-x-1/2 bg-border md:left-1/2"></div>
-          {educationData.map((edu, index) => (
-            <div
-              key={edu.id}
-              className="relative flex items-center md:w-1/2 md:justify-start odd:md:self-end odd:md:pl-16 even:md:self-start even:md:pr-16"
-            >
-              <div
-                className={`w-full pl-12 md:pl-0 ${
-                  index % 2 !== 0 ? "md:text-left" : "md:text-right"
-                }`}
+        <div className="space-y-8">
+          <h2 className="text-3xl font-bold text-center">Education Timeline</h2>
+          <div className="space-y-6">
+            {educationData.map((edu) => (
+              <Card
+                key={edu.id}
+                className="w-full shadow-md hover:shadow-lg transition-shadow duration-300"
               >
-                <Card className="w-full shadow-lg hover:shadow-xl transition-shadow duration-300">
-                  <CardHeader>
-                    <CardTitle className="text-2xl">{edu.institution}</CardTitle>
-                    <CardDescription className="text-base">
-                      {edu.degree}
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-muted-foreground">{edu.duration}</p>
-                    <p className="font-semibold">{edu.score}</p>
-                  </CardContent>
-                  <CardFooter
-                    className={
-                      index % 2 === 0 ? "md:justify-end" : "md:justify-start"
-                    }
-                  >
-                    <ImageDialog
+                <CardContent className="p-6 grid grid-cols-[100px_1fr_auto] items-center gap-6">
+                  <p className="font-bold text-lg text-primary">{edu.degree.split(' ')[0]}</p>
+                  <div>
+                    <h3 className="text-xl font-semibold">{edu.degree}</h3>
+                    <p className="text-muted-foreground">{edu.institution}</p>
+                     <p className="font-semibold mt-1">{edu.score}</p>
+                  </div>
+                   <div className="flex flex-col items-end gap-2">
+                     <p className="text-sm text-muted-foreground">{edu.duration.split(' - ')[1]}</p>
+                     <ImageDialog
                       imageUrl={edu.marksheetUrl}
                       alt={`${edu.degree} Marksheet`}
                       dataAiHint={edu.dataAiHint}
                     >
-                      <Button variant="secondary">View Marksheet</Button>
+                      <Button variant="ghost" size="sm">
+                        <Eye className="mr-2 h-4 w-4" /> View Marksheet
+                      </Button>
                     </ImageDialog>
-                  </CardFooter>
-                </Card>
-              </div>
-              <div className="absolute left-6 top-1/2 h-4 w-4 -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary ring-8 ring-background md:left-1/2"></div>
-            </div>
-          ))}
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
         </div>
       </div>
     </div>
