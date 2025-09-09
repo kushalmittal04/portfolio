@@ -98,7 +98,7 @@ export default function ProfilesPage() {
                             </div>
                         </CardContent>
                         <CardFooter>
-                          <Button asChild className="w-full">
+                          <Button asChild className="w-full transition-all duration-300 hover:shadow-lg hover:-translate-y-px">
                             <Link href={profile.url} target="_blank" rel="noopener noreferrer">
                               View Profile
                             </Link>
