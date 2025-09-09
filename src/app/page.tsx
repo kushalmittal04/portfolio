@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Download, Mail } from "lucide-react";
+import { ArrowRight, Download } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -34,42 +34,38 @@ export default function Home() {
       {/* Hero Section */}
       <section className="py-16 md:py-24 lg:py-32">
         <div className="container px-4 md:px-6">
-          <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px]">
-            <div className="flex flex-col justify-center space-y-4">
-              <div className="space-y-2">
-                <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">
-                  Kushal Mittal
-                </h1>
-                <h2 className="text-2xl font-semibold text-primary">
-                  Full-Stack Developer & AI Enthusiast
-                </h2>
-                <p className="max-w-[600px] text-muted-foreground md:text-xl">
-                  I build innovative and efficient solutions, turning complex
-                  problems into elegant software. Passionate about machine
-                  learning and creating impactful technology.
-                </p>
-              </div>
-              <div className="flex flex-col gap-2 min-[400px]:flex-row">
-                <Button asChild size="lg">
-                  <Link href="/contact">
-                    Contact Me <Mail className="ml-2 h-4 w-4" />
-                  </Link>
-                </Button>
-                <Button asChild variant="secondary" size="lg">
-                  <a href="/resume.pdf" download="resume.pdf">
-                    Download Resume <Download className="ml-2 h-4 w-4" />
-                  </a>
-                </Button>
-              </div>
-            </div>
+          <div className="flex flex-col items-center space-y-6 text-center">
             <Image
-              src="https://picsum.photos/600/600"
-              alt="Hero Portrait"
-              width={600}
-              height={600}
-              className="mx-auto aspect-square overflow-hidden rounded-xl object-cover sm:w-full"
+              src="https://picsum.photos/200/200"
+              alt="Kushal Mittal"
+              width={150}
+              height={150}
+              className="rounded-full object-cover"
               data-ai-hint="portrait professional"
             />
+            <div className="space-y-2">
+              <h1 className="text-5xl font-bold tracking-tighter sm:text-6xl">
+                Kushal Mittal
+              </h1>
+              <h2 className="text-xl font-semibold text-primary md:text-2xl">
+                Full-Stack Developer & AI Enthusiast
+              </h2>
+              <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl">
+                Passionate about creating innovative solutions with modern
+                technologies. Specialized in React, Node.js, and Machine
+                Learning with 2+ years of experience.
+              </p>
+            </div>
+            <div className="flex flex-col gap-4 min-[400px]:flex-row">
+              <Button asChild size="lg">
+                <Link href="/projects">View My Work</Link>
+              </Button>
+              <Button asChild variant="secondary" size="lg">
+                <a href="/resume.pdf" download="resume.pdf">
+                  Download Resume <Download className="ml-2 h-4 w-4" />
+                </a>
+              </Button>
+            </div>
           </div>
         </div>
       </section>
