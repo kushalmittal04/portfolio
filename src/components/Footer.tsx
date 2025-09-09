@@ -40,11 +40,10 @@ export function Footer() {
           {/* Left Column */}
           <div className="space-y-4">
             <Link href="/" className="flex items-center gap-2">
-              <Mountain className="h-6 w-6 text-primary" />
-              <span className="text-lg font-bold">FolioForge</span>
+              <span className="text-lg font-bold">JohnDoe.dev</span>
             </Link>
             <p className="text-muted-foreground">
-              Stackless Engineer <br /> Building without boundaries.
+              Building without boundaries.
             </p>
             <div className="flex items-center gap-4">
               <Link
@@ -112,7 +111,7 @@ export function Footer() {
 
         <div className="mt-12 border-t pt-8 text-center">
           <p className="text-sm text-muted-foreground">
-            &copy; {new Date().getFullYear()} FolioForge. All rights reserved.
+            &copy; {new Date().getFullYear()} JohnDoe.dev. All rights reserved.
           </p>
         </div>
       </div>
