@@ -106,7 +106,7 @@ export default function ContactPage() {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-        <Card>
+        <Card className="transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
           <CardHeader>
             <CardTitle>Send a Message</CardTitle>
           </CardHeader>
@@ -162,7 +162,7 @@ export default function ContactPage() {
         </Card>
         
         <div className="space-y-8">
-          <Card>
+          <Card className="transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
             <CardHeader>
               <CardTitle>Contact Information</CardTitle>
             </CardHeader>
@@ -192,7 +192,7 @@ export default function ContactPage() {
                 </div>
             </CardContent>
           </Card>
-           <Card>
+           <Card className="transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
             <CardHeader>
               <CardTitle>Download Resume</CardTitle>
               <CardDescription>Get a copy of my detailed resume</CardDescription>
@@ -205,7 +205,7 @@ export default function ContactPage() {
                 </Button>
             </CardContent>
           </Card>
-          <Card>
+          <Card className="transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
             <CardHeader>
               <CardTitle>Follow Me</CardTitle>
             </CardHeader>
