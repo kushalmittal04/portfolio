@@ -94,7 +94,7 @@ export default function ProfilesPage() {
                   .filter((p) => section.platforms.includes(p.platform))
                   .map((profile) => (
                      <Link key={profile.id} href={profile.url} target="_blank" rel="noopener noreferrer" className="group block">
-                      <Card className="relative flex h-full flex-col items-center justify-center p-6 text-center transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+                      <Card className="relative flex h-full flex-col items-center justify-center p-6 text-center transition-all duration-300 hover:shadow-xl hover:-translate-y-1 hover:bg-accent">
                         <ArrowUpRight className="absolute top-4 right-4 h-4 w-4 text-muted-foreground opacity-0 transition-opacity group-hover:opacity-100" />
                         <CardContent className="flex flex-col items-center gap-4">
                            <LucideIcon
