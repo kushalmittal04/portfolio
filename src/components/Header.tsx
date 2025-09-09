@@ -32,9 +32,9 @@ export function Header() {
       <div className="container flex h-16 items-center">
         <Link href="/" className="mr-6 flex items-center space-x-2">
           <Mountain className="h-6 w-6 text-primary" />
-          <span className="text-lg font-bold">FolioForge</span>
+          <span className="font-headline text-lg font-bold">FolioForge</span>
         </Link>
-        <nav className="hidden items-center gap-6 text-sm font-medium md:flex">
+        <nav className="hidden items-center space-x-6 text-sm font-medium md:flex">
           {navLinks.map(({ href, label }) => (
             <Link
               key={href}
@@ -42,7 +42,7 @@ export function Header() {
               className={cn(
                 "transition-colors hover:text-primary",
                 pathname === href
-                  ? "text-primary font-semibold"
+                  ? "text-primary"
                   : "text-muted-foreground"
               )}
             >
@@ -50,10 +50,10 @@ export function Header() {
             </Link>
           ))}
         </nav>
-        <div className="flex flex-1 items-center justify-end">
+        <div className="flex flex-1 items-center justify-end md:hidden">
           <Sheet>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" className="md:hidden">
+              <Button variant="ghost" size="icon">
                 <Menu className="h-6 w-6" />
                 <span className="sr-only">Toggle navigation menu</span>
               </Button>
@@ -63,7 +63,7 @@ export function Header() {
                 <SheetTitle>
                   <Link href="/" className="flex items-center space-x-2">
                     <Mountain className="h-6 w-6 text-primary" />
-                    <span className="font-bold">FolioForge</span>
+                    <span className="font-headline font-bold">FolioForge</span>
                   </Link>
                 </SheetTitle>
               </SheetHeader>
@@ -75,7 +75,7 @@ export function Header() {
                     className={cn(
                       "rounded-md px-3 py-2 text-lg transition-colors hover:bg-muted",
                       pathname === href
-                        ? "font-semibold text-primary bg-muted"
+                        ? "font-semibold text-primary"
                         : "text-muted-foreground"
                     )}
                   >

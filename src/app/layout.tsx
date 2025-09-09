@@ -3,9 +3,20 @@ import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Toaster } from "@/components/ui/toaster";
-import { Inter } from 'next/font/google';
+import { PT_Sans, Playfair_Display } from "next/font/google";
+import { cn } from "@/lib/utils";
 
-const inter = Inter({ subsets: ['latin'] });
+const ptSans = PT_Sans({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  variable: "--font-pt-sans",
+});
+
+const playfairDisplay = Playfair_Display({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  variable: "--font-playfair-display",
+});
 
 export const metadata: Metadata = {
   title: "FolioForge",
@@ -19,7 +30,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.className} antialiased`}>
+      <body
+        className={cn(
+          "antialiased",
+          ptSans.variable,
+          playfairDisplay.variable
+        )}
+      >
         <div className="flex min-h-screen flex-col">
           <Header />
           <main className="flex-grow">{children}</main>
