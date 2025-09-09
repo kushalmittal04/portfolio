@@ -40,7 +40,7 @@ export function Header() {
               key={href}
               href={href}
               className={cn(
-                "transition-colors hover:text-primary",
+                "transition-all duration-200 hover:text-primary hover:-translate-y-px",
                 pathname === href
                   ? "font-semibold text-primary"
                   : "text-muted-foreground"
