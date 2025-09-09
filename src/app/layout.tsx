@@ -1,22 +1,13 @@
 import type { Metadata } from "next";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Toaster } from "@/components/ui/toaster";
-import { PT_Sans, Playfair_Display } from "next/font/google";
 import { cn } from "@/lib/utils";
+import { ThemeProvider } from "@/components/ThemeProvider";
 
-const ptSans = PT_Sans({
-  subsets: ["latin"],
-  weight: ["400", "700"],
-  variable: "--font-pt-sans",
-});
-
-const playfairDisplay = Playfair_Display({
-  subsets: ["latin"],
-  weight: ["400", "700"],
-  variable: "--font-playfair-display",
-});
+const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
 export const metadata: Metadata = {
   title: "FolioForge",
@@ -32,17 +23,23 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body
         className={cn(
-          "antialiased",
-          ptSans.variable,
-          playfairDisplay.variable
+          "bg-background text-foreground font-sans antialiased",
+          inter.variable
         )}
       >
-        <div className="flex min-h-screen flex-col">
-          <Header />
-          <main className="flex-grow">{children}</main>
-          <Footer />
-        </div>
-        <Toaster />
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <div className="flex min-h-screen flex-col">
+            <Header />
+            <main className="flex-grow">{children}</main>
+            <Footer />
+          </div>
+          <Toaster />
+        </ThemeProvider>
       </body>
     </html>
   );

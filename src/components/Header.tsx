@@ -13,6 +13,7 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
+import { ThemeToggle } from "./ThemeToggle";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -30,11 +31,11 @@ export function Header() {
   return (
     <header className="supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50 w-full border-b bg-background/95 shadow-sm backdrop-blur">
       <div className="container flex h-16 items-center">
-        <Link href="/" className="mr-6 flex items-center space-x-2">
+        <Link href="/" className="mr-6 flex items-center gap-2">
           <Mountain className="h-6 w-6 text-primary" />
-          <span className="font-headline text-lg font-bold">FolioForge</span>
+          <span className="text-lg font-bold">FolioForge</span>
         </Link>
-        <nav className="hidden items-center space-x-6 text-sm font-medium md:flex">
+        <nav className="hidden items-center gap-6 text-sm font-medium md:flex">
           {navLinks.map(({ href, label }) => (
             <Link
               key={href}
@@ -42,7 +43,7 @@ export function Header() {
               className={cn(
                 "transition-colors hover:text-primary",
                 pathname === href
-                  ? "text-primary"
+                  ? "font-semibold text-primary"
                   : "text-muted-foreground"
               )}
             >
@@ -50,10 +51,11 @@ export function Header() {
             </Link>
           ))}
         </nav>
-        <div className="flex flex-1 items-center justify-end md:hidden">
+        <div className="flex flex-1 items-center justify-end gap-4">
+          <ThemeToggle />
           <Sheet>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon">
+              <Button variant="ghost" size="icon" className="md:hidden">
                 <Menu className="h-6 w-6" />
                 <span className="sr-only">Toggle navigation menu</span>
               </Button>
@@ -61,13 +63,13 @@ export function Header() {
             <SheetContent side="left">
               <SheetHeader>
                 <SheetTitle>
-                  <Link href="/" className="flex items-center space-x-2">
+                  <Link href="/" className="flex items-center gap-2">
                     <Mountain className="h-6 w-6 text-primary" />
-                    <span className="font-headline font-bold">FolioForge</span>
+                    <span className="font-bold">FolioForge</span>
                   </Link>
                 </SheetTitle>
               </SheetHeader>
-              <div className="mt-6 flex flex-col space-y-4">
+              <div className="mt-6 flex flex-col gap-4">
                 {navLinks.map(({ href, label }) => (
                   <Link
                     key={href}
