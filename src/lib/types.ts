@@ -68,3 +68,13 @@ export interface Profile {
   icon: string; // Lucide icon name
   stats: { label: string; value: string }[];
 }
+
+export interface SkillCategory {
+  name: string;
+  skills: string[];
+}
+
+export interface SkillsData {
+  featuredSkills: string[];
+  categories: SkillCategory[];
+}

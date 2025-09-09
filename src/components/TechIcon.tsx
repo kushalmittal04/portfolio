@@ -1,6 +1,7 @@
 import {
   Database,
   Box,
+  FileCode,
 } from "lucide-react";
 import type { SVGProps } from "react";
 
@@ -66,6 +67,12 @@ const LanggraphIcon = (props: SVGProps<SVGSVGElement>) => (
   </svg>
 );
 
+const CppIcon = (props: SVGProps<SVGSVGElement>) => (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" {...props}>
+        <path fill="#00599C" d="M12 2L1 9l11 7 11-7L12 2zm0 1.62L20.56 9 12 14.38 3.44 9 12 3.62z"/>
+        <path fill="#00599C" d="M12 10.5l-11 7v3l11 7 11-7v-3l-11-7zm0 1.62l8.56 5.38L12 22.88l-8.56-5.38L12 12.12z"/>
+    </svg>
+);
 
 interface TechIconProps {
   technology: string;
@@ -75,6 +82,8 @@ interface TechIconProps {
 export function TechIcon({ technology, className }: TechIconProps) {
   switch (technology.toLowerCase()) {
     case "react":
+    case "react.js":
+    case "next.js":
       return <ReactIcon className={className} />;
     case "node.js":
       return <NodeJsIcon className={className} />;
@@ -92,7 +101,15 @@ export function TechIcon({ technology, className }: TechIconProps) {
       return <LangchainIcon className={className} />;
     case "langgraph":
       return <LanggraphIcon className={className} />;
-    default:
+    case "c++":
+        return <CppIcon className={className} />
+    case "tensorflow":
+    case "scikit-learn":
+    case "pandas":
+    case "numpy":
+    case "pyspark":
       return <Box className={className} />;
+    default:
+      return <FileCode className={className} />;
   }
 }

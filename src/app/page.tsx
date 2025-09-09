@@ -15,6 +15,7 @@ import { projectsData } from "@/data/projects";
 import { experienceData } from "@/data/experience";
 import { credentialsData } from "@/data/credentials";
 import { TechIcon } from "@/components/TechIcon";
+import skillsData from "@/data/skills.json";
 
 export default function Home() {
   const featuredProjects = projectsData.slice(0, 3);
@@ -22,16 +23,7 @@ export default function Home() {
   const featuredAchievements = credentialsData.achievements.filter(
     (a) => a.isFeatured
   );
-  const skillsToShow = [
-    "React",
-    "Node.js",
-    "Python",
-    "JavaScript",
-    "TypeScript",
-    "Go",
-    "Langchain",
-    "Langgraph",
-  ];
+  const skillsToShow = skillsData.featuredSkills;
 
 
   return (

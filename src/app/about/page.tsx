@@ -2,13 +2,20 @@ import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
 } from "@/components/ui/card";
 import { educationData } from "@/data/education";
 import { ImageDialog } from "@/components/ImageDialog";
 import Image from "next/image";
 import { Eye } from "lucide-react";
+import skillsData from "@/data/skills.json";
+import { Badge } from "@/components/ui/badge";
 
 export default function AboutPage() {
+  const { categories } = skillsData;
+
   return (
     <div className="container mx-auto max-w-5xl px-4 py-16 animate-in fade-in-0 slide-in-from-bottom-8 duration-1000">
       <div className="space-y-16">
@@ -51,6 +58,25 @@ export default function AboutPage() {
             </p>
           </div>
         </div>
+
+        <div className="space-y-8">
+          <h2 className="text-3xl font-bold text-center">My Skills</h2>
+          <Card className="shadow-lg">
+            <CardContent className="p-6 space-y-6">
+              {categories.map((category) => (
+                <div key={category.name} className="grid md:grid-cols-[200px_1fr] gap-4 items-start">
+                  <h3 className="font-bold text-lg text-primary">{category.name}</h3>
+                  <div className="flex flex-wrap gap-2">
+                    {category.skills.map((skill) => (
+                      <Badge key={skill} variant="secondary" className="text-sm">{skill}</Badge>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </CardContent>
+          </Card>
+        </div>
+
 
         <div className="space-y-8">
           <h2 className="text-3xl font-bold text-center">Education Timeline</h2>

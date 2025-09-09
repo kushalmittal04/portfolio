@@ -1,0 +1,72 @@
+{
+  "featuredSkills": [
+    "Python",
+    "JavaScript",
+    "React",
+    "Next.js",
+    "Node.js",
+    "LangChain",
+    "LangGraph",
+    "TensorFlow"
+  ],
+  "categories": [
+    {
+      "name": "Programming Languages",
+      "skills": [
+        "Python",
+        "JavaScript",
+        "C",
+        "C++",
+        "PHP",
+        "HTML",
+        "CSS",
+        "SQL"
+      ]
+    },
+    {
+      "name": "AI/ML & Data Science",
+      "skills": [
+        "LangChain",
+        "LangGraph",
+        "PySpark",
+        "Scikit-learn",
+        "Pandas",
+        "NumPy",
+        "Matplotlib",
+        "Seaborn",
+        "TensorFlow",
+        "OpenCV"
+      ]
+    },
+    {
+      "name": "Frontend & Web Dev",
+      "skills": [
+        "React",
+        "Next.js",
+        "Node.js",
+        "Express.js",
+        "Bootstrap",
+        "Tailwind CSS"
+      ]
+    },
+    {
+      "name": "Databases",
+      "skills": ["MySQL", "MongoDB", "PostgreSQL"]
+    },
+    {
+      "name": "Tools & Platforms",
+      "skills": [
+        "Git",
+        "VS Code",
+        "PyCharm",
+        "Jupyter Notebook",
+        "Postman",
+        "Vercel",
+        "Kaggle",
+        "Google Colab",
+        "Databricks",
+        "Clerk Authentication"
+      ]
+    }
+  ]
+}
