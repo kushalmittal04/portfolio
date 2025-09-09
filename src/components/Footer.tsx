@@ -26,7 +26,7 @@ export function Footer() {
               <span className="text-lg font-bold">FolioForge</span>
             </Link>
             <p className="text-muted-foreground">
-              Stackless Engineer • Building without boundaries.
+              Stackless Engineer <br /> Building without boundaries.
             </p>
             <div className="flex items-center gap-4">
               <Link
