@@ -1,3 +1,4 @@
+
 import {
   Card,
   CardContent,
@@ -88,7 +89,7 @@ export default function ProfilesPage() {
               <h2 className="text-2xl font-bold mb-6 text-center md:text-left">
                 {section.title}
               </h2>
-              <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+              <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                 {profilesData
                   .filter((p) => section.platforms.includes(p.platform))
                   .map((profile) => (
