@@ -82,9 +82,6 @@ export default function ContactPage() {
         <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">
           Get In Touch
         </h1>
-        <p className="mt-4 text-lg text-muted-foreground">
-         Let&apos;s discuss your next project
-        </p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
