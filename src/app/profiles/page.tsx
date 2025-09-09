@@ -1,15 +1,13 @@
 import {
   Card,
   CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
 } from "@/components/ui/card";
 import profilesData from "@/data/profiles.json";
 import * as Icons from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { ArrowUpRight } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 const WhatsAppIcon = (props: React.SVGProps<SVGSVGElement>) => (
   <svg
@@ -28,87 +26,94 @@ const WhatsAppIcon = (props: React.SVGProps<SVGSVGElement>) => (
   </svg>
 );
 
-// A bit of a hack to dynamically render Lucide icons by name
 type IconName = keyof typeof Icons;
-const LucideIcon = ({ name, className }: { name: string; className?: string }) => {
-  if (name === 'WhatsApp') {
+const LucideIcon = ({
+  name,
+  className,
+}: {
+  name: string;
+  className?: string;
+}) => {
+  if (name === "WhatsApp") {
     return <WhatsAppIcon className={className} />;
   }
-  const Icon = Icons[name as IconName] as React.ComponentType<{ className?: string }>;
+  const Icon = Icons[name as IconName] as React.ComponentType<{
+    className?: string;
+  }>;
   if (!Icon) return null;
   return <Icon className={className} />;
 };
 
 const profileSections = [
-    {
-        title: "Social & Contact",
-        platforms: ["LinkedIn", "WhatsApp", "Gmail"]
-    },
-    {
-        title: "Development & AI",
-        platforms: ["GitHub", "Kaggle", "Portfolio"]
-    },
-    {
-        title: "Certifications & Learning",
-        platforms: ["Microsoft Learn", "Google Cloud Skills Boost", "Google for Developers", "Credly"]
-    },
-    {
-        title: "Competitive Programming",
-        platforms: ["LeetCode", "HackerRank", "GeeksforGeeks"]
-    },
-]
-
+  {
+    title: "Social & Contact",
+    platforms: ["LinkedIn", "WhatsApp", "Gmail"],
+  },
+  {
+    title: "Development & AI",
+    platforms: ["GitHub", "Kaggle", "Portfolio"],
+  },
+  {
+    title: "Certifications & Learning",
+    platforms: [
+      "Microsoft Learn",
+      "Google Cloud Skills Boost",
+      "Google for Developers",
+      "Credly",
+    ],
+  },
+  {
+    title: "Competitive Programming",
+    platforms: ["LeetCode", "HackerRank", "GeeksforGeeks"],
+  },
+];
 
 export default function ProfilesPage() {
   return (
     <div className="container mx-auto max-w-6xl px-4 py-16 animate-in fade-in-0 slide-in-from-bottom-8 duration-1000">
-      <div className="text-center mb-12">
-        <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">
-          My Online Profiles
-        </h1>
-        <p className="mt-4 text-lg text-muted-foreground">
-          Find me across the web on these platforms.
-        </p>
-      </div>
+      <div className="relative isolate overflow-hidden">
+        <div className="absolute inset-0 -z-10 h-full w-full bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] dark:bg-[radial-gradient(rgba(255,255,255,0.1)_1px,transparent_1px)]"></div>
+        <div className="text-center mb-12">
+          <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">
+            My Online Profiles
+          </h1>
+          <p className="mt-4 text-lg text-muted-foreground">
+            Find me across the web on these platforms.
+          </p>
+        </div>
 
-      <div className="space-y-12">
-        {profileSections.map(section => (
+        <div className="space-y-12">
+          {profileSections.map((section) => (
             <div key={section.title}>
-                <h2 className="text-2xl font-bold mb-6 text-center md:text-left">{section.title}</h2>
-                 <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-                    {profilesData
-                        .filter(p => section.platforms.includes(p.platform))
-                        .map((profile) => (
-                      <Card key={profile.id} className="flex flex-col transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
-                        <CardHeader className="flex-row items-center gap-4">
-                           <LucideIcon name={profile.icon} className="h-10 w-10 text-primary"/>
-                           <div>
-                            <CardTitle>{profile.platform}</CardTitle>
-                            <CardDescription>@{profile.username}</CardDescription>
-                           </div>
-                        </CardHeader>
-                        <CardContent className="flex-grow">
-                            <div className="space-y-2">
-                                {profile.stats.map(stat => (
-                                    <div key={stat.label} className="flex justify-between text-sm">
-                                        <span className="text-muted-foreground">{stat.label}</span>
-                                        <span className="font-medium">{stat.value}</span>
-                                    </div>
-                                ))}
-                            </div>
+              <h2 className="text-2xl font-bold mb-6 text-center md:text-left">
+                {section.title}
+              </h2>
+              <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+                {profilesData
+                  .filter((p) => section.platforms.includes(p.platform))
+                  .map((profile) => (
+                     <Link key={profile.id} href={profile.url} target="_blank" rel="noopener noreferrer" className="group block">
+                      <Card className="relative flex h-full flex-col items-center justify-center p-6 text-center transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+                        <ArrowUpRight className="absolute top-4 right-4 h-4 w-4 text-muted-foreground opacity-0 transition-opacity group-hover:opacity-100" />
+                        <CardContent className="flex flex-col items-center gap-4">
+                           <LucideIcon
+                            name={profile.icon}
+                            className="h-16 w-16 text-primary"
+                          />
+                          <div>
+                            <p className="text-xl font-bold">{profile.platform}</p>
+                            <p className="text-sm text-muted-foreground">
+                              @{profile.username}
+                            </p>
+                          </div>
                         </CardContent>
-                        <CardFooter>
-                          <Button asChild className="w-full transition-all duration-300 hover:shadow-lg hover:-translate-y-px">
-                            <Link href={profile.url} target="_blank" rel="noopener noreferrer">
-                              View Profile
-                            </Link>
-                          </Button>
-                        </CardFooter>
                       </Card>
-                    ))}
-                  </div>
+                    </Link>
+                  ))}
+              </div>
             </div>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
   );
