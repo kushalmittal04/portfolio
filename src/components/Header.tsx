@@ -31,9 +31,8 @@ export function Header() {
   return (
     <header className="supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50 w-full border-b bg-background/95 shadow-sm backdrop-blur">
       <div className="container flex h-16 items-center">
-        <Link href="/" className="mr-6 flex items-center gap-2">
-          <Mountain className="h-6 w-6 text-primary" />
-          <span className="text-lg font-bold">FolioForge</span>
+        <Link href="/" className="mr-auto flex items-center">
+          <span className="text-xl font-bold tracking-tight">JohnDoe.dev</span>
         </Link>
         <nav className="hidden items-center gap-6 text-sm font-medium md:flex">
           {navLinks.map(({ href, label }) => (
@@ -51,7 +50,7 @@ export function Header() {
             </Link>
           ))}
         </nav>
-        <div className="flex flex-1 items-center justify-end gap-4">
+        <div className="flex flex-1 items-center justify-end gap-4 md:flex-initial">
           <ThemeToggle />
           <Sheet>
             <SheetTrigger asChild>
@@ -62,10 +61,9 @@ export function Header() {
             </SheetTrigger>
             <SheetContent side="left">
               <SheetHeader>
-                <SheetTitle>
-                  <Link href="/" className="flex items-center gap-2">
-                    <Mountain className="h-6 w-6 text-primary" />
-                    <span className="font-bold">FolioForge</span>
+                 <SheetTitle>
+                  <Link href="/" className="flex items-center">
+                    <span className="text-xl font-bold tracking-tight">JohnDoe.dev</span>
                   </Link>
                 </SheetTitle>
               </SheetHeader>

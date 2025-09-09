@@ -2,17 +2,6 @@ import type { Profile } from "@/lib/types";
 
 export const profilesData: Profile[] = [
   {
-    id: 1,
-    platform: "GitHub",
-    username: "demo-user",
-    url: "https://github.com/demo",
-    icon: "Github",
-    stats: [
-      { label: "Repositories", value: "50+" },
-      { label: "Followers", value: "1.2k" },
-    ],
-  },
-  {
     id: 2,
     platform: "LinkedIn",
     username: "demo-user",
@@ -21,6 +10,17 @@ export const profilesData: Profile[] = [
     stats: [
       { label: "Connections", value: "500+" },
       { label: "Profile Views", value: "250/mo" },
+    ],
+  },
+  {
+    id: 1,
+    platform: "GitHub",
+    username: "demo-user",
+    url: "https://github.com/demo",
+    icon: "Github",
+    stats: [
+      { label: "Repositories", value: "50+" },
+      { label: "Followers", value: "1.2k" },
     ],
   },
   {
@@ -34,7 +34,7 @@ export const profilesData: Profile[] = [
       { label: "Highest Rank", value: "Top 10%" },
     ],
   },
-  {
+   {
     id: 4,
     platform: "LeetCode",
     username: "coder-demo",
