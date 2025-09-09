@@ -50,7 +50,7 @@ export function Header() {
             </Link>
           ))}
         </nav>
-        <div className="flex flex-1 items-center justify-end gap-4 md:flex-initial">
+        <div className="flex items-center justify-end gap-4 ml-4">
           <ThemeToggle />
           <Sheet>
             <SheetTrigger asChild>
