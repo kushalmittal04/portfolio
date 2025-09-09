@@ -54,6 +54,18 @@ const GoIcon = (props: SVGProps<SVGSVGElement>) => (
     </svg>
 );
 
+const LangchainIcon = (props: SVGProps<SVGSVGElement>) => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" {...props}>
+    <path fill="currentColor" d="M16.15 15.28H18.4l-4.52-4.53l4.52-4.52H16.15l-4.52 4.52l-1.9-1.9H7.48l3.17 3.18l-3.17 3.17H9.73l1.9-1.9zM5.6 13.38V9.17h.85l1.8 1.8l-1.8 1.81h-.85zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10s10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8s8 3.59 8 8s-3.59 8-8 8z"/>
+  </svg>
+);
+
+const LanggraphIcon = (props: SVGProps<SVGSVGElement>) => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" {...props}>
+    <path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10s10-4.48 10-10S17.52 2 12 2zm4.24 14.76L12 12.5l-4.24 2.26l.81-4.72l-3.43-3.34l4.74-.68L12 4l2.12 4.28l4.74.68l-3.43 3.34l.81 4.72z"/>
+  </svg>
+);
+
 
 interface TechIconProps {
   technology: string;
@@ -76,6 +88,10 @@ export function TechIcon({ technology, className }: TechIconProps) {
       return <Database className={className} />;
     case "go":
        return <GoIcon className={className} />
+    case "langchain":
+      return <LangchainIcon className={className} />;
+    case "langgraph":
+      return <LanggraphIcon className={className} />;
     default:
       return <Box className={className} />;
   }

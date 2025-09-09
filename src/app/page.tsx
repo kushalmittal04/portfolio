@@ -29,6 +29,8 @@ export default function Home() {
     "JavaScript",
     "TypeScript",
     "Go",
+    "Langchain",
+    "Langgraph",
   ];
 
 
@@ -135,14 +137,13 @@ export default function Home() {
           <p className="text-muted-foreground">Technologies I work with</p>
         </div>
         <div className="mx-auto max-w-4xl">
-           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 justify-center">
+           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-8 justify-center">
             {skillsToShow.map((tech) => (
               <div key={tech} className="flex flex-col items-center gap-2">
                  <div className="w-24 h-24 flex items-center justify-center rounded-lg bg-muted shadow-md hover:shadow-lg transition-shadow">
                     <TechIcon technology={tech} className="w-12 h-12" />
                  </div>
                 <p className="font-semibold">{tech}</p>
-                <p className="text-sm text-muted-foreground">Advanced</p>
               </div>
             ))}
           </div>
