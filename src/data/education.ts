@@ -1,0 +1,31 @@
+import type { Education } from "@/lib/types";
+
+export const educationData: Education[] = [
+  {
+    id: 1,
+    institution: "University of Technology",
+    degree: "Bachelor of Technology in Computer Science",
+    duration: "2021 - 2025",
+    score: "9.0 CGPA",
+    marksheetUrl: "https://picsum.photos/800/1100",
+    dataAiHint: "document certificate",
+  },
+  {
+    id: 2,
+    institution: "Central Senior Secondary School",
+    degree: "12th Grade (Science Stream)",
+    duration: "2020 - 2021",
+    score: "95%",
+    marksheetUrl: "https://picsum.photos/800/1100",
+    dataAiHint: "document certificate",
+  },
+  {
+    id: 3,
+    institution: "Public School",
+    degree: "10th Grade",
+    duration: "2018 - 2019",
+    score: "98%",
+    marksheetUrl: "https://picsum.photos/800/1100",
+    dataAiHint: "document certificate",
+  },
+];

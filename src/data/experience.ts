@@ -1,0 +1,81 @@
+import type { Experience } from "@/lib/types";
+
+export const experienceData: Experience[] = [
+  {
+    id: 1,
+    slug: "google-swe-intern",
+    company: "Google",
+    position: "Software Engineer Intern",
+    location: "Mountain View, CA",
+    duration: "May 2024 - Aug 2024",
+    logoUrl: "https://picsum.photos/100/100",
+    dataAiHint: "logo tech",
+    description: [
+      "Developed and maintained critical features for Google Search, impacting millions of users daily.",
+      "Worked with a cross-functional team of engineers, designers, and product managers to deliver a high-quality product.",
+      "Optimized backend services for performance and scalability, reducing latency by 20%.",
+    ],
+    technologies: ["Go", "Python", "Kubernetes", "gRPC"],
+    certificateUrl: "https://picsum.photos/1100/800",
+    workImages: [
+      { url: "https://picsum.photos/600/400", dataAiHint: "office team" },
+      { url: "https://picsum.photos/600/400", dataAiHint: "computer code" },
+    ],
+  },
+  {
+    id: 2,
+    slug: "microsoft-explore-intern",
+    company: "Microsoft",
+    position: "Explore Intern",
+    location: "Redmond, WA",
+    duration: "May 2023 - Aug 2023",
+    logoUrl: "https://picsum.photos/100/100",
+    dataAiHint: "logo tech",
+    description: [
+      "Participated in a 12-week program combining software engineering and program management.",
+      "Shipped a new feature for Azure DevOps using C# and .NET Core.",
+      "Conducted user research and defined product specifications for a new developer tool.",
+    ],
+    technologies: ["C#", ".NET Core", "Azure", "React"],
+    certificateUrl: "https://picsum.photos/1100/800",
+    workImages: [
+      {
+        url: "https://picsum.photos/600/400",
+        dataAiHint: "conference presentation",
+      },
+      { url: "https://picsum.photos/600/400", dataAiHint: "whiteboard session" },
+    ],
+  },
+  {
+    id: 3,
+    slug: "amazon-sde-intern",
+    company: "Amazon",
+    position: "SDE Intern",
+    location: "Seattle, WA",
+    duration: "May 2022 - Aug 2022",
+    logoUrl: "https://picsum.photos/100/100",
+    dataAiHint: "logo commerce",
+    description: [
+      "Worked on the AWS S3 team, focusing on improving the data consistency model.",
+      "Designed and implemented a new internal tool for monitoring data replication across regions.",
+      "Wrote extensive unit and integration tests to ensure code quality and reliability.",
+    ],
+    technologies: ["Java", "Spring Boot", "AWS", "DynamoDB"],
+  },
+  {
+    id: 4,
+    slug: "startup-frontend-intern",
+    company: "Innovatech",
+    position: "Frontend Developer Intern",
+    location: "Remote",
+    duration: "Jan 2022 - Apr 2022",
+    logoUrl: "https://picsum.photos/100/100",
+    dataAiHint: "logo abstract",
+    description: [
+      "Built responsive user interfaces for a new SaaS platform using React and Tailwind CSS.",
+      "Collaborated with the design team to translate Figma mockups into pixel-perfect code.",
+      "Improved website performance by implementing code splitting and lazy loading.",
+    ],
+    technologies: ["React", "TypeScript", "Tailwind CSS", "Vite"],
+  },
+];
