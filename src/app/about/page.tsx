@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -36,26 +37,34 @@ export default function AboutPage() {
               data-ai-hint="portrait professional"
             />
           </div>
-          <div className="mt-8 max-w-3xl mx-auto space-y-4 text-muted-foreground">
-            <p>
-              I&apos;m a passionate full-stack developer with a strong
-              foundation in computer science and a keen interest in artificial
-              intelligence and machine learning. My journey in technology began
-              during my undergraduate studies, where I discovered my love for
-              creating innovative solutions to complex problems.
-            </p>
-            <p>
-              Throughout my academic career, I&apos;ve maintained a strong focus
-              on both theoretical knowledge and practical application. I
-              believe in continuous learning and staying updated with the latest
-              technologies and industry trends.
-            </p>
-            <p>
-              When I&apos;m not coding, you can find me contributing to
-              open-source projects, participating in hackathons, or exploring
-              new technologies. I&apos;m always excited to take on new
-              challenges and collaborate with like-minded individuals.
-            </p>
+          <div className="mt-8 max-w-3xl mx-auto space-y-6 text-left text-muted-foreground">
+            <div>
+              <h3 className="text-2xl font-bold text-foreground mb-2">Who I Am</h3>
+              <p>
+                I am Kushal Mittal, a final-year B.Tech student specializing in Artificial Intelligence and Data Science. I describe myself as a Stackless Engineer—a problem-solver first and a technologist second. My focus isn&apos;t on any single framework but on selecting the best tools for the task, whether that&apos;s building a predictive model or a full-stack application.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-2xl font-bold text-foreground mb-2">My Technical Approach</h3>
+              <p className="mb-4">
+                My work is driven by a deep curiosity for how things work and a commitment to building robust, efficient systems.
+              </p>
+              <p className="mb-4">
+                In <span className="font-semibold text-foreground/90">AI/ML</span>, I specialize in building practical applications using large language models. I have hands-on experience with the LLM stack—including LangChain and LangGraph—for building context-aware agents, and I&apos;m proficient in the entire data science pipeline: from data preprocessing and exploratory data analysis (EDA) to feature engineering and deploying supervised learning models for regression and classification tasks.
+              </p>
+              <p>
+                In <span className="font-semibold text-foreground/90">Full-Stack Development</span>, I build seamless, end-to-end experiences. I develop RESTful APIs with Node.js and Express, create responsive frontends with React and Next.js, and manage data with both SQL (PostgreSQL, MySQL) and NoSQL (MongoDB) databases. I prioritize security and performance, implementing auth solutions like JWT and Clerk Authentication.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-2xl font-bold text-foreground mb-2">My Core Strengths</h3>
+              <p className="mb-4">
+                Beyond technical skills, I bring a strong foundation in analytical reasoning and critical thinking to every project. I am a proactive team collaborator who values clear communication and thrives in agile environments. My ability to quickly adapt to new technologies and manage my time effectively allows me to take ideas from concept to deployment efficiently.
+              </p>
+              <p>
+                I am actively seeking opportunities where I can apply my diverse skill set to create impactful solutions and continue growing as an engineer.
+              </p>
+            </div>
           </div>
         </div>
 
