@@ -14,6 +14,7 @@ import { Badge } from "@/components/ui/badge";
 import { projectsData } from "@/data/projects";
 import { experienceData } from "@/data/experience";
 import { credentialsData } from "@/data/credentials";
+import { TechIcon } from "@/components/TechIcon";
 
 export default function Home() {
   const featuredProjects = projectsData.slice(0, 3);
@@ -28,6 +29,15 @@ export default function Home() {
         .concat(experienceData.flatMap((e) => e.technologies))
     ),
   ];
+   const skillsToShow = [
+    "React",
+    "Node.js",
+    "Python",
+    "JavaScript",
+    "TypeScript",
+    "Go",
+  ];
+
 
   return (
     <div className="flex flex-col gap-16 md:gap-24 animate-in fade-in-0 slide-in-from-bottom-8 duration-1000">
@@ -133,10 +143,10 @@ export default function Home() {
         </div>
         <div className="mx-auto max-w-4xl">
            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 justify-center">
-            {allTech.slice(0, 6).map((tech) => (
+            {skillsToShow.map((tech) => (
               <div key={tech} className="flex flex-col items-center gap-2">
                  <div className="w-24 h-24 flex items-center justify-center rounded-lg bg-muted shadow-md hover:shadow-lg transition-shadow">
-                    <p className="font-bold text-lg">{tech.slice(0,2)}</p>
+                    <TechIcon technology={tech} className="w-12 h-12" />
                  </div>
                 <p className="font-semibold">{tech}</p>
                 <p className="text-sm text-muted-foreground">Advanced</p>
