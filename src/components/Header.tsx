@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, Mountain } from "lucide-react";
+import { Menu } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -31,10 +31,10 @@ export function Header() {
   return (
     <header className="supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50 w-full border-b bg-background/95 shadow-sm backdrop-blur">
       <div className="container flex h-16 items-center">
-        <Link href="/" className="mr-auto flex items-center">
+        <Link href="/" className="flex items-center">
           <span className="text-xl font-bold tracking-tight">KushalMittal.dev</span>
         </Link>
-        <nav className="hidden items-center gap-6 text-sm font-medium md:flex">
+        <nav className="hidden items-center gap-6 text-sm font-medium md:flex flex-1 justify-center">
           {navLinks.map(({ href, label }) => (
             <Link
               key={href}
@@ -50,7 +50,7 @@ export function Header() {
             </Link>
           ))}
         </nav>
-        <div className="flex items-center justify-end gap-4 ml-4">
+        <div className="flex items-center justify-end gap-4">
           <ThemeToggle />
           <Sheet>
             <SheetTrigger asChild>
