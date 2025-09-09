@@ -1,10 +1,10 @@
 "use client";
 
-import { useFormState, useFormStatus } from "react-dom";
+import { useFormStatus } from "react-dom";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
-import { useEffect } from "react";
+import { useEffect, useActionState } from "react";
 import { useToast } from "@/hooks/use-toast";
 
 import { Button } from "@/components/ui/button";
@@ -48,7 +48,7 @@ function SubmitButton() {
 }
 
 export default function ContactPage() {
-  const [state, formAction] = useFormState(submitContactForm, {
+  const [state, submitAction] = useActionState(submitContactForm, {
     message: "",
     errors: undefined,
     success: false,
@@ -84,7 +84,7 @@ export default function ContactPage() {
           Get In Touch
         </h1>
         <p className="mt-4 text-lg text-muted-foreground">
-          I&apos;m open to new opportunities and collaborations.
+          I'm open to new opportunities and collaborations.
         </p>
       </div>
 
@@ -98,7 +98,7 @@ export default function ContactPage() {
           </CardHeader>
           <CardContent>
             <Form {...form}>
-              <form action={formAction} className="space-y-4">
+              <form action={submitAction} className="space-y-4">
                 <FormField
                   control={form.control}
                   name="name"
