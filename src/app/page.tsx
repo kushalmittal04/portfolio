@@ -40,7 +40,7 @@ export default function Home() {
                 <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">
                   John Doe
                 </h1>
-                <h2 className="text-2xl font-medium text-primary">
+                <h2 className="text-2xl font-semibold text-primary">
                   Full-Stack Developer & AI Enthusiast
                 </h2>
                 <p className="max-w-[600px] text-muted-foreground md:text-xl">
