@@ -18,7 +18,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { submitContactForm } from "./actions";
-import { Download, Github, Linkedin, Mail, MapPin, Phone, Twitter } from "lucide-react";
+import { Download, Github, Linkedin, Mail, MapPin, Phone } from "lucide-react";
 import Link from "next/link";
 import {
   Form,
@@ -198,9 +198,6 @@ export default function ContactPage() {
                 </Link>
                 <Link href="https://linkedin.com/in/demo" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
                   <Linkedin className="h-8 w-8 text-muted-foreground transition-colors hover:text-primary" />
-                </Link>
-                <Link href="https://twitter.com/demo" aria-label="Twitter" target="_blank" rel="noopener noreferrer">
-                  <Twitter className="h-8 w-8 text-muted-foreground transition-colors hover:text-primary" />
                 </Link>
               </div>
             </CardContent>
