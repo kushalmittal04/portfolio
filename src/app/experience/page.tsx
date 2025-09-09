@@ -11,16 +11,19 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { experienceData } from "@/data/experience";
+import content from "@/data/pageContent.json";
+
 
 export default function ExperiencePage() {
+  const experienceContent = content.experience;
   return (
     <div className="container mx-auto max-w-5xl px-4 py-16 animate-in fade-in-0 slide-in-from-bottom-8 duration-1000">
       <div className="text-center mb-12">
         <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">
-          Work Experience
+          {experienceContent.title}
         </h1>
         <p className="mt-4 text-lg text-muted-foreground">
-          My journey through the tech industry as an intern.
+          {experienceContent.description}
         </p>
       </div>
 

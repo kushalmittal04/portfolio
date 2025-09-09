@@ -15,32 +15,34 @@ import {
 import { credentialsData } from "@/data/credentials";
 import { ImageDialog } from "@/components/ImageDialog";
 import { Badge } from "@/components/ui/badge";
+import content from "@/data/pageContent.json";
 
 export default function CredentialsPage() {
   const { achievements, certificates } = credentialsData;
   const featuredCerts = certificates.filter((c) => c.isFeatured);
   const otherCerts = certificates.filter((c) => !c.isFeatured);
+  const credentialsContent = content.credentials;
 
   return (
     <div className="container mx-auto max-w-6xl px-4 py-16 animate-in fade-in-0 slide-in-from-bottom-8 duration-1000">
       <div className="text-center mb-12">
         <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">
-          My Credentials
+          {credentialsContent.title}
         </h1>
         <p className="mt-4 text-lg text-muted-foreground">
-          A collection of my professional achievements and certifications.
+          {credentialsContent.description}
         </p>
       </div>
 
       <Tabs defaultValue="certificates" className="w-full">
         <TabsList className="grid w-full grid-cols-2">
-          <TabsTrigger value="certificates">Certifications</TabsTrigger>
-          <TabsTrigger value="achievements">Achievements</TabsTrigger>
+          <TabsTrigger value="certificates">{credentialsContent.tabs.certificates}</TabsTrigger>
+          <TabsTrigger value="achievements">{credentialsContent.tabs.achievements}</TabsTrigger>
         </TabsList>
         <TabsContent value="certificates" className="mt-8">
           <div className="space-y-12">
             <div>
-              <h2 className="mb-4 text-2xl font-bold">Featured Certificates</h2>
+              <h2 className="mb-4 text-2xl font-bold">{credentialsContent.featuredCertificates}</h2>
               <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
                 {featuredCerts.map((cert) => (
                   <ImageDialog
@@ -70,7 +72,7 @@ export default function CredentialsPage() {
             </div>
 
             <div>
-              <h2 className="mb-4 text-2xl font-bold">Other Certificates</h2>
+              <h2 className="mb-4 text-2xl font-bold">{credentialsContent.otherCertificates}</h2>
               <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
                 {otherCerts.map((cert) => (
                   <ImageDialog

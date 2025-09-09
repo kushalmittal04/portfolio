@@ -9,6 +9,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ArrowUpRight } from "lucide-react";
 import { cn } from "@/lib/utils";
+import content from "@/data/pageContent.json";
 
 const WhatsAppIcon = (props: React.SVGProps<SVGSVGElement>) => (
   <svg
@@ -70,16 +71,17 @@ const profileSections = [
 ];
 
 export default function ProfilesPage() {
+  const profilesContent = content.profiles;
   return (
     <div className="container mx-auto max-w-6xl px-4 py-16 animate-in fade-in-0 slide-in-from-bottom-8 duration-1000">
       <div className="relative isolate overflow-hidden">
         <div className="absolute inset-0 -z-10 h-full w-full bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] dark:bg-[radial-gradient(rgba(255,255,255,0.1)_1px,transparent_1px)]"></div>
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">
-            My Online Profiles
+            {profilesContent.title}
           </h1>
           <p className="mt-4 text-lg text-muted-foreground">
-            Find me across the web on these platforms.
+            {profilesContent.description}
           </p>
         </div>
 
@@ -89,7 +91,7 @@ export default function ProfilesPage() {
               <h2 className="text-2xl font-bold mb-6 text-center md:text-left">
                 {section.title}
               </h2>
-              <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+              <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
                 {profilesData
                   .filter((p) => section.platforms.includes(p.platform))
                   .map((profile) => (

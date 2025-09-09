@@ -16,11 +16,13 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { projectsData } from "@/data/projects";
 import { cn } from "@/lib/utils";
+import content from "@/data/pageContent.json";
 
 const categories = ["All", ...new Set(projectsData.flatMap(p => p.category))];
 
 export default function ProjectsPage() {
   const [filter, setFilter] = useState("All");
+  const projectsContent = content.projects;
 
   const filteredProjects =
     filter === "All"
@@ -31,10 +33,10 @@ export default function ProjectsPage() {
     <div className="container mx-auto max-w-7xl px-4 py-16 animate-in fade-in-0 slide-in-from-bottom-8 duration-1000">
       <div className="text-center mb-12">
         <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">
-          My Projects
+          {projectsContent.title}
         </h1>
         <p className="mt-4 text-lg text-muted-foreground">
-          A collection of my work, from web apps to machine learning models.
+          {projectsContent.description}
         </p>
       </div>
 

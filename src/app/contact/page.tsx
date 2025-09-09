@@ -19,6 +19,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { submitContactForm } from "./actions";
 import { Download, Mail, MapPin, Phone } from "lucide-react";
+import content from "@/data/pageContent.json";
 
 import {
   Form,
@@ -59,6 +60,7 @@ export default function ContactPage() {
   });
 
   const { toast } = useToast();
+  const contactContent = content.contact;
 
   useEffect(() => {
     if (!state.message) return;
@@ -82,17 +84,17 @@ export default function ContactPage() {
     <div className="container mx-auto max-w-5xl px-4 py-16 animate-in fade-in-0 slide-in-from-bottom-8 duration-1000">
       <div className="text-center mb-12">
         <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">
-          Get In Touch
+          {contactContent.title}
         </h1>
         <p className="mt-4 text-lg text-muted-foreground">
-          Feel free to reach out. I'm always happy to connect!
+          {contactContent.description}
         </p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
         <Card className="transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
           <CardHeader>
-            <CardTitle>Send a Message</CardTitle>
+            <CardTitle>{contactContent.formTitle}</CardTitle>
           </CardHeader>
           <CardContent>
             <Form {...form}>
@@ -145,7 +147,7 @@ export default function ContactPage() {
         <div className="space-y-8">
           <Card className="transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
             <CardHeader>
-              <CardTitle>Contact Information</CardTitle>
+              <CardTitle>{contactContent.infoTitle}</CardTitle>
             </CardHeader>
             <CardContent className="space-y-6 text-sm">
                 <div className="flex items-start gap-4">
@@ -175,13 +177,13 @@ export default function ContactPage() {
           </Card>
            <Card className="transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
             <CardHeader>
-              <CardTitle>Download Resume</CardTitle>
-              <CardDescription>Get a copy of my detailed resume</CardDescription>
+              <CardTitle>{contactContent.resumeTitle}</CardTitle>
+              <CardDescription>{contactContent.resumeDescription}</CardDescription>
             </CardHeader>
             <CardContent>
                <Button asChild className="w-full" size="lg">
                   <a href="/resume.pdf" download="resume.pdf">
-                    <Download className="mr-2 h-4 w-4" /> Download Resume
+                    <Download className="mr-2 h-4 w-4" /> {contactContent.buttons.download}
                   </a>
                 </Button>
             </CardContent>

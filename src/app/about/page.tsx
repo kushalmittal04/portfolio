@@ -13,19 +13,21 @@ import Image from "next/image";
 import { Eye } from "lucide-react";
 import skillsData from "@/data/skills.json";
 import { Badge } from "@/components/ui/badge";
+import content from "@/data/pageContent.json";
 
 export default function AboutPage() {
   const { categories } = skillsData;
+  const aboutContent = content.about;
 
   return (
     <div className="container mx-auto max-w-5xl px-4 py-16 animate-in fade-in-0 slide-in-from-bottom-8 duration-1000">
       <div className="space-y-16">
         <div className="text-center">
           <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">
-            About Me
+            {aboutContent.title}
           </h1>
           <p className="mt-4 text-lg text-muted-foreground">
-            My educational journey and background
+            {aboutContent.description}
           </p>
           <div className="mt-8 flex justify-center">
             <Image
@@ -39,37 +41,33 @@ export default function AboutPage() {
           </div>
           <div className="mt-8 max-w-3xl mx-auto space-y-6 text-left text-muted-foreground">
             <div>
-              <h3 className="text-2xl font-bold text-foreground mb-2">Who I Am</h3>
+              <h3 className="text-2xl font-bold text-foreground mb-2">{aboutContent.whoAmI.title}</h3>
               <p>
-                I am Kushal Mittal, a final-year B.Tech student specializing in Artificial Intelligence and Data Science. I describe myself as a Stackless Engineer—a problem-solver first and a technologist second. My focus isn&apos;t on any single framework but on selecting the best tools for the task, whether that&apos;s building a predictive model or a full-stack application.
+                {aboutContent.whoAmI.content}
               </p>
             </div>
             <div>
-              <h3 className="text-2xl font-bold text-foreground mb-2">My Technical Approach</h3>
+              <h3 className="text-2xl font-bold text-foreground mb-2">{aboutContent.technicalApproach.title}</h3>
               <p className="mb-4">
-                My work is driven by a deep curiosity for how things work and a commitment to building robust, efficient systems.
+                {aboutContent.technicalApproach.intro}
               </p>
-              <p className="mb-4">
-                In <span className="font-semibold text-foreground/90">AI/ML</span>, I specialize in building practical applications using large language models. I have hands-on experience with the LLM stack—including LangChain and LangGraph—for building context-aware agents, and I&apos;m proficient in the entire data science pipeline: from data preprocessing and exploratory data analysis (EDA) to feature engineering and deploying supervised learning models for regression and classification tasks.
-              </p>
-              <p>
-                In <span className="font-semibold text-foreground/90">Full-Stack Development</span>, I build seamless, end-to-end experiences. I develop RESTful APIs with Node.js and Express, create responsive frontends with React and Next.js, and manage data with both SQL (PostgreSQL, MySQL) and NoSQL (MongoDB) databases. I prioritize security and performance, implementing auth solutions like JWT and Clerk Authentication.
-              </p>
+              <p className="mb-4" dangerouslySetInnerHTML={{ __html: aboutContent.technicalApproach.aiMl }} />
+              <p dangerouslySetInnerHTML={{ __html: aboutContent.technicalApproach.fullStack }} />
             </div>
             <div>
-              <h3 className="text-2xl font-bold text-foreground mb-2">My Core Strengths</h3>
+              <h3 className="text-2xl font-bold text-foreground mb-2">{aboutContent.coreStrengths.title}</h3>
               <p className="mb-4">
-                Beyond technical skills, I bring a strong foundation in analytical reasoning and critical thinking to every project. I am a proactive team collaborator who values clear communication and thrives in agile environments. My ability to quickly adapt to new technologies and manage my time effectively allows me to take ideas from concept to deployment efficiently.
+                {aboutContent.coreStrengths.paragraph1}
               </p>
               <p>
-                I am actively seeking opportunities where I can apply my diverse skill set to create impactful solutions and continue growing as an engineer.
+                {aboutContent.coreStrengths.paragraph2}
               </p>
             </div>
           </div>
         </div>
 
         <div className="space-y-8">
-          <h2 className="text-3xl font-bold text-center">My Skills</h2>
+          <h2 className="text-3xl font-bold text-center">{aboutContent.skillsTitle}</h2>
           <Card className="shadow-lg">
             <CardContent className="p-6 space-y-6">
               {categories.map((category) => (
@@ -88,7 +86,7 @@ export default function AboutPage() {
 
 
         <div className="space-y-8">
-          <h2 className="text-3xl font-bold text-center">Education Timeline</h2>
+          <h2 className="text-3xl font-bold text-center">{aboutContent.educationTitle}</h2>
           <div className="space-y-6">
             {educationData.map((edu) => (
               <Card

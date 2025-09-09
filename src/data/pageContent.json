@@ -1,0 +1,83 @@
+{
+  "home": {
+    "title": "Kushal Mittal",
+    "subtitle": "Full-Stack Developer & AI Enthusiast",
+    "description": "Passionate about creating innovative solutions with modern technologies. Specialized in React, Node.js, and Machine Learning with 2+ years of experience.",
+    "buttons": {
+      "work": "View My Work",
+      "resume": "Download Resume"
+    },
+    "sections": {
+      "featuredProjects": {
+        "title": "Featured Projects",
+        "description": "Some of my recent work"
+      },
+      "skills": {
+        "title": "Technical Skills",
+        "description": "Technologies I work with"
+      },
+      "latestExperience": {
+        "title": "Latest Experience",
+        "description": "Recent internship and work experience"
+      },
+      "recentActivities": {
+        "title": "Recent Activities",
+        "description": "Latest achievements and updates"
+      }
+    }
+  },
+  "about": {
+    "title": "About Me",
+    "description": "My educational journey and background",
+    "whoAmI": {
+      "title": "Who I Am",
+      "content": "I am Kushal Mittal, a final-year B.Tech student specializing in Artificial Intelligence and Data Science. I describe myself as a Stackless Engineer—a problem-solver first and a technologist second. My focus isn't on any single framework but on selecting the best tools for the task, whether that's building a predictive model or a full-stack application."
+    },
+    "technicalApproach": {
+      "title": "My Technical Approach",
+      "intro": "My work is driven by a deep curiosity for how things work and a commitment to building robust, efficient systems.",
+      "aiMl": "In <span class=\"font-semibold text-foreground/90\">AI/ML</span>, I specialize in building practical applications using large language models. I have hands-on experience with the LLM stack—including LangChain and LangGraph—for building context-aware agents, and I'm proficient in the entire data science pipeline: from data preprocessing and exploratory data analysis (EDA) to feature engineering and deploying supervised learning models for regression and classification tasks.",
+      "fullStack": "In <span class=\"font-semibold text-foreground/90\">Full-Stack Development</span>, I build seamless, end-to-end experiences. I develop RESTful APIs with Node.js and Express, create responsive frontends with React and Next.js, and manage data with both SQL (PostgreSQL, MySQL) and NoSQL (MongoDB) databases. I prioritize security and performance, implementing auth solutions like JWT and Clerk Authentication."
+    },
+    "coreStrengths": {
+      "title": "My Core Strengths",
+      "paragraph1": "Beyond technical skills, I bring a strong foundation in analytical reasoning and critical thinking to every project. I am a proactive team collaborator who values clear communication and thrives in agile environments. My ability to quickly adapt to new technologies and manage my time effectively allows me to take ideas from concept to deployment efficiently.",
+      "paragraph2": "I am actively seeking opportunities where I can apply my diverse skill set to create impactful solutions and continue growing as an engineer."
+    },
+    "skillsTitle": "My Skills",
+    "educationTitle": "Education Timeline"
+  },
+  "experience": {
+    "title": "Work Experience",
+    "description": "My journey through the tech industry as an intern."
+  },
+  "projects": {
+    "title": "My Projects",
+    "description": "A collection of my work, from web apps to machine learning models."
+  },
+  "credentials": {
+    "title": "My Credentials",
+    "description": "A collection of my professional achievements and certifications.",
+    "tabs": {
+      "certificates": "Certifications",
+      "achievements": "Achievements"
+    },
+    "featuredCertificates": "Featured Certificates",
+    "otherCertificates": "Other Certificates"
+  },
+  "profiles": {
+    "title": "My Online Profiles",
+    "description": "Find me across the web on these platforms."
+  },
+  "contact": {
+    "title": "Get In Touch",
+    "description": "Feel free to reach out. I'm always happy to connect!",
+    "formTitle": "Send a Message",
+    "infoTitle": "Contact Information",
+    "resumeTitle": "Download Resume",
+    "resumeDescription": "Get a copy of my detailed resume",
+    "buttons": {
+        "download": "Download Resume"
+    }
+  }
+}
