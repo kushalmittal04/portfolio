@@ -28,11 +28,11 @@ export default function AboutPage() {
           {educationData.map((edu, index) => (
             <div
               key={edu.id}
-              className="relative flex items-center md:w-1/2 md:justify-start even:md:self-end even:md:pl-16 odd:md:self-start odd:md:pr-16"
+              className="relative flex items-center md:w-1/2 md:justify-start odd:md:self-end odd:md:pl-16 even:md:self-start even:md:pr-16"
             >
               <div
                 className={`w-full pl-12 md:pl-0 ${
-                  index % 2 === 0 ? "md:text-left" : "md:text-right"
+                  index % 2 !== 0 ? "md:text-left" : "md:text-right"
                 }`}
               >
                 <Card className="w-full shadow-lg hover:shadow-xl transition-shadow duration-300">
@@ -48,7 +48,7 @@ export default function AboutPage() {
                   </CardContent>
                   <CardFooter
                     className={
-                      index % 2 !== 0 ? "md:justify-end" : "md:justify-start"
+                      index % 2 === 0 ? "md:justify-end" : "md:justify-start"
                     }
                   >
                     <ImageDialog
