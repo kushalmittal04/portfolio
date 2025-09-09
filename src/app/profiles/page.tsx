@@ -79,7 +79,7 @@ export default function ProfilesPage() {
                     {profilesData
                         .filter(p => section.platforms.includes(p.platform))
                         .map((profile) => (
-                      <Card key={profile.id} className="flex flex-col">
+                      <Card key={profile.id} className="flex flex-col transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
                         <CardHeader className="flex-row items-center gap-4">
                            <LucideIcon name={profile.icon} className="h-10 w-10 text-primary"/>
                            <div>
