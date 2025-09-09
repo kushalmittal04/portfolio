@@ -16,10 +16,9 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { submitContactForm } from "./actions";
-import { Download, Github, Linkedin, Twitter } from "lucide-react";
+import { Download, Github, Linkedin, Mail, MapPin, Phone, Twitter } from "lucide-react";
 import Link from "next/link";
 import {
   Form,
@@ -41,7 +40,7 @@ type ContactFormValues = z.infer<typeof contactSchema>;
 function SubmitButton() {
   const { pending } = useFormStatus();
   return (
-    <Button type="submit" disabled={pending}>
+    <Button type="submit" disabled={pending} className="w-full">
       {pending ? "Sending..." : "Send Message"}
     </Button>
   );
@@ -78,27 +77,24 @@ export default function ContactPage() {
   }, [state, toast, form]);
 
   return (
-    <div className="container mx-auto max-w-4xl px-4 py-16 animate-in fade-in-0 slide-in-from-bottom-8 duration-1000">
+    <div className="container mx-auto max-w-5xl px-4 py-16 animate-in fade-in-0 slide-in-from-bottom-8 duration-1000">
       <div className="text-center mb-12">
         <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">
           Get In Touch
         </h1>
         <p className="mt-4 text-lg text-muted-foreground">
-          I'm open to new opportunities and collaborations.
+         Let&apos;s discuss your next project
         </p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
         <Card>
           <CardHeader>
-            <CardTitle>Contact Form</CardTitle>
-            <CardDescription>
-              Feel free to send me a message.
-            </CardDescription>
+            <CardTitle>Send a Message</CardTitle>
           </CardHeader>
           <CardContent>
             <Form {...form}>
-              <form action={submitAction} className="space-y-4">
+              <form action={submitAction} className="space-y-6">
                 <FormField
                   control={form.control}
                   name="name"
@@ -106,7 +102,7 @@ export default function ContactPage() {
                     <FormItem>
                       <FormLabel>Name</FormLabel>
                       <FormControl>
-                        <Input {...field} />
+                        <Input placeholder="Your name" {...field} />
                       </FormControl>
                       <FormMessage />
                       {state.errors?.name && <p className="text-sm text-destructive">{state.errors.name[0]}</p>}
@@ -120,7 +116,7 @@ export default function ContactPage() {
                     <FormItem>
                       <FormLabel>Email</FormLabel>
                       <FormControl>
-                        <Input type="email" {...field} />
+                        <Input type="email" placeholder="your.email@example.com" {...field} />
                       </FormControl>
                       <FormMessage />
                        {state.errors?.email && <p className="text-sm text-destructive">{state.errors.email[0]}</p>}
@@ -134,7 +130,7 @@ export default function ContactPage() {
                     <FormItem>
                       <FormLabel>Message</FormLabel>
                       <FormControl>
-                        <Textarea className="min-h-[120px]" {...field} />
+                        <Textarea className="min-h-[150px]" placeholder="Your message..." {...field} />
                       </FormControl>
                       <FormMessage />
                       {state.errors?.message && <p className="text-sm text-destructive">{state.errors.message[0]}</p>}
@@ -147,15 +143,46 @@ export default function ContactPage() {
           </CardContent>
         </Card>
         
-        <div className="space-y-6">
+        <div className="space-y-8">
           <Card>
             <CardHeader>
-              <CardTitle>Contact Details</CardTitle>
+              <CardTitle>Contact Information</CardTitle>
             </CardHeader>
-            <CardContent className="space-y-4">
+            <CardContent className="space-y-6 text-sm">
+                <div className="flex items-start gap-4">
+                  <Mail className="h-5 w-5 text-muted-foreground mt-0.5" />
+                  <div>
+                    <p className="font-semibold">Email</p>
+                    <a href="mailto:john.doe@email.com" className="text-muted-foreground hover:text-primary">
+                      john.doe@email.com
+                    </a>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4">
+                  <Phone className="h-5 w-5 text-muted-foreground mt-0.5" />
+                  <div>
+                    <p className="font-semibold">Phone</p>
+                    <p className="text-muted-foreground">+91 98765 43210</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4">
+                  <MapPin className="h-5 w-5 text-muted-foreground mt-0.5" />
+                  <div>
+                    <p className="font-semibold">Location</p>
+                    <p className="text-muted-foreground">Mumbai, India</p>
+                  </div>
+                </div>
+            </CardContent>
+          </Card>
+           <Card>
+            <CardHeader>
+              <CardTitle>Download Resume</CardTitle>
+              <CardDescription>Get a copy of my detailed resume</CardDescription>
+            </CardHeader>
+            <CardContent>
                <Button asChild className="w-full" size="lg">
                   <a href="/resume.pdf" download="resume.pdf">
-                    Download Resume <Download className="ml-2 h-4 w-4" />
+                    <Download className="mr-2 h-4 w-4" /> Download Resume
                   </a>
                 </Button>
             </CardContent>
