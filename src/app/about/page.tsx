@@ -24,36 +24,44 @@ export default function AboutPage() {
         </div>
 
         <div className="relative space-y-12">
-          <div className="absolute left-1/2 top-0 h-full w-0.5 -translate-x-1/2 bg-border hidden md:block"></div>
+          <div className="absolute left-6 top-0 h-full w-0.5 -translate-x-1/2 bg-border md:left-1/2"></div>
           {educationData.map((edu, index) => (
             <div
               key={edu.id}
-              className={`relative flex items-center md:w-1/2 ${
-                index % 2 === 0 ? "md:self-start md:pr-8" : "md:self-end md:pl-8"
-              }`}
+              className="relative flex items-center md:w-1/2 md:justify-start even:md:self-end even:md:pl-16 odd:md:self-start odd:md:pr-16"
             >
-              <Card className="w-full shadow-lg hover:shadow-xl transition-shadow duration-300">
-                <CardHeader>
-                  <CardTitle className="text-2xl">{edu.institution}</CardTitle>
-                  <CardDescription className="text-base">
-                    {edu.degree}
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground">{edu.duration}</p>
-                  <p className="font-semibold">{edu.score}</p>
-                </CardContent>
-                <CardFooter>
-                  <ImageDialog
-                    imageUrl={edu.marksheetUrl}
-                    alt={`${edu.degree} Marksheet`}
-                    dataAiHint={edu.dataAiHint}
+              <div
+                className={`w-full pl-12 md:pl-0 ${
+                  index % 2 === 0 ? "md:text-left" : "md:text-right"
+                }`}
+              >
+                <Card className="w-full shadow-lg hover:shadow-xl transition-shadow duration-300">
+                  <CardHeader>
+                    <CardTitle className="text-2xl">{edu.institution}</CardTitle>
+                    <CardDescription className="text-base">
+                      {edu.degree}
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-muted-foreground">{edu.duration}</p>
+                    <p className="font-semibold">{edu.score}</p>
+                  </CardContent>
+                  <CardFooter
+                    className={
+                      index % 2 !== 0 ? "md:justify-end" : "md:justify-start"
+                    }
                   >
-                    <Button variant="secondary">View Marksheet</Button>
-                  </ImageDialog>
-                </CardFooter>
-              </Card>
-              <div className="absolute left-1/2 top-1/2 h-4 w-4 -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary ring-8 ring-background hidden md:block"></div>
+                    <ImageDialog
+                      imageUrl={edu.marksheetUrl}
+                      alt={`${edu.degree} Marksheet`}
+                      dataAiHint={edu.dataAiHint}
+                    >
+                      <Button variant="secondary">View Marksheet</Button>
+                    </ImageDialog>
+                  </CardFooter>
+                </Card>
+              </div>
+              <div className="absolute left-6 top-1/2 h-4 w-4 -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary ring-8 ring-background md:left-1/2"></div>
             </div>
           ))}
         </div>
