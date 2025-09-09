@@ -47,7 +47,7 @@ export default function ProjectsPage() {
               onClick={() => setFilter(category)}
               className={cn(
                 "rounded-md",
-                filter === category && "bg-primary text-primary-foreground shadow-sm hover:bg-primary/90"
+                filter === category && "bg-background text-foreground shadow-sm hover:bg-background/90"
               )}
             >
               {category}

@@ -61,14 +61,16 @@ export default function ContactPage() {
   const { toast } = useToast();
 
   useEffect(() => {
+    if (!state.message) return;
+
     if (state.success) {
       toast({
         title: "Success!",
         description: state.message,
       });
       form.reset();
-    } else if (state.message && (state.errors?.email || state.errors?.message || state.errors?.name)) {
-       toast({
+    } else {
+      toast({
         title: "Error",
         description: state.message,
         variant: "destructive",

@@ -22,14 +22,7 @@ export default function Home() {
   const featuredAchievements = credentialsData.achievements.filter(
     (a) => a.isFeatured
   );
-  const allTech = [
-    ...new Set(
-      projectsData
-        .flatMap((p) => p.technologies)
-        .concat(experienceData.flatMap((e) => e.technologies))
-    ),
-  ];
-   const skillsToShow = [
+  const skillsToShow = [
     "React",
     "Node.js",
     "Python",
