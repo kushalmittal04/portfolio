@@ -18,8 +18,8 @@ import {
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { submitContactForm } from "./actions";
-import { Download, Github, Linkedin, Mail, MapPin, Phone } from "lucide-react";
-import Link from "next/link";
+import { Download, Mail, MapPin, Phone } from "lucide-react";
+
 import {
   Form,
   FormControl,
@@ -28,25 +28,6 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
-
-const WhatsAppIcon = (props: React.SVGProps<SVGSVGElement>) => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="24"
-    height="24"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    {...props}
-  >
-    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
-    <path d="M14.05 2a9 9 0 0 1 8 7.94" />
-    <path d="M14.05 6A5 5 0 0 1 18 10" />
-  </svg>
-);
 
 const contactSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters."),
@@ -178,14 +159,14 @@ export default function ContactPage() {
                   <Phone className="h-5 w-5 text-muted-foreground mt-0.5" />
                   <div>
                     <p className="font-semibold">Phone</p>
-                    <p className="text-muted-foreground">+91 98765 43210</p>
+                    <p className="text-muted-foreground">+91-7317594114</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
                   <MapPin className="h-5 w-5 text-muted-foreground mt-0.5" />
                   <div>
                     <p className="font-semibold">Location</p>
-                    <p className="text-muted-foreground">Mumbai, India</p>
+                    <p className="text-muted-foreground">Bengaluru, Karnataka, India</p>
                   </div>
                 </div>
             </CardContent>
@@ -201,35 +182,6 @@ export default function ContactPage() {
                     <Download className="mr-2 h-4 w-4" /> Download Resume
                   </a>
                 </Button>
-            </CardContent>
-          </Card>
-          <Card className="transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
-            <CardHeader>
-              <CardTitle>Follow Me</CardTitle>
-            </CardHeader>
-            <CardContent>
-               <div className="flex justify-center items-center gap-6">
-                <Link href="https://github.com/kushalmittal04" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
-                  <Github className="h-8 w-8 text-muted-foreground transition-colors hover:text-primary" />
-                </Link>
-                <Link href="https://linkedin.com/in/kushalmittal04" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
-                  <Linkedin className="h-8 w-8 text-muted-foreground transition-colors hover:text-primary" />
-                </Link>
-                <Link
-                    href="mailto:kushalmittal2022@gmail.com"
-                    aria-label="Gmail"
-                  >
-                    <Mail className="h-8 w-8 text-muted-foreground transition-colors hover:text-primary" />
-                  </Link>
-                   <Link
-                    href="https://wa.me/7317594114"
-                    aria-label="WhatsApp"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <WhatsAppIcon className="h-8 w-8 text-muted-foreground transition-colors hover:text-primary" />
-                  </Link>
-              </div>
             </CardContent>
           </Card>
         </div>
