@@ -17,7 +17,7 @@ import { Button } from "@/components/ui/button";
 import { projectsData } from "@/data/projects";
 import { cn } from "@/lib/utils";
 
-const categories = ["All", "AI/ML", "Full Stack", "Web"];
+const categories = ["All", ...new Set(projectsData.flatMap(p => p.category))];
 
 export default function ProjectsPage() {
   const [filter, setFilter] = useState("All");
@@ -43,7 +43,7 @@ export default function ProjectsPage() {
           {categories.map((category) => (
             <Button
               key={category}
-              variant={filter === category ? "default" : "ghost"}
+              variant="ghost"
               onClick={() => setFilter(category)}
               className={cn(
                 "rounded-md",

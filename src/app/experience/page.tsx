@@ -27,13 +27,13 @@ export default function ExperiencePage() {
       <div className="relative space-y-12">
         <div className="absolute left-6 top-0 h-full w-0.5 -translate-x-1/2 bg-border md:left-1/2"></div>
         {experienceData.map((exp, index) => (
-          <div
+           <div
             key={exp.id}
-            className={`relative flex items-center ${
-              "md:justify-start"
-            } md:${index % 2 === 0 ? "justify-start" : "flex-row-reverse justify-start"}`}
+            className={`relative flex items-center md:justify-start ${
+              index % 2 === 0 ? "" : "md:flex-row-reverse"
+            }`}
           >
-             <div className="hidden md:block md:w-1/2"></div>
+            <div className="hidden md:block md:w-1/2"></div>
             <div className="w-full md:w-1/2 pl-12 md:pl-8">
               <Card className="shadow-lg hover:shadow-xl transition-shadow duration-300">
                 <CardHeader>
@@ -53,7 +53,7 @@ export default function ExperiencePage() {
                     {exp.description[0]}
                   </p>
                   <div className="flex flex-wrap gap-2 mb-4">
-                    {exp.technologies.map((tech) => (
+                    {exp.technologies.slice(0, 4).map((tech) => (
                       <Badge key={tech} variant="secondary">
                         {tech}
                       </Badge>

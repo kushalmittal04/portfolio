@@ -21,12 +21,22 @@ import { Textarea } from "@/components/ui/textarea";
 import { submitContactForm } from "./actions";
 import { Download, Github, Linkedin, Twitter } from "lucide-react";
 import Link from "next/link";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form";
 
 const contactSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters."),
   email: z.string().email("Invalid email address."),
   message: z.string().min(10, "Message must be at least 10 characters."),
 });
+
+type ContactFormValues = z.infer<typeof contactSchema>;
 
 function SubmitButton() {
   const { pending } = useFormStatus();
@@ -44,10 +54,7 @@ export default function ContactPage() {
     success: false,
   });
 
-  const {
-    register,
-    formState: { errors },
-  } = useForm({
+  const form = useForm<ContactFormValues>({
     resolver: zodResolver(contactSchema),
     defaultValues: { name: "", email: "", message: "" },
   });
@@ -60,14 +67,15 @@ export default function ContactPage() {
         title: "Success!",
         description: state.message,
       });
-    } else if (state.message && state.errors) {
+      form.reset();
+    } else if (state.message && (state.errors?.email || state.errors?.message || state.errors?.name)) {
        toast({
         title: "Error",
         description: state.message,
         variant: "destructive",
       });
     }
-  }, [state, toast]);
+  }, [state, toast, form]);
 
   return (
     <div className="container mx-auto max-w-4xl px-4 py-16 animate-in fade-in-0 slide-in-from-bottom-8 duration-1000">
@@ -89,33 +97,53 @@ export default function ContactPage() {
             </CardDescription>
           </CardHeader>
           <CardContent>
-            <form action={formAction} className="space-y-4">
-              <div className="space-y-2">
-                <Label htmlFor="name">Name</Label>
-                <Input id="name" {...register("name")} />
-                {errors.name?.message && (
-                  <p className="text-sm text-destructive">{errors.name.message}</p>
-                )}
-                 {state.errors?.name && <p className="text-sm text-destructive">{state.errors.name[0]}</p>}
-              </div>
-              <div className="space-y-2">
-                <Label htmlFor="email">Email</Label>
-                <Input id="email" type="email" {...register("email")} />
-                 {errors.email?.message && (
-                  <p className="text-sm text-destructive">{errors.email.message}</p>
-                )}
-                {state.errors?.email && <p className="text-sm text-destructive">{state.errors.email[0]}</p>}
-              </div>
-              <div className="space-y-2">
-                <Label htmlFor="message">Message</Label>
-                <Textarea id="message" {...register("message")} className="min-h-[120px]"/>
-                 {errors.message?.message && (
-                  <p className="text-sm text-destructive">{errors.message.message}</p>
-                )}
-                {state.errors?.message && <p className="text-sm text-destructive">{state.errors.message[0]}</p>}
-              </div>
-              <SubmitButton />
-            </form>
+            <Form {...form}>
+              <form action={formAction} className="space-y-4">
+                <FormField
+                  control={form.control}
+                  name="name"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Name</FormLabel>
+                      <FormControl>
+                        <Input {...field} />
+                      </FormControl>
+                      <FormMessage />
+                      {state.errors?.name && <p className="text-sm text-destructive">{state.errors.name[0]}</p>}
+                    </FormItem>
+                  )}
+                />
+                <FormField
+                  control={form.control}
+                  name="email"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Email</FormLabel>
+                      <FormControl>
+                        <Input type="email" {...field} />
+                      </FormControl>
+                      <FormMessage />
+                       {state.errors?.email && <p className="text-sm text-destructive">{state.errors.email[0]}</p>}
+                    </FormItem>
+                  )}
+                />
+                <FormField
+                  control={form.control}
+                  name="message"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Message</FormLabel>
+                      <FormControl>
+                        <Textarea className="min-h-[120px]" {...field} />
+                      </FormControl>
+                      <FormMessage />
+                      {state.errors?.message && <p className="text-sm text-destructive">{state.errors.message[0]}</p>}
+                    </FormItem>
+                  )}
+                />
+                <SubmitButton />
+              </form>
+            </Form>
           </CardContent>
         </Card>
         

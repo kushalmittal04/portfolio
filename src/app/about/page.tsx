@@ -29,7 +29,7 @@ export default function AboutPage() {
             <div
               key={edu.id}
               className={`relative flex items-center md:w-1/2 ${
-                index % 2 === 0 ? "md:self-start" : "md:self-end md:pl-8"
+                index % 2 === 0 ? "md:self-start md:pr-8" : "md:self-end md:pl-8"
               }`}
             >
               <Card className="w-full shadow-lg hover:shadow-xl transition-shadow duration-300">
