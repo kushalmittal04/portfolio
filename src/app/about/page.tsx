@@ -22,7 +22,7 @@ export default function AboutPage() {
           <div className="mt-8 flex justify-center">
             <Image
               src="https://picsum.photos/200/200"
-              alt="John Doe"
+              alt="Kushal Mittal"
               width={200}
               height={200}
               className="rounded-full object-cover"

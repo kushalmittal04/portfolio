@@ -38,7 +38,7 @@ export default function Home() {
             <div className="flex flex-col justify-center space-y-4">
               <div className="space-y-2">
                 <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">
-                  John Doe
+                  Kushal Mittal
                 </h1>
                 <h2 className="text-2xl font-semibold text-primary">
                   Full-Stack Developer & AI Enthusiast

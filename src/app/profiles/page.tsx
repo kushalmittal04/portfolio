@@ -6,7 +6,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { profilesData } from "@/data/profiles";
+import profilesData from "@/data/profiles.json";
 import * as Icons from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
@@ -26,11 +26,11 @@ const profileSections = [
     },
     {
         title: "Development & AI",
-        platforms: ["GitHub", "Kaggle"]
+        platforms: ["GitHub", "Kaggle", "Portfolio"]
     },
     {
         title: "Certifications & Learning",
-        platforms: ["Microsoft Learn", "Cloud Skills Boost", "Google for Developers", "Credly"]
+        platforms: ["Microsoft Learn", "Google Cloud Skills Boost", "Google for Developers", "Credly"]
     },
     {
         title: "Competitive Programming",

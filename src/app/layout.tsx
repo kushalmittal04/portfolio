@@ -10,7 +10,7 @@ import { ThemeProvider } from "@/components/ThemeProvider";
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
 export const metadata: Metadata = {
-  title: "FolioForge",
+  title: "Kushal Mittal's Portfolio",
   description: "A personal portfolio website built with Next.js",
 };
 

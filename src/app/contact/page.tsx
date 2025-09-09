@@ -42,7 +42,7 @@ const WhatsAppIcon = (props: React.SVGProps<SVGSVGElement>) => (
     strokeLinejoin="round"
     {...props}
   >
-    <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path><path d="M14.05 2a9 9 0 0 1 8 7.94"></path><path d="M14.05 6A5 5 0 0 1 18 10"></path>
   </svg>
 );
 
@@ -171,8 +171,8 @@ export default function ContactPage() {
                   <Mail className="h-5 w-5 text-muted-foreground mt-0.5" />
                   <div>
                     <p className="font-semibold">Email</p>
-                    <a href="mailto:john.doe@email.com" className="text-muted-foreground hover:text-primary">
-                      john.doe@email.com
+                    <a href="mailto:kushalmittal2022@gmail.com" className="text-muted-foreground hover:text-primary">
+                      kushalmittal2022@gmail.com
                     </a>
                   </div>
                 </div>
@@ -211,14 +211,14 @@ export default function ContactPage() {
             </CardHeader>
             <CardContent>
                <div className="flex justify-center items-center gap-6">
-                <Link href="https://github.com/demo" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
+                <Link href="https://github.com/kushalmittal04" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
                   <Github className="h-8 w-8 text-muted-foreground transition-colors hover:text-primary" />
                 </Link>
-                <Link href="https://linkedin.com/in/demo" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+                <Link href="https://linkedin.com/in/kushalmittal04" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
                   <Linkedin className="h-8 w-8 text-muted-foreground transition-colors hover:text-primary" />
                 </Link>
                 <Link
-                    href="mailto:demo@example.com"
+                    href="mailto:kushalmittal2022@gmail.com"
                     aria-label="Gmail"
                   >
                     <Mail className="h-8 w-8 text-muted-foreground transition-colors hover:text-primary" />
