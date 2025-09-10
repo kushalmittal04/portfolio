@@ -133,7 +133,7 @@ export default function CredentialsPage() {
                 <div className="relative sm:col-span-3">
                   <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
                   <Input
-                    placeholder="Search certifications..."
+                    placeholder="Search certifications by name, issuer, or skill..."
                     className="pl-10 w-full"
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
@@ -183,14 +183,11 @@ export default function CredentialsPage() {
                         <TableCell className="hidden sm:table-cell text-muted-foreground">{cert.issuer}</TableCell>
                         <TableCell className="hidden md:table-cell">
                           <div className="flex flex-wrap gap-1">
-                            {cert.skills.slice(0, 3).map((skill) => (
+                            {cert.skills.map((skill) => (
                               <Badge key={skill} variant="secondary">
                                 {skill}
                               </Badge>
                             ))}
-                            {cert.skills.length > 3 && (
-                                <Badge variant="outline">+{cert.skills.length - 3}</Badge>
-                            )}
                           </div>
                         </TableCell>
                         <TableCell className="hidden sm:table-cell text-right text-muted-foreground">
