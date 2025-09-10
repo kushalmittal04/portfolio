@@ -9,6 +9,7 @@ import {
   Card,
   CardContent,
   CardDescription,
+  CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
@@ -118,11 +119,12 @@ export default function CredentialsPage() {
                                     <CardTitle className="text-lg">{cert.name}</CardTitle>
                                     <CardDescription>{cert.issuer} &middot; {format(new Date(cert.issueDate), "PPP")}</CardDescription>
                                 </CardHeader>
-                                <CardContent className="mt-auto">
+                                <CardContent className="flex-grow" />
+                                <CardFooter>
                                     <Button variant="outline" className="w-full">
                                     <Eye className="mr-2 h-4 w-4" /> View Document
                                     </Button>
-                                </CardContent>
+                                </CardFooter>
                                 </Card>
                             </Link>
                         ))}
