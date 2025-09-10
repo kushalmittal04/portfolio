@@ -1,3 +1,4 @@
+
 export interface Education {
   id: number;
   institution: string;
@@ -17,6 +18,11 @@ export interface Experience {
   position: string;
   location: string;
   duration: string;
+  startDate: string;
+  endDate: string;
+  period: string;
+  companyUrl: string;
+  gmapUrl: string;
   description: string[];
   technologies: string[];
   certificateUrl?: string;

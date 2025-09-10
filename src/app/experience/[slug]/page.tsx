@@ -13,7 +13,8 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { ArrowLeft, CheckCircle } from "lucide-react";
+import { ArrowLeft, Building, CalendarDays, CheckCircle, Globe, MapPin, Timer } from "lucide-react";
+import { format } from "date-fns";
 
 export async function generateStaticParams() {
   return experienceData.map((exp) => ({
@@ -55,7 +56,7 @@ export default function ExperienceDetailPage({
               {experience.position}
             </h1>
             <p className="text-xl text-muted-foreground">
-              at {experience.company} ({experience.duration})
+              at {experience.company}
             </p>
           </div>
         </div>
@@ -115,6 +116,37 @@ export default function ExperienceDetailPage({
 
         </div>
         <div className="space-y-8">
+            <Card>
+                <CardHeader>
+                    <CardTitle>Details</CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-4 text-sm">
+                    <div className="flex items-center gap-3">
+                        <CalendarDays className="h-4 w-4 text-muted-foreground" />
+                        <p><span className="font-semibold">Start:</span> {format(new Date(experience.startDate), "PPP")}</p>
+                    </div>
+                     <div className="flex items-center gap-3">
+                        <CalendarDays className="h-4 w-4 text-muted-foreground" />
+                        <p><span className="font-semibold">End:</span> {experience.endDate === 'Present' ? 'Present' : format(new Date(experience.endDate), "PPP")}</p>
+                    </div>
+                    <div className="flex items-center gap-3">
+                        <Timer className="h-4 w-4 text-muted-foreground" />
+                        <p><span className="font-semibold">Period:</span> {experience.period}</p>
+                    </div>
+                     <div className="flex items-center gap-3">
+                        <Building className="h-4 w-4 text-muted-foreground" />
+                        <a href={experience.companyUrl} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
+                          Company Website
+                        </a>
+                    </div>
+                    <div className="flex items-center gap-3">
+                        <MapPin className="h-4 w-4 text-muted-foreground" />
+                         <a href={experience.gmapUrl} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
+                          Work Location
+                        </a>
+                    </div>
+                </CardContent>
+            </Card>
             <Card>
                 <CardHeader>
                     <CardTitle>Tech Stack</CardTitle>
