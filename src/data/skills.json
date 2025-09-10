@@ -1,12 +1,12 @@
 {
   "featuredSkills": [
-    "Python",
-    "JavaScript",
-    "React",
-    "Next.js",
-    "Node.js",
     "LangChain",
     "LangGraph",
+    "PySpark",
+    "SQL",
+    "React",
+    "Node.js",
+    "Scikit-learn",
     "TensorFlow"
   ],
   "categories": [
