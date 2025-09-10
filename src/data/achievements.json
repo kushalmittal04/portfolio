@@ -3,18 +3,29 @@
   {
     "id": 1,
     "name": "GATE 2025 CS Qualified",
-    "description": "Successfully qualified the Graduate Aptitude Test in Engineering (GATE) for Computer Science, demonstrating a strong foundation in core CS subjects.",
+    "description": "Qualified GATE 2025 – CS with a score of 477 and AIR 8217, demonstrating strong foundational knowledge in core CS subjects.",
     "imageUrl": "/images/credentials/achievements/202503_GATE_CS.pdf",
     "dataAiHint": "certificate document",
-    "isFeatured": true
+    "isFeatured": true,
+    "icon": "Award"
   },
   {
     "id": 2,
     "name": "1st Position in Blind Coding",
-    "description": "Secured first place in a competitive university-level blind coding event, showcasing strong problem-solving abilities under pressure.",
+    "description": "Secured 1st Place in Blind Coding at Aarohan 2024 held at both PCE Jaipur and PIET Jaipur among 60+ participants.",
     "imageUrl": "/images/credentials/achievements/202403_Blind_Coding.pdf",
     "dataAiHint": "award competition",
-    "isFeatured": true
+    "isFeatured": true,
+    "icon": "Award"
+  },
+  {
+    "id": 4,
+    "name": "DSA Proficiency",
+    "description": "Solved over 500+ data structures and algorithms problems on LeetCode and GeeksforGeeks, focusing on arrays, stacks, queues, and linked lists.",
+    "imageUrl": null,
+    "dataAiHint": "code algorithm",
+    "isFeatured": false,
+    "icon": "Star"
   },
   {
     "id": 3,
@@ -22,6 +33,7 @@
     "description": "Passed LinkedIn's skill assessments for both C (Programming Language) and PHP, validating proficiency in these key languages.",
     "imageUrl": "/images/credentials/achievements/202308_Linkedln_Skill_Assessment.pdf",
     "dataAiHint": "badge certificate",
-    "isFeatured": false
+    "isFeatured": false,
+    "icon": "Award"
   }
 ]

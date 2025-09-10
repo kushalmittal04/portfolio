@@ -61,9 +61,10 @@ export interface Achievement {
   id: number;
   name: string;
   description: string;
-  imageUrl: string;
+  imageUrl: string | null;
   dataAiHint: string;
   isFeatured: boolean;
+  icon: 'Award' | 'Star';
 }
 
 export interface Profile {

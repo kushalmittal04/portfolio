@@ -9,9 +9,9 @@ import {
   Card,
   CardContent,
   CardDescription,
-  CardFooter,
   CardHeader,
   CardTitle,
+  CardFooter,
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import {
@@ -24,7 +24,7 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { achievementsData, certificatesData } from "@/data/credentials";
-import { Eye, Search, CalendarDays, Award } from "lucide-react";
+import { Eye, Search, CalendarDays, Award, Star } from "lucide-react";
 import content from "@/data/pageContent.json";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Label } from "@/components/ui/label";
@@ -128,7 +128,7 @@ export default function CredentialsPage() {
             </CardHeader>
             <CardContent>
               <div className="mb-6 flex flex-col md:flex-row items-center gap-4">
-                <div className="relative w-full md:flex-1">
+                <div className="relative w-full md:flex-grow">
                   <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
                   <Input
                     placeholder="Search by name or skill..."
@@ -137,7 +137,7 @@ export default function CredentialsPage() {
                     onChange={(e) => setSearchTerm(e.target.value)}
                   />
                 </div>
-                <div className="flex w-full md:w-auto items-center gap-4">
+                <div className="flex w-full md:w-auto items-center gap-4 shrink-0">
                     <div className="flex items-center gap-2">
                         <Label htmlFor="type-filter" className="text-sm font-medium shrink-0">Type:</Label>
                         <Select value={filterType} onValueChange={setFilterType}>
@@ -216,16 +216,14 @@ export default function CredentialsPage() {
         </TabsContent>
 
         <TabsContent value="achievements" className="mt-8">
-          <div className="grid gap-8 md:grid-cols-2">
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
             {achievementsData.map((achievement) => (
-              <Card key={achievement.id} className="flex flex-col transition-all duration-300 hover:shadow-xl hover:-translate-y-1 hover:rotate-[-1deg]">
-                <CardHeader className="flex-row items-start gap-4 space-y-0">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10">
-                    <Award className="h-6 w-6 text-primary" />
+              <Card key={achievement.id} className="group relative flex flex-col overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
+                 <div className="absolute top-0 right-0 m-4 rounded-full bg-primary/10 p-3 opacity-0 transition-all duration-300 group-hover:opacity-100 group-hover:rotate-12 group-hover:scale-110">
+                    {achievement.icon === 'Award' ? <Award className="h-8 w-8 text-primary" /> : <Star className="h-8 w-8 text-primary" />}
                   </div>
-                  <div className="flex-1">
-                    <CardTitle className="text-lg">{achievement.name}</CardTitle>
-                  </div>
+                <CardHeader>
+                  <CardTitle className="text-xl pr-12">{achievement.name}</CardTitle>
                 </CardHeader>
                 <CardContent className="flex-grow">
                   <p className="text-muted-foreground">
@@ -233,11 +231,13 @@ export default function CredentialsPage() {
                   </p>
                 </CardContent>
                 <CardFooter>
-                  <Button asChild variant="outline" size="sm" className="w-full">
-                    <Link href={achievement.imageUrl} target="_blank" rel="noopener noreferrer">
-                      <Eye className="mr-2 h-4 w-4" /> View Proof
-                    </Link>
-                  </Button>
+                    {achievement.imageUrl && (
+                         <Button asChild variant="outline" size="sm" className="w-full">
+                            <Link href={achievement.imageUrl} target="_blank" rel="noopener noreferrer">
+                            <Eye className="mr-2 h-4 w-4" /> View Proof
+                            </Link>
+                        </Button>
+                    )}
                 </CardFooter>
               </Card>
             ))}
