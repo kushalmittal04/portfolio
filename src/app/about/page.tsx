@@ -55,8 +55,8 @@ export default function AboutPage() {
               <p>
                 {aboutContent.technicalApproach.intro}
               </p>
-              <p dangerouslySetInnerHTML={{ __html: aboutContent.technicalApproach.aiMl }} />
-              <p dangerouslySetInnerHTML={{ __html: aboutContent.technicalApproach.fullStack }} />
+              <div dangerouslySetInnerHTML={{ __html: aboutContent.technicalApproach.aiMl }} />
+              <div dangerouslySetInnerHTML={{ __html: aboutContent.technicalApproach.fullStack }} />
             </div>
             <div className="space-y-4 p-6 rounded-lg bg-card border transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
               <h3 className="text-2xl font-bold text-foreground">{aboutContent.coreStrengths.title}</h3>

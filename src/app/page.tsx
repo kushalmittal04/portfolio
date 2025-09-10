@@ -103,8 +103,8 @@ export default function Home() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
              {featuredProjects.map((project) => (
-               <Card key={project.id} className="flex flex-col overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
-                <div className="relative aspect-video">
+              <Card key={project.id} className="flex flex-col overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+                <Link href={`/projects/${project.slug}`} className="block relative aspect-video">
                   <Image
                     src={project.images[0].url}
                     alt={project.name}
@@ -112,9 +112,11 @@ export default function Home() {
                     className="object-cover"
                     data-ai-hint={project.images[0].dataAiHint}
                   />
-                </div>
+                </Link>
                 <CardHeader>
-                  <CardTitle>{project.name}</CardTitle>
+                  <CardTitle>
+                    <Link href={`/projects/${project.slug}`}>{project.name}</Link>
+                  </CardTitle>
                 </CardHeader>
                 <CardContent className="flex-grow">
                   <p className="text-muted-foreground line-clamp-2">{project.description}</p>
@@ -186,6 +188,7 @@ export default function Home() {
                       height={48}
                       className="rounded-lg"
                       data-ai-hint={latestInternship.dataAiHint}
+                      priority
                     />
                     <div className="flex-1">
                       <CardTitle className="text-xl">
