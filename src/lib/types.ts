@@ -82,6 +82,5 @@ export interface SkillCategory {
 }
 
 export interface SkillsData {
-  featuredSkills: string[];
   categories: SkillCategory[];
 }

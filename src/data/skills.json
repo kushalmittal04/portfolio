@@ -1,15 +1,5 @@
 
 {
-  "featuredSkills": [
-    "LangChain",
-    "LangGraph",
-    "PySpark",
-    "SQL",
-    "React",
-    "Node.js",
-    "Scikit-learn",
-    "TensorFlow"
-  ],
   "categories": [
     {
       "name": "Programming Languages",

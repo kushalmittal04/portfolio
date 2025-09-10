@@ -17,7 +17,7 @@ import projectsData from "@/data/projects.json";
 import experienceData from "@/data/experience.json";
 import { achievementsData, certificatesData } from "@/data/credentials";
 import { TechIcon } from "@/components/TechIcon";
-import skillsData from "@/data/skills.json";
+import skillsToShow from "@/data/featured-skills.json";
 import content from "@/data/pageContent.json";
 import recentActivitiesConfig from "@/data/recent-activities.json";
 import { format } from "date-fns";
@@ -49,7 +49,6 @@ export default function Home() {
     return null;
   }).filter(Boolean);
   
-  const skillsToShow = skillsData.featuredSkills;
   const homeContent = content.home;
 
 
