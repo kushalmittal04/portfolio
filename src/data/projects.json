@@ -1,3 +1,4 @@
+
 [
   {
     "id": 1,
@@ -8,8 +9,8 @@
     "githubUrl": "https://github.com/demo/ai-chatbot",
     "liveUrl": "https://demo.com/ai-chatbot",
     "images": [
-      { "url": "https://picsum.photos/800/600", "dataAiHint": "chatbot interface" },
-      { "url": "https://picsum.photos/800/600", "dataAiHint": "code abstract" }
+      { "url": "https://picsum.photos/seed/1/800/600", "dataAiHint": "chatbot interface" },
+      { "url": "https://picsum.photos/seed/2/800/600", "dataAiHint": "code abstract" }
     ],
     "videoUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ",
     "category": ["AI/ML", "Full Stack"],
@@ -23,7 +24,7 @@
     "technologies": ["Next.js", "Stripe", "PostgreSQL", "Prisma"],
     "githubUrl": "https://github.com/demo/ecommerce",
     "liveUrl": "https://demo.com/ecommerce",
-    "images": [{ "url": "https://picsum.photos/800/600", "dataAiHint": "online store" }],
+    "images": [{ "url": "https://picsum.photos/seed/3/800/600", "dataAiHint": "online store" }],
     "category": ["Full Stack"],
     "isFeatured": true
   },
@@ -35,9 +36,26 @@
     "technologies": ["Python", "Flask", "scikit-learn", "React"],
     "githubUrl": "https://github.com/demo/sentiment-analyzer",
     "liveUrl": "https://demo.com/sentiment-analyzer",
-    "images": [{ "url": "https://picsum.photos/800/600", "dataAiHint": "dashboard chart" }],
+    "images": [{ "url": "https://picsum.photos/seed/4/800/600", "dataAiHint": "dashboard chart" }],
     "category": ["AI/ML", "Web"],
     "isFeatured": true
+  },
+  {
+    "id": 10,
+    "slug": "rera-projects-data-scraper",
+    "name": "RERA Projects Data Scraper",
+    "description": "A Python-based automation tool that scrapes project details from the Odisha RERA (Real Estate Regulatory Authority) website using Selenium WebDriver. The script extracts key project and promoter details and saves them into a structured CSV file, making it easy to analyze or integrate into other systems.",
+    "technologies": ["Python", "Selenium WebDriver", "CSV"],
+    "githubUrl": "https://github.com/kushalmittal04/rera_scraper",
+    "images": [
+      {
+        "url": "/images/projects/rera_scraper/screenshot1.png",
+        "dataAiHint": "data scraping"
+      }
+    ],
+    "videoUrl": "https://www.youtube.com/embed/your_video_id_here",
+    "category": ["Automation", "Data Scraping"],
+    "isFeatured": false
   },
   {
     "id": 4,
@@ -47,7 +65,7 @@
     "technologies": ["React", "Next.js", "Tailwind CSS"],
     "githubUrl": "https://github.com/demo/portfolio",
     "liveUrl": "https://demo.com/portfolio",
-    "images": [{ "url": "https://picsum.photos/800/600", "dataAiHint": "website design" }],
+    "images": [{ "url": "https://picsum.photos/seed/5/800/600", "dataAiHint": "website design" }],
     "category": ["Web", "Full Stack"],
     "isFeatured": false
   },
@@ -59,7 +77,7 @@
     "technologies": ["React", "Firebase", "dnd-kit"],
     "githubUrl": "https://github.com/demo/task-manager",
     "liveUrl": "https://demo.com/task-manager",
-    "images": [{ "url": "https://picsum.photos/800/600", "dataAiHint": "kanban board" }],
+    "images": [{ "url": "https://picsum.photos/seed/6/800/600", "dataAiHint": "kanban board" }],
     "category": ["Full Stack", "Web"],
     "isFeatured": false
   },
@@ -70,7 +88,7 @@
     "description": "A RESTful API that uses a deep learning model to classify objects in images.",
     "technologies": ["Python", "TensorFlow", "FastAPI"],
     "githubUrl": "https://github.com/demo/image-api",
-    "images": [{ "url": "https://picsum.photos/800/600", "dataAiHint": "neural network" }],
+    "images": [{ "url": "https://picsum.photos/seed/7/800/600", "dataAiHint": "neural network" }],
     "category": ["AI/ML"],
     "isFeatured": false
   },
@@ -82,7 +100,7 @@
     "technologies": ["React", "OpenWeatherMap API"],
     "githubUrl": "https://github.com/demo/weather-app",
     "liveUrl": "https://demo.com/weather-app",
-    "images": [{ "url": "https://picsum.photos/800/600", "dataAiHint": "weather forecast" }],
+    "images": [{ "url": "https://picsum.photos/seed/8/800/600", "dataAiHint": "weather forecast" }],
     "category": ["Web"],
     "isFeatured": false
   },
@@ -94,7 +112,7 @@
     "technologies": ["Node.js", "Socket.IO", "React", "Express"],
     "githubUrl": "https://github.com/demo/chat-app",
     "liveUrl": "https://demo.com/chat-app",
-    "images": [{ "url": "https://picsum.photos/800/600", "dataAiHint": "chat message" }],
+    "images": [{ "url": "https://picsum.photos/seed/9/800/600", "dataAiHint": "chat message" }],
     "category": ["Full Stack"],
     "isFeatured": false
   },
@@ -105,7 +123,7 @@
     "description": "A desktop application for organizing and managing code snippets efficiently.",
     "technologies": ["Electron", "React", "SQLite"],
     "githubUrl": "https://github.com/demo/snippet-manager",
-    "images": [{ "url": "https://picsum.photos/800/600", "dataAiHint": "code editor" }],
+    "images": [{ "url": "https://picsum.photos/seed/10/800/600", "dataAiHint": "code editor" }],
     "category": ["Web"],
     "isFeatured": false
   }
