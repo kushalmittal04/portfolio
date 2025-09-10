@@ -1,3 +1,4 @@
+
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
@@ -26,6 +27,7 @@ export default function RootLayout({
           "bg-background text-foreground font-sans antialiased",
           inter.variable
         )}
+        suppressHydrationWarning={true}
       >
         <ThemeProvider
           attribute="class"
