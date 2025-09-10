@@ -9,6 +9,7 @@ import {
   Card,
   CardContent,
   CardDescription,
+  CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
@@ -213,14 +214,26 @@ export default function CredentialsPage() {
           <div className="grid gap-8 md:grid-cols-2">
             {achievementsData.map((achievement) => (
               <Card key={achievement.id} className="flex flex-col transition-all duration-300 hover:shadow-xl hover:-translate-y-1 hover:rotate-[-1deg]">
-                <CardHeader>
-                  <CardTitle>{achievement.name}</CardTitle>
+                <CardHeader className="flex-row items-start gap-4 space-y-0">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10">
+                    <Award className="h-6 w-6 text-primary" />
+                  </div>
+                  <div className="flex-1">
+                    <CardTitle className="text-lg">{achievement.name}</CardTitle>
+                  </div>
                 </CardHeader>
                 <CardContent className="flex-grow">
                   <p className="text-muted-foreground">
                     {achievement.description}
                   </p>
                 </CardContent>
+                <CardFooter>
+                  <Button asChild variant="outline" size="sm" className="w-full">
+                    <Link href={achievement.imageUrl} target="_blank" rel="noopener noreferrer">
+                      <Eye className="mr-2 h-4 w-4" /> View Proof
+                    </Link>
+                  </Button>
+                </CardFooter>
               </Card>
             ))}
           </div>
