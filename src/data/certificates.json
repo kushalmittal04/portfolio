@@ -303,7 +303,7 @@
   {
     "id": 31,
     "name": "Microsoft Certified: Azure AI Fundamentals",
-    "issuer": "Microsoft Certification",
+    "issuer": "Microsoft Learn",
     "type": "Certification",
     "skills": ["Azure Bot Services", "Azure Machine Learning", "Cognitive Services"],
     "fileUrl": "/images/credentials/certifications/20250908_Azure_AI_Fundamentals.pdf",
