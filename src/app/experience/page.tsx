@@ -39,7 +39,7 @@ export default function ExperiencePage() {
           >
             <div className="hidden md:block md:w-1/2"></div>
             <div className="w-full md:w-1/2 pl-12 md:pl-8">
-              <Card className="shadow-lg hover:shadow-xl transition-shadow duration-300">
+              <Card className="shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
                 <CardHeader>
                     <div className="flex items-start gap-4">
                         <Image src={exp.logoUrl} alt={`${exp.company} logo`} width={48} height={48} className="rounded-md mt-1" data-ai-hint={exp.dataAiHint}/>
