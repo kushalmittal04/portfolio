@@ -35,13 +35,17 @@ export interface Project {
   id: number;
   slug: string;
   name: string;
-  description: string;
+  tagline: string;
+  category: string[];
+  overview: string;
+  features: string[];
+  challenges: { challenge: string; solution: string }[];
   technologies: string[];
+  skills: string[];
   githubUrl: string;
   liveUrl?: string;
   images: { url: string; dataAiHint: string }[];
   videoUrl?: string;
-  category: string[];
   isFeatured: boolean;
 }
 

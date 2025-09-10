@@ -13,7 +13,14 @@ import {
 } from "@/components/ui/carousel";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowLeft, faPlayCircle } from "@fortawesome/free-solid-svg-icons";
+import {
+  faArrowLeft,
+  faPlayCircle,
+  faCheckCircle,
+  faLightbulb,
+  faWrench,
+  faCogs
+} from "@fortawesome/free-solid-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import Link from "next/link";
 
@@ -42,21 +49,21 @@ export default function ProjectDetailPage({
           Back to Projects
         </Link>
       </Button>
-      <header className="mb-8">
+      <header className="mb-8 text-center">
         <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">
           {project.name}
         </h1>
-        <p className="mt-2 text-lg text-muted-foreground">
-          {project.category.join(" / ")}
+        <p className="mt-2 text-xl text-primary font-semibold">
+          {project.tagline}
         </p>
       </header>
 
-      <div className="mb-8">
-        <Carousel className="w-full">
+      <div className="mb-12">
+        <Carousel className="w-full max-w-3xl mx-auto">
           <CarouselContent>
             {project.videoUrl && (
               <CarouselItem>
-                <div className="aspect-video w-full overflow-hidden rounded-lg">
+                <div className="aspect-video w-full overflow-hidden rounded-lg border">
                   <iframe
                     src={project.videoUrl}
                     title={`${project.name} video`}
@@ -69,38 +76,69 @@ export default function ProjectDetailPage({
             )}
             {project.images.map((image, index) => (
               <CarouselItem key={index}>
-                <div className="relative aspect-video w-full overflow-hidden rounded-lg">
+                <div className="relative aspect-video w-full overflow-hidden rounded-lg border">
                   <Image
                     src={image.url}
                     alt={`${project.name} screenshot ${index + 1}`}
                     fill
                     className="object-cover"
                     data-ai-hint={image.dataAiHint}
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 75vw, 60vw"
                   />
                 </div>
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious className="left-2" />
-          <CarouselNext className="right-2" />
+          <CarouselPrevious className="-left-4 md:-left-12" />
+          <CarouselNext className="-right-4 md:-right-12" />
         </Carousel>
       </div>
+      
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div className="md:col-span-2 space-y-8">
-           <Card>
+        <div className="lg:col-span-2 space-y-12">
+          <Card>
             <CardHeader>
-                <CardTitle>About this project</CardTitle>
+                <CardTitle>Project Overview</CardTitle>
             </CardHeader>
             <CardContent>
-                <p className="text-muted-foreground">{project.description}</p>
+                <p className="text-muted-foreground">{project.overview}</p>
             </CardContent>
-           </Card>
+          </Card>
+          
+          <Card>
+            <CardHeader>
+                <CardTitle className="flex items-center gap-2"><FontAwesomeIcon icon={faCheckCircle} /> Features</CardTitle>
+            </CardHeader>
+             <CardContent className="space-y-3 text-muted-foreground">
+                {project.features.map((feature, index) => (
+                    <div key={index} className="flex items-start gap-3">
+                        <FontAwesomeIcon icon={faCheckCircle} className="h-4 w-4 text-primary mt-1 flex-shrink-0" />
+                        <p>{feature}</p>
+                    </div>
+                ))}
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+                <CardTitle className="flex items-center gap-2"><FontAwesomeIcon icon={faLightbulb} /> Challenges & Solutions</CardTitle>
+            </CardHeader>
+             <CardContent className="space-y-4 text-muted-foreground">
+                {project.challenges.map((item, index) => (
+                    <div key={index}>
+                        <h4 className="font-semibold text-foreground">{item.challenge}</h4>
+                        <p>{item.solution}</p>
+                    </div>
+                ))}
+            </CardContent>
+          </Card>
         </div>
-        <div className="space-y-8">
+
+        <div className="space-y-8 lg:sticky lg:top-24 self-start">
              <Card>
                 <CardHeader>
-                    <CardTitle>Tech Stack</CardTitle>
+                    <CardTitle className="flex items-center gap-2"><FontAwesomeIcon icon={faWrench} /> Tech Stack</CardTitle>
                 </CardHeader>
                 <CardContent className="flex flex-wrap gap-2">
                     {project.technologies.map((tech) => (
@@ -110,6 +148,20 @@ export default function ProjectDetailPage({
                     ))}
                 </CardContent>
             </Card>
+
+             <Card>
+                <CardHeader>
+                    <CardTitle className="flex items-center gap-2"><FontAwesomeIcon icon={faCogs} /> Skills Demonstrated</CardTitle>
+                </CardHeader>
+                <CardContent className="flex flex-wrap gap-2">
+                    {project.skills.map((skill) => (
+                        <Badge key={skill} variant="outline" className="text-sm">
+                        {skill}
+                        </Badge>
+                    ))}
+                </CardContent>
+            </Card>
+
             <Card>
                 <CardHeader>
                     <CardTitle>Links</CardTitle>
