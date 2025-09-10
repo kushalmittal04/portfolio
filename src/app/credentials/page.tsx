@@ -99,7 +99,7 @@ export default function CredentialsPage() {
                            <Link key={cert.id} href={cert.fileUrl} target="_blank" rel="noopener noreferrer" className="group block h-full">
                                 <Card className="flex h-full flex-col items-center justify-center gap-4 overflow-hidden p-4 transition-all duration-300 hover:shadow-xl hover:-translate-y-2 hover:rotate-[-2deg]">
                                 {cert.featuredImageUrl && (
-                                  <div className="relative aspect-square w-32">
+                                  <div className="relative w-32 h-32">
                                     <Image
                                       src={cert.featuredImageUrl}
                                       alt={`${cert.name} preview`}
@@ -127,8 +127,8 @@ export default function CredentialsPage() {
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="mb-6 grid grid-cols-1 items-center gap-4 sm:grid-cols-3 md:grid-cols-[1fr_auto_auto_auto_auto]">
-                <div className="relative sm:col-span-3 md:col-span-1">
+              <div className="mb-6 flex flex-col md:flex-row items-center gap-4">
+                <div className="relative w-full md:flex-1">
                   <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
                   <Input
                     placeholder="Search by name or skill..."
@@ -137,34 +137,39 @@ export default function CredentialsPage() {
                     onChange={(e) => setSearchTerm(e.target.value)}
                   />
                 </div>
-                <Separator orientation="vertical" className="hidden h-8 md:block" />
-                <Label htmlFor="type-filter" className="text-sm font-medium shrink-0">Filter by Type:</Label>
-                <Select value={filterType} onValueChange={setFilterType}>
-                  <SelectTrigger id="type-filter" className="w-full md:w-auto">
-                    <SelectValue placeholder="All" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    {certificateTypes.map((type) => (
-                      <SelectItem key={type} value={type}>
-                        {type}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
+                <div className="flex w-full md:w-auto items-center gap-4">
+                    <div className="flex items-center gap-2">
+                        <Label htmlFor="type-filter" className="text-sm font-medium shrink-0">Type:</Label>
+                        <Select value={filterType} onValueChange={setFilterType}>
+                        <SelectTrigger id="type-filter" className="w-full md:w-[180px]">
+                            <SelectValue placeholder="All" />
+                        </SelectTrigger>
+                        <SelectContent>
+                            {certificateTypes.map((type) => (
+                            <SelectItem key={type} value={type}>
+                                {type}
+                            </SelectItem>
+                            ))}
+                        </SelectContent>
+                        </Select>
+                    </div>
 
-                <Label htmlFor="issuer-filter" className="text-sm font-medium shrink-0">Filter by Issuer:</Label>
-                <Select value={filterIssuer} onValueChange={setFilterIssuer}>
-                  <SelectTrigger id="issuer-filter" className="w-full md:w-auto">
-                    <SelectValue placeholder="All" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    {certificateIssuers.map((issuer) => (
-                      <SelectItem key={issuer} value={issuer}>
-                        {issuer}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
+                    <div className="flex items-center gap-2">
+                        <Label htmlFor="issuer-filter" className="text-sm font-medium shrink-0">Issuer:</Label>
+                        <Select value={filterIssuer} onValueChange={setFilterIssuer}>
+                        <SelectTrigger id="issuer-filter" className="w-full md:w-[180px]">
+                            <SelectValue placeholder="All" />
+                        </SelectTrigger>
+                        <SelectContent>
+                            {certificateIssuers.map((issuer) => (
+                            <SelectItem key={issuer} value={issuer}>
+                                {issuer}
+                            </SelectItem>
+                            ))}
+                        </SelectContent>
+                        </Select>
+                    </div>
+                </div>
               </div>
 
                <div className="space-y-4">
