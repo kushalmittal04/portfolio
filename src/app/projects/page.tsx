@@ -4,7 +4,8 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight } from "lucide-react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import {
   Card,
   CardContent,
@@ -85,7 +86,7 @@ export default function ProjectsPage() {
             <CardFooter>
                  <Button asChild className="w-full">
                   <Link href={`/projects/${project.slug}`}>
-                    View Details <ArrowRight className="ml-2 h-4 w-4" />
+                    View Details <FontAwesomeIcon icon={faArrowRight} className="ml-2 h-4 w-4" />
                   </Link>
                 </Button>
             </CardFooter>

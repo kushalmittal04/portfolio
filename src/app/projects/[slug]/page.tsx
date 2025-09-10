@@ -12,7 +12,9 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { ArrowLeft, Github, PlayCircle } from "lucide-react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowLeft, faPlayCircle } from "@fortawesome/free-solid-svg-icons";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import Link from "next/link";
 
 export async function generateStaticParams() {
@@ -36,7 +38,7 @@ export default function ProjectDetailPage({
     <div className="container mx-auto max-w-5xl px-4 py-16 animate-in fade-in-0 slide-in-from-bottom-8 duration-1000">
       <Button asChild variant="ghost" className="mb-8">
         <Link href="/projects">
-          <ArrowLeft className="mr-2 h-4 w-4" />
+          <FontAwesomeIcon icon={faArrowLeft} className="mr-2 h-4 w-4" />
           Back to Projects
         </Link>
       </Button>
@@ -115,13 +117,13 @@ export default function ProjectDetailPage({
                 <CardContent className="space-y-3">
                     <Button asChild className="w-full">
                         <Link href={project.githubUrl} target="_blank" rel="noopener noreferrer">
-                            <Github className="mr-2 h-4 w-4" /> GitHub Repository
+                            <FontAwesomeIcon icon={faGithub} className="mr-2 h-4 w-4" /> GitHub Repository
                         </Link>
                     </Button>
                      {project.liveUrl && (
                         <Button asChild variant="secondary" className="w-full">
                             <Link href={project.liveUrl} target="_blank" rel="noopener noreferrer">
-                                <PlayCircle className="mr-2 h-4 w-4" /> Live Demo
+                                <FontAwesomeIcon icon={faPlayCircle} className="mr-2 h-4 w-4" /> Live Demo
                             </Link>
                         </Button>
                     )}

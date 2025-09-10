@@ -2,7 +2,9 @@
 "use client";
 
 import Link from "next/link";
-import { Github, Linkedin, Mail } from "lucide-react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 
 const navLinks = [
     { href: "/about", label: "About" },
@@ -18,17 +20,17 @@ const socialLinks = [
   { 
     href: "https://github.com/kushalmittal04", 
     label: "GitHub", 
-    icon: <Github className="h-6 w-6 text-muted-foreground transition-colors hover:text-primary" /> 
+    icon: <FontAwesomeIcon icon={faGithub} className="h-6 w-6 text-muted-foreground transition-colors hover:text-primary" /> 
   },
   { 
     href: "https://linkedin.com/in/kushalmittal04", 
     label: "LinkedIn", 
-    icon: <Linkedin className="h-6 w-6 text-muted-foreground transition-colors hover:text-primary" /> 
+    icon: <FontAwesomeIcon icon={faLinkedin} className="h-6 w-6 text-muted-foreground transition-colors hover:text-primary" /> 
   },
   { 
     href: "mailto:kushalmittal2022@gmail.com", 
     label: "Gmail", 
-    icon: <Mail className="h-6 w-6 text-muted-foreground transition-colors hover:text-primary" /> 
+    icon: <FontAwesomeIcon icon={faEnvelope} className="h-6 w-6 text-muted-foreground transition-colors hover:text-primary" /> 
   },
 ];
 

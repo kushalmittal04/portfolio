@@ -9,7 +9,6 @@ import {
   Card,
   CardContent,
   CardDescription,
-  CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
@@ -24,7 +23,8 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { achievementsData, certificatesData } from "@/data/credentials";
-import { Eye, Search, CalendarDays, Award, Star } from "lucide-react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEye, faSearch, faCalendarDays, faAward, faStar } from "@fortawesome/free-solid-svg-icons";
 import content from "@/data/pageContent.json";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Label } from "@/components/ui/label";
@@ -128,7 +128,7 @@ export default function CredentialsPage() {
             <CardContent>
               <div className="mb-6 flex flex-col md:flex-row items-center gap-4">
                 <div className="relative w-full md:flex-grow">
-                  <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
+                  <FontAwesomeIcon icon={faSearch} className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
                   <Input
                     placeholder="Search by name or skill..."
                     className="pl-10 w-full"
@@ -179,11 +179,11 @@ export default function CredentialsPage() {
                         <h4 className="font-semibold text-lg">{cert.name}</h4>
                         <div className="text-sm text-muted-foreground mt-1 flex flex-wrap items-center gap-x-4 gap-y-1">
                           <div className="flex items-center gap-2">
-                             <Award className="h-4 w-4"/>
+                             <FontAwesomeIcon icon={faAward} className="h-4 w-4"/>
                              <span>{cert.issuer}</span>
                           </div>
                           <div className="flex items-center gap-2">
-                            <CalendarDays className="h-4 w-4"/>
+                            <FontAwesomeIcon icon={faCalendarDays} className="h-4 w-4"/>
                             <span>{format(new Date(cert.issueDate), "PPP")}</span>
                           </div>
                         </div>
@@ -196,7 +196,7 @@ export default function CredentialsPage() {
                       </div>
                       <Button asChild variant="outline" size="sm" className="shrink-0">
                         <Link href={cert.fileUrl} target="_blank" rel="noopener noreferrer">
-                          <Eye className="mr-2 h-4 w-4" /> View
+                          <FontAwesomeIcon icon={faEye} className="mr-2 h-4 w-4" /> View
                         </Link>
                       </Button>
                     </div>
@@ -219,7 +219,7 @@ export default function CredentialsPage() {
             {achievementsData.map((achievement) => (
               <Card key={achievement.id} className="group relative flex flex-col overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
                  <div className="absolute top-0 right-0 m-4 rounded-full bg-primary/10 p-3 opacity-0 transition-all duration-300 group-hover:opacity-100 group-hover:rotate-12 group-hover:scale-110">
-                    {achievement.icon === 'Award' ? <Award className="h-8 w-8 text-primary" /> : <Star className="h-8 w-8 text-primary" />}
+                    <FontAwesomeIcon icon={achievement.icon === 'Award' ? faAward : faStar} className="h-8 w-8 text-primary" />
                   </div>
                 <CardHeader>
                   <CardTitle className="text-xl pr-12">{achievement.name}</CardTitle>
@@ -233,7 +233,7 @@ export default function CredentialsPage() {
                     {achievement.imageUrl && (
                          <Button asChild variant="outline" size="sm" className="w-full">
                             <Link href={achievement.imageUrl} target="_blank" rel="noopener noreferrer">
-                            <Eye className="mr-2 h-4 w-4" /> View Proof
+                            <FontAwesomeIcon icon={faEye} className="mr-2 h-4 w-4" /> View Proof
                             </Link>
                         </Button>
                     )}

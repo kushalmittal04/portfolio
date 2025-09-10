@@ -1,7 +1,8 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Briefcase, CalendarDays, MapPin } from "lucide-react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowRight, faBriefcase, faCalendarDays, faMapMarkerAlt } from "@fortawesome/free-solid-svg-icons";
 import {
   Card,
   CardContent,
@@ -35,7 +36,7 @@ export default function ExperiencePage() {
             <div key={exp.id} className="relative pl-12 md:pl-0">
               {/* Timeline Dot */}
               <div className="absolute left-4 top-6 h-8 w-8 -translate-x-1/2 rounded-full bg-primary flex items-center justify-center ring-8 ring-background md:left-1/2">
-                <Briefcase className="h-5 w-5 text-primary-foreground" />
+                <FontAwesomeIcon icon={faBriefcase} className="h-5 w-5 text-primary-foreground" />
               </div>
               <div
                 className={`w-full flex ${
@@ -60,11 +61,11 @@ export default function ExperiencePage() {
                         </CardDescription>
                         <div className="mt-2 space-y-1 text-sm text-muted-foreground">
                           <div className="flex items-center gap-2">
-                            <MapPin className="h-4 w-4" />
+                            <FontAwesomeIcon icon={faMapMarkerAlt} className="h-4 w-4" />
                             <span>{exp.location}</span>
                           </div>
                           <div className="flex items-center gap-2">
-                            <CalendarDays className="h-4 w-4" />
+                            <FontAwesomeIcon icon={faCalendarDays} className="h-4 w-4" />
                             <span>{exp.duration}</span>
                           </div>
                         </div>
@@ -89,7 +90,7 @@ export default function ExperiencePage() {
                       </div>
                       <Button asChild variant="outline" size="sm">
                         <Link href={`/experience/${exp.slug}`}>
-                          Read More <ArrowRight className="ml-2 h-4 w-4" />
+                          Read More <FontAwesomeIcon icon={faArrowRight} className="ml-2 h-4 w-4" />
                         </Link>
                       </Button>
                     </CardContent>

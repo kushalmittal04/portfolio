@@ -4,9 +4,11 @@
 import { useRef, useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Download, Github, PlayCircle } from "lucide-react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { format } from "date-fns";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowRight, faDownload, faPlayCircle } from "@fortawesome/free-solid-svg-icons";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -117,7 +119,7 @@ export default function Home() {
                     </Button>
                     <Button asChild variant="secondary" size="lg">
                         <a href="/pdfs/Kushal_Mittal_Resume.pdf" download="Kushal_Mittal_Resume.pdf" rel="noopener noreferrer">
-                        {homeContent.buttons.resume} <Download className="ml-2 h-4 w-4" />
+                        {homeContent.buttons.resume} <FontAwesomeIcon icon={faDownload} className="ml-2 h-4 w-4" />
                         </a>
                     </Button>
                     </motion.div>
@@ -135,8 +137,8 @@ export default function Home() {
                 className="container pt-16"
                 initial="initial"
                 whileInView="whileInView"
-                transition={{ staggerChildren: 0.1 }}
                 viewport={{ once: true, amount: 0.2 }}
+                transition={{ staggerChildren: 0.1 }}
             >
                 <motion.div {...sectionAnimation}>
                     <div className="text-center mb-8">
@@ -177,13 +179,13 @@ export default function Home() {
                         <CardFooter className="flex gap-4">
                             <Button asChild variant="link" className="p-0 h-auto">
                                 <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
-                                <Github className="mr-2 h-4 w-4" /> Code
+                                <FontAwesomeIcon icon={faGithub} className="mr-2 h-4 w-4" /> Code
                                 </a>
                             </Button>
                             {project.liveUrl && (
                                 <Button asChild variant="link" className="p-0 h-auto">
                                 <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
-                                    <PlayCircle className="mr-2 h-4 w-4" /> Live Demo
+                                    <FontAwesomeIcon icon={faPlayCircle} className="mr-2 h-4 w-4" /> Live Demo
                                 </a>
                                 </Button>
                             )}
@@ -199,7 +201,10 @@ export default function Home() {
             <motion.section 
                 id="skills" 
                 className="container"
-                {...sectionAnimation}
+                initial="initial"
+                whileInView="whileInView"
+                transition={{ duration: 0.5, ease: "easeInOut" }}
+                viewport={{ once: true, amount: 0.2 }}
             >
             <div className="text-center mb-8">
                 <h2 className="text-3xl font-bold">{homeContent.sections.skills.title}</h2>
@@ -224,7 +229,10 @@ export default function Home() {
             <motion.section 
                 id="latest-internship" 
                 className="container"
-                {...sectionAnimation}
+                initial="initial"
+                whileInView="whileInView"
+                transition={{ duration: 0.5, ease: "easeInOut" }}
+                viewport={{ once: true, amount: 0.2 }}
             >
                 <div className="text-center mb-8">
                 <h2 className="text-3xl font-bold">
@@ -260,7 +268,7 @@ export default function Home() {
                             </div>
                             <Button asChild variant="link" className="px-0 mt-4">
                             <Link href="/experience">
-                                View All Experience <ArrowRight className="ml-2 h-4 w-4" />
+                                View All Experience <FontAwesomeIcon icon={faArrowRight} className="ml-2 h-4 w-4" />
                             </Link>
                             </Button>
                         </div>
@@ -275,7 +283,10 @@ export default function Home() {
             <motion.section 
                 id="achievements" 
                 className="container"
-                {...sectionAnimation}
+                initial="initial"
+                whileInView="whileInView"
+                transition={{ duration: 0.5, ease: "easeInOut" }}
+                viewport={{ once: true, amount: 0.2 }}
             >
                 <div className="text-center mb-8">
                 <h2 className="text-3xl font-bold">

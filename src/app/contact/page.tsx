@@ -6,6 +6,8 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { useEffect, useActionState } from "react";
 import { useToast } from "@/hooks/use-toast";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faDownload, faEnvelope, faMapMarkerAlt, faPhone } from "@fortawesome/free-solid-svg-icons";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -18,7 +20,6 @@ import {
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { submitContactForm } from "./actions";
-import { Download, Mail, MapPin, Phone } from "lucide-react";
 import content from "@/data/pageContent.json";
 
 import {
@@ -151,7 +152,7 @@ export default function ContactPage() {
             </CardHeader>
             <CardContent className="space-y-6 text-sm">
                 <div className="flex items-start gap-4">
-                  <Mail className="h-5 w-5 text-muted-foreground mt-0.5" />
+                  <FontAwesomeIcon icon={faEnvelope} className="h-5 w-5 text-muted-foreground mt-0.5" />
                   <div>
                     <p className="font-semibold">Email</p>
                     <a href="mailto:kushalmittal2022@gmail.com" className="text-muted-foreground hover:text-primary">
@@ -160,14 +161,14 @@ export default function ContactPage() {
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
-                  <Phone className="h-5 w-5 text-muted-foreground mt-0.5" />
+                  <FontAwesomeIcon icon={faPhone} className="h-5 w-5 text-muted-foreground mt-0.5" />
                   <div>
                     <p className="font-semibold">Phone</p>
                     <p className="text-muted-foreground">+91-7317594114</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
-                  <MapPin className="h-5 w-5 text-muted-foreground mt-0.5" />
+                  <FontAwesomeIcon icon={faMapMarkerAlt} className="h-5 w-5 text-muted-foreground mt-0.5" />
                   <div>
                     <p className="font-semibold">Location</p>
                     <p className="text-muted-foreground">Bengaluru, Karnataka, India</p>
@@ -183,7 +184,7 @@ export default function ContactPage() {
             <CardContent>
                <Button asChild className="w-full" size="lg">
                   <a href="/pdfs/Kushal_Mittal_Resume.pdf" download="Kushal_Mittal_Resume.pdf">
-                    <Download className="mr-2 h-4 w-4" /> {contactContent.buttons.download}
+                    <FontAwesomeIcon icon={faDownload} className="mr-2 h-4 w-4" /> {contactContent.buttons.download}
                   </a>
                 </Button>
             </CardContent>

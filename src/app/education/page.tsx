@@ -3,7 +3,8 @@ import educationData from "@/data/education.json";
 import { ImageDialog } from "@/components/ImageDialog";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Eye, GraduationCap, MapPin } from "lucide-react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEye, faGraduationCap, faMapMarkerAlt } from "@fortawesome/free-solid-svg-icons";
 import content from "@/data/pageContent.json";
 
 export default function EducationPage() {
@@ -26,7 +27,7 @@ export default function EducationPage() {
             <div key={edu.id} className="relative pl-12 md:pl-0">
               {/* Timeline Dot */}
               <div className="absolute left-4 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-8 h-8 bg-primary rounded-full flex items-center justify-center ring-8 ring-background md:left-1/2">
-                <GraduationCap className="h-5 w-5 text-primary-foreground" />
+                <FontAwesomeIcon icon={faGraduationCap} className="h-5 w-5 text-primary-foreground" />
               </div>
               <div
                 className={`w-full flex md:justify-start ${
@@ -52,7 +53,7 @@ export default function EducationPage() {
                       )}
                       {edu.location && (
                         <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground mt-1">
-                          <MapPin className="h-4 w-4" />
+                          <FontAwesomeIcon icon={faMapMarkerAlt} className="h-4 w-4" />
                           <span>{edu.location}</span>
                         </div>
                       )}
@@ -65,7 +66,7 @@ export default function EducationPage() {
                         dataAiHint={edu.dataAiHint}
                       >
                         <Button variant="outline" size="sm" className="mt-4">
-                          <Eye className="mr-2 h-4 w-4" /> View Marksheet
+                          <FontAwesomeIcon icon={faEye} className="mr-2 h-4 w-4" /> View Marksheet
                         </Button>
                       </ImageDialog>
                     </CardContent>

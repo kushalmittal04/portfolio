@@ -72,7 +72,6 @@ export interface Profile {
   platform: string;
   username: string;
   url: string;
-  icon: string; // Lucide icon name
   stats: { label: string; value: string }[];
 }
 

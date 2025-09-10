@@ -12,7 +12,8 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { ArrowLeft, Building, CalendarDays, CheckCircle, MapPin, Timer } from "lucide-react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowLeft, faBuilding, faCalendarDays, faCheckCircle, faMapMarkerAlt, faClock } from "@fortawesome/free-solid-svg-icons";
 import { format } from "date-fns";
 
 export async function generateStaticParams() {
@@ -36,7 +37,7 @@ export default function ExperienceDetailPage({
     <div className="container mx-auto max-w-5xl px-4 py-16 animate-in fade-in-0 slide-in-from-bottom-8 duration-1000">
        <Button asChild variant="ghost" className="mb-8">
         <Link href="/experience">
-          <ArrowLeft className="mr-2 h-4 w-4" />
+          <FontAwesomeIcon icon={faArrowLeft} className="mr-2 h-4 w-4" />
           Back to Experiences
         </Link>
       </Button>
@@ -71,7 +72,7 @@ export default function ExperienceDetailPage({
             <CardContent className="space-y-4 text-muted-foreground">
               {experience.description.map((desc, index) => (
                 <div key={index} className="flex items-start gap-3">
-                    <CheckCircle className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
+                    <FontAwesomeIcon icon={faCheckCircle} className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
                     <div dangerouslySetInnerHTML={{ __html: desc }} />
                 </div>
               ))}
@@ -134,27 +135,27 @@ export default function ExperienceDetailPage({
                 </CardHeader>
                 <CardContent className="space-y-4 text-sm">
                     <div className="flex items-center gap-3">
-                        <CalendarDays className="h-4 w-4 text-muted-foreground" />
+                        <FontAwesomeIcon icon={faCalendarDays} className="h-4 w-4 text-muted-foreground" />
                         <p><span className="font-semibold">Start:</span> {format(new Date(experience.startDate), "PPP")}</p>
                     </div>
                      <div className="flex items-center gap-3">
-                        <CalendarDays className="h-4 w-4 text-muted-foreground" />
+                        <FontAwesomeIcon icon={faCalendarDays} className="h-4 w-4 text-muted-foreground" />
                         <p><span className="font-semibold">End:</span> {experience.endDate === 'Present' ? 'Present' : format(new Date(experience.endDate), "PPP")}</p>
                     </div>
                     {experience.period && (
                       <div className="flex items-center gap-3">
-                          <Timer className="h-4 w-4 text-muted-foreground" />
+                          <FontAwesomeIcon icon={faClock} className="h-4 w-4 text-muted-foreground" />
                           <p><span className="font-semibold">Period:</span> {experience.period}</p>
                       </div>
                     )}
                      <div className="flex items-center gap-3">
-                        <Building className="h-4 w-4 text-muted-foreground" />
+                        <FontAwesomeIcon icon={faBuilding} className="h-4 w-4 text-muted-foreground" />
                         <a href={experience.companyUrl} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
                           Company Website
                         </a>
                     </div>
                     <div className="flex items-center gap-3">
-                        <MapPin className="h-4 w-4 text-muted-foreground" />
+                        <FontAwesomeIcon icon={faMapMarkerAlt} className="h-4 w-4 text-muted-foreground" />
                          <a href={experience.gmapUrl} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
                           Work Location
                         </a>

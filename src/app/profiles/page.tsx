@@ -1,25 +1,30 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import profilesData from "@/data/profiles.json";
-import * as Icons from "lucide-react";
 import Link from "next/link";
 import content from "@/data/pageContent.json";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faLinkedin, faWhatsapp, faGithub, faKaggle, faMicrosoft, faGoogle, faCredly, faLeetcode, faHackerrank } from "@fortawesome/free-brands-svg-icons";
+import { faEnvelope, faGlobe, faCode, faTerminal, faLaptop, faGraduationCap, faCloud, faCheckCircle } from "@fortawesome/free-solid-svg-icons";
+import type { IconDefinition } from "@fortawesome/fontawesome-svg-core";
 
-const WhatsAppIcon = (props: React.SVGProps<SVGSVGElement>) => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 24 24"
-    fill="currentColor"
-    stroke="none"
-    {...props}
-  >
-    <path d="M16.6 14.2c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.2-.6.7-.8.9-.1.1-.3.1-.5 0-.2-.1-1-.4-1.9-1.2-.7-.6-1.2-1.4-1.3-1.6s0-.4.1-.5c.1-.1.2-.2.4-.4.1-.1.2-.2.3-.4.1-.2 0-.3-.1-.4-.1-.1-1.7-4-1.9-4.5-.3-.4-.5-.4-.7-.4h-.6c-.2 0-.5.2-.7.4-.2.2-.8.8-.8 1.9s.8 2.2 1 2.3c.1.1 1.5.7 3.5 2.6 2 1.8 2.6 2.1 3.1 2.2.5.1.9.1 1.2.1.4 0 .7-.1.9-.3.2-.2.2-.4.1-.6-.1-.1-.2-.2-.4-.3z" />
-    <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm4.3 14.5c-.2.1-.5.2-1.1.2-.5 0-1.2-.1-3.6-1.3-2.9-1.5-4.8-4.4-5-4.6-.2-.2-.9-1.1-.9-2.2s.6-1.9.8-2.1c.2-.2.5-.3.7-.3h.7c.2 0 .4.1.6.5.2.4.8 1.9.8 1.9s.1.2.1.4-.1.4-.2.5l-.3.4c-.1.1-.1.2 0 .4 0 .1.1.2.2.3.6.8 1.3 1.5 2.2 2.1.3.2.6.3.8.3.2 0 .4-.1.6-.2.2-.2.5-.6.6-.8.1-.2.3-.2.5-.1l2.1.9c.2.1.4.2.4.3s.1.4.1.5-.2.5-.4.6z" />
-  </svg>
-);
+const iconMap: Record<string, IconDefinition> = {
+  LinkedIn: faLinkedin,
+  WhatsApp: faWhatsapp,
+  Gmail: faEnvelope,
+  GitHub: faGithub,
+  Kaggle: faKaggle,
+  Portfolio: faGlobe,
+  "Microsoft Learn": faMicrosoft,
+  "Google Cloud Skills Boost": faCloud,
+  "Google for Developers": faGoogle,
+  Credly: faCheckCircle,
+  LeetCode: faCode,
+  HackerRank: faTerminal,
+  GeeksforGeeks: faLaptop,
+};
 
 
-type IconName = keyof typeof Icons;
 const LucideIcon = ({
   name,
   className,
@@ -27,14 +32,9 @@ const LucideIcon = ({
   name: string;
   className?: string;
 }) => {
-  if (name === "WhatsApp") {
-    return <WhatsAppIcon className={className} />;
-  }
-  const Icon = Icons[name as IconName] as React.ComponentType<{
-    className?: string;
-  }>;
-  if (!Icon) return null;
-  return <Icon className={className} />;
+  const icon = iconMap[name];
+  if (!icon) return null;
+  return <FontAwesomeIcon icon={icon} className={className} />;
 };
 
 const profileSections = [
@@ -93,7 +93,7 @@ export default function ProfilesPage() {
                            <Card className="flex h-full w-full flex-col items-center justify-center p-6 text-center transition-shadow hover:shadow-xl">
                             <Link href={profile.url} target="_blank" rel="noopener noreferrer" className="flex flex-col items-center justify-center gap-4 h-full w-full">
                                 <LucideIcon
-                                    name={profile.icon}
+                                    name={profile.platform}
                                     className="h-16 w-16 text-primary"
                                 />
                                 <div>
