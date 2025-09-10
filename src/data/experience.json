@@ -15,8 +15,8 @@
     "logoUrl": "/images/experiences/logos/ey.jpg",
     "dataAiHint": "logo professional services",
     "description": [
-      "Engineered and optimized large-scale ML workflows using PySpark on Databricks, reducing data preprocessing time by 5% through analytical problem-solving and efficient distributed computing architecture.",
-      "Architected a production-ready RAG-based Chatbot leveraging LangChain and LangGraph, enhancing the accuracy of client information retrieval by 15% and demonstrating innovative creativity in applying Generative AI to real-world business automation."
+      "Engineered and optimized <strong>large-scale ML workflows</strong> using <strong>PySpark on Databricks</strong>, reducing data preprocessing time by 5% through analytical problem-solving and efficient distributed computing architecture.",
+      "Architected a production-ready <strong>RAG-based Chatbot</strong> leveraging <strong>LangChain and LangGraph</strong>, enhancing the accuracy of client information retrieval by 15% and demonstrating innovative creativity in applying <strong>Generative AI</strong> to real-world business automation."
     ],
     "technologies": ["PySpark", "Databricks", "LangChain", "LangGraph", "Generative AI", "Agents", "Agentic AI"]
   },
@@ -43,10 +43,10 @@
       { "url": "/images/experiences/nic/5.jpg", "dataAiHint": "whiteboard diagram" }
     ],
     "description": [
-      "Automated the extraction and transformation of 10,000+ unstructured emails into structured data using Python and Pandas, demonstrating meticulous attention to detail and creating a clean dataset for analysis.",
-      "Executed the full machine learning lifecycle, performing in-depth EDA, data cleaning, and feature engineering to build a highly accurate supervised classification model for automated email categorization.",
-      "Developed and deployed a scalable REST API to serve the ML model, enabling real-time predictions and reducing manual processing effort by 20+ hours per week, highlighting strong initiative and end-to-end project ownership.",
-      "Authored comprehensive documentation and held knowledge-transfer sessions for the help-desk team, ensuring smooth adoption of the new automated system and showcasing effective knowledge sharing and communication."
+      "Automated the <strong>extraction and transformation</strong> of 10,000+ unstructured emails into structured data using Python and Pandas, demonstrating meticulous attention to detail and creating a clean dataset for analysis.",
+      "Executed the <strong>full machine learning lifecycle</strong>, performing in-depth EDA, data cleaning, and feature engineering to build a highly accurate <strong>supervised classification model</strong> for automated email categorization.",
+      "Developed and deployed a scalable <strong>REST API</strong> to serve the ML model, enabling real-time predictions and reducing manual processing effort by 20+ hours per week, highlighting strong initiative and end-to-end project ownership.",
+      "Authored comprehensive documentation and held <strong>knowledge-transfer sessions</strong> for the help-desk team, ensuring smooth adoption of the new automated system and showcasing effective knowledge sharing and communication."
     ],
     "technologies": ["Python", "Pandas", "Scikit-learn", "REST API", "Machine Learning", "Django", "Data Analysis"]
   },
@@ -73,10 +73,10 @@
       { "url": "/images/experiences/csl/5.jpg", "dataAiHint": "whiteboard diagram" }
     ],
     "description": [
-      "Designed, developed, and documented 15+ secure RESTful APIs in PHP for a hotel management platform, ensuring 100% reliability through rigorous testing with Postman and exemplifying strong time management and backend expertise.",
-      "Built a predictive analytics model using supervised ML techniques and Scikit-learn, which improved hotel occupancy rate forecasting accuracy by 15% and provided data-driven insights for strategic planning.",
-      "Translated complex model outputs into clear, actionable business intelligence reports for management, effectively bridging the gap between technical data and operational strategy through sharp analytical reasoning.",
-      "Collaborated with a small development team in an Agile setup, participating in daily scrums and code reviews, which enhanced the team's output and reinforced adaptable and collaborative work practices."
+      "Designed, developed, and documented 15+ secure <strong>RESTful APIs in PHP</strong> for a hotel management platform, ensuring 100% reliability through rigorous testing with Postman and exemplifying strong time management and backend expertise.",
+      "Built a <strong>predictive analytics model</strong> using supervised ML techniques and Scikit-learn, which improved hotel occupancy rate forecasting accuracy by 15% and provided data-driven insights for strategic planning.",
+      "Translated complex model outputs into clear, actionable <strong>business intelligence reports</strong> for management, effectively bridging the gap between technical data and operational strategy through sharp analytical reasoning.",
+      "Collaborated with a small development team in an <strong>Agile setup</strong>, participating in daily scrums and code reviews, which enhanced the team's output and reinforced adaptable and collaborative work practices."
     ],
     "technologies": ["PHP", "REST APIs", "Postman", "Machine Learning", "Scikit-learn", "Agile", "SQL"]
   },
@@ -103,10 +103,10 @@
       { "url": "/images/experiences/phx/5.jpg", "dataAiHint": "whiteboard diagram" }
     ],
     "description": [
-      "Developed 10+ dynamic, responsive, and interactive web pages using HTML, CSS, JavaScript, and PHP, contributing to a measured 15% increase in user engagement through creative and user-centric front-end design.",
-      "Significantly enhanced application security by implementing a robust JWT-based authentication system from scratch, demonstrating reliable technical judgment and a deep understanding of web security principles.",
-      "Built an automated data scraping pipeline using Selenium to collect and aggregate information from 50+ different sources, improving data timeliness by 90% and saving 5+ hours of manual work weekly.",
-      "Proactively identified performance bottlenecks in existing web pages and optimized them, resulting in faster load times and an improved user experience, showcasing self-motivation and a commitment to quality."
+      "Developed 10+ dynamic, responsive, and interactive web pages using <strong>HTML, CSS, JavaScript, and PHP</strong>, contributing to a measured 15% increase in user engagement through creative and user-centric front-end design.",
+      "Significantly enhanced application security by implementing a robust <strong>JWT-based authentication system</strong> from scratch, demonstrating reliable technical judgment and a deep understanding of web security principles.",
+      "Built an <strong>automated data scraping pipeline</strong> using Selenium to collect and aggregate information from 50+ different sources, improving data timeliness by 90% and saving 5+ hours of manual work weekly.",
+      "Proactively identified performance bottlenecks in existing web pages and <strong>optimized them</strong>, resulting in faster load times and an improved user experience, showcasing self-motivation and a commitment to quality."
     ],
     "technologies": ["HTML", "CSS", "JavaScript", "PHP", "JWT", "Selenium", "Web Scraping"]
   }
