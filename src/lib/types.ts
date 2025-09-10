@@ -49,8 +49,10 @@ export interface Certificate {
   id: number;
   name: string;
   issuer: string;
-  imageUrl: string;
-  dataAiHint: string;
+  type: string;
+  skills: string[];
+  fileUrl: string;
+  issueDate: string;
   isFeatured: boolean;
 }
 
