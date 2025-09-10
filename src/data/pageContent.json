@@ -29,7 +29,7 @@
   },
   "about": {
     "title": "About Me",
-    "description": "My educational journey and background",
+    "description": "A little bit about my journey and what drives me.",
     "profilePicUrl": "/images/profile_pics/pic_2.jpeg",
     "whoAmI": {
       "title": "Who I Am",
@@ -48,6 +48,10 @@
     },
     "skillsTitle": "My Skills",
     "educationTitle": "Education Timeline"
+  },
+  "education": {
+    "title": "Education Timeline",
+    "description": "My academic journey and qualifications."
   },
   "experience": {
     "title": "Work Experience",

@@ -1,18 +1,12 @@
 
-import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
-  CardDescription,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import educationData from "@/data/education.json";
-import { ImageDialog } from "@/components/ImageDialog";
 import Image from "next/image";
-import { Eye, GraduationCap, MapPin } from "lucide-react";
 import skillsData from "@/data/skills.json";
-import { Badge } from "@/components/ui/badge";
 import content from "@/data/pageContent.json";
 import { TechIcon } from "@/components/TechIcon";
 
@@ -100,54 +94,6 @@ export default function AboutPage() {
                 </CardContent>
               </Card>
             ))}
-          </div>
-        </section>
-
-
-        {/* Education Timeline */}
-        <section className="space-y-8">
-          <div className="text-center">
-            <h2 className="text-3xl font-bold text-center">{aboutContent.educationTitle}</h2>
-          </div>
-          <div className="relative">
-             <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-border"></div>
-             <div className="space-y-12">
-                {educationData.map((edu, index) => (
-                  <div key={edu.id} className="relative">
-                    <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-8 h-8 bg-primary rounded-full flex items-center justify-center ring-8 ring-background">
-                       <GraduationCap className="h-5 w-5 text-primary-foreground" />
-                    </div>
-                     <div className={`w-full flex ${index % 2 === 0 ? 'justify-start' : 'justify-end'}`}>
-                      <div className="w-1/2 px-8">
-                         <Card className="w-full shadow-md hover:shadow-lg transition-shadow duration-300 hover:-translate-y-1">
-                           <CardContent className="p-6 text-center">
-                               <p className="text-sm text-muted-foreground">{edu.duration}</p>
-                               <h3 className="text-xl font-semibold mt-1">{edu.degree}</h3>
-                               <p className="text-muted-foreground">{edu.institution}</p>
-                               {edu.university && <p className="text-sm text-muted-foreground">{edu.university}</p>}
-                               {edu.location && (
-                                <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground mt-1">
-                                  <MapPin className="h-4 w-4" />
-                                  <span>{edu.location}</span>
-                                </div>
-                              )}
-                               <p className="font-bold text-lg text-primary mt-2">{edu.score}</p>
-                               <ImageDialog
-                                imageUrl={edu.marksheetUrl}
-                                alt={`${edu.degree} Marksheet`}
-                                dataAiHint={edu.dataAiHint}
-                              >
-                                <Button variant="outline" size="sm" className="mt-4">
-                                  <Eye className="mr-2 h-4 w-4" /> View Marksheet
-                                </Button>
-                              </ImageDialog>
-                           </CardContent>
-                         </Card>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-             </div>
           </div>
         </section>
       </div>

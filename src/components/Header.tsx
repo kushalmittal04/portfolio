@@ -11,8 +11,8 @@ import {
   SheetContent,
   SheetHeader,
   SheetTitle,
+  SheetClose,
   SheetTrigger,
-  SheetClose
 } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
 import { ThemeToggle } from "./ThemeToggle";
@@ -22,6 +22,7 @@ const navLinks = [
   { href: "/about", label: "About" },
   { href: "/experience", label: "Experience" },
   { href: "/projects", label: "Projects" },
+  { href: "/education", label: "Education" },
   { href: "/credentials", label: "Credentials" },
   { href: "/profiles", label: "Profiles" },
   { href: "/contact", label: "Contact" },
