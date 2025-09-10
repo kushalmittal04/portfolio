@@ -1,41 +1,250 @@
+
 [
   {
     "id": 1,
-    "name": "Microsoft Certified: Azure Fundamentals",
-    "issuer": "Microsoft",
-    "imageUrl": "https://picsum.photos/800/600",
+    "name": "Microsoft Certified: Azure AI Fundamentals",
+    "issuer": "Microsoft Certification",
+    "imageUrl": "/images/credentials/certifications/20250908_Azure_AI_Fundamentals.pdf",
     "dataAiHint": "certificate document",
     "isFeatured": true
   },
   {
     "id": 2,
-    "name": "Google Cloud Certified: Associate Cloud Engineer",
-    "issuer": "Google",
-    "imageUrl": "https://picsum.photos/800/600",
+    "name": "Introduction to Generative AI",
+    "issuer": "Google Cloud",
+    "imageUrl": "/images/credentials/certifications/20250815_Introduction_to_Generative_AI.pdf",
     "dataAiHint": "certificate document",
     "isFeatured": true
   },
   {
     "id": 3,
-    "name": "Advanced React",
-    "issuer": "LinkedIn Learning",
-    "imageUrl": "https://picsum.photos/800/600",
+    "name": "Zendesk Customer Service Professional Certificate",
+    "issuer": "linkedin learning",
+    "imageUrl": "/images/credentials/certifications/20230820_Zendesk_Customer_Service_Professional_Certificate.pdf",
     "dataAiHint": "certificate document",
-    "isFeatured": false
+    "isFeatured": true
   },
   {
     "id": 4,
-    "name": "Machine Learning Specialization",
-    "issuer": "Coursera",
-    "imageUrl": "https://picsum.photos/800/600",
+    "name": "HTML for Programmers",
+    "issuer": "linkedin learning",
+    "imageUrl": "/images/credentials/certifications/20230802_HTML_for_Programmers.pdf",
     "dataAiHint": "certificate document",
     "isFeatured": false
   },
   {
     "id": 5,
-    "name": "AWS Certified Solutions Architect - Associate",
-    "issuer": "Amazon Web Services",
-    "imageUrl": "https://picsum.photos/800/600",
+    "name": "CSS for Programmers",
+    "issuer": "linkedin learning",
+    "imageUrl": "/images/credentials/certifications/20230802_CSS_for_Programmers.pdf",
+    "dataAiHint": "certificate document",
+    "isFeatured": false
+  },
+  {
+    "id": 6,
+    "name": "Web Programming Foundations",
+    "issuer": "linkedin learning",
+    "imageUrl": "/images/credentials/certifications/20230803_Web_Programming_Foundations.pdf",
+    "dataAiHint": "certificate document",
+    "isFeatured": false
+  },
+  {
+    "id": 7,
+    "name": "Programming Foundations Fundamentals",
+    "issuer": "linkedin learning",
+    "imageUrl": "/images/credentials/certifications/20230813_Programming_Foundations_Fundamentals.pdf",
+    "dataAiHint": "certificate document",
+    "isFeatured": false
+  },
+  {
+    "id": 8,
+    "name": "Computer Science Principles Digital Information",
+    "issuer": "linkedin learning",
+    "imageUrl": "/images/credentials/certifications/20230817_Computer_Science_Principles_Digital_Information.pdf",
+    "dataAiHint": "certificate document",
+    "isFeatured": false
+  },
+  {
+    "id": 9,
+    "name": "Computer Science Principles The Internet",
+    "issuer": "linkedin learning",
+    "imageUrl": "/images/credentials/certifications/20230818_Computer_Science_Principles_The_Internet.pdf",
+    "dataAiHint": "certificate document",
+    "isFeatured": false
+  },
+  {
+    "id": 10,
+    "name": "Computer Science Principles Programming",
+    "issuer": "linkedin learning",
+    "imageUrl": "/images/credentials/certifications/20230819_Computer_Science_Principles_Programming.pdf",
+    "dataAiHint": "certificate document",
+    "isFeatured": false
+  },
+  {
+    "id": 11,
+    "name": "Learning PHP",
+    "issuer": "linkedin learning",
+    "imageUrl": "/images/credentials/certifications/20230821_Learning_PHP.pdf",
+    "dataAiHint": "certificate document",
+    "isFeatured": false
+  },
+  {
+    "id": 12,
+    "name": "PHP with MySQL Essential Training 1 The Basics",
+    "issuer": "linkedin learning",
+    "imageUrl": "/images/credentials/certifications/20230829_PHP_with_MySQL_Essential_Training_1_The_Basics.pdf",
+    "dataAiHint": "certificate document",
+    "isFeatured": false
+  },
+  {
+    "id": 13,
+    "name": "Google Forms Essential Training",
+    "issuer": "linkedin learning",
+    "imageUrl": "/images/credentials/certifications/20230905_Google_Forms_Essential_Training.pdf",
+    "dataAiHint": "certificate document",
+    "isFeatured": false
+  },
+  {
+    "id": 14,
+    "name": "Introduction to Large Language Models",
+    "issuer": "Google Cloud",
+    "imageUrl": "/images/credentials/certifications/20250816_Introduction_to_Large_Language_Models.pdf",
+    "dataAiHint": "certificate document",
+    "isFeatured": false
+  },
+  {
+    "id": 15,
+    "name": "Introduction to Responsible AI",
+    "issuer": "Google Cloud",
+    "imageUrl": "/images/credentials/certifications/20250816_Introduction_to_Responsible_AI.pdf",
+    "dataAiHint": "certificate document",
+    "isFeatured": false
+  },
+  {
+    "id": 16,
+    "name": "Prompt Design in Vertex AI",
+    "issuer": "Google Cloud",
+    "imageUrl": "/images/credentials/certifications/20250816_Prompt_Design_in_Vertex_AI.pdf",
+    "dataAiHint": "certificate document",
+    "isFeatured": false
+  },
+  {
+    "id": 17,
+    "name": "Responsible AI: Applying AI Principles with Google Cloud",
+    "issuer": "Google Cloud",
+    "imageUrl": "/images/credentials/certifications/20250821_Responsible_AI_Applying_AI_Principles_with_Google_Cloud.pdf",
+    "dataAiHint": "certificate document",
+    "isFeatured": false
+  },
+  {
+    "id": 18,
+    "name": "Professional Machine Learning Engineer Study Guide",
+    "issuer": "Google Cloud",
+    "imageUrl": "/images/credentials/certifications/20250821_Professional_Machine_Learning_Engineer_Study_Guide.pdf",
+    "dataAiHint": "certificate document",
+    "isFeatured": false
+  },
+  {
+    "id": 19,
+    "name": "Introduction to AI concepts",
+    "issuer": "Microsoft Learn",
+    "imageUrl": "/images/credentials/certifications/20250823_Introduction_to_AI_concepts.pdf",
+    "dataAiHint": "certificate document",
+    "isFeatured": false
+  },
+  {
+    "id": 20,
+    "name": "Introduction to machine learning concepts",
+    "issuer": "Microsoft Learn",
+    "imageUrl": "/images/credentials/certifications/20250823_Introduction_to_machine_learning_concepts.pdf",
+    "dataAiHint": "certificate document",
+    "isFeatured": false
+  },
+  {
+    "id": 21,
+    "name": "Introduction to AI-powered information extraction concepts",
+    "issuer": "Microsoft Learn",
+    "imageUrl": "/images/credentials/certifications/20250826_Introduction_to_AI_powered_information_extraction_concepts.pdf",
+    "dataAiHint": "certificate document",
+    "isFeatured": false
+  },
+  {
+    "id": 22,
+    "name": "Get started with AI-powered information extraction in Azure",
+    "issuer": "Microsoft Learn",
+    "imageUrl": "/images/credentials/certifications/20250827_Get_started_with_AI_powered_information_extraction_in_Azure.pdf",
+    "dataAiHint": "certificate document",
+    "isFeatured": false
+  },
+  {
+    "id": 23,
+    "name": "Get started with machine learning in Azure",
+    "issuer": "Microsoft Learn",
+    "imageUrl": "/images/credentials/certifications/20250829_Get_started_with_machine_learning_in_Azure.pdf",
+    "dataAiHint": "certificate document",
+    "isFeatured": false
+  },
+  {
+    "id": 24,
+    "name": "Introduction to generative AI concepts",
+    "issuer": "Microsoft Learn",
+    "imageUrl": "/images/credentials/certifications/20250901_Introduction_to_generative_AI_concepts.pdf",
+    "dataAiHint": "certificate document",
+    "isFeatured": false
+  },
+  {
+    "id": 25,
+    "name": "Get started with generative AI in Azure",
+    "issuer": "Microsoft Learn",
+    "imageUrl": "/images/credentials/certifications/20250901_Get_started_with_generative_AI_in_Azure.pdf",
+    "dataAiHint": "certificate document",
+    "isFeatured": false
+  },
+  {
+    "id": 26,
+    "name": "Introduction to natural language processing concepts",
+    "issuer": "Microsoft Learn",
+    "imageUrl": "/images/credentials/certifications/20250902_Introduction_to_natural_language_processing_concepts.pdf",
+    "dataAiHint": "certificate document",
+    "isFeatured": false
+  },
+  {
+    "id": 27,
+    "name": "Get started with natural language processing in Azure",
+    "issuer": "Microsoft Learn",
+    "imageUrl": "/images/credentials/certifications/20250903_Get_started_with_natural_language_processing_in_Azure.pdf",
+    "dataAiHint": "certificate document",
+    "isFeatured": false
+  },
+  {
+    "id": 28,
+    "name": "Get started with speech in Azure",
+    "issuer": "Microsoft Learn",
+    "imageUrl": "/images/credentials/certifications/20250904_Get_started_with_speech_in_Azure.pdf",
+    "dataAiHint": "certificate document",
+    "isFeatured": false
+  },
+  {
+    "id": 29,
+    "name": "Introduction to computer vision concepts",
+    "issuer": "Microsoft Learn",
+    "imageUrl": "/images/credentials/certifications/20250905_Introduction_to_computer_vision_concepts.pdf",
+    "dataAiHint": "certificate document",
+    "isFeatured": false
+  },
+  {
+    "id": 30,
+    "name": "Get started with computer vision in Azure",
+    "issuer": "Microsoft Learn",
+    "imageUrl": "/images/credentials/certifications/20250907_Get_started_with_computer_vision_in_Azure.pdf",
+    "dataAiHint": "certificate document",
+    "isFeatured": false
+  },
+  {
+    "id": 31,
+    "name": "Introduction to AI in Azure",
+    "issuer": "Microsoft Learn",
+    "imageUrl": "/images/credentials/certifications/20250907_Introduction_to_AI_in_Azure.pdf",
     "dataAiHint": "certificate document",
     "isFeatured": false
   }
