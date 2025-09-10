@@ -1,7 +1,12 @@
 
+"use client";
+
+import { useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Download, Github, PlayCircle } from "lucide-react";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { format } from "date-fns";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -13,14 +18,15 @@ import {
   CardFooter,
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { TechIcon } from "@/components/TechIcon";
+
 import projectsData from "@/data/projects.json";
 import experienceData from "@/data/experience.json";
 import { achievementsData, certificatesData } from "@/data/credentials";
-import { TechIcon } from "@/components/TechIcon";
 import skillsToShow from "@/data/featured-skills.json";
 import content from "@/data/pageContent.json";
 import recentActivitiesConfig from "@/data/recent-activities.json";
-import { format } from "date-fns";
+
 
 export default function Home() {
   const featuredProjects = projectsData.filter((p) => p.isFeatured).slice(0, 3);
@@ -51,51 +57,65 @@ export default function Home() {
   
   const homeContent = content.home;
 
+  const heroRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: heroRef,
+    offset: ["start start", "end start"],
+  });
+
+  const textOpacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
+  const textTranslateY = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
+  const imageScale = useTransform(scrollYProgress, [0, 0.5], [1, 0.8]);
 
   return (
-    <div className="flex flex-col animate-in fade-in-0 slide-in-from-bottom-8 duration-1000">
+    <div className="flex flex-col">
       {/* Hero Section */}
-      <section className="flex min-h-screen items-center justify-center py-16 md:py-24 lg:py-32">
-        <div className="container px-4 md:px-6">
-          <div className="flex flex-col items-center space-y-6 text-center">
-            <Image
-              src="/images/profile_pics/pic_1.jpeg"
-              alt="Kushal Mittal"
-              width={150}
-              height={150}
-              className="rounded-full object-cover shadow-lg aspect-square"
-              data-ai-hint="portrait professional"
-              priority
-            />
-            <div className="space-y-2">
-              <h1 className="text-5xl font-bold tracking-tighter sm:text-6xl">
-                {homeContent.title}
-              </h1>
-              <h2 className="text-xl font-semibold text-primary md:text-2xl">
-                {homeContent.subtitle}
-              </h2>
-              <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl">
-                {homeContent.description}
-              </p>
+      <section ref={heroRef} className="relative flex h-screen items-center justify-center overflow-hidden">
+        <motion.div 
+            style={{ y: textTranslateY }}
+            className="container px-4 md:px-6"
+        >
+            <div className="flex flex-col items-center space-y-6 text-center">
+                <motion.div style={{ scale: imageScale, opacity: textOpacity }}>
+                <Image
+                    src="/images/profile_pics/pic_1.jpeg"
+                    alt="Kushal Mittal"
+                    width={150}
+                    height={150}
+                    className="rounded-full object-cover shadow-lg aspect-square"
+                    data-ai-hint="portrait professional"
+                    priority
+                />
+                </motion.div>
+                <motion.div style={{ opacity: textOpacity }} className="space-y-2">
+                <h1 className="text-5xl font-bold tracking-tighter sm:text-6xl">
+                    {homeContent.title}
+                </h1>
+                <h2 className="text-xl font-semibold text-primary md:text-2xl">
+                    {homeContent.subtitle}
+                </h2>
+                <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl">
+                    {homeContent.description}
+                </p>
+                </motion.div>
+                <motion.div style={{ opacity: textOpacity }} className="flex flex-col gap-4 min-[400px]:flex-row">
+                <Button asChild size="lg">
+                    <Link href="/projects">{homeContent.buttons.work}</Link>
+                </Button>
+                <Button asChild variant="secondary" size="lg">
+                    <a href="/pdfs/Kushal_Mittal_Resume.pdf" download="Kushal_Mittal_Resume.pdf" rel="noopener noreferrer">
+                    {homeContent.buttons.resume} <Download className="ml-2 h-4 w-4" />
+                    </a>
+                </Button>
+                </motion.div>
             </div>
-            <div className="flex flex-col gap-4 min-[400px]:flex-row">
-              <Button asChild size="lg">
-                <Link href="/projects">{homeContent.buttons.work}</Link>
-              </Button>
-              <Button asChild variant="secondary" size="lg">
-                <a href="/pdfs/Kushal_Mittal_Resume.pdf" download="Kushal_Mittal_Resume.pdf">
-                  {homeContent.buttons.resume} <Download className="ml-2 h-4 w-4" />
-                </a>
-              </Button>
-            </div>
-          </div>
-        </div>
+        </motion.div>
       </section>
 
-      <div className="flex flex-col gap-16 md:gap-24">
+      <div className="flex flex-col gap-16 md:gap-24 bg-background z-10">
         {/* Featured Projects */}
         {featuredProjects.length > 0 && (
-          <section id="featured-projects" className="container">
+          <section id="featured-projects" className="container pt-16">
             <div className="text-center mb-8">
               <h2 className="text-3xl font-bold">
                 {homeContent.sections.featuredProjects.title}
