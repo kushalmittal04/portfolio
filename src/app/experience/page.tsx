@@ -29,7 +29,7 @@ export default function ExperiencePage() {
       </div>
 
       <div className="relative space-y-12">
-        <div className="absolute left-6 top-0 h-full w-0.5 -translate-x-1/2 bg-border md:left-1/2"></div>
+        <div className="absolute left-4 top-0 h-full w-0.5 -translate-x-1/2 bg-border md:left-1/2"></div>
         {experienceData.map((exp, index) => (
            <div
             key={exp.id}
@@ -38,7 +38,7 @@ export default function ExperiencePage() {
             }`}
           >
             <div className="hidden md:block md:w-1/2"></div>
-            <div className="w-full md:w-1/2 pl-12 md:pl-8">
+            <div className="w-full md:w-1/2 pl-10 md:pl-8">
               <Card className="shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
                 <CardHeader>
                     <div className="flex items-start gap-4">
@@ -75,7 +75,7 @@ export default function ExperiencePage() {
                 </CardContent>
               </Card>
             </div>
-            <div className="absolute left-6 top-1/2 h-4 w-4 -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary ring-8 ring-background md:left-1/2"></div>
+            <div className="absolute left-4 top-1/2 h-4 w-4 -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary ring-8 ring-background md:left-1/2"></div>
           </div>
         ))}
       </div>
