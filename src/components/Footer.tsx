@@ -33,6 +33,7 @@ const socialLinks = [
 
 
 export function Footer() {
+  const currentYear = new Date().getFullYear();
   return (
     <footer className="border-t bg-background">
       <div className="container mx-auto px-4 py-8">
@@ -40,7 +41,7 @@ export function Footer() {
           {/* Left Column */}
           <div className="space-y-4 md:col-span-1">
             <Link href="/" className="inline-block">
-              <span className="text-lg font-bold">KushalMittal.dev</span>
+              <span className="text-lg font-bold">kushalmittal04.profile</span>
             </Link>
             <p className="text-sm text-muted-foreground">
               Building without boundaries.
@@ -83,7 +84,7 @@ export function Footer() {
 
         <div className="mt-8 border-t pt-6 text-center">
           <p className="text-xs text-muted-foreground">
-            &copy; 2024 KushalMittal.dev. All rights reserved.
+            &copy; {currentYear} kushalmittal04.profile. All rights reserved.
           </p>
         </div>
       </div>
