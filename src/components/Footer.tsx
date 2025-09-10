@@ -83,7 +83,7 @@ export function Footer() {
 
         <div className="mt-8 border-t pt-6 text-center">
           <p className="text-xs text-muted-foreground">
-            &copy; {new Date().getFullYear()} KushalMittal.dev. All rights reserved.
+            &copy; 2024 KushalMittal.dev. All rights reserved.
           </p>
         </div>
       </div>
