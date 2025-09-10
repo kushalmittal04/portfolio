@@ -1,20 +1,19 @@
+
 [
   {
     "id": 1,
-    "slug": "google-swe-intern",
-    "company": "Google",
-    "position": "Software Engineer Intern",
-    "location": "Mountain View, CA",
-    "duration": "May 2024 - Aug 2024",
+    "slug": "ey-ai-ml-intern",
+    "company": "Ernst & Young (EY)",
+    "position": "AI/ML Intern",
+    "location": "Bengaluru, Karnataka, India",
+    "duration": "Jul 2025 – Present",
     "logoUrl": "https://picsum.photos/100/100",
-    "dataAiHint": "logo tech",
+    "dataAiHint": "logo professional services",
     "description": [
-      "Developed and maintained critical features for Google Search, impacting millions of users daily.",
-      "Worked with a cross-functional team of engineers, designers, and product managers to deliver a high-quality product.",
-      "Optimized backend services for performance and scalability, reducing latency by 20%."
+      "Engineered and optimized large-scale ML workflows using PySpark on Databricks, reducing data preprocessing time by 5% through analytical problem-solving and efficient distributed computing architecture.",
+      "Architected a production-ready RAG-based Chatbot leveraging LangChain and LangGraph, enhancing the accuracy of client information retrieval by 15% and demonstrating innovative creativity in applying Generative AI to real-world business automation."
     ],
-    "technologies": ["Go", "Python", "Kubernetes", "gRPC"],
-    "certificateUrl": "https://picsum.photos/1100/800",
+    "technologies": ["PySpark", "Databricks", "LangChain", "LangGraph", "Generative AI"],
     "workImages": [
       { "url": "https://picsum.photos/600/400", "dataAiHint": "office team" },
       { "url": "https://picsum.photos/600/400", "dataAiHint": "code computer" }
@@ -22,20 +21,20 @@
   },
   {
     "id": 2,
-    "slug": "microsoft-explore-intern",
-    "company": "Microsoft",
-    "position": "Explore Intern",
-    "location": "Redmond, WA",
-    "duration": "May 2023 - Aug 2023",
+    "slug": "nic-ml-intern",
+    "company": "National Informatics Centre (NIC)",
+    "position": "ML Intern",
+    "location": "Lucknow, Uttar Pradesh, India",
+    "duration": "May 2025 – Jul 2025",
     "logoUrl": "https://picsum.photos/100/100",
-    "dataAiHint": "logo tech",
+    "dataAiHint": "logo government",
     "description": [
-      "Participated in a 12-week program combining software engineering and program management.",
-      "Shipped a new feature for Azure DevOps using C# and .NET Core.",
-      "Conducted user research and defined product specifications for a new developer tool."
+      "Automated the extraction and transformation of 10,000+ unstructured emails into structured data using Python and Pandas, demonstrating meticulous attention to detail and creating a clean dataset for analysis.",
+      "Executed the full machine learning lifecycle, performing in-depth EDA, data cleaning, and feature engineering to build a highly accurate supervised classification model for automated email categorization.",
+      "Developed and deployed a scalable REST API to serve the ML model, enabling real-time predictions and reducing manual processing effort by 20+ hours per week, highlighting strong initiative and end-to-end project ownership.",
+      "Authored comprehensive documentation and held knowledge-transfer sessions for the help-desk team, ensuring smooth adoption of the new automated system and showcasing effective knowledge sharing and communication."
     ],
-    "technologies": ["C#", ".NET Core", "Azure", "React"],
-    "certificateUrl": "https://picsum.photos/1100/800",
+    "technologies": ["Python", "Pandas", "Scikit-learn", "REST API", "Machine Learning"],
     "workImages": [
       {
         "url": "https://picsum.photos/600/400",
@@ -46,34 +45,36 @@
   },
   {
     "id": 3,
-    "slug": "amazon-sde-intern",
-    "company": "Amazon",
-    "position": "SDE Intern",
-    "location": "Seattle, WA",
-    "duration": "May 2022 - Aug 2022",
+    "slug": "compucom-software-intern",
+    "company": "Compucom Software Limited",
+    "position": "Backend Developer & ML Intern",
+    "location": "Jaipur, Rajasthan, India",
+    "duration": "Jun 2024 – Sep 2024",
     "logoUrl": "https://picsum.photos/100/100",
-    "dataAiHint": "logo commerce",
+    "dataAiHint": "logo software",
     "description": [
-      "Worked on the AWS S3 team, focusing on improving the data consistency model.",
-      "Designed and implemented a new internal tool for monitoring data replication across regions.",
-      "Wrote extensive unit and integration tests to ensure code quality and reliability."
+      "Designed, developed, and documented 15+ secure RESTful APIs in PHP for a hotel management platform, ensuring 100% reliability through rigorous testing with Postman and exemplifying strong time management and backend expertise.",
+      "Built a predictive analytics model using supervised ML techniques and Scikit-learn, which improved hotel occupancy rate forecasting accuracy by 15% and provided data-driven insights for strategic planning.",
+      "Translated complex model outputs into clear, actionable business intelligence reports for management, effectively bridging the gap between technical data and operational strategy through sharp analytical reasoning.",
+      "Collaborated with a small development team in an Agile setup, participating in daily scrums and code reviews, which enhanced the team's output and reinforced adaptable and collaborative work practices."
     ],
-    "technologies": ["Java", "Spring Boot", "AWS", "DynamoDB"]
+    "technologies": ["PHP", "REST APIs", "Postman", "Machine Learning", "Scikit-learn", "Agile"]
   },
   {
     "id": 4,
-    "slug": "startup-frontend-intern",
-    "company": "Innovatech",
-    "position": "Frontend Developer Intern",
-    "location": "Remote",
-    "duration": "Jan 2022 - Apr 2022",
+    "slug": "phoenix-web-dev-intern",
+    "company": "Phoenix Advanced Softwares Pvt. Ltd.",
+    "position": "Web Development Intern",
+    "location": "Jaipur, Rajasthan, India",
+    "duration": "Aug 2023 – Sep 2023",
     "logoUrl": "https://picsum.photos/100/100",
     "dataAiHint": "logo abstract",
     "description": [
-      "Built responsive user interfaces for a new SaaS platform using React and Tailwind CSS.",
-      "Collaborated with the design team to translate Figma mockups into pixel-perfect code.",
-      "Improved website performance by implementing code splitting and lazy loading."
+      "Developed 10+ dynamic, responsive, and interactive web pages using HTML, CSS, JavaScript, and PHP, contributing to a measured 15% increase in user engagement through creative and user-centric front-end design.",
+      "Significantly enhanced application security by implementing a robust JWT-based authentication system from scratch, demonstrating reliable technical judgment and a deep understanding of web security principles.",
+      "Built an automated data scraping pipeline using Selenium to collect and aggregate information from 50+ different sources, improving data timeliness by 90% and saving 5+ hours of manual work weekly.",
+      "Proactively identified performance bottlenecks in existing web pages and optimized them, resulting in faster load times and an improved user experience, showcasing self-motivation and a commitment to quality."
     ],
-    "technologies": ["React", "TypeScript", "Tailwind CSS", "Vite"]
+    "technologies": ["HTML", "CSS", "JavaScript", "PHP", "JWT", "Selenium"]
   }
 ]
