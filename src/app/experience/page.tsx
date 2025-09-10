@@ -71,9 +71,10 @@ export default function ExperiencePage() {
                       </div>
                     </CardHeader>
                     <CardContent>
-                      <p className="mb-4 text-muted-foreground line-clamp-2">
-                        {exp.description[0]}
-                      </p>
+                      <div
+                        className="mb-4 text-muted-foreground line-clamp-2"
+                        dangerouslySetInnerHTML={{ __html: exp.description[0] }}
+                      />
                       <div className="flex flex-wrap gap-2 mb-4">
                         {exp.technologies.slice(0, 4).map((tech) => (
                           <Badge key={tech} variant="secondary">
