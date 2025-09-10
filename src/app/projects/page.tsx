@@ -14,7 +14,7 @@ import {
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { projectsData } from "@/data/projects";
+import projectsData from "@/data/projects.json";
 import { cn } from "@/lib/utils";
 import content from "@/data/pageContent.json";
 

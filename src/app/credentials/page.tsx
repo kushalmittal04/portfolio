@@ -12,15 +12,14 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { credentialsData } from "@/data/credentials";
+import { achievementsData, certificatesData } from "@/data/credentials";
 import { ImageDialog } from "@/components/ImageDialog";
 import { Badge } from "@/components/ui/badge";
 import content from "@/data/pageContent.json";
 
 export default function CredentialsPage() {
-  const { achievements, certificates } = credentialsData;
-  const featuredCerts = certificates.filter((c) => c.isFeatured);
-  const otherCerts = certificates.filter((c) => !c.isFeatured);
+  const featuredCerts = certificatesData.filter((c) => c.isFeatured);
+  const otherCerts = certificatesData.filter((c) => !c.isFeatured);
   const credentialsContent = content.credentials;
 
   return (
@@ -103,7 +102,7 @@ export default function CredentialsPage() {
         </TabsContent>
         <TabsContent value="achievements" className="mt-8">
           <div className="grid gap-8 md:grid-cols-2">
-            {achievements.map((achievement) => (
+            {achievementsData.map((achievement) => (
               <Card key={achievement.id} className="flex flex-col sm:flex-row overflow-hidden">
                 <div className="sm:w-1/3">
                   <ImageDialog

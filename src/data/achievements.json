@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "name": "GATE 2025 CS",
+    "description": "Qualified the Graduate Aptitude Test in Engineering for Computer Science with a top rank.",
+    "imageUrl": "https://picsum.photos/600/400",
+    "dataAiHint": "award trophy",
+    "isFeatured": true
+  },
+  {
+    "id": 2,
+    "name": "First Position in Blind Coding",
+    "description": "Secured the first place in a university-level blind coding competition, demonstrating strong problem-solving skills under pressure.",
+    "imageUrl": "https://picsum.photos/600/400",
+    "dataAiHint": "code competition",
+    "isFeatured": true
+  }
+]

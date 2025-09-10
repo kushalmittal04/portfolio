@@ -1,0 +1,112 @@
+[
+  {
+    "id": 1,
+    "slug": "ai-chatbot-demo",
+    "name": "AI Chatbot Demo",
+    "description": "A cutting-edge, conversational AI chatbot built with the OpenAI API and a custom React frontend. Features real-time responses and context awareness.",
+    "technologies": ["React", "Tailwind CSS", "OpenAI API", "Next.js"],
+    "githubUrl": "https://github.com/demo/ai-chatbot",
+    "liveUrl": "https://demo.com/ai-chatbot",
+    "images": [
+      { "url": "https://picsum.photos/800/600", "dataAiHint": "chatbot interface" },
+      { "url": "https://picsum.photos/800/600", "dataAiHint": "code abstract" }
+    ],
+    "videoUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    "category": ["AI/ML", "Full Stack"],
+    "isFeatured": true
+  },
+  {
+    "id": 2,
+    "slug": "e-commerce-platform",
+    "name": "E-commerce Platform",
+    "description": "A full-featured e-commerce site with product listings, a shopping cart, and a secure checkout process powered by Stripe.",
+    "technologies": ["Next.js", "Stripe", "PostgreSQL", "Prisma"],
+    "githubUrl": "https://github.com/demo/ecommerce",
+    "liveUrl": "https://demo.com/ecommerce",
+    "images": [{ "url": "https://picsum.photos/800/600", "dataAiHint": "online store" }],
+    "category": ["Full Stack"],
+    "isFeatured": true
+  },
+  {
+    "id": 3,
+    "slug": "web-analyzer",
+    "name": "Sentiment Analysis Tool",
+    "description": "A web-based tool that analyzes the sentiment of text using a custom-trained machine learning model.",
+    "technologies": ["Python", "Flask", "scikit-learn", "React"],
+    "githubUrl": "https://github.com/demo/sentiment-analyzer",
+    "liveUrl": "https://demo.com/sentiment-analyzer",
+    "images": [{ "url": "https://picsum.photos/800/600", "dataAiHint": "dashboard chart" }],
+    "category": ["AI/ML", "Web"],
+    "isFeatured": true
+  },
+  {
+    "id": 4,
+    "name": "Portfolio Website",
+    "slug": "portfolio-website",
+    "description": "A personal portfolio to showcase my skills and projects, built with modern web technologies.",
+    "technologies": ["React", "Next.js", "Tailwind CSS"],
+    "githubUrl": "https://github.com/demo/portfolio",
+    "liveUrl": "https://demo.com/portfolio",
+    "images": [{ "url": "https://picsum.photos/800/600", "dataAiHint": "website design" }],
+    "category": ["Web", "Full Stack"],
+    "isFeatured": false
+  },
+  {
+    "id": 5,
+    "name": "Task Management App",
+    "slug": "task-management-app",
+    "description": "A Kanban-style task management application with drag-and-drop functionality.",
+    "technologies": ["React", "Firebase", "dnd-kit"],
+    "githubUrl": "https://github.com/demo/task-manager",
+    "liveUrl": "https://demo.com/task-manager",
+    "images": [{ "url": "https://picsum.photos/800/600", "dataAiHint": "kanban board" }],
+    "category": ["Full Stack", "Web"],
+    "isFeatured": false
+  },
+  {
+    "id": 6,
+    "name": "Image Recognition API",
+    "slug": "image-recognition-api",
+    "description": "A RESTful API that uses a deep learning model to classify objects in images.",
+    "technologies": ["Python", "TensorFlow", "FastAPI"],
+    "githubUrl": "https://github.com/demo/image-api",
+    "images": [{ "url": "https://picsum.photos/800/600", "dataAiHint": "neural network" }],
+    "category": ["AI/ML"],
+    "isFeatured": false
+  },
+  {
+    "id": 7,
+    "name": "Weather App",
+    "slug": "weather-app",
+    "description": "A simple and elegant weather application that provides real-time weather data for any city.",
+    "technologies": ["React", "OpenWeatherMap API"],
+    "githubUrl": "https://github.com/demo/weather-app",
+    "liveUrl": "https://demo.com/weather-app",
+    "images": [{ "url": "https://picsum.photos/800/600", "dataAiHint": "weather forecast" }],
+    "category": ["Web"],
+    "isFeatured": false
+  },
+  {
+    "id": 8,
+    "name": "Real-time Chat App",
+    "slug": "real-time-chat-app",
+    "description": "A full-stack chat application enabling real-time communication between users, built with WebSockets.",
+    "technologies": ["Node.js", "Socket.IO", "React", "Express"],
+    "githubUrl": "https://github.com/demo/chat-app",
+    "liveUrl": "https://demo.com/chat-app",
+    "images": [{ "url": "https://picsum.photos/800/600", "dataAiHint": "chat message" }],
+    "category": ["Full Stack"],
+    "isFeatured": false
+  },
+  {
+    "id": 9,
+    "name": "Code Snippet Manager",
+    "slug": "code-snippet-manager",
+    "description": "A desktop application for organizing and managing code snippets efficiently.",
+    "technologies": ["Electron", "React", "SQLite"],
+    "githubUrl": "https://github.com/demo/snippet-manager",
+    "images": [{ "url": "https://picsum.photos/800/600", "dataAiHint": "code editor" }],
+    "category": ["Web"],
+    "isFeatured": false
+  }
+]

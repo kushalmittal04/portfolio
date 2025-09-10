@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import Image from "next/image";
-import { experienceData } from "@/data/experience";
+import experienceData from "@/data/experience.json";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ImageDialog } from "@/components/ImageDialog";

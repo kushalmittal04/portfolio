@@ -55,11 +55,6 @@ export interface Achievement {
   isFeatured: boolean;
 }
 
-export interface CredentialData {
-  certificates: Certificate[];
-  achievements: Achievement[];
-}
-
 export interface Profile {
   id: number;
   platform: string;

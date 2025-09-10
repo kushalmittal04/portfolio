@@ -7,7 +7,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { educationData } from "@/data/education";
+import educationData from "@/data/education.json";
 import { ImageDialog } from "@/components/ImageDialog";
 import Image from "next/image";
 import { Eye } from "lucide-react";

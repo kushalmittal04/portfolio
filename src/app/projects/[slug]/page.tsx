@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import Image from "next/image";
-import { projectsData } from "@/data/projects";
+import projectsData from "@/data/projects.json";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {

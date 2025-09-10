@@ -10,7 +10,7 @@ import {
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { experienceData } from "@/data/experience";
+import experienceData from "@/data/experience.json";
 import content from "@/data/pageContent.json";
 
 

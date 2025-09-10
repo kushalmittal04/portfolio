@@ -11,17 +11,17 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { projectsData } from "@/data/projects";
-import { experienceData } from "@/data/experience";
-import { credentialsData } from "@/data/credentials";
+import projectsData from "@/data/projects.json";
+import experienceData from "@/data/experience.json";
+import achievementsData from "@/data/achievements.json";
 import { TechIcon } from "@/components/TechIcon";
 import skillsData from "@/data/skills.json";
 import content from "@/data/pageContent.json";
 
 export default function Home() {
-  const featuredProjects = projectsData.slice(0, 3);
+  const featuredProjects = projectsData.filter((p) => p.isFeatured).slice(0, 3);
   const latestInternship = experienceData[0];
-  const featuredAchievements = credentialsData.achievements.filter(
+  const featuredAchievements = achievementsData.filter(
     (a) => a.isFeatured
   );
   const skillsToShow = skillsData.featuredSkills;
