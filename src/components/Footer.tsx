@@ -39,7 +39,7 @@ export function Footer() {
 
   return (
     <footer className="border-t bg-background">
-      <div className="container mx-auto px-4 py-8">
+      <div className="container mx-auto px-8 py-8 md:px-12">
         <div className="grid grid-cols-1 gap-8 text-center md:grid-cols-3 md:text-left">
           {/* Left Column */}
           <div className="space-y-4">
