@@ -47,7 +47,7 @@ export function Footer() {
           {/* Left Column */}
           <div className="space-y-4">
             <Link href="/" className="inline-block">
-              <span className="text-lg font-bold">kushalmittal04.profile</span>
+              <span className="text-lg font-bold">Portfolio</span>
             </Link>
              <p className="text-sm font-semibold">
               Stackless Engineer
@@ -108,7 +108,7 @@ export function Footer() {
 
         <div className="mt-8 border-t pt-6 text-center">
           <p className="text-xs text-muted-foreground">
-            &copy; {currentYear} kushalmittal04.profile. All rights reserved.
+            &copy; {currentYear} Portfolio. All rights reserved.
           </p>
         </div>
       </div>
