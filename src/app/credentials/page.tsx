@@ -5,19 +5,12 @@ import { useState, useMemo } from "react";
 import Link from "next/link";
 import { format } from "date-fns";
 import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "@/components/ui/table";
-import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
+  CardFooter,
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import {
@@ -165,51 +158,39 @@ export default function CredentialsPage() {
                 </Select>
               </div>
 
-              <div className="overflow-x-auto rounded-md border">
-                <Table>
-                  <TableHeader>
-                    <TableRow>
-                      <TableHead>Name</TableHead>
-                      <TableHead className="hidden sm:table-cell">Issuer</TableHead>
-                      <TableHead className="hidden md:table-cell">Skills</TableHead>
-                      <TableHead className="hidden sm:table-cell text-right">Date</TableHead>
-                      <TableHead className="text-right">Link</TableHead>
-                    </TableRow>
-                  </TableHeader>
-                  <TableBody>
-                    {filteredCertificates.map((cert) => (
-                      <TableRow key={cert.id}>
-                        <TableCell className="font-medium">{cert.name}</TableCell>
-                        <TableCell className="hidden sm:table-cell text-muted-foreground">{cert.issuer}</TableCell>
-                        <TableCell className="hidden md:table-cell">
-                          <div className="flex flex-wrap gap-1">
-                            {cert.skills.map((skill) => (
-                              <Badge key={skill} variant="secondary">
-                                {skill}
-                              </Badge>
-                            ))}
-                          </div>
-                        </TableCell>
-                        <TableCell className="hidden sm:table-cell text-right text-muted-foreground">
-                          {format(new Date(cert.issueDate), "PPP")}
-                        </TableCell>
-                        <TableCell className="text-right">
-                          <Button asChild variant="ghost" size="sm">
-                            <Link href={cert.fileUrl} target="_blank" rel="noopener noreferrer">
-                              <Eye className="h-4 w-4" />
-                            </Link>
-                          </Button>
-                        </TableCell>
-                      </TableRow>
-                    ))}
-                  </TableBody>
-                </Table>
-                 {filteredCertificates.length === 0 && (
-                    <div className="p-8 text-center text-muted-foreground">
-                        No certifications found.
-                    </div>
-                )}
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {filteredCertificates.map((cert) => (
+                  <Card key={cert.id} className="flex flex-col overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+                    <CardHeader>
+                      <CardTitle className="text-lg">{cert.name}</CardTitle>
+                      <CardDescription>{cert.issuer}</CardDescription>
+                      <CardDescription className="text-xs pt-1">{format(new Date(cert.issueDate), "PPP")}</CardDescription>
+                    </CardHeader>
+                    <CardContent className="flex-grow">
+                      <div className="flex flex-wrap gap-1">
+                        {cert.skills.map((skill) => (
+                          <Badge key={skill} variant="secondary">
+                            {skill}
+                          </Badge>
+                        ))}
+                      </div>
+                    </CardContent>
+                    <CardFooter>
+                      <Button asChild variant="outline" size="sm" className="w-full">
+                        <Link href={cert.fileUrl} target="_blank" rel="noopener noreferrer">
+                          <Eye className="mr-2 h-4 w-4" /> View Document
+                        </Link>
+                      </Button>
+                    </CardFooter>
+                  </Card>
+                ))}
               </div>
+
+              {filteredCertificates.length === 0 && (
+                <div className="p-8 text-center text-muted-foreground border rounded-md">
+                    No certifications found. Try adjusting your search or filters.
+                </div>
+              )}
             </CardContent>
           </Card>
         </TabsContent>
