@@ -141,10 +141,12 @@ export default function ExperienceDetailPage({
                         <CalendarDays className="h-4 w-4 text-muted-foreground" />
                         <p><span className="font-semibold">End:</span> {experience.endDate === 'Present' ? 'Present' : format(new Date(experience.endDate), "PPP")}</p>
                     </div>
-                    <div className="flex items-center gap-3">
-                        <Timer className="h-4 w-4 text-muted-foreground" />
-                        <p><span className="font-semibold">Period:</span> {experience.period}</p>
-                    </div>
+                    {experience.period && (
+                      <div className="flex items-center gap-3">
+                          <Timer className="h-4 w-4 text-muted-foreground" />
+                          <p><span className="font-semibold">Period:</span> {experience.period}</p>
+                      </div>
+                    )}
                      <div className="flex items-center gap-3">
                         <Building className="h-4 w-4 text-muted-foreground" />
                         <a href={experience.companyUrl} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
