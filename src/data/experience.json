@@ -7,7 +7,7 @@
     "position": "AI/ML Intern",
     "location": "Bengaluru, Karnataka, India",
     "duration": "Jul 2025 – Present",
-    "logoUrl": "https://picsum.photos/100/100",
+    "logoUrl": "/images/experiences/logos/ey.jpg",
     "dataAiHint": "logo professional services",
     "description": [
       "Engineered and optimized large-scale ML workflows using PySpark on Databricks, reducing data preprocessing time by 5% through analytical problem-solving and efficient distributed computing architecture.",
@@ -22,7 +22,7 @@
     "position": "ML Intern",
     "location": "Lucknow, Uttar Pradesh, India",
     "duration": "May 2025 – Jul 2025",
-    "logoUrl": "https://picsum.photos/100/100",
+    "logoUrl": "/images/experiences/logos/nic.jpg",
     "dataAiHint": "logo government",
     "certificateUrl": "/images/experiences/nic/0.jpg",
     "workImages": [
@@ -47,7 +47,7 @@
     "position": "Backend Developer & ML Intern",
     "location": "Jaipur, Rajasthan, India",
     "duration": "Jun 2024 – Sep 2024",
-    "logoUrl": "https://picsum.photos/100/100",
+    "logoUrl": "/images/experiences/logos/csl.jpg",
     "dataAiHint": "logo software",
      "certificateUrl": "/images/experiences/csl/0.jpg",
     "workImages": [
@@ -72,7 +72,7 @@
     "position": "Web Development Intern",
     "location": "Jaipur, Rajasthan, India",
     "duration": "Aug 2023 – Sep 2023",
-    "logoUrl": "https://picsum.photos/100/100",
+    "logoUrl": "/images/experiences/logos/phx.jpg",
     "dataAiHint": "logo abstract",
     "certificateUrl": "/images/experiences/phx/0.jpg",
     "workImages": [
