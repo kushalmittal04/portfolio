@@ -19,41 +19,35 @@ import { achievementsData, certificatesData } from "@/data/credentials";
 import { TechIcon } from "@/components/TechIcon";
 import skillsData from "@/data/skills.json";
 import content from "@/data/pageContent.json";
+import recentActivitiesConfig from "@/data/recent-activities.json";
 import { format } from "date-fns";
 
 export default function Home() {
   const featuredProjects = projectsData.filter((p) => p.isFeatured).slice(0, 3);
   const latestInternship = experienceData[0];
 
-  const azureCert = certificatesData.find(c => c.id === 31);
-  const promptCert = certificatesData.find(c => c.id === 15);
-  const gateAchievement = achievementsData.find(a => a.id === 1);
-
-  const recentActivities = [];
-
-  if (azureCert) {
-    recentActivities.push({
-      id: `cert-${azureCert.id}`,
-      name: azureCert.name,
-      description: `Issued by ${azureCert.issuer} on ${format(new Date(azureCert.issueDate), "PPP")}.`,
-    });
-  }
-
-  if (promptCert) {
-    recentActivities.push({
-      id: `cert-${promptCert.id}`,
-      name: promptCert.name,
-      description: `Issued by ${promptCert.issuer} on ${format(new Date(promptCert.issueDate), "PPP")}.`,
-    });
-  }
-
-  if (gateAchievement) {
-     recentActivities.push({
-        id: `ach-${gateAchievement.id}`,
-        name: gateAchievement.name,
-        description: gateAchievement.description,
-    });
-  }
+  const recentActivities = recentActivitiesConfig.map(activity => {
+    if (activity.type === 'certificate') {
+      const cert = certificatesData.find(c => c.id === activity.id);
+      if (cert) {
+        return {
+          id: `cert-${cert.id}`,
+          name: cert.name,
+          description: `Issued by ${cert.issuer} on ${format(new Date(cert.issueDate), "PPP")}.`,
+        };
+      }
+    } else if (activity.type === 'achievement') {
+      const achievement = achievementsData.find(a => a.id === activity.id);
+      if (achievement) {
+        return {
+          id: `ach-${achievement.id}`,
+          name: achievement.name,
+          description: achievement.description,
+        };
+      }
+    }
+    return null;
+  }).filter(Boolean);
   
   const skillsToShow = skillsData.featuredSkills;
   const homeContent = content.home;
@@ -231,16 +225,18 @@ export default function Home() {
           </div>
           <div className="mx-auto grid max-w-4xl gap-8 md:grid-cols-2 lg:grid-cols-3">
             {recentActivities.map((item) => (
-              <Card key={item.id} className="transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
-                <CardHeader>
-                  <CardTitle className="text-lg">{item.name}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground text-sm line-clamp-3">
-                    {item.description}
-                  </p>
-                </CardContent>
-              </Card>
+              item && (
+                <Card key={item.id} className="transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+                  <CardHeader>
+                    <CardTitle className="text-lg">{item.name}</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-muted-foreground text-sm line-clamp-3">
+                      {item.description}
+                    </p>
+                  </CardContent>
+                </Card>
+              )
             ))}
           </div>
         </section>
