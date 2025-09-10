@@ -3,6 +3,8 @@ import {
   Database,
   Box,
   FileCode,
+  Notebook,
+  Sparkles,
 } from "lucide-react";
 import type { SVGProps } from "react";
 
@@ -95,9 +97,11 @@ const iconMap: Record<string, React.ComponentType<any>> = {
   "c++": CppIcon,
   tensorflow: Box,
   "scikit-learn": Box,
+  pyspark: Sparkles,
+  "firebase studio": Sparkles,
+  notebooklm: Notebook,
   pandas: Box,
   numpy: Box,
-  pyspark: Box,
 };
 
 export function TechIcon({ technology, className }: TechIconProps) {

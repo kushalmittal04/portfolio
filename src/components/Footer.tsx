@@ -1,6 +1,8 @@
+"use client";
 
 import Link from "next/link";
 import { Github, Linkedin, Mail } from "lucide-react";
+import { useEffect, useState } from "react";
 
 const navLinks = [
     { href: "/about", label: "About" },
@@ -32,7 +34,12 @@ const socialLinks = [
 
 
 export function Footer() {
-  const currentYear = new Date().getFullYear();
+  const [currentYear, setCurrentYear] = useState(new Date().getFullYear());
+
+  useEffect(() => {
+    setCurrentYear(new Date().getFullYear());
+  }, []);
+
   const half = Math.ceil(navLinks.length / 2);
   const firstHalf = navLinks.slice(0, half);
   const secondHalf = navLinks.slice(half);

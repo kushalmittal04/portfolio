@@ -9,11 +9,10 @@ import { ImageDialog } from "@/components/ImageDialog";
 import {
   Card,
   CardContent,
-  CardDescription,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { ArrowLeft, Building, CalendarDays, CheckCircle, Globe, MapPin, Timer } from "lucide-react";
+import { ArrowLeft, Building, CalendarDays, CheckCircle, MapPin, Timer } from "lucide-react";
 import { format } from "date-fns";
 
 export async function generateStaticParams() {
