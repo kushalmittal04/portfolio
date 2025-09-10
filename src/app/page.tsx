@@ -20,12 +20,31 @@ import { TechIcon } from "@/components/TechIcon";
 import skillsData from "@/data/skills.json";
 import content from "@/data/pageContent.json";
 
+// Helper function to extract date from imageUrl
+const extractDateFromUrl = (url: string): Date => {
+  const match = url.match(/(\d{8})/);
+  if (match) {
+    const dateStr = match[1];
+    const year = parseInt(dateStr.substring(0, 4), 10);
+    const month = parseInt(dateStr.substring(4, 6), 10) - 1; // Month is 0-indexed
+    const day = parseInt(dateStr.substring(6, 8), 10);
+    return new Date(year, month, day);
+  }
+  return new Date(0); // Return a very old date if no match
+};
+
 export default function Home() {
   const featuredProjects = projectsData.filter((p) => p.isFeatured).slice(0, 3);
   const latestInternship = experienceData[0];
-  const featuredAchievements = achievementsData.filter(
-    (a) => a.isFeatured
-  );
+  
+  const latestAchievements = [...achievementsData]
+    .sort((a, b) => {
+      const dateA = extractDateFromUrl(a.imageUrl);
+      const dateB = extractDateFromUrl(b.imageUrl);
+      return dateB.getTime() - dateA.getTime();
+    })
+    .slice(0, 3);
+
   const skillsToShow = skillsData.featuredSkills;
   const homeContent = content.home;
 
@@ -192,7 +211,7 @@ export default function Home() {
       )}
 
       {/* Quick Achievements */}
-      {featuredAchievements.length > 0 && (
+      {latestAchievements.length > 0 && (
         <section id="achievements" className="container">
            <div className="text-center mb-8">
             <h2 className="text-3xl font-bold">
@@ -201,7 +220,7 @@ export default function Home() {
             <p className="text-muted-foreground">{homeContent.sections.recentActivities.description}</p>
           </div>
           <div className="mx-auto grid max-w-4xl gap-8 md:grid-cols-2">
-            {featuredAchievements.map((achievement) => (
+            {latestAchievements.map((achievement) => (
               <Card key={achievement.id} className="transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
                 <CardHeader>
                   <CardTitle>{achievement.name}</CardTitle>
