@@ -13,11 +13,7 @@
       "Engineered and optimized large-scale ML workflows using PySpark on Databricks, reducing data preprocessing time by 5% through analytical problem-solving and efficient distributed computing architecture.",
       "Architected a production-ready RAG-based Chatbot leveraging LangChain and LangGraph, enhancing the accuracy of client information retrieval by 15% and demonstrating innovative creativity in applying Generative AI to real-world business automation."
     ],
-    "technologies": ["PySpark", "Databricks", "LangChain", "LangGraph", "Generative AI"],
-    "workImages": [
-      { "url": "https://picsum.photos/600/400", "dataAiHint": "office team" },
-      { "url": "https://picsum.photos/600/400", "dataAiHint": "code computer" }
-    ]
+    "technologies": ["PySpark", "Databricks", "LangChain", "LangGraph", "Generative AI"]
   },
   {
     "id": 2,
@@ -34,19 +30,12 @@
       "Developed and deployed a scalable REST API to serve the ML model, enabling real-time predictions and reducing manual processing effort by 20+ hours per week, highlighting strong initiative and end-to-end project ownership.",
       "Authored comprehensive documentation and held knowledge-transfer sessions for the help-desk team, ensuring smooth adoption of the new automated system and showcasing effective knowledge sharing and communication."
     ],
-    "technologies": ["Python", "Pandas", "Scikit-learn", "REST API", "Machine Learning"],
-    "workImages": [
-      {
-        "url": "https://picsum.photos/600/400",
-        "dataAiHint": "conference presentation"
-      },
-      { "url": "https://picsum.photos/600/400", "dataAiHint": "whiteboard session" }
-    ]
+    "technologies": ["Python", "Pandas", "Scikit-learn", "REST API", "Machine Learning"]
   },
   {
     "id": 3,
     "slug": "compucom-software-intern",
-    "company": "Compucom Software Limited",
+    "company": "Compucom Software Limited (CSL)",
     "position": "Backend Developer & ML Intern",
     "location": "Jaipur, Rajasthan, India",
     "duration": "Jun 2024 – Sep 2024",
@@ -63,7 +52,7 @@
   {
     "id": 4,
     "slug": "phoenix-web-dev-intern",
-    "company": "Phoenix Advanced Softwares Pvt. Ltd.",
+    "company": "Phoenix Advanced Softwares Pvt. Ltd. (PHX)",
     "position": "Web Development Intern",
     "location": "Jaipur, Rajasthan, India",
     "duration": "Aug 2023 – Sep 2023",

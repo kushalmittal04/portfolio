@@ -46,7 +46,10 @@ export default function ExperiencePage() {
                         <div>
                             <CardTitle className="text-2xl">{exp.position}</CardTitle>
                             <CardDescription className="text-base">
-                            {exp.company} &middot; {exp.location}
+                                {exp.company}
+                            </CardDescription>
+                            <CardDescription className="text-base">
+                                {exp.location}
                             </CardDescription>
                             <p className="text-sm text-muted-foreground mt-1">{exp.duration}</p>
                         </div>
@@ -62,6 +65,7 @@ export default function ExperiencePage() {
                         {tech}
                       </Badge>
                     ))}
+                    {exp.technologies.length > 4 && <Badge variant="outline">+{exp.technologies.length - 4} more</Badge>}
                   </div>
                    <Button asChild variant="default" size="sm">
                     <Link href={`/experience/${exp.slug}`}>
