@@ -16,7 +16,7 @@ import {
 } from "@/components/ui/card";
 import { achievementsData, certificatesData } from "@/data/credentials";
 import { Button } from "@/components/ui/button";
-import { Eye } from "lucide-react";
+import { Eye, FileText } from "lucide-react";
 import content from "@/data/pageContent.json";
 
 export default function CredentialsPage() {
@@ -32,7 +32,7 @@ export default function CredentialsPage() {
          <Link href={cert.imageUrl} target="_blank" rel="noopener noreferrer" className="group block h-full">
             <Card className="group cursor-pointer overflow-hidden transition-all hover:shadow-lg h-full flex flex-col">
               <div className="relative aspect-video bg-muted flex items-center justify-center">
-                  <p className="text-muted-foreground p-4 text-center font-semibold">View Certificate</p>
+                  <FileText className="w-16 h-16 text-muted-foreground" />
               </div>
               <CardHeader className="flex-grow">
                 <CardTitle className="text-lg">{cert.name}</CardTitle>
