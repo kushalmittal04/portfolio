@@ -53,11 +53,12 @@ export default function CredentialsPage() {
   const filteredCertificates = useMemo(() => {
     return certificatesData
       .filter((cert) => {
+        const lowercasedSearchTerm = searchTerm.toLowerCase();
         const matchesSearch =
-          cert.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-          cert.issuer.toLowerCase().includes(searchTerm.toLowerCase()) ||
+          cert.name.toLowerCase().includes(lowercasedSearchTerm) ||
+          cert.issuer.toLowerCase().includes(lowercasedSearchTerm) ||
           cert.skills.some((skill) =>
-            skill.toLowerCase().includes(searchTerm.toLowerCase())
+            skill.toLowerCase().includes(lowercasedSearchTerm)
           );
         const matchesType =
           filterType === "All" || cert.type === filterType;
