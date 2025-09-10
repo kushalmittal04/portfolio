@@ -2,56 +2,36 @@
 [
   {
     "id": 1,
-    "slug": "ey",
-    "company": "Ernst & Young (EY)",
-    "position": "AI/ML Intern",
-    "location": "Bengaluru, Karnataka, India",
-    "duration": "Jul 2025 – Present",
-    "startDate": "2025-07-14",
-    "endDate": "Present",
-    "period": "",
-    "companyUrl": "https://www.ey.com/en_in/",
-    "gmapUrl": "https://www.google.com/maps/search/?api=1&query=1st, 8th & 16th Floor, Ernst & Young, TOWER-A, PRESTIGE SHANTINIKETAN, ITPL Main Rd, Hudi, Thigalarapalya, Krishnarajapuram, Bengaluru, Karnataka 560067",
-    "logoUrl": "/images/experiences/logos/ey.jpg",
-    "dataAiHint": "logo professional services",
-    "description": [
-      "Engineered and optimized <strong>large-scale ML workflows</strong> using <strong>PySpark on Databricks</strong>, reducing data preprocessing time by 5% through analytical problem-solving and efficient distributed computing architecture.",
-      "Architected a production-ready <strong>RAG-based Chatbot</strong> leveraging <strong>LangChain and LangGraph</strong>, enhancing the accuracy of client information retrieval by 15% and demonstrating innovative creativity in applying <strong>Generative AI</strong> to real-world business automation."
+    "slug": "phx",
+    "company": "Phoenix Advanced Softwares Pvt. Ltd. (PHX)",
+    "position": "Web Development Intern",
+    "location": "Jaipur, Rajasthan, India",
+    "duration": "Aug 2023 – Sep 2023",
+    "startDate": "2023-08-07",
+    "endDate": "2023-09-07",
+    "period": "1 month",
+    "companyUrl": "https://www.phoenixsoftwares.in/",
+    "gmapUrl": "https://www.google.com/maps/search/?api=1&query=IT-2005, IT Zone, Ramchandrapura, Sitapura Industrial Area, Sitapura, Jaipur, Rajasthan 302022",
+    "logoUrl": "/images/experiences/logos/phx.jpg",
+    "dataAiHint": "logo abstract",
+    "certificateUrl": "/images/experiences/phx/0.jpg",
+    "workImages": [
+      { "url": "/images/experiences/phx/1.jpg", "dataAiHint": "office workspace" },
+      { "url": "/images/experiences/phx/2.jpg", "dataAiHint": "team meeting" },
+      { "url": "/images/experiences/phx/3.jpg", "dataAiHint": "code screen" },
+      { "url": "/images/experiences/phx/4.jpg", "dataAiHint": "presentation slide" },
+      { "url": "/images/experiences/phx/5.jpg", "dataAiHint": "whiteboard diagram" }
     ],
-    "technologies": ["PySpark", "Databricks", "LangChain", "LangGraph", "Generative AI", "Agents", "Agentic AI"]
+    "description": [
+      "Developed 10+ dynamic, responsive, and interactive web pages using <strong>HTML, CSS, JavaScript, and PHP</strong>, contributing to a measured 15% increase in user engagement through creative and user-centric front-end design.",
+      "Significantly enhanced application security by implementing a robust <strong>JWT-based authentication system</strong> from scratch, demonstrating reliable technical judgment and a deep understanding of web security principles.",
+      "Built an <strong>automated data scraping pipeline</strong> using Selenium to collect and aggregate information from 50+ different sources, improving data timeliness by 90% and saving 5+ hours of manual work weekly.",
+      "Proactively identified performance bottlenecks in existing web pages and <strong>optimized them</strong>, resulting in faster load times and an improved user experience, showcasing self-motivation and a commitment to quality."
+    ],
+    "technologies": ["HTML", "CSS", "JavaScript", "PHP", "JWT", "Selenium", "Web Scraping"]
   },
   {
     "id": 2,
-    "slug": "nic",
-    "company": "National Informatics Centre (NIC)",
-    "position": "ML Intern",
-    "location": "Lucknow, Uttar Pradesh, India",
-    "duration": "May 2025 – Jul 2025",
-    "startDate": "2025-05-05",
-    "endDate": "2025-07-04",
-    "period": "2 months",
-    "companyUrl": "https://www.nic.gov.in/",
-    "gmapUrl": "https://www.google.com/maps/search/?api=1&query=RWQV+6W7, Sarojini Naidu Marg, Block A, Raj Bhavan Colony, Hasanganj, Lucknow, Uttar Pradesh 226001",
-    "logoUrl": "/images/experiences/logos/nic.jpg",
-    "dataAiHint": "logo government",
-    "certificateUrl": "/images/experiences/nic/0.jpg",
-    "workImages": [
-      { "url": "/images/experiences/nic/1.jpg", "dataAiHint": "office workspace" },
-      { "url": "/images/experiences/nic/2.jpg", "dataAiHint": "team meeting" },
-      { "url": "/images/experiences/nic/3.jpg", "dataAiHint": "code screen" },
-      { "url": "/images/experiences/nic/4.jpg", "dataAiHint": "presentation slide" },
-      { "url": "/images/experiences/nic/5.jpg", "dataAiHint": "whiteboard diagram" }
-    ],
-    "description": [
-      "Automated the <strong>extraction and transformation</strong> of 10,000+ unstructured emails into structured data using Python and Pandas, demonstrating meticulous attention to detail and creating a clean dataset for analysis.",
-      "Executed the <strong>full machine learning lifecycle</strong>, performing in-depth EDA, data cleaning, and feature engineering to build a highly accurate <strong>supervised classification model</strong> for automated email categorization.",
-      "Developed and deployed a scalable <strong>REST API</strong> to serve the ML model, enabling real-time predictions and reducing manual processing effort by 20+ hours per week, highlighting strong initiative and end-to-end project ownership.",
-      "Authored comprehensive documentation and held <strong>knowledge-transfer sessions</strong> for the help-desk team, ensuring smooth adoption of the new automated system and showcasing effective knowledge sharing and communication."
-    ],
-    "technologies": ["Python", "Pandas", "Scikit-learn", "REST API", "Machine Learning", "Django", "Data Analysis"]
-  },
-  {
-    "id": 3,
     "slug": "csl",
     "company": "Compucom Software Limited (CSL)",
     "position": "Backend Developer & ML Intern",
@@ -81,33 +61,53 @@
     "technologies": ["PHP", "REST APIs", "Postman", "Machine Learning", "Scikit-learn", "Agile", "SQL"]
   },
   {
-    "id": 4,
-    "slug": "phx",
-    "company": "Phoenix Advanced Softwares Pvt. Ltd. (PHX)",
-    "position": "Web Development Intern",
-    "location": "Jaipur, Rajasthan, India",
-    "duration": "Aug 2023 – Sep 2023",
-    "startDate": "2023-08-07",
-    "endDate": "2023-09-07",
-    "period": "1 month",
-    "companyUrl": "https://www.phoenixsoftwares.in/",
-    "gmapUrl": "https://www.google.com/maps/search/?api=1&query=IT-2005, IT Zone, Ramchandrapura, Sitapura Industrial Area, Sitapura, Jaipur, Rajasthan 302022",
-    "logoUrl": "/images/experiences/logos/phx.jpg",
-    "dataAiHint": "logo abstract",
-    "certificateUrl": "/images/experiences/phx/0.jpg",
+    "id": 3,
+    "slug": "nic",
+    "company": "National Informatics Centre (NIC)",
+    "position": "ML Intern",
+    "location": "Lucknow, Uttar Pradesh, India",
+    "duration": "May 2025 – Jul 2025",
+    "startDate": "2025-05-05",
+    "endDate": "2025-07-04",
+    "period": "2 months",
+    "companyUrl": "https://www.nic.gov.in/",
+    "gmapUrl": "https://www.google.com/maps/search/?api=1&query=RWQV+6W7, Sarojini Naidu Marg, Block A, Raj Bhavan Colony, Hasanganj, Lucknow, Uttar Pradesh 226001",
+    "logoUrl": "/images/experiences/logos/nic.jpg",
+    "dataAiHint": "logo government",
+    "certificateUrl": "/images/experiences/nic/0.jpg",
     "workImages": [
-      { "url": "/images/experiences/phx/1.jpg", "dataAiHint": "office workspace" },
-      { "url": "/images/experiences/phx/2.jpg", "dataAiHint": "team meeting" },
-      { "url": "/images/experiences/phx/3.jpg", "dataAiHint": "code screen" },
-      { "url": "/images/experiences/phx/4.jpg", "dataAiHint": "presentation slide" },
-      { "url": "/images/experiences/phx/5.jpg", "dataAiHint": "whiteboard diagram" }
+      { "url": "/images/experiences/nic/1.jpg", "dataAiHint": "office workspace" },
+      { "url": "/images/experiences/nic/2.jpg", "dataAiHint": "team meeting" },
+      { "url": "/images/experiences/nic/3.jpg", "dataAiHint": "code screen" },
+      { "url": "/images/experiences/nic/4.jpg", "dataAiHint": "presentation slide" },
+      { "url": "/images/experiences/nic/5.jpg", "dataAiHint": "whiteboard diagram" }
     ],
     "description": [
-      "Developed 10+ dynamic, responsive, and interactive web pages using <strong>HTML, CSS, JavaScript, and PHP</strong>, contributing to a measured 15% increase in user engagement through creative and user-centric front-end design.",
-      "Significantly enhanced application security by implementing a robust <strong>JWT-based authentication system</strong> from scratch, demonstrating reliable technical judgment and a deep understanding of web security principles.",
-      "Built an <strong>automated data scraping pipeline</strong> using Selenium to collect and aggregate information from 50+ different sources, improving data timeliness by 90% and saving 5+ hours of manual work weekly.",
-      "Proactively identified performance bottlenecks in existing web pages and <strong>optimized them</strong>, resulting in faster load times and an improved user experience, showcasing self-motivation and a commitment to quality."
+      "Automated the <strong>extraction and transformation</strong> of 10,000+ unstructured emails into structured data using Python and Pandas, demonstrating meticulous attention to detail and creating a clean dataset for analysis.",
+      "Executed the <strong>full machine learning lifecycle</strong>, performing in-depth EDA, data cleaning, and feature engineering to build a highly accurate <strong>supervised classification model</strong> for automated email categorization.",
+      "Developed and deployed a scalable <strong>REST API</strong> to serve the ML model, enabling real-time predictions and reducing manual processing effort by 20+ hours per week, highlighting strong initiative and end-to-end project ownership.",
+      "Authored comprehensive documentation and held <strong>knowledge-transfer sessions</strong> for the help-desk team, ensuring smooth adoption of the new automated system and showcasing effective knowledge sharing and communication."
     ],
-    "technologies": ["HTML", "CSS", "JavaScript", "PHP", "JWT", "Selenium", "Web Scraping"]
+    "technologies": ["Python", "Pandas", "Scikit-learn", "REST API", "Machine Learning", "Django", "Data Analysis"]
+  },
+  {
+    "id": 4,
+    "slug": "ey",
+    "company": "Ernst & Young (EY)",
+    "position": "AI/ML Intern",
+    "location": "Bengaluru, Karnataka, India",
+    "duration": "Jul 2025 – Present",
+    "startDate": "2025-07-14",
+    "endDate": "Present",
+    "period": "",
+    "companyUrl": "https://www.ey.com/en_in/",
+    "gmapUrl": "https://www.google.com/maps/search/?api=1&query=1st, 8th & 16th Floor, Ernst & Young, TOWER-A, PRESTIGE SHANTINIKETAN, ITPL Main Rd, Hudi, Thigalarapalya, Krishnarajapuram, Bengaluru, Karnataka 560067",
+    "logoUrl": "/images/experiences/logos/ey.jpg",
+    "dataAiHint": "logo professional services",
+    "description": [
+      "Engineered and optimized <strong>large-scale ML workflows</strong> using <strong>PySpark on Databricks</strong>, reducing data preprocessing time by 5% through analytical problem-solving and efficient distributed computing architecture.",
+      "Architected a production-ready <strong>RAG-based Chatbot</strong> leveraging <strong>LangChain and LangGraph</strong>, enhancing the accuracy of client information retrieval by 15% and demonstrating innovative creativity in applying <strong>Generative AI</strong> to real-world business automation."
+    ],
+    "technologies": ["PySpark", "Databricks", "LangChain", "LangGraph", "Generative AI", "Agents", "Agentic AI"]
   }
 ]

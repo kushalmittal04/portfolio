@@ -9,6 +9,8 @@ import content from "@/data/pageContent.json";
 
 export default function EducationPage() {
   const educationContent = content.education;
+  const sortedEducation = [...educationData].sort((a, b) => b.id - a.id);
+
   return (
     <div className="container mx-auto max-w-5xl px-4 py-16 animate-in fade-in-0 slide-in-from-bottom-8 duration-1000">
       <div className="text-center mb-12">
@@ -23,7 +25,7 @@ export default function EducationPage() {
         {/* Timeline Line */}
         <div className="absolute left-4 md:left-1/2 transform md:-translate-x-1/2 h-full w-0.5 bg-border"></div>
         <div className="space-y-12">
-          {educationData.map((edu, index) => (
+          {sortedEducation.map((edu, index) => (
             <div key={edu.id} className="relative pl-12 md:pl-0">
               {/* Timeline Dot */}
               <div className="absolute left-4 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-8 h-8 bg-primary rounded-full flex items-center justify-center ring-8 ring-background md:left-1/2">
@@ -31,7 +33,7 @@ export default function EducationPage() {
               </div>
               <div
                 className={`w-full flex md:justify-start ${
-                  index % 2 === 0 ? "md:justify-start" : "md:justify-end"
+                  index % 2 !== 0 ? "md:justify-start" : "md:justify-end"
                 }`}
               >
                 <div className="w-full md:w-1/2 md:px-8">

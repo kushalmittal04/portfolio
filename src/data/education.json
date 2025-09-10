@@ -2,14 +2,13 @@
 [
   {
     "id": 1,
-    "institution": "Poornima College of Engineering, Jaipur",
-    "university": "Rajasthan Technical University",
-    "degree": "B.Tech, Artificial Intelligence & Data Science",
-    "duration": "2022 - 2026",
-    "score": "9.44 CGPA (IV Sem)",
-    "marksheetUrl": "/images/marksheets/marksheet_btech.jpg",
+    "institution": "Birla Int School Bander Sindri Ajmer",
+    "degree": "10th Standard (CBSE)",
+    "duration": "2019",
+    "score": "85.8%",
+    "marksheetUrl": "/images/marksheets/marksheet_10.jpg",
     "dataAiHint": "document certificate",
-    "location": "Jaipur, Rajasthan, India"
+    "location": "Ajmer, Rajasthan, India"
   },
   {
     "id": 2,
@@ -23,12 +22,14 @@
   },
   {
     "id": 3,
-    "institution": "Birla Int School Bander Sindri Ajmer",
-    "degree": "10th Standard (CBSE)",
-    "duration": "2019",
-    "score": "85.8%",
-    "marksheetUrl": "/images/marksheets/marksheet_10.jpg",
+    "institution": "Poornima College of Engineering, Jaipur",
+    "university": "Rajasthan Technical University",
+    "degree": "B.Tech, Artificial Intelligence & Data Science",
+    "duration": "2022 - 2026",
+    "score": "9.44 CGPA (IV Sem)",
+    "marksheetUrl": "/images/marksheets/marksheet_btech.jpg",
     "dataAiHint": "document certificate",
-    "location": "Ajmer, Rajasthan, India"
+    "location": "Jaipur, Rajasthan, India"
   }
+  
 ]

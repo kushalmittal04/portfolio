@@ -17,6 +17,8 @@ import content from "@/data/pageContent.json";
 
 export default function ExperiencePage() {
   const experienceContent = content.experience;
+  const sortedExperience = [...experienceData].sort((a, b) => b.id - a.id);
+
   return (
     <div className="container mx-auto max-w-5xl px-4 py-16 animate-in fade-in-0 slide-in-from-bottom-8 duration-1000">
       <div className="text-center mb-12">
@@ -32,7 +34,7 @@ export default function ExperiencePage() {
         {/* Timeline Line */}
         <div className="absolute left-4 md:left-1/2 top-0 h-full w-0.5 -translate-x-1/2 bg-border"></div>
         <div className="space-y-12">
-          {experienceData.map((exp, index) => (
+          {sortedExperience.map((exp, index) => (
             <div key={exp.id} className="relative pl-12 md:pl-0">
               {/* Timeline Dot */}
               <div className="absolute left-4 top-6 h-8 w-8 -translate-x-1/2 rounded-full bg-primary flex items-center justify-center ring-8 ring-background md:left-1/2">
@@ -40,7 +42,7 @@ export default function ExperiencePage() {
               </div>
               <div
                 className={`w-full flex ${
-                  index % 2 === 0 ? "md:justify-start" : "md:justify-end"
+                  index % 2 !== 0 ? "md:justify-start" : "md:justify-end"
                 }`}
               >
                 <div className="w-full md:w-1/2 md:px-8">
