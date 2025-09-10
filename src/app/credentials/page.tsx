@@ -9,7 +9,6 @@ import {
   Card,
   CardContent,
   CardDescription,
-  CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
@@ -105,7 +104,7 @@ export default function CredentialsPage() {
                            <Link key={cert.id} href={cert.fileUrl} target="_blank" rel="noopener noreferrer" className="group block h-full">
                                 <Card className="flex h-full flex-col items-center justify-center gap-4 overflow-hidden p-4 transition-all hover:shadow-xl hover:-translate-y-1">
                                 {cert.featuredImageUrl && (
-                                  <div className="relative aspect-square w-full">
+                                  <div className="relative h-32 w-32">
                                     <Image
                                       src={cert.featuredImageUrl}
                                       alt={`${cert.name} preview`}
