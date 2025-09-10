@@ -1,7 +1,6 @@
 
 import Link from "next/link";
 import { Github, Linkedin, Mail } from "lucide-react";
-import content from "@/data/pageContent.json";
 
 const navLinks = [
     { href: "/about", label: "About" },
