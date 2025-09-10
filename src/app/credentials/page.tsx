@@ -96,7 +96,7 @@ export default function CredentialsPage() {
                     <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
                         {featuredCerts.map((cert) => (
                            <Link key={cert.id} href={cert.fileUrl} target="_blank" rel="noopener noreferrer" className="group block h-full">
-                                <Card className="flex h-full flex-col items-center justify-center gap-4 overflow-hidden p-4 transition-all hover:shadow-xl hover:-translate-y-1">
+                                <Card className="flex h-full flex-col items-center justify-center gap-4 overflow-hidden p-4 transition-all duration-300 hover:shadow-xl hover:-translate-y-2 hover:rotate-[-2deg]">
                                 {cert.featuredImageUrl && (
                                   <div className="relative aspect-square w-32">
                                     <Image
@@ -168,7 +168,7 @@ export default function CredentialsPage() {
 
                <div className="space-y-4">
                 {filteredCertificates.map((cert) => (
-                  <Card key={cert.id} className="transition-shadow hover:shadow-md">
+                  <Card key={cert.id} className="transition-all duration-300 hover:shadow-xl hover:-translate-y-1 hover:rotate-[-1deg]">
                     <div className="p-4 grid grid-cols-[1fr_auto] items-start gap-4">
                       <div>
                         <h4 className="font-semibold text-lg">{cert.name}</h4>
@@ -212,7 +212,7 @@ export default function CredentialsPage() {
         <TabsContent value="achievements" className="mt-8">
           <div className="grid gap-8 md:grid-cols-2">
             {achievementsData.map((achievement) => (
-              <Card key={achievement.id} className="flex flex-col">
+              <Card key={achievement.id} className="flex flex-col transition-all duration-300 hover:shadow-xl hover:-translate-y-1 hover:rotate-[-1deg]">
                 <CardHeader>
                   <CardTitle>{achievement.name}</CardTitle>
                 </CardHeader>
