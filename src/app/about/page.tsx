@@ -55,7 +55,7 @@ export default function AboutPage() {
 
         {/* Detailed Content */}
         <section className="grid md:grid-cols-2 gap-8 text-muted-foreground">
-           <div className="space-y-4 p-6 rounded-lg bg-card border">
+           <div className="space-y-4 p-6 rounded-lg bg-card border transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
               <h3 className="text-2xl font-bold text-foreground">{aboutContent.technicalApproach.title}</h3>
               <p>
                 {aboutContent.technicalApproach.intro}
@@ -63,7 +63,7 @@ export default function AboutPage() {
               <p dangerouslySetInnerHTML={{ __html: aboutContent.technicalApproach.aiMl }} />
               <p dangerouslySetInnerHTML={{ __html: aboutContent.technicalApproach.fullStack }} />
             </div>
-            <div className="space-y-4 p-6 rounded-lg bg-card border">
+            <div className="space-y-4 p-6 rounded-lg bg-card border transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
               <h3 className="text-2xl font-bold text-foreground">{aboutContent.coreStrengths.title}</h3>
               <p>
                 {aboutContent.coreStrengths.paragraph1}
@@ -82,7 +82,7 @@ export default function AboutPage() {
           </div>
           <div className="space-y-8">
             {categories.map((category) => (
-              <Card key={category.name} className="shadow-lg">
+              <Card key={category.name} className="shadow-lg transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
                  <CardHeader>
                     <CardTitle className="text-xl text-primary">{category.name}</CardTitle>
                 </CardHeader>
@@ -119,7 +119,7 @@ export default function AboutPage() {
                     </div>
                      <div className={`w-full flex ${index % 2 === 0 ? 'justify-start' : 'justify-end'}`}>
                       <div className="w-1/2 px-8">
-                         <Card className="w-full shadow-md hover:shadow-lg transition-shadow duration-300">
+                         <Card className="w-full shadow-md hover:shadow-lg transition-shadow duration-300 hover:-translate-y-1">
                            <CardContent className="p-6 text-center">
                                <p className="text-sm text-muted-foreground">{edu.duration}</p>
                                <h3 className="text-xl font-semibold mt-1">{edu.degree}</h3>
