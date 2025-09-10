@@ -1,3 +1,4 @@
+
 {
   "home": {
     "title": "Kushal Mittal",
@@ -29,6 +30,7 @@
   "about": {
     "title": "About Me",
     "description": "My educational journey and background",
+    "profilePicUrl": "/images/profile_pics/pic_2.jpeg",
     "whoAmI": {
       "title": "Who I Am",
       "content": "I am Kushal Mittal, a final-year B.Tech student specializing in Artificial Intelligence and Data Science. I describe myself as a Stackless Engineer—a problem-solver first and a technologist second. My focus isn't on any single framework but on selecting the best tools for the task, whether that's building a predictive model or a full-stack application."

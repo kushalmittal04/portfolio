@@ -27,7 +27,7 @@ export default function AboutPage() {
         <section className="grid grid-cols-1 md:grid-cols-3 gap-12 items-center">
           <div className="md:col-span-1 flex justify-center">
             <Image
-              src="/images/profile_pics/pic_2.jpeg"
+              src={aboutContent.profilePicUrl}
               alt="Kushal Mittal"
               width={300}
               height={300}
