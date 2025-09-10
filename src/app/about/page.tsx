@@ -10,113 +10,139 @@ import {
 import educationData from "@/data/education.json";
 import { ImageDialog } from "@/components/ImageDialog";
 import Image from "next/image";
-import { Eye } from "lucide-react";
+import { Eye, GraduationCap } from "lucide-react";
 import skillsData from "@/data/skills.json";
 import { Badge } from "@/components/ui/badge";
 import content from "@/data/pageContent.json";
+import { TechIcon } from "@/components/TechIcon";
 
 export default function AboutPage() {
   const { categories } = skillsData;
   const aboutContent = content.about;
 
   return (
-    <div className="container mx-auto max-w-5xl px-4 py-16 animate-in fade-in-0 slide-in-from-bottom-8 duration-1000">
-      <div className="space-y-16">
-        <div className="text-center">
-          <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">
-            {aboutContent.title}
-          </h1>
-          <p className="mt-4 text-lg text-muted-foreground">
-            {aboutContent.description}
-          </p>
-          <div className="mt-8 flex justify-center">
+    <div className="container mx-auto max-w-6xl px-4 py-16 animate-in fade-in-0 slide-in-from-bottom-8 duration-1000">
+      <div className="space-y-20">
+        {/* Intro Section */}
+        <section className="grid grid-cols-1 md:grid-cols-3 gap-12 items-center">
+          <div className="md:col-span-1 flex justify-center">
             <Image
-              src="https://picsum.photos/200/200"
+              src="https://picsum.photos/400/400"
               alt="Kushal Mittal"
-              width={200}
-              height={200}
-              className="rounded-full object-cover"
+              width={300}
+              height={300}
+              className="rounded-full object-cover aspect-square shadow-lg"
               data-ai-hint="portrait professional"
             />
           </div>
-          <div className="mt-8 max-w-3xl mx-auto space-y-6 text-left text-muted-foreground">
-            <div>
-              <h3 className="text-2xl font-bold text-foreground mb-2">{aboutContent.whoAmI.title}</h3>
-              <p>
-                {aboutContent.whoAmI.content}
-              </p>
+          <div className="md:col-span-2 space-y-4">
+            <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">
+              {aboutContent.title}
+            </h1>
+            <p className="text-xl text-muted-foreground">
+              {aboutContent.description}
+            </p>
+             <div className="space-y-6 text-muted-foreground pt-4">
+               <div>
+                  <h3 className="text-2xl font-bold text-foreground mb-2">{aboutContent.whoAmI.title}</h3>
+                  <p>
+                    {aboutContent.whoAmI.content}
+                  </p>
+                </div>
             </div>
-            <div>
-              <h3 className="text-2xl font-bold text-foreground mb-2">{aboutContent.technicalApproach.title}</h3>
-              <p className="mb-4">
+          </div>
+        </section>
+
+        {/* Detailed Content */}
+        <section className="grid md:grid-cols-2 gap-8 text-muted-foreground">
+           <div className="space-y-4 p-6 rounded-lg bg-card border">
+              <h3 className="text-2xl font-bold text-foreground">{aboutContent.technicalApproach.title}</h3>
+              <p>
                 {aboutContent.technicalApproach.intro}
               </p>
-              <p className="mb-4" dangerouslySetInnerHTML={{ __html: aboutContent.technicalApproach.aiMl }} />
+              <p dangerouslySetInnerHTML={{ __html: aboutContent.technicalApproach.aiMl }} />
               <p dangerouslySetInnerHTML={{ __html: aboutContent.technicalApproach.fullStack }} />
             </div>
-            <div>
-              <h3 className="text-2xl font-bold text-foreground mb-2">{aboutContent.coreStrengths.title}</h3>
-              <p className="mb-4">
+            <div className="space-y-4 p-6 rounded-lg bg-card border">
+              <h3 className="text-2xl font-bold text-foreground">{aboutContent.coreStrengths.title}</h3>
+              <p>
                 {aboutContent.coreStrengths.paragraph1}
               </p>
               <p>
                 {aboutContent.coreStrengths.paragraph2}
               </p>
             </div>
+        </section>
+
+
+        {/* Skills Section */}
+        <section className="space-y-8">
+          <div className="text-center">
+            <h2 className="text-3xl font-bold">{aboutContent.skillsTitle}</h2>
           </div>
-        </div>
-
-        <div className="space-y-8">
-          <h2 className="text-3xl font-bold text-center">{aboutContent.skillsTitle}</h2>
-          <Card className="shadow-lg">
-            <CardContent className="p-6 space-y-6">
-              {categories.map((category) => (
-                <div key={category.name} className="grid md:grid-cols-[200px_1fr] gap-4 items-start">
-                  <h3 className="font-bold text-lg text-primary">{category.name}</h3>
-                  <div className="flex flex-wrap gap-2">
+          <div className="space-y-8">
+            {categories.map((category) => (
+              <Card key={category.name} className="shadow-lg">
+                 <CardHeader>
+                    <CardTitle className="text-xl text-primary">{category.name}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="flex flex-wrap gap-4">
                     {category.skills.map((skill) => (
-                      <Badge key={skill} variant="secondary" className="text-sm">{skill}</Badge>
+                       <div key={skill} className="flex flex-col items-center gap-2 text-center w-24">
+                          <div className="w-16 h-16 flex items-center justify-center rounded-lg bg-muted shadow-sm hover:shadow-md transition-shadow">
+                              <TechIcon technology={skill} className="w-9 h-9" />
+                          </div>
+                          <p className="font-semibold text-sm">{skill}</p>
+                        </div>
                     ))}
-                  </div>
-                </div>
-              ))}
-            </CardContent>
-          </Card>
-        </div>
-
-
-        <div className="space-y-8">
-          <h2 className="text-3xl font-bold text-center">{aboutContent.educationTitle}</h2>
-          <div className="space-y-6">
-            {educationData.map((edu) => (
-              <Card
-                key={edu.id}
-                className="w-full shadow-md hover:shadow-lg transition-shadow duration-300"
-              >
-                <CardContent className="p-6 grid grid-cols-[100px_1fr_auto] items-center gap-6">
-                  <p className="font-bold text-lg text-primary">{edu.degree.split(' ')[0]}</p>
-                  <div>
-                    <h3 className="text-xl font-semibold">{edu.degree}</h3>
-                    <p className="text-muted-foreground">{edu.institution}</p>
-                     <p className="font-semibold mt-1">{edu.score}</p>
-                  </div>
-                   <div className="flex flex-col items-end gap-2">
-                     <p className="text-sm text-muted-foreground">{edu.duration.split(' - ')[1]}</p>
-                     <ImageDialog
-                      imageUrl={edu.marksheetUrl}
-                      alt={`${edu.degree} Marksheet`}
-                      dataAiHint={edu.dataAiHint}
-                    >
-                      <Button variant="ghost" size="sm">
-                        <Eye className="mr-2 h-4 w-4" /> View Marksheet
-                      </Button>
-                    </ImageDialog>
                   </div>
                 </CardContent>
               </Card>
             ))}
           </div>
-        </div>
+        </section>
+
+
+        {/* Education Timeline */}
+        <section className="space-y-8">
+          <div className="text-center">
+            <h2 className="text-3xl font-bold text-center">{aboutContent.educationTitle}</h2>
+          </div>
+          <div className="relative">
+             <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-border"></div>
+             <div className="space-y-12">
+                {educationData.map((edu, index) => (
+                  <div key={edu.id} className="relative">
+                    <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-8 h-8 bg-primary rounded-full flex items-center justify-center ring-8 ring-background">
+                       <GraduationCap className="h-5 w-5 text-primary-foreground" />
+                    </div>
+                     <div className={`w-full flex ${index % 2 === 0 ? 'justify-start' : 'justify-end'}`}>
+                      <div className="w-1/2 px-8">
+                         <Card className="w-full shadow-md hover:shadow-lg transition-shadow duration-300">
+                           <CardContent className="p-6 text-center">
+                               <p className="text-sm text-muted-foreground">{edu.duration}</p>
+                               <h3 className="text-xl font-semibold mt-1">{edu.degree}</h3>
+                               <p className="text-muted-foreground">{edu.institution}</p>
+                               <p className="font-bold text-lg text-primary mt-2">{edu.score}</p>
+                               <ImageDialog
+                                imageUrl={edu.marksheetUrl}
+                                alt={`${edu.degree} Marksheet`}
+                                dataAiHint={edu.dataAiHint}
+                              >
+                                <Button variant="outline" size="sm" className="mt-4">
+                                  <Eye className="mr-2 h-4 w-4" /> View Marksheet
+                                </Button>
+                              </ImageDialog>
+                           </CardContent>
+                         </Card>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+             </div>
+          </div>
+        </section>
       </div>
     </div>
   );
