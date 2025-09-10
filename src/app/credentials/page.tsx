@@ -34,6 +34,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import { Label } from "@/components/ui/label";
 
 export default function CredentialsPage() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -57,7 +58,6 @@ export default function CredentialsPage() {
         const lowercasedSearchTerm = searchTerm.toLowerCase();
         const matchesSearch =
           cert.name.toLowerCase().includes(lowercasedSearchTerm) ||
-          cert.issuer.toLowerCase().includes(lowercasedSearchTerm) ||
           cert.skills.some((skill) =>
             skill.toLowerCase().includes(lowercasedSearchTerm)
           );
@@ -134,36 +134,42 @@ export default function CredentialsPage() {
                 <div className="relative sm:col-span-1">
                   <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
                   <Input
-                    placeholder="Search certifications..."
+                    placeholder="Search by name or skill..."
                     className="pl-10 w-full"
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
                   />
                 </div>
-                <Select value={filterType} onValueChange={setFilterType}>
-                  <SelectTrigger>
-                    <SelectValue placeholder="Filter by Type" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    {certificateTypes.map((type) => (
-                      <SelectItem key={type} value={type}>
-                        {type}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
-                <Select value={filterIssuer} onValueChange={setFilterIssuer}>
-                  <SelectTrigger>
-                    <SelectValue placeholder="Filter by Issuer" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    {certificateIssuers.map((issuer) => (
-                      <SelectItem key={issuer} value={issuer}>
-                        {issuer}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
+                <div className="flex items-center gap-2">
+                  <Label htmlFor="type-filter" className="text-sm font-medium">Type:</Label>
+                  <Select value={filterType} onValueChange={setFilterType}>
+                    <SelectTrigger id="type-filter">
+                      <SelectValue placeholder="Filter by Type" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      {certificateTypes.map((type) => (
+                        <SelectItem key={type} value={type}>
+                          {type}
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Label htmlFor="issuer-filter" className="text-sm font-medium">Issuer:</Label>
+                  <Select value={filterIssuer} onValueChange={setFilterIssuer}>
+                    <SelectTrigger id="issuer-filter">
+                      <SelectValue placeholder="Filter by Issuer" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      {certificateIssuers.map((issuer) => (
+                        <SelectItem key={issuer} value={issuer}>
+                          {issuer}
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
+                </div>
               </div>
 
                <div className="overflow-x-auto">
