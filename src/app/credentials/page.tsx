@@ -69,6 +69,10 @@ export default function CredentialsPage() {
     .filter(c => c.isFeatured)
     .sort((a, b) => new Date(b.issueDate).getTime() - new Date(a.issueDate).getTime());
 
+  const sortedAchievements = useMemo(() => {
+    return [...achievementsData].sort((a, b) => b.id - a.id);
+  }, []);
+
   return (
     <div className="container mx-auto max-w-7xl px-4 py-16 animate-in fade-in-0 slide-in-from-bottom-8 duration-1000">
       <div className="text-center mb-12">
@@ -217,7 +221,7 @@ export default function CredentialsPage() {
 
         <TabsContent value="achievements" className="mt-8">
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {achievementsData.map((achievement) => (
+            {sortedAchievements.map((achievement) => (
               <Card key={achievement.id} className="group relative flex flex-col overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
                  <div className="absolute top-0 right-0 m-4 rounded-full bg-primary/10 p-3 opacity-0 transition-all duration-300 group-hover:opacity-100 group-hover:rotate-12 group-hover:scale-110">
                     <FontAwesomeIcon icon={achievement.icon === 'Award' ? faAward : faStar} className="h-8 w-8 text-primary" />
