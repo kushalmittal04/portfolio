@@ -2,7 +2,7 @@
 [
   {
     "id": 1,
-    "slug": "ey-ai-ml-intern",
+    "slug": "ey",
     "company": "Ernst & Young (EY)",
     "position": "AI/ML Intern",
     "location": "Bengaluru, Karnataka, India",
@@ -22,7 +22,7 @@
   },
   {
     "id": 2,
-    "slug": "nic-ml-intern",
+    "slug": "nic",
     "company": "National Informatics Centre (NIC)",
     "position": "ML Intern",
     "location": "Lucknow, Uttar Pradesh, India",
@@ -52,7 +52,7 @@
   },
   {
     "id": 3,
-    "slug": "compucom-software-intern",
+    "slug": "csl",
     "company": "Compucom Software Limited (CSL)",
     "position": "Backend Developer & ML Intern",
     "location": "Jaipur, Rajasthan, India",
@@ -82,7 +82,7 @@
   },
   {
     "id": 4,
-    "slug": "phoenix-web-dev-intern",
+    "slug": "phx",
     "company": "Phoenix Advanced Softwares Pvt. Ltd. (PHX)",
     "position": "Web Development Intern",
     "location": "Jaipur, Rajasthan, India",
