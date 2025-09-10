@@ -27,6 +27,7 @@ export default function AboutPage() {
               height={300}
               className="rounded-full object-cover aspect-square shadow-lg"
               data-ai-hint="portrait professional"
+              priority
             />
           </div>
           <div className="md:col-span-2 space-y-4">

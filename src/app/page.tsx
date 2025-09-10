@@ -65,6 +65,7 @@ export default function Home() {
               height={150}
               className="rounded-full object-cover shadow-lg aspect-square"
               data-ai-hint="portrait professional"
+              priority
             />
             <div className="space-y-2">
               <h1 className="text-5xl font-bold tracking-tighter sm:text-6xl">

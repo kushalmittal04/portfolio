@@ -49,6 +49,7 @@ export default function ExperienceDetailPage({
             height={80}
             className="rounded-lg"
             data-ai-hint={experience.dataAiHint}
+            priority
           />
           <div>
             <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">
@@ -77,7 +78,7 @@ export default function ExperienceDetailPage({
             </CardContent>
           </Card>
           
-          {(experience.workImages || experience.certificateUrl) &&
+          {(experience.certificateUrl || (experience.workImages && experience.workImages.length > 0)) &&
             <Card>
                 <CardHeader>
                 <CardTitle>Gallery</CardTitle>
