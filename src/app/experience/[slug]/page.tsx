@@ -1,5 +1,7 @@
+
 import { notFound } from "next/navigation";
 import Image from "next/image";
+import Link from "next/link";
 import experienceData from "@/data/experience.json";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -11,7 +13,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { CheckCircle } from "lucide-react";
+import { ArrowLeft, CheckCircle } from "lucide-react";
 
 export async function generateStaticParams() {
   return experienceData.map((exp) => ({
@@ -32,6 +34,12 @@ export default function ExperienceDetailPage({
 
   return (
     <div className="container mx-auto max-w-5xl px-4 py-16 animate-in fade-in-0 slide-in-from-bottom-8 duration-1000">
+       <Button asChild variant="ghost" className="mb-8">
+        <Link href="/experience">
+          <ArrowLeft className="mr-2 h-4 w-4" />
+          Back to Experiences
+        </Link>
+      </Button>
       <header className="mb-12 space-y-4">
         <div className="flex items-center gap-4">
           <Image
