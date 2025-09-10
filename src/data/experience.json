@@ -24,6 +24,14 @@
     "duration": "May 2025 – Jul 2025",
     "logoUrl": "https://picsum.photos/100/100",
     "dataAiHint": "logo government",
+    "certificateUrl": "/images/experiences/nic/0.jpg",
+    "workImages": [
+      { "url": "/images/experiences/nic/1.jpg", "dataAiHint": "office workspace" },
+      { "url": "/images/experiences/nic/2.jpg", "dataAiHint": "team meeting" },
+      { "url": "/images/experiences/nic/3.jpg", "dataAiHint": "code screen" },
+      { "url": "/images/experiences/nic/4.jpg", "dataAiHint": "presentation slide" },
+      { "url": "/images/experiences/nic/5.jpg", "dataAiHint": "whiteboard diagram" }
+    ],
     "description": [
       "Automated the extraction and transformation of 10,000+ unstructured emails into structured data using Python and Pandas, demonstrating meticulous attention to detail and creating a clean dataset for analysis.",
       "Executed the full machine learning lifecycle, performing in-depth EDA, data cleaning, and feature engineering to build a highly accurate supervised classification model for automated email categorization.",
@@ -41,6 +49,14 @@
     "duration": "Jun 2024 – Sep 2024",
     "logoUrl": "https://picsum.photos/100/100",
     "dataAiHint": "logo software",
+     "certificateUrl": "/images/experiences/csl/0.jpg",
+    "workImages": [
+      { "url": "/images/experiences/csl/1.jpg", "dataAiHint": "office workspace" },
+      { "url": "/images/experiences/csl/2.jpg", "dataAiHint": "team meeting" },
+      { "url": "/images/experiences/csl/3.jpg", "dataAiHint": "code screen" },
+      { "url": "/images/experiences/csl/4.jpg", "dataAiHint": "presentation slide" },
+      { "url": "/images/experiences/csl/5.jpg", "dataAiHint": "whiteboard diagram" }
+    ],
     "description": [
       "Designed, developed, and documented 15+ secure RESTful APIs in PHP for a hotel management platform, ensuring 100% reliability through rigorous testing with Postman and exemplifying strong time management and backend expertise.",
       "Built a predictive analytics model using supervised ML techniques and Scikit-learn, which improved hotel occupancy rate forecasting accuracy by 15% and provided data-driven insights for strategic planning.",
@@ -58,6 +74,14 @@
     "duration": "Aug 2023 – Sep 2023",
     "logoUrl": "https://picsum.photos/100/100",
     "dataAiHint": "logo abstract",
+    "certificateUrl": "/images/experiences/phx/0.jpg",
+    "workImages": [
+      { "url": "/images/experiences/phx/1.jpg", "dataAiHint": "office workspace" },
+      { "url": "/images/experiences/phx/2.jpg", "dataAiHint": "team meeting" },
+      { "url": "/images/experiences/phx/3.jpg", "dataAiHint": "code screen" },
+      { "url": "/images/experiences/phx/4.jpg", "dataAiHint": "presentation slide" },
+      { "url": "/images/experiences/phx/5.jpg", "dataAiHint": "whiteboard diagram" }
+    ],
     "description": [
       "Developed 10+ dynamic, responsive, and interactive web pages using HTML, CSS, JavaScript, and PHP, contributing to a measured 15% increase in user engagement through creative and user-centric front-end design.",
       "Significantly enhanced application security by implementing a robust JWT-based authentication system from scratch, demonstrating reliable technical judgment and a deep understanding of web security principles.",
