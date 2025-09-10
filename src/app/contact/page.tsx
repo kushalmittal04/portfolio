@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useFormStatus } from "react-dom";
@@ -183,7 +182,7 @@ export default function ContactPage() {
             </CardHeader>
             <CardContent>
                <Button asChild className="w-full" size="lg">
-                  <a href="/resume.pdf" download="resume.pdf">
+                  <a href="/pdfs/Kushal_Mittal_Resume.pdf" download="Kushal_Mittal_Resume.pdf">
                     <Download className="mr-2 h-4 w-4" /> {contactContent.buttons.download}
                   </a>
                 </Button>

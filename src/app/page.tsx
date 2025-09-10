@@ -1,4 +1,3 @@
-
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Download, Github, PlayCircle } from "lucide-react";
@@ -37,11 +36,11 @@ export default function Home() {
         <div className="container px-4 md:px-6">
           <div className="flex flex-col items-center space-y-6 text-center">
             <Image
-              src="https://picsum.photos/200/200"
+              src="/images/profile_pics/pic_1.jpeg"
               alt="Kushal Mittal"
               width={150}
               height={150}
-              className="rounded-full object-cover"
+              className="rounded-full object-cover shadow-lg aspect-square"
               data-ai-hint="portrait professional"
             />
             <div className="space-y-2">
@@ -60,7 +59,7 @@ export default function Home() {
                 <Link href="/projects">{homeContent.buttons.work}</Link>
               </Button>
               <Button asChild variant="secondary" size="lg">
-                <a href="/resume.pdf" download="resume.pdf">
+                <a href="/pdfs/Kushal_Mittal_Resume.pdf" download="Kushal_Mittal_Resume.pdf">
                   {homeContent.buttons.resume} <Download className="ml-2 h-4 w-4" />
                 </a>
               </Button>
@@ -131,13 +130,13 @@ export default function Home() {
           <p className="text-muted-foreground">{homeContent.sections.skills.description}</p>
         </div>
         <div className="mx-auto max-w-4xl">
-           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-8 justify-center">
+           <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-4 gap-8 justify-center">
             {skillsToShow.map((tech) => (
               <div key={tech} className="flex flex-col items-center gap-2">
                  <div className="w-24 h-24 flex items-center justify-center rounded-lg bg-muted shadow-md hover:shadow-lg transition-shadow">
                     <TechIcon technology={tech} className="w-12 h-12" />
                  </div>
-                <p className="font-semibold">{tech}</p>
+                <p className="font-semibold text-center">{tech}</p>
               </div>
             ))}
           </div>
@@ -168,10 +167,10 @@ export default function Home() {
                       <CardTitle className="text-xl">
                         {latestInternship.position}
                       </CardTitle>
-                      <CardDescription>
+                      <CardDescription className="text-sm sm:text-base">
                         {latestInternship.company} &middot; {latestInternship.duration} &middot; {latestInternship.location}
                       </CardDescription>
-                      <p className="mt-4 text-muted-foreground">
+                      <p className="mt-4 text-muted-foreground line-clamp-3 sm:line-clamp-2">
                         {latestInternship.description[0]}
                       </p>
                        <div className="flex flex-wrap gap-2 mt-4">
