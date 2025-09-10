@@ -3,7 +3,6 @@ import { Card, CardContent } from "@/components/ui/card";
 import profilesData from "@/data/profiles.json";
 import * as Icons from "lucide-react";
 import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
 import content from "@/data/pageContent.json";
 
 const WhatsAppIcon = (props: React.SVGProps<SVGSVGElement>) => (
@@ -87,22 +86,43 @@ export default function ProfilesPage() {
                 {profilesData
                   .filter((p) => section.platforms.includes(p.platform))
                   .map((profile) => (
-                     <Link key={profile.id} href={profile.url} target="_blank" rel="noopener noreferrer" className="group block">
-                      <Card className="relative flex h-full flex-col items-center justify-center p-6 text-center transition-all duration-300 hover:shadow-xl hover:-translate-y-1 hover:bg-accent">
-                        <ArrowUpRight className="absolute top-4 right-4 h-4 w-4 text-muted-foreground opacity-0 transition-opacity group-hover:opacity-100" />
-                        <CardContent className="flex flex-col items-center gap-4 p-0">
-                           <LucideIcon
-                            name={profile.icon}
-                            className="h-16 w-16 text-primary"
-                          />
-                          <div>
-                            <p className="text-xl font-bold">{profile.platform}</p>
-                            <p className="text-sm text-muted-foreground">
-                              @{profile.username}
-                            </p>
-                          </div>
-                        </CardContent>
-                      </Card>
+                     <Link key={profile.id} href={profile.url} target="_blank" rel="noopener noreferrer" className="group block h-48 [perspective:1000px]">
+                        <div className="relative h-full w-full rounded-lg shadow-md transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+                            {/* Front of Card */}
+                            <div className="absolute inset-0 [backface-visibility:hidden]">
+                                <Card className="flex h-full w-full flex-col items-center justify-center p-6 text-center transition-shadow hover:shadow-xl">
+                                    <CardContent className="flex flex-col items-center gap-4 p-0">
+                                    <LucideIcon
+                                        name={profile.icon}
+                                        className="h-16 w-16 text-primary"
+                                    />
+                                    <div>
+                                        <p className="text-xl font-bold">{profile.platform}</p>
+                                        <p className="text-sm text-muted-foreground">
+                                        @{profile.username}
+                                        </p>
+                                    </div>
+                                    </CardContent>
+                                </Card>
+                            </div>
+
+                            {/* Back of Card */}
+                            <div className="absolute inset-0 [transform:rotateY(180deg)] [backface-visibility:hidden]">
+                                <Card className="flex h-full w-full flex-col items-center justify-center bg-muted p-6">
+                                     <CardContent className="flex flex-col items-center gap-4 p-0 text-center">
+                                        <h3 className="text-lg font-bold text-foreground">{profile.platform} Stats</h3>
+                                        <div className="space-y-2 text-sm">
+                                            {profile.stats.map(stat => (
+                                                <div key={stat.label}>
+                                                    <p className="font-semibold">{stat.value}</p>
+                                                    <p className="text-xs text-muted-foreground">{stat.label}</p>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    </CardContent>
+                                </Card>
+                            </div>
+                        </div>
                     </Link>
                   ))}
               </div>
