@@ -67,6 +67,13 @@ export default function Home() {
   const textTranslateY = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
   const imageScale = useTransform(scrollYProgress, [0, 0.5], [1, 0.8]);
 
+  const sectionAnimation = {
+    initial: { opacity: 0, y: 50 },
+    whileInView: { opacity: 1, y: 0 },
+    transition: { duration: 0.5, ease: "easeInOut" },
+    viewport: { once: true, amount: 0.2 }
+  };
+
   return (
     <div className="flex flex-col">
       {/* Hero Section */}
@@ -115,7 +122,11 @@ export default function Home() {
       <div className="flex flex-col gap-16 md:gap-24 bg-background z-10">
         {/* Featured Projects */}
         {featuredProjects.length > 0 && (
-          <section id="featured-projects" className="container pt-16">
+          <motion.section 
+            id="featured-projects" 
+            className="container pt-16"
+            {...sectionAnimation}
+          >
             <div className="text-center mb-8">
               <h2 className="text-3xl font-bold">
                 {homeContent.sections.featuredProjects.title}
@@ -168,11 +179,15 @@ export default function Home() {
                 </Card>
               ))}
             </div>
-          </section>
+          </motion.section>
         )}
         
         {/* Skills Overview */}
-        <section id="skills" className="container">
+        <motion.section 
+            id="skills" 
+            className="container"
+            {...sectionAnimation}
+        >
           <div className="text-center mb-8">
             <h2 className="text-3xl font-bold">{homeContent.sections.skills.title}</h2>
             <p className="text-muted-foreground">{homeContent.sections.skills.description}</p>
@@ -189,11 +204,15 @@ export default function Home() {
               ))}
             </div>
           </div>
-        </section>
+        </motion.section>
 
         {/* Latest Internship */}
         {latestInternship && (
-          <section id="latest-internship" className="container">
+          <motion.section 
+            id="latest-internship" 
+            className="container"
+            {...sectionAnimation}
+          >
             <div className="text-center mb-8">
               <h2 className="text-3xl font-bold">
                 {homeContent.sections.latestExperience.title}
@@ -235,12 +254,16 @@ export default function Home() {
                   </div>
               </CardContent>
             </Card>
-          </section>
+          </motion.section>
         )}
 
         {/* Quick Achievements */}
         {recentActivities.length > 0 && (
-          <section id="achievements" className="container">
+          <motion.section 
+            id="achievements" 
+            className="container"
+            {...sectionAnimation}
+          >
             <div className="text-center mb-8">
               <h2 className="text-3xl font-bold">
                 {homeContent.sections.recentActivities.title}
@@ -263,7 +286,7 @@ export default function Home() {
                 )
               ))}
             </div>
-          </section>
+          </motion.section>
         )}
 
         <div className="pb-16" />
