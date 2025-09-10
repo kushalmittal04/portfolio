@@ -40,9 +40,9 @@ export function Footer() {
   return (
     <footer className="border-t bg-background">
       <div className="container mx-auto px-4 py-8">
-        <div className="grid grid-cols-1 gap-8 text-center md:grid-cols-4 md:text-left">
+        <div className="grid grid-cols-1 gap-8 text-center md:grid-cols-3 md:text-left">
           {/* Left Column */}
-          <div className="space-y-4 md:col-span-1">
+          <div className="space-y-4">
             <Link href="/" className="inline-block">
               <span className="text-lg font-bold">kushalmittal04.profile</span>
             </Link>
@@ -55,36 +55,37 @@ export function Footer() {
           </div>
 
           {/* Quick Links Columns */}
-          <div className="md:col-span-2">
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-muted-foreground mb-4">
-                Quick Links
-            </h3>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-               <ul className="space-y-2">
-                {firstHalf.map(({ href, label }) => (
-                  <li key={href}>
-                    <Link
-                      href={href}
-                      className="text-foreground/80 hover:text-primary transition-colors text-sm"
-                    >
-                      {label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-              <ul className="space-y-2">
-                {secondHalf.map(({ href, label }) => (
-                  <li key={href}>
-                    <Link
-                      href={href}
-                      className="text-foreground/80 hover:text-primary transition-colors text-sm"
-                    >
-                      {label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+             <ul className="space-y-2">
+               <h3 className="text-sm font-semibold uppercase tracking-wider text-muted-foreground mb-4">
+                  Quick Links
+              </h3>
+              {firstHalf.map(({ href, label }) => (
+                <li key={href}>
+                  <Link
+                    href={href}
+                    className="text-foreground/80 hover:text-primary transition-colors text-sm"
+                  >
+                    {label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+            <ul className="space-y-2">
+              <h3 className="text-sm font-semibold uppercase tracking-wider text-muted-foreground mb-4 invisible">
+                  &nbsp;
+              </h3>
+              {secondHalf.map(({ href, label }) => (
+                <li key={href}>
+                  <Link
+                    href={href}
+                    className="text-foreground/80 hover:text-primary transition-colors text-sm"
+                  >
+                    {label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
           
 
