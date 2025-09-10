@@ -3,6 +3,7 @@
 
 import { useState, useMemo } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { format } from "date-fns";
 import {
   Card,
@@ -10,7 +11,6 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
-  CardFooter,
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import {
@@ -23,7 +23,7 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { achievementsData, certificatesData } from "@/data/credentials";
-import { Eye, Search, FileText } from "lucide-react";
+import { Eye, Search } from "lucide-react";
 import content from "@/data/pageContent.json";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
@@ -35,6 +35,7 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { Label } from "@/components/ui/label";
+import { Separator } from "@/components/ui/separator";
 
 export default function CredentialsPage() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -102,9 +103,17 @@ export default function CredentialsPage() {
                         {featuredCerts.map((cert) => (
                            <Link key={cert.id} href={cert.fileUrl} target="_blank" rel="noopener noreferrer" className="group block h-full">
                                 <Card className="flex h-full flex-col overflow-hidden transition-all hover:shadow-xl hover:-translate-y-1">
-                                <div className="flex flex-col items-center justify-center bg-muted p-6">
-                                    <FileText className="h-12 w-12 text-muted-foreground" />
-                                </div>
+                                {cert.featuredImageUrl && (
+                                  <div className="relative aspect-video bg-muted">
+                                    <Image
+                                      src={cert.featuredImageUrl}
+                                      alt={`${cert.name} preview`}
+                                      fill
+                                      className="object-contain p-4"
+                                      data-ai-hint="certificate badge"
+                                    />
+                                  </div>
+                                )}
                                 <CardHeader>
                                     <CardTitle className="text-lg">{cert.name}</CardTitle>
                                     <CardDescription>{cert.issuer} &middot; {format(new Date(cert.issueDate), "PPP")}</CardDescription>
@@ -130,8 +139,8 @@ export default function CredentialsPage() {
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="mb-6 grid grid-cols-1 gap-4 sm:grid-cols-3">
-                <div className="relative sm:col-span-1">
+              <div className="mb-6 grid grid-cols-1 items-center gap-4 sm:grid-cols-3 md:grid-cols-[1fr_auto_auto_auto_auto]">
+                <div className="relative sm:col-span-3 md:col-span-1">
                   <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
                   <Input
                     placeholder="Search by name or skill..."
@@ -140,36 +149,34 @@ export default function CredentialsPage() {
                     onChange={(e) => setSearchTerm(e.target.value)}
                   />
                 </div>
-                <div className="flex items-center gap-2">
-                  <Label htmlFor="type-filter" className="text-sm font-medium">Type:</Label>
-                  <Select value={filterType} onValueChange={setFilterType}>
-                    <SelectTrigger id="type-filter">
-                      <SelectValue placeholder="Filter by Type" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      {certificateTypes.map((type) => (
-                        <SelectItem key={type} value={type}>
-                          {type}
-                        </SelectItem>
-                      ))}
-                    </SelectContent>
-                  </Select>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Label htmlFor="issuer-filter" className="text-sm font-medium">Issuer:</Label>
-                  <Select value={filterIssuer} onValueChange={setFilterIssuer}>
-                    <SelectTrigger id="issuer-filter">
-                      <SelectValue placeholder="Filter by Issuer" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      {certificateIssuers.map((issuer) => (
-                        <SelectItem key={issuer} value={issuer}>
-                          {issuer}
-                        </SelectItem>
-                      ))}
-                    </SelectContent>
-                  </Select>
-                </div>
+                <Separator orientation="vertical" className="hidden h-8 md:block" />
+                <Label htmlFor="type-filter" className="text-sm font-medium shrink-0">Filter by Type:</Label>
+                <Select value={filterType} onValueChange={setFilterType}>
+                  <SelectTrigger id="type-filter" className="w-full md:w-auto">
+                    <SelectValue placeholder="All" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    {certificateTypes.map((type) => (
+                      <SelectItem key={type} value={type}>
+                        {type}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+
+                <Label htmlFor="issuer-filter" className="text-sm font-medium shrink-0">Filter by Issuer:</Label>
+                <Select value={filterIssuer} onValueChange={setFilterIssuer}>
+                  <SelectTrigger id="issuer-filter" className="w-full md:w-auto">
+                    <SelectValue placeholder="All" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    {certificateIssuers.map((issuer) => (
+                      <SelectItem key={issuer} value={issuer}>
+                        {issuer}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
               </div>
 
                <div className="overflow-x-auto">

@@ -308,6 +308,7 @@
     "skills": ["Azure Bot Services", "Azure Machine Learning", "Cognitive Services"],
     "fileUrl": "/images/credentials/certifications/20250908_Azure_AI_Fundamentals.pdf",
     "issueDate": "2025-09-08",
-    "isFeatured": true
+    "isFeatured": true,
+    "featuredImageUrl": "/images/credentials/featured/ai900.png"
   }
 ]

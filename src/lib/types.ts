@@ -54,6 +54,7 @@ export interface Certificate {
   fileUrl: string;
   issueDate: string;
   isFeatured: boolean;
+  featuredImageUrl?: string;
 }
 
 export interface Achievement {
