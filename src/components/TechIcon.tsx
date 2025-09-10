@@ -171,7 +171,8 @@ faYahoo,
 faYandex,
 faYelp,
 faYoast,
-faZhihu
+faZhihu,
+faKaggle
 } from "@fortawesome/free-brands-svg-icons";
 import {
   faDatabase,
