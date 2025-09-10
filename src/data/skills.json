@@ -1,3 +1,4 @@
+
 {
   "featuredSkills": [
     "LangChain",
@@ -65,7 +66,9 @@
         "Kaggle",
         "Google Colab",
         "Databricks",
-        "Clerk Authentication"
+        "Clerk Authentication",
+        "Firebase Studio",
+        "NotebookLM"
       ]
     }
   ]
