@@ -111,6 +111,7 @@ export default function CredentialsPage() {
                                       src={cert.featuredImageUrl}
                                       alt={`${cert.name} preview`}
                                       fill
+                                      sizes="(max-width: 768px) 50vw, (max-width: 1200px) 20vw, 15vw"
                                       className="object-contain"
                                       data-ai-hint="certificate badge"
                                     />
