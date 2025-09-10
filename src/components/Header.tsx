@@ -35,7 +35,7 @@ export function Header() {
     <header className="supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50 w-full border-b bg-background/95 shadow-sm backdrop-blur">
       <div className="container flex h-16 items-center">
         <Link href="/" className="mr-6 flex items-center">
-          <span className="text-xl font-bold tracking-tight">KushalMittal.dev</span>
+          <span className="text-xl font-bold tracking-tight">Portfolio</span>
         </Link>
         <nav className="hidden items-center gap-6 text-sm font-medium md:flex flex-1">
           {navLinks.map(({ href, label }) => (
@@ -66,7 +66,7 @@ export function Header() {
               <SheetHeader>
                  <SheetTitle>
                   <Link href="/" className="flex items-center">
-                    <span className="text-xl font-bold tracking-tight">KushalMittal.dev</span>
+                    <span className="text-xl font-bold tracking-tight">Portfolio</span>
                   </Link>
                 </SheetTitle>
               </SheetHeader>
