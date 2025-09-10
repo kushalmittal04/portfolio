@@ -193,7 +193,7 @@ export default function CredentialsPage() {
                           </div>
                         </TableCell>
                         <TableCell className="hidden sm:table-cell text-right text-muted-foreground">
-                          {format(new Date(cert.issueDate), "MMM yyyy")}
+                          {format(new Date(cert.issueDate), "PPP")}
                         </TableCell>
                         <TableCell className="text-right">
                           <Button asChild variant="ghost" size="sm">
