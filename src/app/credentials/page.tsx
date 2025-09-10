@@ -103,28 +103,19 @@ export default function CredentialsPage() {
                     <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
                         {featuredCerts.map((cert) => (
                            <Link key={cert.id} href={cert.fileUrl} target="_blank" rel="noopener noreferrer" className="group block h-full">
-                                <Card className="flex h-full flex-col overflow-hidden transition-all hover:shadow-xl hover:-translate-y-1">
+                                <Card className="flex h-full flex-col items-center justify-center gap-4 overflow-hidden p-4 transition-all hover:shadow-xl hover:-translate-y-1">
                                 {cert.featuredImageUrl && (
-                                  <div className="relative aspect-video bg-muted">
+                                  <div className="relative aspect-square w-full">
                                     <Image
                                       src={cert.featuredImageUrl}
                                       alt={`${cert.name} preview`}
                                       fill
-                                      className="object-contain p-4"
+                                      className="object-contain"
                                       data-ai-hint="certificate badge"
                                     />
                                   </div>
                                 )}
-                                <CardHeader>
-                                    <CardTitle className="text-lg">{cert.name}</CardTitle>
-                                    <CardDescription>{cert.issuer} &middot; {format(new Date(cert.issueDate), "PPP")}</CardDescription>
-                                </CardHeader>
-                                <CardContent className="flex-grow" />
-                                <CardFooter>
-                                    <Button variant="outline" className="w-full">
-                                    <Eye className="mr-2 h-4 w-4" /> View Document
-                                    </Button>
-                                </CardFooter>
+                                <p className="text-sm font-medium text-muted-foreground">{format(new Date(cert.issueDate), "PPP")}</p>
                                 </Card>
                             </Link>
                         ))}
