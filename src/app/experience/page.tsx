@@ -33,8 +33,8 @@ export default function ExperiencePage() {
         {experienceData.map((exp, index) => (
            <div
             key={exp.id}
-            className={`relative flex items-center md:justify-start ${
-              index % 2 === 0 ? "" : "md:flex-row-reverse"
+            className={`relative flex items-center ${
+              index % 2 === 0 ? "md:justify-start" : "md:justify-end md:flex-row-reverse"
             }`}
           >
             <div className="hidden md:block md:w-1/2"></div>
