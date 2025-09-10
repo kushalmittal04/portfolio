@@ -229,17 +229,6 @@ export default function CredentialsPage() {
                     {achievement.description}
                   </p>
                 </CardContent>
-                <CardFooter>
-                  <Button asChild variant="outline" size="sm">
-                    <Link
-                      href={achievement.imageUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <Eye className="mr-2 h-4 w-4" /> View Document
-                    </Link>
-                  </Button>
-                </CardFooter>
               </Card>
             ))}
           </div>
