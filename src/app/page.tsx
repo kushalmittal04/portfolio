@@ -15,56 +15,46 @@ import {
 import { Badge } from "@/components/ui/badge";
 import projectsData from "@/data/projects.json";
 import experienceData from "@/data/experience.json";
-import { achievementsData, certificatesRawData } from "@/data/credentials";
+import { achievementsData, certificatesData } from "@/data/credentials";
 import { TechIcon } from "@/components/TechIcon";
 import skillsData from "@/data/skills.json";
 import content from "@/data/pageContent.json";
 import { format } from "date-fns";
 
-const extractDateFromAchievementUrl = (url: string): Date => {
-  const match = url.match(/(\d{8})/);
-  if (match) {
-    const dateStr = match[1];
-    const year = parseInt(dateStr.substring(0, 4), 10);
-    const month = parseInt(dateStr.substring(4, 6), 10) - 1; // Month is 0-indexed
-    const day = parseInt(dateStr.substring(6, 8), 10);
-    return new Date(year, month, day);
-  }
-  return new Date(0);
-};
-
 export default function Home() {
   const featuredProjects = projectsData.filter((p) => p.isFeatured).slice(0, 3);
   const latestInternship = experienceData[0];
 
-  const latestCerts = [...certificatesRawData]
-    .sort((a, b) => new Date(b.issueDate).getTime() - new Date(a.issueDate).getTime())
-    .slice(0, 2)
-    .map(cert => ({
-        id: `cert-${cert.id}`,
-        name: cert.name,
-        description: `Issued by ${cert.issuer} on ${format(new Date(cert.issueDate), "PPP")}.`,
-        date: new Date(cert.issueDate),
-    }));
+  const azureCert = certificatesData.find(c => c.id === 31);
+  const promptCert = certificatesData.find(c => c.id === 15);
+  const gateAchievement = achievementsData.find(a => a.id === 1);
 
-  const latestAchievement = [...achievementsData]
-    .sort((a, b) => {
-      const dateA = extractDateFromAchievementUrl(a.imageUrl);
-      const dateB = extractDateFromAchievementUrl(b.imageUrl);
-      return dateB.getTime() - dateA.getTime();
-    })
-    .slice(0, 1)
-     .map(ach => ({
-        id: `ach-${ach.id}`,
-        name: ach.name,
-        description: ach.description,
-        date: extractDateFromAchievementUrl(ach.imageUrl),
-    }));
+  const recentActivities = [];
 
-  const recentActivities = [...latestCerts, ...latestAchievement]
-    .sort((a, b) => b.date.getTime() - a.date.getTime())
-    .slice(0, 3);
+  if (azureCert) {
+    recentActivities.push({
+      id: `cert-${azureCert.id}`,
+      name: azureCert.name,
+      description: `Issued by ${azureCert.issuer} on ${format(new Date(azureCert.issueDate), "PPP")}.`,
+    });
+  }
 
+  if (promptCert) {
+    recentActivities.push({
+      id: `cert-${promptCert.id}`,
+      name: promptCert.name,
+      description: `Issued by ${promptCert.issuer} on ${format(new Date(promptCert.issueDate), "PPP")}.`,
+    });
+  }
+
+  if (gateAchievement) {
+     recentActivities.push({
+        id: `ach-${gateAchievement.id}`,
+        name: gateAchievement.name,
+        description: gateAchievement.description,
+    });
+  }
+  
   const skillsToShow = skillsData.featuredSkills;
   const homeContent = content.home;
 
