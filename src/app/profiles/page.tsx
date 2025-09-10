@@ -91,25 +91,25 @@ export default function ProfilesPage() {
                             {/* Front of Card */}
                             <div className="absolute inset-0 [backface-visibility:hidden]">
                                 <Card className="flex h-full w-full flex-col items-center justify-center p-6 text-center transition-shadow hover:shadow-xl">
-                                    <CardContent className="flex flex-col items-center gap-4 p-0">
-                                    <LucideIcon
-                                        name={profile.icon}
-                                        className="h-16 w-16 text-primary"
-                                    />
-                                    <div>
-                                        <p className="text-xl font-bold">{profile.platform}</p>
-                                        <p className="text-sm text-muted-foreground">
-                                        @{profile.username}
-                                        </p>
+                                    <div className="flex flex-col items-center gap-4 p-0">
+                                      <LucideIcon
+                                          name={profile.icon}
+                                          className="h-16 w-16 text-primary"
+                                      />
+                                      <div>
+                                          <p className="text-xl font-bold">{profile.platform}</p>
+                                          <p className="text-sm text-muted-foreground">
+                                          @{profile.username}
+                                          </p>
+                                      </div>
                                     </div>
-                                    </CardContent>
                                 </Card>
                             </div>
 
                             {/* Back of Card */}
                             <div className="absolute inset-0 [transform:rotateY(180deg)] [backface-visibility:hidden]">
                                 <Card className="flex h-full w-full flex-col items-center justify-center bg-muted p-6">
-                                     <CardContent className="flex flex-col items-center gap-4 p-0 text-center">
+                                     <div className="flex flex-col items-center gap-4 p-0 text-center">
                                         <h3 className="text-lg font-bold text-foreground">{profile.platform} Stats</h3>
                                         <div className="space-y-2 text-sm">
                                             {profile.stats.map(stat => (
@@ -119,7 +119,7 @@ export default function ProfilesPage() {
                                                 </div>
                                             ))}
                                         </div>
-                                    </CardContent>
+                                    </div>
                                 </Card>
                             </div>
                         </div>

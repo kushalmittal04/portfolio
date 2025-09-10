@@ -72,7 +72,7 @@ export default function ExperienceDetailPage({
               {experience.description.map((desc, index) => (
                 <div key={index} className="flex items-start gap-3">
                     <CheckCircle className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
-                    <p dangerouslySetInnerHTML={{ __html: desc }} />
+                    <div dangerouslySetInnerHTML={{ __html: desc }} />
                 </div>
               ))}
             </CardContent>
