@@ -148,7 +148,8 @@
     "skills": ["Prompt Engineering", "Vertex AI"],
     "fileUrl": "/images/credentials/certifications/20250816_Prompt_Design_in_Vertex_AI.pdf",
     "issueDate": "2025-08-16",
-    "isFeatured": false
+    "isFeatured": true,
+    "featuredImageUrl": "/images/credentials/featured/promptdesign.png"
   },
   {
     "id": 16,
