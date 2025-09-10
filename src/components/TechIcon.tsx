@@ -1,3 +1,4 @@
+
 import {
   Database,
   Box,
@@ -79,37 +80,27 @@ interface TechIconProps {
   className?: string;
 }
 
+const iconMap: Record<string, React.ComponentType<any>> = {
+  react: ReactIcon,
+  "react.js": ReactIcon,
+  "next.js": ReactIcon,
+  "node.js": NodeJsIcon,
+  python: PythonIcon,
+  javascript: JavaScriptIcon,
+  typescript: TypeScriptIcon,
+  mongodb: Database,
+  go: GoIcon,
+  langchain: LangchainIcon,
+  langgraph: LanggraphIcon,
+  "c++": CppIcon,
+  tensorflow: Box,
+  "scikit-learn": Box,
+  pandas: Box,
+  numpy: Box,
+  pyspark: Box,
+};
+
 export function TechIcon({ technology, className }: TechIconProps) {
-  switch (technology.toLowerCase()) {
-    case "react":
-    case "react.js":
-    case "next.js":
-      return <ReactIcon className={className} />;
-    case "node.js":
-      return <NodeJsIcon className={className} />;
-    case "python":
-      return <PythonIcon className={className} />;
-    case "javascript":
-      return <JavaScriptIcon className={className} />;
-    case "typescript":
-      return <TypeScriptIcon className={className} />;
-    case "mongodb":
-      return <Database className={className} />;
-    case "go":
-       return <GoIcon className={className} />
-    case "langchain":
-      return <LangchainIcon className={className} />;
-    case "langgraph":
-      return <LanggraphIcon className={className} />;
-    case "c++":
-        return <CppIcon className={className} />
-    case "tensorflow":
-    case "scikit-learn":
-    case "pandas":
-    case "numpy":
-    case "pyspark":
-      return <Box className={className} />;
-    default:
-      return <FileCode className={className} />;
-  }
+  const IconComponent = iconMap[technology.toLowerCase()] || FileCode;
+  return <IconComponent className={className} />;
 }

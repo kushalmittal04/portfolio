@@ -1,3 +1,4 @@
+
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Download, Github, PlayCircle } from "lucide-react";
@@ -9,6 +10,7 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
+  CardFooter,
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import projectsData from "@/data/projects.json";
@@ -78,7 +80,7 @@ export default function Home() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
              {featuredProjects.map((project) => (
-               <Card key={project.id} className="flex flex-col overflow-hidden transition-shadow hover:shadow-lg">
+               <Card key={project.id} className="flex flex-col overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
                 <div className="relative aspect-video">
                   <Image
                     src={project.images[0].url}
@@ -91,9 +93,9 @@ export default function Home() {
                 <CardHeader>
                   <CardTitle>{project.name}</CardTitle>
                 </CardHeader>
-                <CardContent className="flex-grow space-y-4">
+                <CardContent className="flex-grow">
                   <p className="text-muted-foreground line-clamp-2">{project.description}</p>
-                   <div className="flex flex-wrap gap-2">
+                   <div className="flex flex-wrap gap-2 mt-4">
                       {project.technologies.slice(0,3).map(tech => (
                           <Badge key={tech} variant="secondary">{tech}</Badge>
                       ))}
@@ -102,7 +104,7 @@ export default function Home() {
                       )}
                    </div>
                 </CardContent>
-                <CardContent className="flex gap-4">
+                <CardFooter className="flex gap-4">
                     <Button asChild variant="link" className="p-0 h-auto">
                       <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
                         <Github className="mr-2 h-4 w-4" /> Code
@@ -115,7 +117,7 @@ export default function Home() {
                         </a>
                       </Button>
                     )}
-                </CardContent>
+                </CardFooter>
               </Card>
             ))}
           </div>
@@ -151,40 +153,42 @@ export default function Home() {
             </h2>
             <p className="text-muted-foreground">{homeContent.sections.latestExperience.description}</p>
           </div>
-          <Card className="mx-auto max-w-4xl p-6">
-            <div className="flex flex-col sm:flex-row items-start gap-6">
-                <Image
-                  src={latestInternship.logoUrl}
-                  alt={`${latestInternship.company} logo`}
-                  width={48}
-                  height={48}
-                  className="rounded-lg"
-                  data-ai-hint={latestInternship.dataAiHint}
-                />
-                <div className="flex-1">
-                  <CardTitle className="text-xl">
-                    {latestInternship.position}
-                  </CardTitle>
-                  <CardDescription>
-                    {latestInternship.company} &middot; {latestInternship.duration} &middot; {latestInternship.location}
-                  </CardDescription>
-                  <p className="mt-4 text-muted-foreground">
-                    {latestInternship.description[0]}
-                  </p>
-                   <div className="flex flex-wrap gap-2 mt-4">
-                    {latestInternship.technologies.map((tech) => (
-                      <Badge key={tech} variant="secondary">
-                        {tech}
-                      </Badge>
-                    ))}
-                  </div>
-                  <Button asChild variant="link" className="px-0 mt-4">
-                    <Link href={`/experience/${latestInternship.slug}`}>
-                      View All Experience <ArrowRight className="ml-2 h-4 w-4" />
-                    </Link>
-                  </Button>
+          <Card className="mx-auto max-w-4xl transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+             <CardContent className="p-6">
+                <div className="flex flex-col sm:flex-row items-start gap-6">
+                    <Image
+                      src={latestInternship.logoUrl}
+                      alt={`${latestInternship.company} logo`}
+                      width={48}
+                      height={48}
+                      className="rounded-lg"
+                      data-ai-hint={latestInternship.dataAiHint}
+                    />
+                    <div className="flex-1">
+                      <CardTitle className="text-xl">
+                        {latestInternship.position}
+                      </CardTitle>
+                      <CardDescription>
+                        {latestInternship.company} &middot; {latestInternship.duration} &middot; {latestInternship.location}
+                      </CardDescription>
+                      <p className="mt-4 text-muted-foreground">
+                        {latestInternship.description[0]}
+                      </p>
+                       <div className="flex flex-wrap gap-2 mt-4">
+                        {latestInternship.technologies.map((tech) => (
+                          <Badge key={tech} variant="secondary">
+                            {tech}
+                          </Badge>
+                        ))}
+                      </div>
+                      <Button asChild variant="link" className="px-0 mt-4">
+                        <Link href={`/experience/${latestInternship.slug}`}>
+                          View All Experience <ArrowRight className="ml-2 h-4 w-4" />
+                        </Link>
+                      </Button>
+                    </div>
                 </div>
-            </div>
+            </CardContent>
           </Card>
         </section>
       )}
@@ -200,11 +204,11 @@ export default function Home() {
           </div>
           <div className="mx-auto grid max-w-4xl gap-8 md:grid-cols-2">
             {featuredAchievements.map((achievement) => (
-              <Card key={achievement.id} className="p-6">
-                <CardHeader className="p-0">
+              <Card key={achievement.id} className="transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+                <CardHeader>
                   <CardTitle>{achievement.name}</CardTitle>
                 </CardHeader>
-                <CardContent className="p-0 mt-2">
+                <CardContent>
                   <p className="text-muted-foreground">
                     {achievement.description}
                   </p>
