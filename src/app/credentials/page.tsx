@@ -72,7 +72,9 @@ export default function CredentialsPage() {
       .sort((a, b) => new Date(b.issueDate).getTime() - new Date(a.issueDate).getTime());
   }, [searchTerm, filterType, filterIssuer]);
   
-  const featuredCerts = certificatesData.filter(c => c.isFeatured);
+  const featuredCerts = certificatesData
+    .filter(c => c.isFeatured)
+    .sort((a, b) => new Date(b.issueDate).getTime() - new Date(a.issueDate).getTime());
 
   return (
     <div className="container mx-auto max-w-7xl px-4 py-16 animate-in fade-in-0 slide-in-from-bottom-8 duration-1000">
@@ -99,12 +101,12 @@ export default function CredentialsPage() {
             {featuredCerts.length > 0 && (
                 <div className="mb-12">
                     <h2 className="mb-4 text-2xl font-bold">{credentialsContent.featuredCertificates}</h2>
-                    <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                    <div className="grid grid-cols-2 gap-6 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
                         {featuredCerts.map((cert) => (
                            <Link key={cert.id} href={cert.fileUrl} target="_blank" rel="noopener noreferrer" className="group block h-full">
                                 <Card className="flex h-full flex-col items-center justify-center gap-4 overflow-hidden p-4 transition-all hover:shadow-xl hover:-translate-y-1">
                                 {cert.featuredImageUrl && (
-                                  <div className="relative h-32 w-32">
+                                  <div className="relative aspect-square w-32">
                                     <Image
                                       src={cert.featuredImageUrl}
                                       alt={`${cert.name} preview`}
