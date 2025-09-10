@@ -18,7 +18,7 @@
       "Engineered and optimized large-scale ML workflows using PySpark on Databricks, reducing data preprocessing time by 5% through analytical problem-solving and efficient distributed computing architecture.",
       "Architected a production-ready RAG-based Chatbot leveraging LangChain and LangGraph, enhancing the accuracy of client information retrieval by 15% and demonstrating innovative creativity in applying Generative AI to real-world business automation."
     ],
-    "technologies": ["PySpark", "Databricks", "LangChain", "LangGraph", "Generative AI"]
+    "technologies": ["PySpark", "Databricks", "LangChain", "LangGraph", "Generative AI", "Agents", "Agentic AI"]
   },
   {
     "id": 2,
@@ -48,7 +48,7 @@
       "Developed and deployed a scalable REST API to serve the ML model, enabling real-time predictions and reducing manual processing effort by 20+ hours per week, highlighting strong initiative and end-to-end project ownership.",
       "Authored comprehensive documentation and held knowledge-transfer sessions for the help-desk team, ensuring smooth adoption of the new automated system and showcasing effective knowledge sharing and communication."
     ],
-    "technologies": ["Python", "Pandas", "Scikit-learn", "REST API", "Machine Learning"]
+    "technologies": ["Python", "Pandas", "Scikit-learn", "REST API", "Machine Learning", "Django", "Data Analysis"]
   },
   {
     "id": 3,
@@ -78,7 +78,7 @@
       "Translated complex model outputs into clear, actionable business intelligence reports for management, effectively bridging the gap between technical data and operational strategy through sharp analytical reasoning.",
       "Collaborated with a small development team in an Agile setup, participating in daily scrums and code reviews, which enhanced the team's output and reinforced adaptable and collaborative work practices."
     ],
-    "technologies": ["PHP", "REST APIs", "Postman", "Machine Learning", "Scikit-learn", "Agile"]
+    "technologies": ["PHP", "REST APIs", "Postman", "Machine Learning", "Scikit-learn", "Agile", "SQL"]
   },
   {
     "id": 4,
@@ -108,6 +108,6 @@
       "Built an automated data scraping pipeline using Selenium to collect and aggregate information from 50+ different sources, improving data timeliness by 90% and saving 5+ hours of manual work weekly.",
       "Proactively identified performance bottlenecks in existing web pages and optimized them, resulting in faster load times and an improved user experience, showcasing self-motivation and a commitment to quality."
     ],
-    "technologies": ["HTML", "CSS", "JavaScript", "PHP", "JWT", "Selenium"]
+    "technologies": ["HTML", "CSS", "JavaScript", "PHP", "JWT", "Selenium", "Web Scraping"]
   }
 ]

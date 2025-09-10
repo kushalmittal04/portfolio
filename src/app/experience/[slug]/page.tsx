@@ -118,6 +118,18 @@ export default function ExperienceDetailPage({
         <div className="space-y-8">
             <Card>
                 <CardHeader>
+                    <CardTitle>Tech Stack</CardTitle>
+                </CardHeader>
+                <CardContent className="flex flex-wrap gap-2">
+                    {experience.technologies.map((tech) => (
+                        <Badge key={tech} variant="secondary" className="text-sm">
+                        {tech}
+                        </Badge>
+                    ))}
+                </CardContent>
+            </Card>
+            <Card>
+                <CardHeader>
                     <CardTitle>Details</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4 text-sm">
@@ -145,18 +157,6 @@ export default function ExperienceDetailPage({
                           Work Location
                         </a>
                     </div>
-                </CardContent>
-            </Card>
-            <Card>
-                <CardHeader>
-                    <CardTitle>Tech Stack</CardTitle>
-                </CardHeader>
-                <CardContent className="flex flex-wrap gap-2">
-                    {experience.technologies.map((tech) => (
-                        <Badge key={tech} variant="secondary" className="text-sm">
-                        {tech}
-                        </Badge>
-                    ))}
                 </CardContent>
             </Card>
         </div>
