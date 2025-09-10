@@ -4,30 +4,31 @@
     "id": 1,
     "slug": "rera-projects-data-scraper",
     "name": "RERA Projects Data Scraper",
-    "tagline": "An automated web scraper for real estate project data.",
-    "overview": "A Python-based automation tool that scrapes project details from the Odisha RERA (Real Estate Regulatory Authority) website using Selenium WebDriver. The script extracts key project and promoter details and saves them into a structured CSV file, making it easy to analyze or integrate into other systems.",
+    "tagline": "Automated web scraping tool for real estate compliance data.",
+    "overview": "RERA Scraper is a Python-based automation tool designed to collect structured data from the Real Estate Regulatory Authority (RERA) portal. It simplifies the process of retrieving property, agent, and project registration details, making it easier for analysts and researchers to work with real-estate data. The tool eliminates manual data entry by automating data collection, cleaning, and exporting into structured formats.",
     "features": [
-      "Fetches project name, registration number, promoter details, address, and GST number.",
-      "Automatically saves scraped data into a CSV file for further analysis.",
-      "Uses WebDriverWait and error handling to manage dynamic page loads and unexpected popups.",
-      "Clicks through project detail pages and extracts promoter information before returning to the main list."
+      "Automated scraping of property & project details from the RERA portal.",
+      "Handles pagination and multiple records efficiently.",
+      "Data cleaning and formatting for improved readability.",
+      "Robust error handling for missing or restricted data.",
+      "Exports data to CSV/Excel for further analysis."
     ],
     "challenges": [
       {
-        "challenge": "Website uses dynamic Angular components.",
-        "solution": "Implemented WebDriverWait with specific XPaths to handle async loading."
+        "challenge": "The RERA portal used dynamic loading and hidden elements.",
+        "solution": "Used Selenium waits and advanced DOM traversal to reliably handle dynamic content."
       },
       {
-        "challenge": "Popups occasionally blocked page interaction.",
-        "solution": "Script detects and clicks 'Accept/Close' buttons automatically."
+        "challenge": "Large datasets caused performance issues during scraping.",
+        "solution": "Implemented pagination handling and batched data exports to optimize memory usage."
       },
       {
-        "challenge": "Ensuring data completeness.",
-        "solution": "Added error handling & fallback defaults ('Not Found') for missing fields."
+        "challenge": "Data fields were inconsistent across different state portals.",
+        "solution": "Applied Pandas preprocessing to standardize the output schema for consistent data."
       }
     ],
-    "technologies": ["Python", "Selenium WebDriver", "CSV"],
-    "skills": ["Web Scraping", "Automation", "Data Extraction", "Error Handling"],
+    "technologies": ["Python", "Selenium", "BeautifulSoup", "Pandas"],
+    "skills": ["Web Scraping", "Data Extraction", "Data Cleaning", "Automation", "File Handling"],
     "githubUrl": "https://github.com/kushalmittal04/rera_scraper",
     "liveUrl": null,
     "images": [
