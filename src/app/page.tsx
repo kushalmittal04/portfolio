@@ -15,13 +15,13 @@ import {
 import { Badge } from "@/components/ui/badge";
 import projectsData from "@/data/projects.json";
 import experienceData from "@/data/experience.json";
-import achievementsData from "@/data/achievements.json";
+import { achievementsData, certificatesRawData } from "@/data/credentials";
 import { TechIcon } from "@/components/TechIcon";
 import skillsData from "@/data/skills.json";
 import content from "@/data/pageContent.json";
+import { format } from "date-fns";
 
-// Helper function to extract date from imageUrl
-const extractDateFromUrl = (url: string): Date => {
+const extractDateFromAchievementUrl = (url: string): Date => {
   const match = url.match(/(\d{8})/);
   if (match) {
     const dateStr = match[1];
@@ -30,19 +30,39 @@ const extractDateFromUrl = (url: string): Date => {
     const day = parseInt(dateStr.substring(6, 8), 10);
     return new Date(year, month, day);
   }
-  return new Date(0); // Return a very old date if no match
+  return new Date(0);
 };
 
 export default function Home() {
   const featuredProjects = projectsData.filter((p) => p.isFeatured).slice(0, 3);
   const latestInternship = experienceData[0];
-  
-  const latestAchievements = [...achievementsData]
+
+  const latestCerts = [...certificatesRawData]
+    .sort((a, b) => new Date(b.issueDate).getTime() - new Date(a.issueDate).getTime())
+    .slice(0, 2)
+    .map(cert => ({
+        id: `cert-${cert.id}`,
+        name: cert.name,
+        description: `Issued by ${cert.issuer} on ${format(new Date(cert.issueDate), "PPP")}.`,
+        date: new Date(cert.issueDate),
+    }));
+
+  const latestAchievement = [...achievementsData]
     .sort((a, b) => {
-      const dateA = extractDateFromUrl(a.imageUrl);
-      const dateB = extractDateFromUrl(b.imageUrl);
+      const dateA = extractDateFromAchievementUrl(a.imageUrl);
+      const dateB = extractDateFromAchievementUrl(b.imageUrl);
       return dateB.getTime() - dateA.getTime();
     })
+    .slice(0, 1)
+     .map(ach => ({
+        id: `ach-${ach.id}`,
+        name: ach.name,
+        description: ach.description,
+        date: extractDateFromAchievementUrl(ach.imageUrl),
+    }));
+
+  const recentActivities = [...latestCerts, ...latestAchievement]
+    .sort((a, b) => b.date.getTime() - a.date.getTime())
     .slice(0, 3);
 
   const skillsToShow = skillsData.featuredSkills;
@@ -211,7 +231,7 @@ export default function Home() {
       )}
 
       {/* Quick Achievements */}
-      {latestAchievements.length > 0 && (
+      {recentActivities.length > 0 && (
         <section id="achievements" className="container">
            <div className="text-center mb-8">
             <h2 className="text-3xl font-bold">
@@ -219,15 +239,15 @@ export default function Home() {
             </h2>
             <p className="text-muted-foreground">{homeContent.sections.recentActivities.description}</p>
           </div>
-          <div className="mx-auto grid max-w-4xl gap-8 md:grid-cols-2">
-            {latestAchievements.map((achievement) => (
-              <Card key={achievement.id} className="transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+          <div className="mx-auto grid max-w-4xl gap-8 md:grid-cols-2 lg:grid-cols-3">
+            {recentActivities.map((item) => (
+              <Card key={item.id} className="transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
                 <CardHeader>
-                  <CardTitle>{achievement.name}</CardTitle>
+                  <CardTitle className="text-lg">{item.name}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-muted-foreground">
-                    {achievement.description}
+                  <p className="text-muted-foreground text-sm line-clamp-3">
+                    {item.description}
                   </p>
                 </CardContent>
               </Card>
