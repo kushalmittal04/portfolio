@@ -75,7 +75,7 @@ export default function Home() {
   };
 
   return (
-    <div className="flex flex-col">
+    <>
       {/* Hero Section */}
       <section ref={heroRef} className="relative flex h-screen items-center justify-center overflow-hidden">
         <motion.div 
@@ -119,178 +119,180 @@ export default function Home() {
         </motion.div>
       </section>
 
-      <div className="flex flex-col gap-16 md:gap-24 bg-background z-10">
-        {/* Featured Projects */}
-        {featuredProjects.length > 0 && (
-          <motion.section 
-            id="featured-projects" 
-            className="container pt-16"
-            {...sectionAnimation}
-          >
-            <div className="text-center mb-8">
-              <h2 className="text-3xl font-bold">
-                {homeContent.sections.featuredProjects.title}
-              </h2>
-              <p className="text-muted-foreground">{homeContent.sections.featuredProjects.description}</p>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {featuredProjects.map((project) => (
-                <Card key={project.id} className="flex flex-col overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
-                  <Link href={`/projects/${project.slug}`} className="block relative aspect-video">
-                    <Image
-                      src={project.images[0].url}
-                      alt={project.name}
-                      fill
-                      className="object-cover"
-                      data-ai-hint={project.images[0].dataAiHint}
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    />
-                  </Link>
-                  <CardHeader>
-                    <CardTitle>
-                      <Link href={`/projects/${project.slug}`}>{project.name}</Link>
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent className="flex-grow">
-                    <p className="text-muted-foreground line-clamp-2">{project.description}</p>
-                    <div className="flex flex-wrap gap-2 mt-4">
-                        {project.technologies.slice(0,3).map(tech => (
-                            <Badge key={tech} variant="secondary">{tech}</Badge>
-                        ))}
-                        {project.technologies.length > 3 && (
-                          <Badge variant="outline">+{project.technologies.length - 3} more</Badge>
-                        )}
-                    </div>
-                  </CardContent>
-                  <CardFooter className="flex gap-4">
-                      <Button asChild variant="link" className="p-0 h-auto">
-                        <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
-                          <Github className="mr-2 h-4 w-4" /> Code
-                        </a>
-                      </Button>
-                      {project.liveUrl && (
-                        <Button asChild variant="link" className="p-0 h-auto">
-                          <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
-                            <PlayCircle className="mr-2 h-4 w-4" /> Live Demo
-                          </a>
-                        </Button>
-                      )}
-                  </CardFooter>
-                </Card>
-              ))}
-            </div>
-          </motion.section>
-        )}
-        
-        {/* Skills Overview */}
-        <motion.section 
-            id="skills" 
-            className="container"
-            {...sectionAnimation}
-        >
-          <div className="text-center mb-8">
-            <h2 className="text-3xl font-bold">{homeContent.sections.skills.title}</h2>
-            <p className="text-muted-foreground">{homeContent.sections.skills.description}</p>
-          </div>
-          <div className="mx-auto max-w-4xl">
-            <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-4 gap-8 justify-center">
-              {skillsToShow.map((tech) => (
-                <div key={tech} className="flex flex-col items-center gap-2">
-                  <div className="w-24 h-24 flex items-center justify-center rounded-lg bg-muted shadow-md hover:shadow-lg transition-shadow">
-                      <TechIcon technology={tech} className="w-12 h-12" />
-                  </div>
-                  <p className="font-semibold text-center">{tech}</p>
+      <div className="relative z-10 bg-background">
+        <div className="flex flex-col gap-16 md:gap-24">
+            {/* Featured Projects */}
+            {featuredProjects.length > 0 && (
+            <motion.section 
+                id="featured-projects" 
+                className="container pt-16"
+                {...sectionAnimation}
+            >
+                <div className="text-center mb-8">
+                <h2 className="text-3xl font-bold">
+                    {homeContent.sections.featuredProjects.title}
+                </h2>
+                <p className="text-muted-foreground">{homeContent.sections.featuredProjects.description}</p>
                 </div>
-              ))}
-            </div>
-          </div>
-        </motion.section>
-
-        {/* Latest Internship */}
-        {latestInternship && (
-          <motion.section 
-            id="latest-internship" 
-            className="container"
-            {...sectionAnimation}
-          >
-            <div className="text-center mb-8">
-              <h2 className="text-3xl font-bold">
-                {homeContent.sections.latestExperience.title}
-              </h2>
-              <p className="text-muted-foreground">{homeContent.sections.latestExperience.description}</p>
-            </div>
-            <Card className="mx-auto max-w-4xl transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
-              <CardContent className="p-6">
-                  <div className="flex flex-col sm:flex-row items-start gap-6">
-                      <Image
-                        src={latestInternship.logoUrl}
-                        alt={`${latestInternship.company} logo`}
-                        width={48}
-                        height={48}
-                        className="rounded-lg"
-                        data-ai-hint={latestInternship.dataAiHint}
-                      />
-                      <div className="flex-1">
-                        <CardTitle className="text-xl">
-                          {latestInternship.position}
-                        </CardTitle>
-                        <CardDescription className="text-sm sm:text-base">
-                          {latestInternship.company} &middot; {latestInternship.duration} &middot; {latestInternship.location}
-                        </CardDescription>
-                        <div className="mt-4 text-muted-foreground line-clamp-3 sm:line-clamp-2" dangerouslySetInnerHTML={{ __html: latestInternship.description[0] }}/>
-                        <div className="flex flex-wrap gap-2 mt-4">
-                          {latestInternship.technologies.map((tech) => (
-                            <Badge key={tech} variant="secondary">
-                              {tech}
-                            </Badge>
-                          ))}
-                        </div>
-                        <Button asChild variant="link" className="px-0 mt-4">
-                          <Link href="/experience">
-                            View All Experience <ArrowRight className="ml-2 h-4 w-4" />
-                          </Link>
-                        </Button>
-                      </div>
-                  </div>
-              </CardContent>
-            </Card>
-          </motion.section>
-        )}
-
-        {/* Quick Achievements */}
-        {recentActivities.length > 0 && (
-          <motion.section 
-            id="achievements" 
-            className="container"
-            {...sectionAnimation}
-          >
-            <div className="text-center mb-8">
-              <h2 className="text-3xl font-bold">
-                {homeContent.sections.recentActivities.title}
-              </h2>
-              <p className="text-muted-foreground">{homeContent.sections.recentActivities.description}</p>
-            </div>
-            <div className="mx-auto grid max-w-4xl gap-8 md:grid-cols-2 lg:grid-cols-3">
-              {recentActivities.map((item) => (
-                item && (
-                  <Card key={item.id} className="transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {featuredProjects.map((project) => (
+                    <Card key={project.id} className="flex flex-col overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+                    <Link href={`/projects/${project.slug}`} className="block relative aspect-video">
+                        <Image
+                        src={project.images[0].url}
+                        alt={project.name}
+                        fill
+                        className="object-cover"
+                        data-ai-hint={project.images[0].dataAiHint}
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        />
+                    </Link>
                     <CardHeader>
-                      <CardTitle className="text-lg">{item.name}</CardTitle>
+                        <CardTitle>
+                        <Link href={`/projects/${project.slug}`}>{project.name}</Link>
+                        </CardTitle>
                     </CardHeader>
-                    <CardContent>
-                      <p className="text-muted-foreground text-sm line-clamp-3">
-                        {item.description}
-                      </p>
+                    <CardContent className="flex-grow">
+                        <p className="text-muted-foreground line-clamp-2">{project.description}</p>
+                        <div className="flex flex-wrap gap-2 mt-4">
+                            {project.technologies.slice(0,3).map(tech => (
+                                <Badge key={tech} variant="secondary">{tech}</Badge>
+                            ))}
+                            {project.technologies.length > 3 && (
+                            <Badge variant="outline">+{project.technologies.length - 3} more</Badge>
+                            )}
+                        </div>
                     </CardContent>
-                  </Card>
-                )
-              ))}
+                    <CardFooter className="flex gap-4">
+                        <Button asChild variant="link" className="p-0 h-auto">
+                            <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+                            <Github className="mr-2 h-4 w-4" /> Code
+                            </a>
+                        </Button>
+                        {project.liveUrl && (
+                            <Button asChild variant="link" className="p-0 h-auto">
+                            <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
+                                <PlayCircle className="mr-2 h-4 w-4" /> Live Demo
+                            </a>
+                            </Button>
+                        )}
+                    </CardFooter>
+                    </Card>
+                ))}
+                </div>
+            </motion.section>
+            )}
+            
+            {/* Skills Overview */}
+            <motion.section 
+                id="skills" 
+                className="container"
+                {...sectionAnimation}
+            >
+            <div className="text-center mb-8">
+                <h2 className="text-3xl font-bold">{homeContent.sections.skills.title}</h2>
+                <p className="text-muted-foreground">{homeContent.sections.skills.description}</p>
             </div>
-          </motion.section>
-        )}
+            <div className="mx-auto max-w-4xl">
+                <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-4 gap-8 justify-center">
+                {skillsToShow.map((tech) => (
+                    <div key={tech} className="flex flex-col items-center gap-2">
+                    <div className="w-24 h-24 flex items-center justify-center rounded-lg bg-muted shadow-md hover:shadow-lg transition-shadow">
+                        <TechIcon technology={tech} className="w-12 h-12" />
+                    </div>
+                    <p className="font-semibold text-center">{tech}</p>
+                    </div>
+                ))}
+                </div>
+            </div>
+            </motion.section>
 
-        <div className="pb-16" />
+            {/* Latest Internship */}
+            {latestInternship && (
+            <motion.section 
+                id="latest-internship" 
+                className="container"
+                {...sectionAnimation}
+            >
+                <div className="text-center mb-8">
+                <h2 className="text-3xl font-bold">
+                    {homeContent.sections.latestExperience.title}
+                </h2>
+                <p className="text-muted-foreground">{homeContent.sections.latestExperience.description}</p>
+                </div>
+                <Card className="mx-auto max-w-4xl transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+                <CardContent className="p-6">
+                    <div className="flex flex-col sm:flex-row items-start gap-6">
+                        <Image
+                            src={latestInternship.logoUrl}
+                            alt={`${latestInternship.company} logo`}
+                            width={48}
+                            height={48}
+                            className="rounded-lg"
+                            data-ai-hint={latestInternship.dataAiHint}
+                        />
+                        <div className="flex-1">
+                            <CardTitle className="text-xl">
+                            {latestInternship.position}
+                            </CardTitle>
+                            <CardDescription className="text-sm sm:text-base">
+                            {latestInternship.company} &middot; {latestInternship.duration} &middot; {latestInternship.location}
+                            </CardDescription>
+                            <div className="mt-4 text-muted-foreground line-clamp-3 sm:line-clamp-2" dangerouslySetInnerHTML={{ __html: latestInternship.description[0] }}/>
+                            <div className="flex flex-wrap gap-2 mt-4">
+                            {latestInternship.technologies.map((tech) => (
+                                <Badge key={tech} variant="secondary">
+                                {tech}
+                                </Badge>
+                            ))}
+                            </div>
+                            <Button asChild variant="link" className="px-0 mt-4">
+                            <Link href="/experience">
+                                View All Experience <ArrowRight className="ml-2 h-4 w-4" />
+                            </Link>
+                            </Button>
+                        </div>
+                    </div>
+                </CardContent>
+                </Card>
+            </motion.section>
+            )}
+
+            {/* Quick Achievements */}
+            {recentActivities.length > 0 && (
+            <motion.section 
+                id="achievements" 
+                className="container"
+                {...sectionAnimation}
+            >
+                <div className="text-center mb-8">
+                <h2 className="text-3xl font-bold">
+                    {homeContent.sections.recentActivities.title}
+                </h2>
+                <p className="text-muted-foreground">{homeContent.sections.recentActivities.description}</p>
+                </div>
+                <div className="mx-auto grid max-w-4xl gap-8 md:grid-cols-2 lg:grid-cols-3">
+                {recentActivities.map((item) => (
+                    item && (
+                    <Card key={item.id} className="transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+                        <CardHeader>
+                        <CardTitle className="text-lg">{item.name}</CardTitle>
+                        </CardHeader>
+                        <CardContent>
+                        <p className="text-muted-foreground text-sm line-clamp-3">
+                            {item.description}
+                        </p>
+                        </CardContent>
+                    </Card>
+                    )
+                ))}
+                </div>
+            </motion.section>
+            )}
+
+            <div className="pb-16" />
+        </div>
       </div>
-    </div>
+    </>
   );
 }
