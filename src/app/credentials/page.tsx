@@ -23,17 +23,9 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { achievementsData, certificatesData } from "@/data/credentials";
-import { Eye, Search } from "lucide-react";
+import { Eye, Search, CalendarDays, Award } from "lucide-react";
 import content from "@/data/pageContent.json";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "@/components/ui/table";
 import { Label } from "@/components/ui/label";
 import { Separator } from "@/components/ui/separator";
 
@@ -101,7 +93,7 @@ export default function CredentialsPage() {
             {featuredCerts.length > 0 && (
                 <div className="mb-12">
                     <h2 className="mb-4 text-2xl font-bold">{credentialsContent.featuredCertificates}</h2>
-                    <div className="grid grid-cols-2 gap-6 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
+                    <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
                         {featuredCerts.map((cert) => (
                            <Link key={cert.id} href={cert.fileUrl} target="_blank" rel="noopener noreferrer" className="group block h-full">
                                 <Card className="flex h-full flex-col items-center justify-center gap-4 overflow-hidden p-4 transition-all hover:shadow-xl hover:-translate-y-1">
@@ -174,42 +166,39 @@ export default function CredentialsPage() {
                 </Select>
               </div>
 
-               <div className="overflow-x-auto">
-                <Table>
-                  <TableHeader>
-                    <TableRow>
-                      <TableHead className="w-[30%]">Certificate</TableHead>
-                      <TableHead>Issuer</TableHead>
-                      <TableHead>Date</TableHead>
-                      <TableHead className="w-[25%]">Skills</TableHead>
-                      <TableHead className="text-right">Link</TableHead>
-                    </TableRow>
-                  </TableHeader>
-                  <TableBody>
-                    {filteredCertificates.map((cert) => (
-                      <TableRow key={cert.id}>
-                        <TableCell className="font-medium">{cert.name}</TableCell>
-                        <TableCell>{cert.issuer}</TableCell>
-                        <TableCell>{format(new Date(cert.issueDate), "PPP")}</TableCell>
-                        <TableCell>
-                          <div className="flex flex-wrap gap-1">
+               <div className="space-y-4">
+                {filteredCertificates.map((cert) => (
+                  <Card key={cert.id} className="transition-shadow hover:shadow-md">
+                    <div className="p-4 grid grid-cols-[1fr_auto] items-start gap-4">
+                      <div>
+                        <h4 className="font-semibold text-lg">{cert.name}</h4>
+                        <div className="text-sm text-muted-foreground mt-1 flex flex-wrap items-center gap-x-4 gap-y-1">
+                          <div className="flex items-center gap-2">
+                             <Award className="h-4 w-4"/>
+                             <span>{cert.issuer}</span>
+                          </div>
+                          <div className="flex items-center gap-2">
+                            <CalendarDays className="h-4 w-4"/>
+                            <span>{format(new Date(cert.issueDate), "PPP")}</span>
+                          </div>
+                        </div>
+
+                        <div className="mt-3 flex flex-wrap gap-2">
                             {cert.skills.map((skill) => (
                               <Badge key={skill} variant="secondary">{skill}</Badge>
                             ))}
-                          </div>
-                        </TableCell>
-                        <TableCell className="text-right">
-                          <Button asChild variant="outline" size="sm">
-                            <Link href={cert.fileUrl} target="_blank" rel="noopener noreferrer">
-                              <Eye className="mr-2 h-4 w-4" /> View
-                            </Link>
-                          </Button>
-                        </TableCell>
-                      </TableRow>
-                    ))}
-                  </TableBody>
-                </Table>
+                        </div>
+                      </div>
+                      <Button asChild variant="outline" size="sm" className="shrink-0">
+                        <Link href={cert.fileUrl} target="_blank" rel="noopener noreferrer">
+                          <Eye className="mr-2 h-4 w-4" /> View
+                        </Link>
+                      </Button>
+                    </div>
+                  </Card>
+                ))}
               </div>
+
 
               {filteredCertificates.length === 0 && (
                 <div className="p-8 text-center text-muted-foreground border rounded-md mt-4">
