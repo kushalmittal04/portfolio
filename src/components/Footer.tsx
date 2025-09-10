@@ -59,8 +59,8 @@ export function Footer() {
             <h3 className="text-sm font-semibold uppercase tracking-wider text-muted-foreground mb-4">
                 Quick Links
             </h3>
-            <div className="flex gap-8">
-              <ul className="space-y-2 text-center md:text-left">
+            <div className="flex gap-8 justify-center md:justify-start">
+              <ul className="space-y-2 text-left">
                 {firstHalf.map(({ href, label }) => (
                   <li key={href}>
                     <Link
@@ -72,7 +72,7 @@ export function Footer() {
                   </li>
                 ))}
               </ul>
-              <ul className="space-y-2 text-center md:text-left">
+              <ul className="space-y-2 text-left">
                 {secondHalf.map(({ href, label }) => (
                   <li key={href}>
                     <Link
@@ -89,11 +89,11 @@ export function Footer() {
           
 
           {/* Right Column */}
-           <div className="space-y-4 md:justify-self-end">
+           <div className="space-y-4 md:justify-self-end md:text-right">
                <h3 className="text-sm font-semibold uppercase tracking-wider text-muted-foreground">
                 Connect
               </h3>
-              <div className="flex justify-center gap-4 md:justify-start">
+              <div className="flex justify-center gap-4 md:justify-end">
                   {socialLinks.map(({ href, label, icon }) => (
                      <Link key={label} href={href} aria-label={label} target="_blank" rel="noopener noreferrer">
                         {icon}
