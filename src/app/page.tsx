@@ -1,7 +1,7 @@
 
 "use client";
 
-import { useRef } from "react";
+import { useRef, useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Download, Github, PlayCircle } from "lucide-react";
@@ -29,6 +29,11 @@ import recentActivitiesConfig from "@/data/recent-activities.json";
 
 
 export default function Home() {
+  const [isMounted, setIsMounted] = useState(false);
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
   const featuredProjects = projectsData.filter((p) => p.isFeatured).slice(0, 3);
   const latestInternship = experienceData[0];
 
@@ -78,45 +83,47 @@ export default function Home() {
     <>
       {/* Hero Section */}
       <section ref={heroRef} className="relative flex h-screen items-center justify-center overflow-hidden">
-        <motion.div 
-            style={{ y: textTranslateY }}
-            className="container px-4 md:px-6"
-        >
-            <div className="flex flex-col items-center space-y-6 text-center">
-                <motion.div style={{ scale: imageScale, opacity: textOpacity }}>
-                <Image
-                    src="/images/profile_pics/pic_1.jpeg"
-                    alt="Kushal Mittal"
-                    width={150}
-                    height={150}
-                    className="rounded-full object-cover shadow-lg aspect-square"
-                    data-ai-hint="portrait professional"
-                    priority
-                />
-                </motion.div>
-                <motion.div style={{ opacity: textOpacity }} className="space-y-2">
-                <h1 className="text-5xl font-bold tracking-tighter sm:text-6xl">
-                    {homeContent.title}
-                </h1>
-                <h2 className="text-xl font-semibold text-primary md:text-2xl">
-                    {homeContent.subtitle}
-                </h2>
-                <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl">
-                    {homeContent.description}
-                </p>
-                </motion.div>
-                <motion.div style={{ opacity: textOpacity }} className="flex flex-col gap-4 min-[400px]:flex-row">
-                <Button asChild size="lg">
-                    <Link href="/projects">{homeContent.buttons.work}</Link>
-                </Button>
-                <Button asChild variant="secondary" size="lg">
-                    <a href="/pdfs/Kushal_Mittal_Resume.pdf" download="Kushal_Mittal_Resume.pdf" rel="noopener noreferrer">
-                    {homeContent.buttons.resume} <Download className="ml-2 h-4 w-4" />
-                    </a>
-                </Button>
-                </motion.div>
-            </div>
-        </motion.div>
+        {isMounted && (
+            <motion.div 
+                style={{ y: textTranslateY }}
+                className="container px-4 md:px-6"
+            >
+                <div className="flex flex-col items-center space-y-6 text-center">
+                    <motion.div style={{ scale: imageScale, opacity: textOpacity }}>
+                    <Image
+                        src="/images/profile_pics/pic_1.jpeg"
+                        alt="Kushal Mittal"
+                        width={150}
+                        height={150}
+                        className="rounded-full object-cover shadow-lg aspect-square"
+                        data-ai-hint="portrait professional"
+                        priority
+                    />
+                    </motion.div>
+                    <motion.div style={{ opacity: textOpacity }} className="space-y-2">
+                    <h1 className="text-5xl font-bold tracking-tighter sm:text-6xl">
+                        {homeContent.title}
+                    </h1>
+                    <h2 className="text-xl font-semibold text-primary md:text-2xl">
+                        {homeContent.subtitle}
+                    </h2>
+                    <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl">
+                        {homeContent.description}
+                    </p>
+                    </motion.div>
+                    <motion.div style={{ opacity: textOpacity }} className="flex flex-col gap-4 min-[400px]:flex-row">
+                    <Button asChild size="lg">
+                        <Link href="/projects">{homeContent.buttons.work}</Link>
+                    </Button>
+                    <Button asChild variant="secondary" size="lg">
+                        <a href="/pdfs/Kushal_Mittal_Resume.pdf" download="Kushal_Mittal_Resume.pdf" rel="noopener noreferrer">
+                        {homeContent.buttons.resume} <Download className="ml-2 h-4 w-4" />
+                        </a>
+                    </Button>
+                    </motion.div>
+                </div>
+            </motion.div>
+        )}
       </section>
 
       <div className="relative z-10 bg-background">
