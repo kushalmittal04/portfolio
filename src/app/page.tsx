@@ -171,9 +171,7 @@ export default function Home() {
                       <CardDescription className="text-sm sm:text-base">
                         {latestInternship.company} &middot; {latestInternship.duration} &middot; {latestInternship.location}
                       </CardDescription>
-                      <p className="mt-4 text-muted-foreground line-clamp-3 sm:line-clamp-2">
-                        {latestInternship.description[0]}
-                      </p>
+                      <p className="mt-4 text-muted-foreground line-clamp-3 sm:line-clamp-2" dangerouslySetInnerHTML={{ __html: latestInternship.description[0] }}/>
                        <div className="flex flex-wrap gap-2 mt-4">
                         {latestInternship.technologies.map((tech) => (
                           <Badge key={tech} variant="secondary">

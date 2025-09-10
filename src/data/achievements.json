@@ -1,18 +1,27 @@
+
 [
   {
     "id": 1,
-    "name": "GATE 2025 CS",
-    "description": "Qualified the Graduate Aptitude Test in Engineering for Computer Science with a top rank.",
-    "imageUrl": "https://picsum.photos/600/400",
-    "dataAiHint": "award trophy",
+    "name": "GATE 2025 CS Qualified",
+    "description": "Successfully qualified the Graduate Aptitude Test in Engineering (GATE) for Computer Science, demonstrating a strong foundation in core CS subjects.",
+    "imageUrl": "/images/credentials/achievements/202503_GATE_CS.pdf",
+    "dataAiHint": "certificate document",
     "isFeatured": true
   },
   {
     "id": 2,
-    "name": "First Position in Blind Coding",
-    "description": "Secured the first place in a university-level blind coding competition, demonstrating strong problem-solving skills under pressure.",
-    "imageUrl": "https://picsum.photos/600/400",
-    "dataAiHint": "code competition",
+    "name": "1st Position in Blind Coding",
+    "description": "Secured first place in a competitive university-level blind coding event, showcasing strong problem-solving abilities under pressure.",
+    "imageUrl": "/images/credentials/achievements/202403_Blind_Coding.pdf",
+    "dataAiHint": "award competition",
     "isFeatured": true
+  },
+  {
+    "id": 3,
+    "name": "LinkedIn Skill Assessments: C & PHP",
+    "description": "Passed LinkedIn's skill assessments for both C (Programming Language) and PHP, validating proficiency in these key languages.",
+    "imageUrl": "/images/credentials/achievements/202308_Linkedln_Skill_Assessment.pdf",
+    "dataAiHint": "badge certificate",
+    "isFeatured": false
   }
 ]

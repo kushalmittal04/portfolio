@@ -1,3 +1,4 @@
+
 import Image from "next/image";
 import {
   Tabs,
@@ -112,7 +113,7 @@ export default function CredentialsPage() {
                   >
                     <div className="relative aspect-video sm:aspect-square h-full cursor-pointer">
                        <Image
-                        src={achievement.imageUrl}
+                        src={achievement.imageUrl.endsWith('.pdf') ? 'https://picsum.photos/seed/doc/600/400' : achievement.imageUrl}
                         alt={achievement.name}
                         fill
                         className="object-cover"
