@@ -126,7 +126,10 @@ export default function Home() {
             <motion.section 
                 id="featured-projects" 
                 className="container pt-16"
-                {...sectionAnimation}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, ease: "easeInOut" }}
+                viewport={{ once: true, amount: 0.2 }}
             >
                 <div className="text-center mb-8">
                 <h2 className="text-3xl font-bold">
@@ -187,7 +190,10 @@ export default function Home() {
             <motion.section 
                 id="skills" 
                 className="container"
-                {...sectionAnimation}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, ease: "easeInOut" }}
+                viewport={{ once: true, amount: 0.2 }}
             >
             <div className="text-center mb-8">
                 <h2 className="text-3xl font-bold">{homeContent.sections.skills.title}</h2>
@@ -212,7 +218,10 @@ export default function Home() {
             <motion.section 
                 id="latest-internship" 
                 className="container"
-                {...sectionAnimation}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, ease: "easeInOut" }}
+                viewport={{ once: true, amount: 0.2 }}
             >
                 <div className="text-center mb-8">
                 <h2 className="text-3xl font-bold">
@@ -263,7 +272,10 @@ export default function Home() {
             <motion.section 
                 id="achievements" 
                 className="container"
-                {...sectionAnimation}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, ease: "easeInOut" }}
+                viewport={{ once: true, amount: 0.2 }}
             >
                 <div className="text-center mb-8">
                 <h2 className="text-3xl font-bold">
