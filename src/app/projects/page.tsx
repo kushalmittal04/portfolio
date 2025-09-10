@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState } from "react";
@@ -18,7 +19,7 @@ import projectsData from "@/data/projects.json";
 import { cn } from "@/lib/utils";
 import content from "@/data/pageContent.json";
 
-const categories = ["All", ...new Set(projectsData.flatMap(p => p.category))];
+const categories = ["All", ...Array.from(new Set(projectsData.flatMap(p => p.category)))];
 
 export default function ProjectsPage() {
   const [filter, setFilter] = useState("All");

@@ -5,7 +5,4 @@ import certificates from "./certificates.json";
 
 export const achievementsData: Achievement[] = achievements;
 
-export const certificatesData: Certificate[] = certificates.map(cert => ({
-    ...cert,
-    dataAiHint: "certificate document"
-}));
+export const certificatesData: Certificate[] = certificates;

@@ -11,7 +11,6 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
-  CardFooter,
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import {
@@ -28,7 +27,6 @@ import { Eye, Search, CalendarDays, Award, Star } from "lucide-react";
 import content from "@/data/pageContent.json";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Label } from "@/components/ui/label";
-import { Separator } from "@/components/ui/separator";
 
 export default function CredentialsPage() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -96,9 +94,9 @@ export default function CredentialsPage() {
                     <h2 className="mb-4 text-2xl font-bold">{credentialsContent.featuredCertificates}</h2>
                     <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
                         {featuredCerts.map((cert) => (
-                           <Link key={cert.id} href={cert.fileUrl} target="_blank" rel="noopener noreferrer" className="group block h-full">
+                           cert.featuredImageUrl && (
+                            <Link key={cert.id} href={cert.fileUrl} target="_blank" rel="noopener noreferrer" className="group block h-full">
                                 <Card className="flex h-full flex-col items-center justify-center gap-4 overflow-hidden p-4 transition-all duration-300 hover:shadow-xl hover:-translate-y-2 hover:rotate-[-2deg]">
-                                {cert.featuredImageUrl && (
                                   <div className="relative w-32 h-32">
                                     <Image
                                       src={cert.featuredImageUrl}
@@ -109,10 +107,10 @@ export default function CredentialsPage() {
                                       data-ai-hint="certificate badge"
                                     />
                                   </div>
-                                )}
                                 <p className="text-sm font-medium text-muted-foreground">{format(new Date(cert.issueDate), "PPP")}</p>
                                 </Card>
                             </Link>
+                           )
                         ))}
                     </div>
                 </div>
@@ -137,8 +135,8 @@ export default function CredentialsPage() {
                     onChange={(e) => setSearchTerm(e.target.value)}
                   />
                 </div>
-                <div className="flex w-full md:w-auto items-center gap-4 shrink-0">
-                    <div className="flex items-center gap-2">
+                <div className="flex w-full md:w-auto flex-col sm:flex-row items-center gap-4 shrink-0">
+                    <div className="flex w-full items-center gap-2">
                         <Label htmlFor="type-filter" className="text-sm font-medium shrink-0">Type:</Label>
                         <Select value={filterType} onValueChange={setFilterType}>
                         <SelectTrigger id="type-filter" className="w-full md:w-[180px]">
@@ -154,7 +152,7 @@ export default function CredentialsPage() {
                         </Select>
                     </div>
 
-                    <div className="flex items-center gap-2">
+                    <div className="flex w-full items-center gap-2">
                         <Label htmlFor="issuer-filter" className="text-sm font-medium shrink-0">Issuer:</Label>
                         <Select value={filterIssuer} onValueChange={setFilterIssuer}>
                         <SelectTrigger id="issuer-filter" className="w-full md:w-[180px]">

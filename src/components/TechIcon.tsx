@@ -17,13 +17,14 @@ import {
   PencilRuler,
   Wind,
 } from "lucide-react";
+import type { LucideProps } from "lucide-react";
 
 interface TechIconProps {
   technology: string;
   className?: string;
 }
 
-const iconMap: Record<string, React.ComponentType<any>> = {
+const iconMap: Record<string, React.ComponentType<LucideProps>> = {
   // Languages
   python: Code,
   javascript: Code,

@@ -126,63 +126,65 @@ export default function Home() {
             <motion.section 
                 id="featured-projects" 
                 className="container pt-16"
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, ease: "easeInOut" }}
+                initial="initial"
+                whileInView="whileInView"
+                transition={{ staggerChildren: 0.1 }}
                 viewport={{ once: true, amount: 0.2 }}
             >
-                <div className="text-center mb-8">
-                <h2 className="text-3xl font-bold">
-                    {homeContent.sections.featuredProjects.title}
-                </h2>
-                <p className="text-muted-foreground">{homeContent.sections.featuredProjects.description}</p>
-                </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {featuredProjects.map((project) => (
-                    <Card key={project.id} className="flex flex-col overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
-                    <Link href={`/projects/${project.slug}`} className="block relative aspect-video">
-                        <Image
-                        src={project.images[0].url}
-                        alt={project.name}
-                        fill
-                        className="object-cover"
-                        data-ai-hint={project.images[0].dataAiHint}
-                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                        />
-                    </Link>
-                    <CardHeader>
-                        <CardTitle>
-                        <Link href={`/projects/${project.slug}`}>{project.name}</Link>
-                        </CardTitle>
-                    </CardHeader>
-                    <CardContent className="flex-grow">
-                        <p className="text-muted-foreground line-clamp-2">{project.description}</p>
-                        <div className="flex flex-wrap gap-2 mt-4">
-                            {project.technologies.slice(0,3).map(tech => (
-                                <Badge key={tech} variant="secondary">{tech}</Badge>
-                            ))}
-                            {project.technologies.length > 3 && (
-                            <Badge variant="outline">+{project.technologies.length - 3} more</Badge>
-                            )}
-                        </div>
-                    </CardContent>
-                    <CardFooter className="flex gap-4">
-                        <Button asChild variant="link" className="p-0 h-auto">
-                            <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
-                            <Github className="mr-2 h-4 w-4" /> Code
-                            </a>
-                        </Button>
-                        {project.liveUrl && (
+                <motion.div {...sectionAnimation}>
+                    <div className="text-center mb-8">
+                        <h2 className="text-3xl font-bold">
+                            {homeContent.sections.featuredProjects.title}
+                        </h2>
+                        <p className="text-muted-foreground">{homeContent.sections.featuredProjects.description}</p>
+                    </div>
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    {featuredProjects.map((project) => (
+                        <Card key={project.id} className="flex flex-col overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+                        <Link href={`/projects/${project.slug}`} className="block relative aspect-video">
+                            <Image
+                            src={project.images[0].url}
+                            alt={project.name}
+                            fill
+                            className="object-cover"
+                            data-ai-hint={project.images[0].dataAiHint}
+                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                            />
+                        </Link>
+                        <CardHeader>
+                            <CardTitle>
+                            <Link href={`/projects/${project.slug}`}>{project.name}</Link>
+                            </CardTitle>
+                        </CardHeader>
+                        <CardContent className="flex-grow">
+                            <p className="text-muted-foreground line-clamp-2">{project.description}</p>
+                            <div className="flex flex-wrap gap-2 mt-4">
+                                {project.technologies.slice(0,3).map(tech => (
+                                    <Badge key={tech} variant="secondary">{tech}</Badge>
+                                ))}
+                                {project.technologies.length > 3 && (
+                                <Badge variant="outline">+{project.technologies.length - 3} more</Badge>
+                                )}
+                            </div>
+                        </CardContent>
+                        <CardFooter className="flex gap-4">
                             <Button asChild variant="link" className="p-0 h-auto">
-                            <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
-                                <PlayCircle className="mr-2 h-4 w-4" /> Live Demo
-                            </a>
+                                <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+                                <Github className="mr-2 h-4 w-4" /> Code
+                                </a>
                             </Button>
-                        )}
-                    </CardFooter>
-                    </Card>
-                ))}
-                </div>
+                            {project.liveUrl && (
+                                <Button asChild variant="link" className="p-0 h-auto">
+                                <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
+                                    <PlayCircle className="mr-2 h-4 w-4" /> Live Demo
+                                </a>
+                                </Button>
+                            )}
+                        </CardFooter>
+                        </Card>
+                    ))}
+                    </div>
+                </motion.div>
             </motion.section>
             )}
             
@@ -190,10 +192,7 @@ export default function Home() {
             <motion.section 
                 id="skills" 
                 className="container"
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, ease: "easeInOut" }}
-                viewport={{ once: true, amount: 0.2 }}
+                {...sectionAnimation}
             >
             <div className="text-center mb-8">
                 <h2 className="text-3xl font-bold">{homeContent.sections.skills.title}</h2>
@@ -218,10 +217,7 @@ export default function Home() {
             <motion.section 
                 id="latest-internship" 
                 className="container"
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, ease: "easeInOut" }}
-                viewport={{ once: true, amount: 0.2 }}
+                {...sectionAnimation}
             >
                 <div className="text-center mb-8">
                 <h2 className="text-3xl font-bold">
@@ -272,10 +268,7 @@ export default function Home() {
             <motion.section 
                 id="achievements" 
                 className="container"
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, ease: "easeInOut" }}
-                viewport={{ once: true, amount: 0.2 }}
+                {...sectionAnimation}
             >
                 <div className="text-center mb-8">
                 <h2 className="text-3xl font-bold">

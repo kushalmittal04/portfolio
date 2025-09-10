@@ -1,5 +1,5 @@
 
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import profilesData from "@/data/profiles.json";
 import * as Icons from "lucide-react";
 import Link from "next/link";
@@ -91,7 +91,7 @@ export default function ProfilesPage() {
                         {/* Front of Card */}
                         <div className="absolute inset-0 [backface-visibility:hidden]">
                            <Card className="flex h-full w-full flex-col items-center justify-center p-6 text-center transition-shadow hover:shadow-xl">
-                              <Link href={profile.url} target="_blank" rel="noopener noreferrer" className="flex flex-col items-center gap-4 p-0">
+                            <Link href={profile.url} target="_blank" rel="noopener noreferrer" className="flex flex-col items-center justify-center gap-4 h-full w-full">
                                 <LucideIcon
                                     name={profile.icon}
                                     className="h-16 w-16 text-primary"
@@ -102,24 +102,26 @@ export default function ProfilesPage() {
                                     @{profile.username}
                                     </p>
                                 </div>
-                              </Link>
+                            </Link>
                            </Card>
                         </div>
 
                         {/* Back of Card */}
                         <div className="absolute inset-0 [transform:rotateY(180deg)] [backface-visibility:hidden]">
                           <Card className="flex h-full w-full flex-col items-center justify-center bg-muted p-6">
-                              <Link href={profile.url} target="_blank" rel="noopener noreferrer" className="flex flex-col items-center gap-4 p-0 text-center">
-                                  <h3 className="text-lg font-bold text-foreground">{profile.platform} Stats</h3>
-                                  <div className="space-y-2 text-sm">
-                                      {profile.stats.map(stat => (
-                                          <div key={stat.label}>
-                                              <p className="font-semibold">{stat.value}</p>
-                                              <p className="text-xs text-muted-foreground">{stat.label}</p>
-                                          </div>
-                                      ))}
-                                  </div>
-                              </Link>
+                            <Link href={profile.url} target="_blank" rel="noopener noreferrer" className="flex flex-col items-center justify-center gap-4 text-center h-full w-full">
+                                <CardHeader className="p-0">
+                                    <CardTitle className="text-lg font-bold text-foreground">{profile.platform} Stats</CardTitle>
+                                </CardHeader>
+                                <CardContent className="p-0 space-y-2 text-sm">
+                                    {profile.stats.map(stat => (
+                                        <div key={stat.label}>
+                                            <p className="font-semibold">{stat.value}</p>
+                                            <p className="text-xs text-muted-foreground">{stat.label}</p>
+                                        </div>
+                                    ))}
+                                </CardContent>
+                            </Link>
                           </Card>
                         </div>
                       </div>
