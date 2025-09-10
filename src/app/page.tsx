@@ -182,7 +182,7 @@ export default function Home() {
                         ))}
                       </div>
                       <Button asChild variant="link" className="px-0 mt-4">
-                        <Link href={`/experience/${latestInternship.slug}`}>
+                        <Link href="/experience">
                           View All Experience <ArrowRight className="ml-2 h-4 w-4" />
                         </Link>
                       </Button>
