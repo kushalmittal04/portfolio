@@ -40,9 +40,9 @@ export function Footer() {
   return (
     <footer className="border-t bg-background">
       <div className="container mx-auto px-4 py-8">
-        <div className="grid grid-cols-1 gap-8 text-center md:grid-cols-3 md:text-left">
+        <div className="grid grid-cols-1 gap-8 text-center md:grid-cols-4 md:text-left">
           {/* Left Column */}
-          <div className="space-y-4">
+          <div className="space-y-4 md:col-span-1">
             <Link href="/" className="inline-block">
               <span className="text-lg font-bold">kushalmittal04.profile</span>
             </Link>
@@ -54,8 +54,8 @@ export function Footer() {
             </p>
           </div>
 
-          {/* Quick Links Columns */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+          {/* Quick Links Column 1 */}
+          <div className="md:justify-self-center">
              <ul className="space-y-2">
                <h3 className="text-sm font-semibold uppercase tracking-wider text-muted-foreground mb-4">
                   Quick Links
@@ -71,7 +71,11 @@ export function Footer() {
                 </li>
               ))}
             </ul>
-            <ul className="space-y-2">
+          </div>
+
+          {/* Quick Links Column 2 */}
+           <div className="md:justify-self-center">
+             <ul className="space-y-2">
               <h3 className="text-sm font-semibold uppercase tracking-wider text-muted-foreground mb-4 invisible">
                   &nbsp;
               </h3>
@@ -86,11 +90,11 @@ export function Footer() {
                 </li>
               ))}
             </ul>
-          </div>
+           </div>
           
 
           {/* Right Column */}
-           <div className="space-y-4">
+           <div className="space-y-4 md:justify-self-end">
                <h3 className="text-sm font-semibold uppercase tracking-wider text-muted-foreground">
                 Connect
               </h3>
