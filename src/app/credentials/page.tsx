@@ -1,5 +1,6 @@
 
 import Image from "next/image";
+import Link from "next/link";
 import {
   Tabs,
   TabsContent,
@@ -15,7 +16,8 @@ import {
 } from "@/components/ui/card";
 import { achievementsData, certificatesData } from "@/data/credentials";
 import { ImageDialog } from "@/components/ImageDialog";
-import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Eye } from "lucide-react";
 import content from "@/data/pageContent.json";
 
 export default function CredentialsPage() {
@@ -104,34 +106,22 @@ export default function CredentialsPage() {
         <TabsContent value="achievements" className="mt-8">
           <div className="grid gap-8 md:grid-cols-2">
             {achievementsData.map((achievement) => (
-              <Card key={achievement.id} className="flex flex-col sm:flex-row overflow-hidden">
-                <div className="sm:w-1/3">
-                  <ImageDialog
-                    imageUrl={achievement.imageUrl}
-                    alt={achievement.name}
-                    dataAiHint={achievement.dataAiHint}
-                  >
-                    <div className="relative aspect-video sm:aspect-square h-full cursor-pointer">
-                       <Image
-                        src={achievement.imageUrl.endsWith('.pdf') ? 'https://picsum.photos/seed/doc/600/400' : achievement.imageUrl}
-                        alt={achievement.name}
-                        fill
-                        className="object-cover"
-                        data-ai-hint={achievement.dataAiHint}
-                      />
-                    </div>
-                  </ImageDialog>
-                </div>
-                <div className="flex-1">
-                  <CardHeader>
-                    <CardTitle>{achievement.name}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-muted-foreground">
-                      {achievement.description}
-                    </p>
-                  </CardContent>
-                </div>
+              <Card key={achievement.id} className="flex flex-col">
+                <CardHeader>
+                  <CardTitle>{achievement.name}</CardTitle>
+                </CardHeader>
+                <CardContent className="flex-grow">
+                  <p className="text-muted-foreground">
+                    {achievement.description}
+                  </p>
+                </CardContent>
+                <CardContent>
+                    <Button asChild variant="outline" size="sm">
+                       <Link href={achievement.imageUrl} target="_blank" rel="noopener noreferrer">
+                        <Eye className="mr-2 h-4 w-4" /> View Document
+                      </Link>
+                    </Button>
+                </CardContent>
               </Card>
             ))}
           </div>
