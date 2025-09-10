@@ -10,7 +10,7 @@ import {
 import educationData from "@/data/education.json";
 import { ImageDialog } from "@/components/ImageDialog";
 import Image from "next/image";
-import { Eye, GraduationCap } from "lucide-react";
+import { Eye, GraduationCap, MapPin } from "lucide-react";
 import skillsData from "@/data/skills.json";
 import { Badge } from "@/components/ui/badge";
 import content from "@/data/pageContent.json";
@@ -125,6 +125,12 @@ export default function AboutPage() {
                                <h3 className="text-xl font-semibold mt-1">{edu.degree}</h3>
                                <p className="text-muted-foreground">{edu.institution}</p>
                                {edu.university && <p className="text-sm text-muted-foreground">{edu.university}</p>}
+                               {edu.location && (
+                                <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground mt-1">
+                                  <MapPin className="h-4 w-4" />
+                                  <span>{edu.location}</span>
+                                </div>
+                              )}
                                <p className="font-bold text-lg text-primary mt-2">{edu.score}</p>
                                <ImageDialog
                                 imageUrl={edu.marksheetUrl}

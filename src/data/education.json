@@ -8,7 +8,8 @@
     "duration": "2022 - 2026",
     "score": "Pursuing",
     "marksheetUrl": "/images/marksheets/marksheet_btech.jpg",
-    "dataAiHint": "document certificate"
+    "dataAiHint": "document certificate",
+    "location": "Jaipur, Rajasthan, India"
   },
   {
     "id": 2,
@@ -17,7 +18,8 @@
     "duration": "2021",
     "score": "84%",
     "marksheetUrl": "/images/marksheets/marksheet_12.jpg",
-    "dataAiHint": "document certificate"
+    "dataAiHint": "document certificate",
+    "location": "Lucknow, Uttar Pradesh, India"
   },
   {
     "id": 3,
@@ -26,6 +28,7 @@
     "duration": "2019",
     "score": "85.8%",
     "marksheetUrl": "/images/marksheets/marksheet_10.jpg",
-    "dataAiHint": "document certificate"
+    "dataAiHint": "document certificate",
+    "location": "Ajmer, Rajasthan, India"
   }
 ]

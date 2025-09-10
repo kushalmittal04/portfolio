@@ -7,6 +7,7 @@ export interface Education {
   score: string;
   marksheetUrl: string;
   dataAiHint: string;
+  location?: string;
 }
 
 export interface Experience {
