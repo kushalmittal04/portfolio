@@ -124,6 +124,7 @@ export default function AboutPage() {
                                <p className="text-sm text-muted-foreground">{edu.duration}</p>
                                <h3 className="text-xl font-semibold mt-1">{edu.degree}</h3>
                                <p className="text-muted-foreground">{edu.institution}</p>
+                               {edu.university && <p className="text-sm text-muted-foreground">{edu.university}</p>}
                                <p className="font-bold text-lg text-primary mt-2">{edu.score}</p>
                                <ImageDialog
                                 imageUrl={edu.marksheetUrl}

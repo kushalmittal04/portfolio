@@ -1,28 +1,30 @@
+
 [
   {
     "id": 1,
-    "institution": "University of Technology",
-    "degree": "Bachelor of Technology in Computer Science",
-    "duration": "2021 - 2025",
-    "score": "9.0 CGPA",
+    "institution": "Poornima College of Engineering, Jaipur",
+    "university": "Rajasthan Technical University",
+    "degree": "B.Tech, Artificial Intelligence & Data Science",
+    "duration": "2022 - 2026",
+    "score": "Pursuing",
     "marksheetUrl": "https://picsum.photos/800/1100",
     "dataAiHint": "document certificate"
   },
   {
     "id": 2,
-    "institution": "Central Senior Secondary School",
-    "degree": "12th Grade (Science Stream)",
-    "duration": "2020 - 2021",
-    "score": "95%",
+    "institution": "Lucknow Pub Col Vinamra Khand Gomti Ngr Lucknow",
+    "degree": "12th Standard (CBSE)",
+    "duration": "2021",
+    "score": "84%",
     "marksheetUrl": "https://picsum.photos/800/1100",
     "dataAiHint": "document certificate"
   },
   {
     "id": 3,
-    "institution": "Public School",
-    "degree": "10th Grade",
-    "duration": "2018 - 2019",
-    "score": "98%",
+    "institution": "Birla Int School Bander Sindri Ajmer",
+    "degree": "10th Standard (CBSE)",
+    "duration": "2019",
+    "score": "85.8%",
     "marksheetUrl": "https://picsum.photos/800/1100",
     "dataAiHint": "document certificate"
   }
