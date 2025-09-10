@@ -122,11 +122,11 @@ export default function CredentialsPage() {
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="mb-6 grid grid-cols-1 gap-4 sm:grid-cols-3">
-                <div className="relative sm:col-span-3">
+              <div className="mb-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                <div className="relative sm:col-span-2 lg:col-span-1">
                   <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
                   <Input
-                    placeholder="Search certifications by name, issuer, or skill..."
+                    placeholder="Search certifications..."
                     className="pl-10 w-full"
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
@@ -207,7 +207,7 @@ export default function CredentialsPage() {
                     {achievement.description}
                   </p>
                 </CardContent>
-                <CardContent>
+                <CardFooter>
                   <Button asChild variant="outline" size="sm">
                     <Link
                       href={achievement.imageUrl}
@@ -217,7 +217,7 @@ export default function CredentialsPage() {
                       <Eye className="mr-2 h-4 w-4" /> View Document
                     </Link>
                   </Button>
-                </CardContent>
+                </CardFooter>
               </Card>
             ))}
           </div>
