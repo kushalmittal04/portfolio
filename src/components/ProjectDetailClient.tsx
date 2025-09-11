@@ -1,3 +1,4 @@
+
 "use client";
 
 import Image from "next/image";
@@ -18,7 +19,8 @@ import {
   faLightbulb,
   faWrench,
   faBullseye,
-  faTasks
+  faTasks,
+  faCogs
 } from "@fortawesome/free-solid-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 
@@ -63,8 +65,7 @@ export function ProjectDetailClient({ project }: { project: Project }) {
   }, [mainApi, onSelect]);
 
   return (
-    <>
-      <div className="container mx-auto max-w-7xl px-4 py-16 animate-in fade-in-0 slide-in-from-bottom-8 duration-1000">
+    <div className="container mx-auto max-w-7xl px-4 py-16 animate-in fade-in-0 slide-in-from-bottom-8 duration-1000">
         <Button asChild variant="ghost" className="mb-8 -ml-4">
             <Link href="/projects">
             <FontAwesomeIcon icon={faArrowLeft} className="mr-2 h-4 w-4" />
@@ -73,37 +74,13 @@ export function ProjectDetailClient({ project }: { project: Project }) {
         </Button>
 
         {/* Header Section */}
-        <header className="mb-12">
+        <header className="text-center mb-12">
             <h1 className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl text-foreground">
             {project.name}
             </h1>
-            <p className="mt-4 text-lg text-muted-foreground sm:text-xl max-w-3xl">
+            <p className="mt-4 text-lg text-muted-foreground sm:text-xl max-w-3xl mx-auto">
             {project.tagline}
             </p>
-            <div className="mt-6 flex flex-col sm:flex-row items-start sm:items-center gap-4">
-                {project.liveUrl && (
-                    <Button asChild size="lg" className="w-full sm:w-auto">
-                    <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
-                        <FontAwesomeIcon icon={faPlayCircle} className="mr-2" /> Live Demo
-                    </a>
-                    </Button>
-                )}
-                <Button asChild variant="secondary" size="lg" className="w-full sm:w-auto">
-                    <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
-                    <FontAwesomeIcon icon={faGithub} className="mr-2" /> View Code
-                    </a>
-                </Button>
-            </div>
-             <div className="mt-8">
-                 <h3 className="text-sm font-semibold text-muted-foreground mb-2">TECHNOLOGIES USED</h3>
-                <div className="flex flex-wrap gap-2">
-                    {project.technologies.map((tech) => (
-                    <Badge key={tech} variant="secondary" className="text-sm px-3 py-1">
-                        {tech}
-                    </Badge>
-                    ))}
-                </div>
-            </div>
         </header>
 
         {/* Media Carousel */}
@@ -212,6 +189,20 @@ export function ProjectDetailClient({ project }: { project: Project }) {
             <aside className="lg:sticky lg:top-24 self-start space-y-8">
                 <Card className="overflow-hidden shadow-lg">
                     <CardHeader>
+                        <CardTitle className="flex items-center gap-3 text-2xl"><FontAwesomeIcon icon={faCogs} /> Tech Stack</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                        <div className="flex flex-wrap gap-2">
+                            {project.technologies.map((tech) => (
+                            <Badge key={tech} variant="secondary" className="text-sm px-3 py-1">
+                                {tech}
+                            </Badge>
+                            ))}
+                        </div>
+                    </CardContent>
+                </Card>
+                <Card className="overflow-hidden shadow-lg">
+                    <CardHeader>
                     <CardTitle className="flex items-center gap-3 text-2xl"><FontAwesomeIcon icon={faWrench} /> Skills Demonstrated</CardTitle>
                     </CardHeader>
                     <CardContent>
@@ -224,9 +215,27 @@ export function ProjectDetailClient({ project }: { project: Project }) {
                     </div>
                     </CardContent>
                 </Card>
+                 <Card className="overflow-hidden shadow-lg">
+                    <CardHeader>
+                        <CardTitle>Links</CardTitle>
+                    </CardHeader>
+                    <CardContent className="space-y-3">
+                        <Button asChild className="w-full" size="lg">
+                            <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+                            <FontAwesomeIcon icon={faGithub} className="mr-2" /> View Code
+                            </a>
+                        </Button>
+                        {project.liveUrl && (
+                            <Button asChild variant="secondary" className="w-full" size="lg">
+                            <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
+                                <FontAwesomeIcon icon={faPlayCircle} className="mr-2" /> Live Demo
+                            </a>
+                            </Button>
+                        )}
+                    </CardContent>
+                </Card>
             </aside>
         </div>
-      </div>
-    </>
+    </div>
   );
 }
