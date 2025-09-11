@@ -38,13 +38,13 @@ export function ProjectDetailClient({ project }: { project: Project }) {
 
   return (
     <>
-      <Button asChild variant="ghost" className="absolute top-20 left-4 z-20 bg-background/50 hover:bg-background/80">
-        <Link href="/projects">
-          <FontAwesomeIcon icon={faArrowLeft} className="mr-2 h-4 w-4" />
-          Back
-        </Link>
-      </Button>
       <section className="container mx-auto max-w-7xl px-4 py-16 sm:py-24 animate-in fade-in-0 slide-in-from-bottom-8 duration-1000">
+        <Button asChild variant="ghost" className="mb-8">
+          <Link href="/projects">
+            <FontAwesomeIcon icon={faArrowLeft} className="mr-2 h-4 w-4" />
+            Back to Projects
+          </Link>
+        </Button>
         <div className="text-center mb-8">
             <h1 className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
                 {project.name}
