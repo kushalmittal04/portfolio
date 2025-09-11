@@ -5,7 +5,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect, useCallback } from "react";
 import useEmblaCarousel, { type EmblaCarouselType } from "embla-carousel-react";
-import { motion } from "framer-motion";
 import {
   Carousel,
   CarouselContent,
@@ -29,19 +28,6 @@ import type { Project } from "@/lib/types";
 import { Badge } from "./ui/badge";
 import { Button } from "./ui/button";
 import { CarouselThumb } from "./CarouselThumb";
-
-const MotionCard = motion(Card);
-
-const cardVariants = {
-  initial: { y: 20, opacity: 0 },
-  animate: { y: 0, opacity: 1, transition: { duration: 0.5, ease: "easeInOut" } },
-};
-
-const hoverEffect = {
-  scale: 1.03,
-  transition: { duration: 0.3 }
-};
-
 
 export function ProjectDetailClient({ project }: { project: Project }) {
   const [selectedIndex, setSelectedIndex] = useState(0);
@@ -76,12 +62,7 @@ export function ProjectDetailClient({ project }: { project: Project }) {
   }, [mainApi, onSelect]);
 
   return (
-    <motion.div 
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8, ease: "easeInOut" }}
-      className="container mx-auto max-w-6xl px-4 py-16"
-    >
+    <div className="container mx-auto max-w-6xl px-4 py-16 animate-in fade-in-0 slide-in-from-bottom-8 duration-1000">
       <Button asChild variant="ghost" className="mb-8">
         <Link href="/projects">
           <FontAwesomeIcon icon={faArrowLeft} className="mr-2 h-4 w-4" />
@@ -97,12 +78,7 @@ export function ProjectDetailClient({ project }: { project: Project }) {
         </p>
       </header>
 
-      <motion.div 
-        initial={{ opacity: 0, scale: 0.95 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ delay: 0.2, duration: 0.5 }}
-        className="mb-12 space-y-4"
-      >
+      <div className="mb-12 space-y-4">
         <Carousel setApi={setMainApi} className="w-full max-w-4xl mx-auto">
           <CarouselContent>
             {media.map((item, index) => (
@@ -155,26 +131,21 @@ export function ProjectDetailClient({ project }: { project: Project }) {
                 ))}
             </CarouselContent>
         </Carousel>
-      </motion.div>
+      </div>
       
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
 
-        <motion.div 
-           initial="initial"
-           animate="animate"
-           transition={{ staggerChildren: 0.1 }}
-           className="lg:col-span-2 space-y-12"
-        >
-          <MotionCard variants={cardVariants} whileHover={hoverEffect} className="overflow-hidden">
+        <div className="lg:col-span-2 space-y-12">
+          <Card className="overflow-hidden">
             <CardHeader>
                 <CardTitle className="flex items-center gap-3 text-2xl"><FontAwesomeIcon icon={faBullseye} /> Project Overview</CardTitle>
             </CardHeader>
             <CardContent>
                 <p className="text-muted-foreground text-base leading-relaxed">{project.overview}</p>
             </CardContent>
-          </MotionCard>
+          </Card>
           
-          <MotionCard variants={cardVariants} whileHover={hoverEffect} className="overflow-hidden">
+          <Card className="overflow-hidden">
             <CardHeader>
                 <CardTitle className="flex items-center gap-3 text-2xl"><FontAwesomeIcon icon={faTasks} /> Features</CardTitle>
             </CardHeader>
@@ -186,9 +157,9 @@ export function ProjectDetailClient({ project }: { project: Project }) {
                     </div>
                 ))}
             </CardContent>
-          </MotionCard>
+          </Card>
 
-          <MotionCard variants={cardVariants} whileHover={hoverEffect} className="overflow-hidden">
+          <Card className="overflow-hidden">
             <CardHeader>
                 <CardTitle className="flex items-center gap-3 text-2xl"><FontAwesomeIcon icon={faLightbulb} /> Challenges & Solutions</CardTitle>
             </CardHeader>
@@ -200,11 +171,11 @@ export function ProjectDetailClient({ project }: { project: Project }) {
                     </div>
                 ))}
             </CardContent>
-          </MotionCard>
-        </motion.div>
+          </Card>
+        </div>
 
         <div className="space-y-8 lg:sticky lg:top-24 self-start">
-             <MotionCard variants={cardVariants} whileHover={hoverEffect} className="overflow-hidden">
+             <Card className="overflow-hidden">
                 <CardHeader>
                     <CardTitle className="flex items-center gap-3 text-xl"><FontAwesomeIcon icon={faWrench} /> Tech Stack</CardTitle>
                 </CardHeader>
@@ -215,9 +186,9 @@ export function ProjectDetailClient({ project }: { project: Project }) {
                         </Badge>
                     ))}
                 </CardContent>
-            </MotionCard>
+            </Card>
 
-             <MotionCard variants={cardVariants} whileHover={hoverEffect} className="overflow-hidden">
+             <Card className="overflow-hidden">
                 <CardHeader>
                     <CardTitle className="flex items-center gap-3 text-xl"><FontAwesomeIcon icon={faCogs} /> Skills Demonstrated</CardTitle>
                 </Header>
@@ -228,9 +199,9 @@ export function ProjectDetailClient({ project }: { project: Project }) {
                         </badge>
                     ))}
                 </CardContent>
-            </MotionCard>
+            </Card>
 
-            <MotionCard variants={cardVariants} whileHover={hoverEffect} className="overflow-hidden">
+            <Card className="overflow-hidden">
                 <CardHeader>
                     <CardTitle>Links</CardTitle>
                 </Header>
@@ -248,11 +219,9 @@ export function ProjectDetailClient({ project }: { project: Project }) {
                         </Button>
                     )}
                 </CardContent>
-            </MotionCard>
+            </Card>
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 }
-
-    
