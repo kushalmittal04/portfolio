@@ -48,8 +48,8 @@ export function ProjectDetailClient({ project }: { project: Project }) {
   const [thumbApi, setThumbApi] = useState<EmblaCarouselType>();
 
   const media = [
-      ...(project.videoUrl ? [{ type: 'video', url: project.videoUrl }] : []),
-      ...project.images.map(img => ({ type: 'image', ...img }))
+      ...(project.videoUrl ? [{ type: 'video' as const, url: project.videoUrl }] : []),
+      ...project.images.map(img => ({ type: 'image' as const, ...img }))
   ];
 
   const onThumbClick = useCallback(
@@ -224,7 +224,7 @@ export function ProjectDetailClient({ project }: { project: Project }) {
                     {project.skills.map((skill) => (
                         <Badge key={skill} variant="outline" className="text-sm px-3 py-1">
                         {skill}
-                        </Badge>
+                        </badge>
                     ))}
                 </CardContent>
             </MotionCard>
