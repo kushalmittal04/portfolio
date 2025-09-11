@@ -1,6 +1,7 @@
+
 "use client";
 
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -13,7 +14,6 @@ import content from "@/data/pageContent.json";
 import {
   Card,
   CardContent,
-  CardDescription,
   CardFooter,
   CardHeader,
   CardTitle,
@@ -25,10 +25,16 @@ export default function ProjectsPage() {
   const [filter, setFilter] = useState("All");
   const projectsContent = content.projects;
 
-  const filteredProjects =
-    filter === "All"
-      ? projectsData
-      : projectsData.filter((p) => p.category.includes(filter));
+  const sortedProjects = useMemo(() => {
+    return [...projectsData].sort((a, b) => b.id - a.id);
+  }, []);
+
+  const filteredProjects = useMemo(() => {
+    if (filter === "All") {
+      return sortedProjects;
+    }
+    return sortedProjects.filter((p) => p.category.includes(filter));
+  }, [filter, sortedProjects]);
 
   return (
     <div className="container mx-auto max-w-7xl px-4 py-16 animate-in fade-in-0 slide-in-from-bottom-8 duration-1000">
@@ -49,7 +55,7 @@ export default function ProjectsPage() {
               variant="ghost"
               onClick={() => setFilter(category)}
               className={cn(
-                "rounded-md",
+                "rounded-md px-4 py-2 transition-all duration-200",
                 filter === category && "bg-background text-foreground shadow-sm hover:bg-background/90"
               )}
             >
@@ -74,7 +80,7 @@ export default function ProjectsPage() {
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
               <div className="absolute bottom-4 left-4">
                   <h3 className="text-white font-bold text-lg">{project.name}</h3>
-                  <p className="text-primary-foreground/80 text-sm">{project.tagline}</p>
+                  {project.tagline && <p className="text-primary-foreground/80 text-sm">{project.tagline}</p>}
               </div>
             </Link>
             <CardContent className="pt-6 flex-grow flex flex-col">
