@@ -84,14 +84,29 @@ export default function ProjectsPage() {
               </div>
             </Link>
             <CardContent className="pt-6 flex-grow flex flex-col">
-              <p className="text-muted-foreground text-sm line-clamp-3 flex-grow">{project.overview}</p>
-              <div className="flex flex-wrap gap-2 mt-4">
-                  {project.technologies.slice(0, 3).map(tech => (
-                      <Badge key={tech} variant="secondary">{tech}</Badge>
-                  ))}
-                  {project.technologies.length > 3 && (
-                    <Badge variant="outline">+{project.technologies.length - 3} more</Badge>
-                  )}
+              <div className="flex-grow space-y-3">
+                <div>
+                    <h4 className="text-xs uppercase font-semibold text-muted-foreground mb-2">Tech Stack</h4>
+                    <div className="flex flex-wrap gap-1.5">
+                        {project.technologies.slice(0, 3).map(tech => (
+                            <Badge key={tech} variant="secondary">{tech}</Badge>
+                        ))}
+                        {project.technologies.length > 3 && (
+                            <Badge variant="outline">+{project.technologies.length - 3}</Badge>
+                        )}
+                    </div>
+                </div>
+                <div>
+                    <h4 className="text-xs uppercase font-semibold text-muted-foreground mb-2">Skills</h4>
+                     <div className="flex flex-wrap gap-1.5">
+                        {project.skills.slice(0, 2).map(skill => (
+                            <Badge key={skill} variant="outline">{skill}</Badge>
+                        ))}
+                        {project.skills.length > 2 && (
+                            <Badge variant="outline">+{project.skills.length - 2}</Badge>
+                        )}
+                    </div>
+                </div>
               </div>
             </CardContent>
             <CardFooter>
