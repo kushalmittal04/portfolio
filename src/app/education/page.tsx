@@ -37,7 +37,7 @@ export default function EducationPage() {
                 }`}
               >
                 <div className="w-full md:w-1/2 md:px-8">
-                  <Card className="w-full shadow-md hover:shadow-lg transition-shadow duration-300 hover:-translate-y-1">
+                  <Card className="w-full shadow-md hover:shadow-xl transition-shadow duration-300 hover:-translate-y-1">
                     <CardContent className="p-6 text-center">
                       <p className="text-sm text-muted-foreground">
                         {edu.duration}

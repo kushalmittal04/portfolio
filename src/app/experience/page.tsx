@@ -46,7 +46,7 @@ export default function ExperiencePage() {
                 }`}
               >
                 <div className="w-full md:w-1/2 md:px-8">
-                  <Card className="shadow-md hover:shadow-lg transition-shadow duration-300 hover:-translate-y-1">
+                  <Card className="shadow-md hover:shadow-xl transition-shadow duration-300 hover:-translate-y-1">
                     <CardHeader className="flex flex-col sm:flex-row items-start gap-4">
                       <Image
                         src={exp.logoUrl}
