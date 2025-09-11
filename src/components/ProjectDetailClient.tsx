@@ -3,12 +3,12 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { useState, useEffect, useCallback } from "react";
+import useEmblaCarousel, { type EmblaCarouselType } from "embla-carousel-react";
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
 } from "@/components/ui/carousel";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -28,6 +28,7 @@ import { motion } from "framer-motion";
 import type { Project } from "@/lib/types";
 import { Badge } from "./ui/badge";
 import { Button } from "./ui/button";
+import { CarouselThumb } from "./CarouselThumb";
 
 const MotionCard = motion(Card);
 
@@ -42,6 +43,37 @@ const hoverEffect = {
 };
 
 export function ProjectDetailClient({ project }: { project: Project }) {
+  const [selectedIndex, setSelectedIndex] = useState(0);
+  const [mainApi, setMainApi] = useState<EmblaCarouselType>();
+  const [thumbApi, setThumbApi] = useState<EmblaCarouselType>();
+
+  const media = [
+      ...(project.videoUrl ? [{ type: 'video', url: project.videoUrl }] : []),
+      ...project.images.map(img => ({ type: 'image', ...img }))
+  ];
+
+  const onThumbClick = useCallback(
+    (index: number) => {
+      if (!mainApi || !thumbApi) return;
+      mainApi.scrollTo(index);
+    },
+    [mainApi, thumbApi]
+  );
+
+  const onSelect = useCallback(() => {
+    if (!mainApi || !thumbApi) return;
+    const newSelectedIndex = mainApi.selectedScrollSnap();
+    setSelectedIndex(newSelectedIndex);
+    thumbApi.scrollTo(newSelectedIndex);
+  }, [mainApi, thumbApi, setSelectedIndex]);
+
+  useEffect(() => {
+    if (!mainApi) return;
+    onSelect();
+    mainApi.on("select", onSelect);
+    mainApi.on("reInit", onSelect);
+  }, [mainApi, onSelect]);
+
   return (
     <motion.div 
       initial={{ opacity: 0, y: 20 }}
@@ -68,41 +100,59 @@ export function ProjectDetailClient({ project }: { project: Project }) {
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ delay: 0.2, duration: 0.5 }}
-        className="mb-12"
+        className="mb-12 space-y-4"
       >
-        <Carousel className="w-full max-w-4xl mx-auto">
+        <Carousel setApi={setMainApi} className="w-full max-w-4xl mx-auto">
           <CarouselContent>
-            {project.videoUrl && (
-              <CarouselItem>
-                <div className="aspect-video w-full overflow-hidden rounded-lg border shadow-lg">
-                  <iframe
-                    src={project.videoUrl}
-                    title={`${project.name} video`}
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                    className="h-full w-full"
-                  ></iframe>
-                </div>
-              </CarouselItem>
-            )}
-            {project.images.map((image, index) => (
+            {media.map((item, index) => (
               <CarouselItem key={index}>
-                <div className="relative aspect-video w-full overflow-hidden rounded-lg border shadow-lg">
-                  <Image
-                    src={image.url}
-                    alt={`${project.name} screenshot ${index + 1}`}
-                    fill
-                    className="object-cover"
-                    data-ai-hint={image.dataAiHint}
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 75vw, 60vw"
-                    priority={index === 0}
-                  />
-                </div>
+                {item.type === 'video' ? (
+                  <div className="aspect-video w-full overflow-hidden rounded-lg border shadow-lg">
+                    <iframe
+                      src={item.url}
+                      title={`${project.name} video`}
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                      className="h-full w-full"
+                    ></iframe>
+                  </div>
+                ) : (
+                  <div className="relative aspect-video w-full overflow-hidden rounded-lg border shadow-lg">
+                    <Image
+                      src={item.url}
+                      alt={`${project.name} screenshot ${index + 1}`}
+                      fill
+                      className="object-cover"
+                      data-ai-hint={item.dataAiHint}
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 75vw, 60vw"
+                      priority={index === 0}
+                    />
+                  </div>
+                )}
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious className="-left-4 md:-left-12" />
-          <CarouselNext className="-right-4 md:-right-12" />
+        </Carousel>
+
+        <Carousel
+            setApi={setThumbApi}
+            opts={{
+                containScroll: 'keepSnaps',
+                dragFree: true,
+            }}
+            className="w-full max-w-xl mx-auto"
+        >
+            <CarouselContent className="items-center">
+                {media.map((item, index) => (
+                    <CarouselItem key={index} className="basis-1/4 sm:basis-1/5 lg:basis-1/6">
+                        <CarouselThumb
+                            onClick={() => onThumbClick(index)}
+                            selected={index === selectedIndex}
+                            item={item}
+                        />
+                    </CarouselItem>
+                ))}
+            </CarouselContent>
         </Carousel>
       </motion.div>
       
@@ -140,7 +190,7 @@ export function ProjectDetailClient({ project }: { project: Project }) {
           <MotionCard variants={cardVariants} whileHover={hoverEffect} className="overflow-hidden">
             <CardHeader>
                 <CardTitle className="flex items-center gap-3 text-2xl"><FontAwesomeIcon icon={faLightbulb} /> Challenges & Solutions</CardTitle>
-            </CardHeader>
+            </Header>
              <CardContent className="space-y-6 text-muted-foreground">
                 {project.challenges.map((item, index) => (
                     <div key={index} className="border-l-4 border-primary/50 pl-4">
@@ -199,9 +249,7 @@ export function ProjectDetailClient({ project }: { project: Project }) {
                 </CardContent>
             </MotionCard>
         </div>
-
       </div>
-
     </motion.div>
   );
 }
