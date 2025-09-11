@@ -196,7 +196,7 @@ export function ProjectDetailClient({ project }: { project: Project }) {
                     {project.skills.map((skill) => (
                         <Badge key={skill} variant="outline" className="text-sm px-3 py-1">
                         {skill}
-                        </badge>
+                        </Badge>
                     ))}
                 </CardContent>
             </Card>
