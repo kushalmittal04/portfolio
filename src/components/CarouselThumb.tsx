@@ -45,6 +45,7 @@ export const CarouselThumb = ({ selected, onClick, item }: ThumbProps) => {
                 fill
                 className="object-cover"
                 data-ai-hint="video play button"
+                sizes="15vw"
             />
           </div>
         ) : (

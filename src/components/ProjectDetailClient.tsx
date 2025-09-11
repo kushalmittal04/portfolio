@@ -83,7 +83,7 @@ export function ProjectDetailClient({ project }: { project: Project }) {
           <CarouselContent>
             {media.map((item, index) => (
               <CarouselItem key={index}>
-                {item.type === 'video' ? (
+                {item.type === 'video' && item.url ? (
                   <div className="aspect-video w-full overflow-hidden rounded-lg border shadow-lg">
                     <iframe
                       src={item.url}

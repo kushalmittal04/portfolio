@@ -101,7 +101,7 @@
       { "url": "https://picsum.photos/seed/302/1280/720", "dataAiHint": "data flow diagram" },
       { "url": "https://picsum.photos/seed/303/1280/720", "dataAiHint": "code terminal" }
     ],
-    "videoUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    "videoUrl": "https://www.youtube.com/embed/gWiuK9U0s_A",
     "category": ["AI/ML", "Chatbot"],
     "isFeatured": true
   },
@@ -135,7 +135,7 @@
       { "url": "https://picsum.photos/seed/401/1280/720", "dataAiHint": "data chart" },
       { "url": "https://picsum.photos/seed/402/1280/720", "dataAiHint": "analytics dashboard" }
     ],
-    "videoUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    "videoUrl": "https://www.youtube.com/embed/ETsekCVwps4",
     "category": ["Data Science", "Machine Learning"],
     "isFeatured": false
   },
@@ -171,7 +171,7 @@
       { "url": "https://picsum.photos/seed/502/1280/720", "dataAiHint": "database schema" },
       { "url": "https://picsum.photos/seed/503/1280/720", "dataAiHint": "network diagram" }
     ],
-    "videoUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    "videoUrl": "https://www.youtube.com/embed/pQN-pn4_3gY",
     "category": ["Backend", "Web Application"],
     "isFeatured": false
   },
@@ -206,7 +206,7 @@
       { "url": "https://picsum.photos/seed/601/1280/720", "dataAiHint": "chat application" },
       { "url": "https://picsum.photos/seed/602/1280/720", "dataAiHint": "user interface" }
     ],
-    "videoUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    "videoUrl": "https://www.youtube.com/embed/8N38An2s4y8",
     "category": ["Web Application", "Full-Stack"],
     "isFeatured": false
   },
@@ -240,7 +240,7 @@
       { "url": "https://picsum.photos/seed/701/1280/720", "dataAiHint": "house exterior" },
       { "url": "https://picsum.photos/seed/702/1280/720", "dataAiHint": "data graph" }
     ],
-    "videoUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    "videoUrl": "https://www.youtube.com/embed/3LqWvYpB_yI",
     "category": ["Data Science", "Machine Learning"],
     "isFeatured": false
   },
@@ -274,7 +274,7 @@
       { "url": "https://picsum.photos/seed/801/1280/720", "dataAiHint": "text analysis" },
       { "url": "https://picsum.photos/seed/802/1280/720", "dataAiHint": "server code" }
     ],
-    "videoUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    "videoUrl": "https://www.youtube.com/embed/P2MX9o2LpDw",
     "category": ["AI/ML", "Backend"],
     "isFeatured": false
   },
@@ -308,7 +308,7 @@
       { "url": "https://picsum.photos/seed/901/1280/720", "dataAiHint": "devops pipeline" },
       { "url": "https://picsum.photos/seed/902/1280/720", "dataAiHint": "flowchart diagram" }
     ],
-    "videoUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    "videoUrl": "https://www.youtube.com/embed/J9-L-Y22qgQ",
     "category": ["DevOps"],
     "isFeatured": false
   },
@@ -342,7 +342,7 @@
       { "url": "https://picsum.photos/seed/1001/1280/720", "dataAiHint": "neural network" },
       { "url": "https://picsum.photos/seed/1002/1280/720", "dataAiHint": "image data" }
     ],
-    "videoUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    "videoUrl": "https://www.youtube.com/embed/DbeIqrR8gBI",
     "category": ["AI/ML", "Deep Learning"],
     "isFeatured": false
   },
@@ -377,7 +377,7 @@
       { "url": "https://picsum.photos/seed/1101/1280/720", "dataAiHint": "cloud architecture" },
       { "url": "https://picsum.photos/seed/1102/1280/720", "dataAiHint": "contact form" }
     ],
-    "videoUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    "videoUrl": "https://www.youtube.com/embed/BS2Vr0y_f7s",
     "category": ["Cloud", "Backend"],
     "isFeatured": false
   },
@@ -412,7 +412,7 @@
       { "url": "https://picsum.photos/seed/1201/1280/720", "dataAiHint": "analytics dashboard" },
       { "url": "https://picsum.photos/seed/1202/1280/720", "dataAiHint": "business charts" }
     ],
-    "videoUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    "videoUrl": "https://www.youtube.com/embed/lYa_B-V2t2g",
     "category": ["Data Science", "Web Application"],
     "isFeatured": false
   },
@@ -447,7 +447,7 @@
       { "url": "https://picsum.photos/seed/1301/1280/720", "dataAiHint": "kanban board" },
       { "url": "https://picsum.photos/seed/1302/1280/720", "dataAiHint": "project management" }
     ],
-    "videoUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    "videoUrl": "https://www.youtube.com/embed/8tPnX7OPo0Q",
     "category": ["Web Application", "Full-Stack"],
     "isFeatured": false
   },
@@ -481,13 +481,13 @@
       { "url": "https://picsum.photos/seed/1401/1280/720", "dataAiHint": "code editor" },
       { "url": "https://picsum.photos/seed/1402/1280/720", "dataAiHint": "documentation example" }
     ],
-    "videoUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    "videoUrl": "https://www.youtube.com/embed/DozTrSgEom0",
     "category": ["AI/ML", "Developer Tool"],
     "isFeatured": false
   },
   {
     "id": 15,
-    "slug": "real-estate-data-scraper",
+    "slug": "rera-projects-data-scraper",
     "name": "RERA Projects Data Scraper",
     "tagline": "Automated web scraping tool for real estate compliance data.",
     "overview": "RERA Scraper is a Python-based automation tool designed to collect structured data from the Real Estate Regulatory Authority (RERA) portal. It simplifies the process of retrieving property, agent, and project registration details, making it easier for analysts and researchers to work with real-estate data. The tool eliminates manual data entry by automating data collection, cleaning, and exporting into structured formats.",
@@ -550,7 +550,7 @@
       { "url": "https://picsum.photos/seed/1601/1280/720", "dataAiHint": "ai agent" },
       { "url": "https://picsum.photos/seed/1602/1280/720", "dataAiHint": "research report" }
     ],
-    "videoUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    "videoUrl": "https://www.youtube.com/embed/5aIUnkPyC-Y",
     "category": ["AI/ML", "Agents"],
     "isFeatured": false
   }
