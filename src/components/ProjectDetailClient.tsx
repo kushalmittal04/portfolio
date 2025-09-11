@@ -3,10 +3,6 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState, useCallback, useEffect } from "react";
-import useEmblaCarousel, { type EmblaCarouselType } from "embla-carousel-react";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faArrowLeft,
   faPlayCircle,
@@ -19,58 +15,27 @@ import {
   faArrowDown
 } from "@fortawesome/free-solid-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import type { Project } from "@/lib/types";
+
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "./ui/badge";
 import { Button } from "./ui/button";
-import { CarouselThumb } from "./CarouselThumb";
-import { cn } from "@/lib/utils";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+
 
 export function ProjectDetailClient({ project }: { project: Project }) {
-  const [mainApi, setMainApi] = useState<EmblaCarouselType>();
-  const [thumbApi, setThumbApi] = useState<EmblaCarouselType>();
-  const [selectedIndex, setSelectedIndex] = useState(0);
    
   const media = [
       ...(project.videoUrl ? [{ type: 'video' as const, url: project.videoUrl }] : []),
       ...project.images.map(img => ({ type: 'image' as const, ...img }))
   ];
-
-  const onThumbClick = useCallback(
-    (index: number) => {
-      if (!mainApi || !thumbApi) return;
-      mainApi.scrollTo(index);
-    },
-    [mainApi, thumbApi]
-  );
-
-  const onSelect = useCallback(() => {
-    if (!mainApi || !thumbApi) return;
-    const newSelectedIndex = mainApi.selectedScrollSnap();
-    setSelectedIndex(newSelectedIndex);
-    if (thumbApi.scrollSnapList().length > newSelectedIndex) {
-      thumbApi.scrollTo(newSelectedIndex);
-    }
-  }, [mainApi, thumbApi]);
-
-  useEffect(() => {
-    if (!mainApi) return;
-    onSelect();
-    mainApi.on("select", onSelect);
-    mainApi.on("reInit", onSelect);
-  }, [mainApi, onSelect]);
-
-  const [mainRef, mainEmblaApi] = useEmblaCarousel({ loop: true });
-  const [thumbRef, thumbEmblaApi] = useEmblaCarousel({
-    containScroll: "keepSnaps",
-    dragFree: true,
-  });
-
-  useEffect(() => {
-    setMainApi(mainEmblaApi);
-    setThumbApi(thumbEmblaApi);
-  }, [mainEmblaApi, thumbEmblaApi]);
-
 
   const handleScrollToContent = () => {
     const contentElement = document.getElementById('project-content');
@@ -100,55 +65,41 @@ export function ProjectDetailClient({ project }: { project: Project }) {
                 </p>
             </div>
 
-            <div className="w-full max-w-7xl">
-                 <div ref={mainRef} className="overflow-hidden rounded-lg border-4 border-muted">
-                     <div className="flex">
-                        {media.map((item, index) => (
-                             <div className="relative min-w-0 flex-[0_0_100%] aspect-video" key={index}>
-                                 {item.type === 'video' && item.url ? (
-                                    <div className="h-full w-full bg-black">
-                                        <iframe
-                                        src={item.url}
-                                        title={`${project.name} video`}
-                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                        allowFullScreen
-                                        className="h-full w-full"
-                                        ></iframe>
-                                    </div>
-                                    ) : (
-                                    <div className="relative h-full w-full bg-muted">
-                                        <Image
-                                        src={item.url}
-                                        alt={`${project.name} screenshot ${index + 1}`}
-                                        fill
-                                        className="object-contain"
-                                        data-ai-hint={item.dataAiHint}
-                                        sizes="(max-width: 768px) 100vw, 75vw"
-                                        priority={index === 0}
-                                        />
-                                    </div>
-                                )}
-                            </div>
-                        ))}
-                     </div>
-                </div>
-
-                {media.length > 1 && (
-                     <div ref={thumbRef} className="overflow-hidden mt-4 w-full">
-                        <div className="flex gap-4">
-                            {media.map((item, index) => (
-                                <div key={`thumb-${index}`} className="relative flex-[0_0_25%] md:flex-[0_0_15%] lg:flex-[0_0_12.5%]">
-                                    <CarouselThumb
-                                        onClick={() => onThumbClick(index)}
-                                        selected={index === selectedIndex}
-                                        item={item}
-                                    />
-                                </div>
-                            ))}
+            <Carousel className="w-full max-w-4xl" opts={{ loop: true }}>
+              <CarouselContent>
+                {media.map((item, index) => (
+                  <CarouselItem key={index}>
+                    <div className="relative aspect-video overflow-hidden rounded-lg border bg-muted">
+                      {item.type === 'video' && item.url ? (
+                        <div className="h-full w-full bg-black">
+                            <iframe
+                            src={item.url}
+                            title={`${project.name} video`}
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowFullScreen
+                            className="h-full w-full"
+                            ></iframe>
                         </div>
-                     </div>
-                )}
-            </div>
+                        ) : (
+                        <div className="relative h-full w-full">
+                            <Image
+                            src={item.url}
+                            alt={`${project.name} screenshot ${index + 1}`}
+                            fill
+                            className="object-contain"
+                            data-ai-hint={item.dataAiHint}
+                            sizes="(max-width: 768px) 100vw, 75vw"
+                            priority={index === 0}
+                            />
+                        </div>
+                      )}
+                    </div>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious className="absolute left-[-50px] top-1/2 -translate-y-1/2" />
+              <CarouselNext className="absolute right-[-50px] top-1/2 -translate-y-1/2" />
+            </Carousel>
         </div>
         <Button variant="ghost" onClick={handleScrollToContent} className="absolute bottom-4 animate-bounce">
             <FontAwesomeIcon icon={faArrowDown} className="h-6 w-6" />
@@ -231,7 +182,7 @@ export function ProjectDetailClient({ project }: { project: Project }) {
                         <CardTitle>Links</CardTitle>
                     </CardHeader>
                     <CardContent className="flex flex-col space-y-3">
-                        <Button asChild className="w-full" size="lg" variant="secondary">
+                         <Button asChild className="w-full" size="lg" variant="secondary">
                             <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
                             <FontAwesomeIcon icon={faGithub} className="mr-2" /> View Code
                             </a>
