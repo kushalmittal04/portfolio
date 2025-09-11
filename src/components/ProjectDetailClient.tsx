@@ -191,7 +191,7 @@ export function ProjectDetailClient({ project }: { project: Project }) {
              <Card className="overflow-hidden">
                 <CardHeader>
                     <CardTitle className="flex items-center gap-3 text-xl"><FontAwesomeIcon icon={faCogs} /> Skills Demonstrated</CardTitle>
-                </Header>
+                </CardHeader>
                 <CardContent className="flex flex-wrap gap-2">
                     {project.skills.map((skill) => (
                         <Badge key={skill} variant="outline" className="text-sm px-3 py-1">
