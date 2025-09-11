@@ -3,7 +3,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState, useEffect, useCallback } from "react";
+import { useState, useCallback, useEffect } from "react";
 import useEmblaCarousel, { type EmblaCarouselType } from "embla-carousel-react";
 import {
   Carousel,
@@ -58,7 +58,7 @@ export function ProjectDetailClient({ project }: { project: Project }) {
     if (!mainApi) return;
     onSelect();
     mainApi.on("select", onSelect);
-    main.on("reInit", onSelect);
+    mainApi.on("reInit", onSelect);
   }, [mainApi, onSelect]);
 
   return (
