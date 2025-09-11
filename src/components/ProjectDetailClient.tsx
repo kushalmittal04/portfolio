@@ -254,3 +254,5 @@ export function ProjectDetailClient({ project }: { project: Project }) {
     </motion.div>
   );
 }
+
+    
