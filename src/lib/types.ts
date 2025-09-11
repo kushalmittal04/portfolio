@@ -25,8 +25,8 @@ export interface Experience {
   gmapUrl: string;
   description: string[];
   technologies: string[];
-  certificateUrl?: string;
-  workImages?: { url: string; dataAiHint: string }[];
+  certificateUrl?: string | null;
+  workImages?: { url: string; dataAiHint: string }[] | null;
   logoUrl: string;
   dataAiHint: string;
 }
@@ -43,9 +43,9 @@ export interface Project {
   technologies: string[];
   skills: string[];
   githubUrl: string;
-  liveUrl?: string;
+  liveUrl?: string | null;
   images: { url: string; dataAiHint: string }[];
-  videoUrl?: string;
+  videoUrl?: string | null;
   isFeatured: boolean;
 }
 
@@ -67,7 +67,7 @@ export interface Achievement {
   description: string;
   imageUrl: string | null;
   dataAiHint: string;
-  isFeatured: boolean;
+isFeatured: boolean;
   icon: 'Award' | 'Star';
 }
 

@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect, useCallback } from "react";
 import useEmblaCarousel, { type EmblaCarouselType } from "embla-carousel-react";
+import { motion } from "framer-motion";
 import {
   Carousel,
   CarouselContent,
@@ -23,7 +24,6 @@ import {
   faTasks
 } from "@fortawesome/free-solid-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
-import { motion } from "framer-motion";
 
 import type { Project } from "@/lib/types";
 import { Badge } from "./ui/badge";
@@ -41,6 +41,7 @@ const hoverEffect = {
   scale: 1.03,
   transition: { duration: 0.3 }
 };
+
 
 export function ProjectDetailClient({ project }: { project: Project }) {
   const [selectedIndex, setSelectedIndex] = useState(0);
@@ -190,7 +191,7 @@ export function ProjectDetailClient({ project }: { project: Project }) {
           <MotionCard variants={cardVariants} whileHover={hoverEffect} className="overflow-hidden">
             <CardHeader>
                 <CardTitle className="flex items-center gap-3 text-2xl"><FontAwesomeIcon icon={faLightbulb} /> Challenges & Solutions</CardTitle>
-            </Header>
+            </CardHeader>
              <CardContent className="space-y-6 text-muted-foreground">
                 {project.challenges.map((item, index) => (
                     <div key={index} className="border-l-4 border-primary/50 pl-4">
@@ -253,5 +254,3 @@ export function ProjectDetailClient({ project }: { project: Project }) {
     </motion.div>
   );
 }
-
-    

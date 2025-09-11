@@ -74,7 +74,7 @@ import {
   faMedium,
   faQuora,
   faStackOverflow,
-  faProductHunt,
+faProductHunt,
   faHackerNews,
   faGlide,
   faPiedPiper,
@@ -188,6 +188,7 @@ import {
   faChartBar,
   faChartPie,
   faCameraRetro,
+  faBolt
 } from "@fortawesome/free-solid-svg-icons";
 import type { IconDefinition } from "@fortawesome/fontawesome-svg-core";
 
@@ -218,6 +219,8 @@ const iconMap: Record<string, IconDefinition> = {
   seaborn: faChartPie,
   tensorflow: faBrain,
   opencv: faCameraRetro,
+  "google gemini api": faGoogle,
+  "huggingface embeddings": faBrain,
 
   // Frontend & Web
   react: faReact,
@@ -226,11 +229,15 @@ const iconMap: Record<string, IconDefinition> = {
   "express.js": faServer,
   bootstrap: faBootstrap,
   "tailwind css": faWind,
+  streamlit: faWind,
+  "beautifulsoup": faCode,
+  selenium: faCode,
 
   // Databases
   mysql: faDatabase,
   mongodb: faDatabase,
   postgresql: faDatabase,
+  chromadb: faDatabase,
 
   // Tools
   git: faCodeBranch,
@@ -246,6 +253,18 @@ const iconMap: Record<string, IconDefinition> = {
   "firebase studio": faCode,
   notebooklm: faBook,
   replit: faTerminal,
+  dotenv: faTerminal,
+  "restful apis": faServer,
+  "jwt": faTerminal,
+  "web scraping": faCode,
+  "agile": faTerminal,
+  "rest apis": faServer,
+  "machine learning": faBrain,
+  "django": faCode,
+  "data analysis": faChartSimple,
+  "generative ai": faBrain,
+  "agents": faBrain,
+  "agentic ai": faBrain,
 };
 
 export function TechIcon({ technology, className }: TechIconProps) {

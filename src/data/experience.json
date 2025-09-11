@@ -108,6 +108,8 @@
       "Engineered and optimized <strong>large-scale ML workflows</strong> using <strong>PySpark on Databricks</strong>, reducing data preprocessing time by 5% through analytical problem-solving and efficient distributed computing architecture.",
       "Architected a production-ready <strong>RAG-based Chatbot</strong> leveraging <strong>LangChain and LangGraph</strong>, enhancing the accuracy of client information retrieval by 15% and demonstrating innovative creativity in applying <strong>Generative AI</strong> to real-world business automation."
     ],
-    "technologies": ["PySpark", "Databricks", "LangChain", "LangGraph", "Generative AI", "Agents", "Agentic AI"]
+    "technologies": ["PySpark", "Databricks", "LangChain", "LangGraph", "Generative AI", "Agents", "Agentic AI"],
+    "certificateUrl": null,
+    "workImages": null
   }
 ]
