@@ -38,7 +38,7 @@ export function ProjectDetailClient({ project }: { project: Project }) {
 
   return (
     <>
-      <Button asChild variant="ghost" className="absolute top-4 left-4 z-20 bg-background/50 hover:bg-background/80">
+      <Button asChild variant="ghost" className="absolute top-20 left-4 z-20 bg-background/50 hover:bg-background/80">
         <Link href="/projects">
           <FontAwesomeIcon icon={faArrowLeft} className="mr-2 h-4 w-4" />
           Back
@@ -87,8 +87,8 @@ export function ProjectDetailClient({ project }: { project: Project }) {
                 </CarouselItem>
             ))}
             </CarouselContent>
-            <CarouselPrevious className="absolute left-2 top-0 h-full w-12 rounded-none border-none bg-black/20 text-white opacity-0 transition-opacity hover:bg-black/40 group-hover:opacity-100 disabled:opacity-0" />
-            <CarouselNext className="absolute right-2 top-0 h-full w-12 rounded-none border-none bg-black/20 text-white opacity-0 transition-opacity hover:bg-black/40 group-hover:opacity-100 disabled:opacity-0" />
+            <CarouselPrevious className="absolute left-2 top-1/2 -translate-y-1/2 h-full w-12 rounded-none border-none bg-black/20 text-white opacity-0 transition-opacity hover:bg-black/40 group-hover:opacity-100 disabled:opacity-0" />
+            <CarouselNext className="absolute right-2 top-1/2 -translate-y-1/2 h-full w-12 rounded-none border-none bg-black/20 text-white opacity-0 transition-opacity hover:bg-black/40 group-hover:opacity-100 disabled:opacity-0" />
         </Carousel>
       </section>
 
