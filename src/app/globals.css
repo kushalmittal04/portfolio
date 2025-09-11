@@ -52,6 +52,28 @@
     --input: 217.2 32.6% 17.5%;
     --ring: 212.7 26.8% 83.9%;
   }
+
+  .gray-theme {
+    --background: 220 13% 18%;
+    --foreground: 210 40% 98%;
+    --card: 220 13% 18%;
+    --card-foreground: 210 40% 98%;
+    --popover: 220 13% 18%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 190 80% 60%;
+    --primary-foreground: 220 13% 10%;
+    --secondary: 220 14% 25%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 220 14% 25%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 220 14% 25%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 220 14% 25%;
+    --input: 220 14% 25%;
+    --ring: 190 80% 70%;
+  }
 }
 
 @layer base {

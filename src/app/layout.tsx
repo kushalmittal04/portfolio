@@ -34,6 +34,7 @@ export default function RootLayout({
           defaultTheme="light"
           enableSystem
           disableTransitionOnChange
+          themes={["light", "dark", "gray"]}
         >
           <div className="flex min-h-screen flex-col">
             <Header />
