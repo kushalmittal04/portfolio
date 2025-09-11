@@ -48,7 +48,7 @@ export default function ProjectsPage() {
       </div>
 
       <div className="flex justify-center mb-12">
-        <div className="flex flex-wrap gap-2 rounded-lg bg-muted p-1">
+        <div className="flex flex-wrap justify-center gap-2 rounded-lg bg-muted p-2">
           {categories.map((category) => (
             <Button
               key={category}
