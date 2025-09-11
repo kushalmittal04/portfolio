@@ -60,6 +60,18 @@ export function ProjectDetailClient({ project }: { project: Project }) {
     mainApi.on("reInit", onSelect);
   }, [mainApi, onSelect]);
 
+  const [mainRef, mainEmblaApi] = useEmblaCarousel({ loop: true });
+  const [thumbRef, thumbEmblaApi] = useEmblaCarousel({
+    containScroll: "keepSnaps",
+    dragFree: true,
+  });
+
+  useEffect(() => {
+    setMainApi(mainEmblaApi);
+    setThumbApi(thumbEmblaApi);
+  }, [mainEmblaApi, thumbEmblaApi]);
+
+
   const handleScrollToContent = () => {
     const contentElement = document.getElementById('project-content');
     if (contentElement) {
@@ -68,7 +80,7 @@ export function ProjectDetailClient({ project }: { project: Project }) {
   };
 
   return (
-    <div className="relative">
+    <>
       <div className="container mx-auto px-4">
         <Button asChild variant="ghost" className="absolute top-4 left-4 z-20 bg-background/50 hover:bg-background/80">
           <Link href="/projects">
@@ -77,69 +89,65 @@ export function ProjectDetailClient({ project }: { project: Project }) {
           </Link>
         </Button>
       </div>
+      <section className="relative flex h-screen w-full flex-col items-center justify-center bg-background text-foreground">
+        <div className="container flex-grow flex flex-col justify-center items-center gap-8 py-16">
+            <div className="text-center">
+                 <h1 className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
+                    {project.name}
+                </h1>
+                <p className="mt-3 text-lg text-muted-foreground sm:text-xl max-w-3xl mx-auto">
+                    {project.tagline}
+                </p>
+            </div>
 
-      <section className="relative flex h-screen w-full flex-col items-center justify-center bg-card text-card-foreground">
-        <div className="container text-center mb-4">
-            <h1 className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
-                {project.name}
-            </h1>
-            <p className="mt-3 text-lg text-muted-foreground sm:text-xl max-w-3xl mx-auto">
-                {project.tagline}
-            </p>
-        </div>
-        
-        <div className="w-full max-w-7xl mx-auto px-4 flex-grow flex items-center justify-center gap-4">
-            {media.length > 1 && (
-                 <div className="h-full py-16 hidden md:block">
-                     <div
-                        ref={useEmblaCarousel({ axis: 'y', containScroll: 'keepSnaps', dragFree: true }, []).emblaRef}
-                        onMouseEnter={() => thumbApi?.reInit()}
-                        className="h-full overflow-hidden"
-                     >
-                        <div className="flex h-full flex-col gap-2">
+            <div className="w-full max-w-7xl">
+                 <div ref={mainRef} className="overflow-hidden rounded-lg border-4 border-muted">
+                     <div className="flex">
                         {media.map((item, index) => (
-                            <div key={`thumb-${index}`} className="basis-1/2 sm:basis-1/3 lg:basis-1/4 flex-shrink-0">
-                                <CarouselThumb
-                                    onClick={() => onThumbClick(index)}
-                                    selected={index === selectedIndex}
-                                    item={item}
-                                />
+                             <div className="relative min-w-0 flex-[0_0_100%] aspect-video" key={index}>
+                                 {item.type === 'video' && item.url ? (
+                                    <div className="h-full w-full bg-black">
+                                        <iframe
+                                        src={item.url}
+                                        title={`${project.name} video`}
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                        allowFullScreen
+                                        className="h-full w-full"
+                                        ></iframe>
+                                    </div>
+                                    ) : (
+                                    <div className="relative h-full w-full bg-muted">
+                                        <Image
+                                        src={item.url}
+                                        alt={`${project.name} screenshot ${index + 1}`}
+                                        fill
+                                        className="object-contain"
+                                        data-ai-hint={item.dataAiHint}
+                                        sizes="(max-width: 768px) 100vw, 75vw"
+                                        priority={index === 0}
+                                        />
+                                    </div>
+                                )}
                             </div>
                         ))}
-                        </div>
                      </div>
-                 </div>
-            )}
-            <div ref={useEmblaCarousel({ loop: true }, []).emblaRef} onMouseEnter={() => mainApi?.reInit()} className="h-full w-full flex-1 overflow-hidden py-16">
-                 <div className="h-full">
-                    {media.map((item, index) => (
-                        <div className="h-full" key={index}>
-                             {item.type === 'video' && item.url ? (
-                                <div className="h-full w-full bg-black rounded-lg overflow-hidden">
-                                    <iframe
-                                    src={item.url}
-                                    title={`${project.name} video`}
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                    allowFullScreen
-                                    className="h-full w-full"
-                                    ></iframe>
-                                </div>
-                                ) : (
-                                <div className="relative h-full w-full bg-muted rounded-lg overflow-hidden">
-                                    <Image
-                                    src={item.url}
-                                    alt={`${project.name} screenshot ${index + 1}`}
-                                    fill
-                                    className="object-contain"
-                                    data-ai-hint={item.dataAiHint}
-                                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 75vw, 60vw"
-                                    priority={index === 0}
+                </div>
+
+                {media.length > 1 && (
+                     <div ref={thumbRef} className="overflow-hidden mt-4 w-full">
+                        <div className="flex gap-4">
+                            {media.map((item, index) => (
+                                <div key={`thumb-${index}`} className="relative flex-[0_0_25%] md:flex-[0_0_15%] lg:flex-[0_0_12.5%]">
+                                    <CarouselThumb
+                                        onClick={() => onThumbClick(index)}
+                                        selected={index === selectedIndex}
+                                        item={item}
                                     />
                                 </div>
-                                )}
+                            ))}
                         </div>
-                    ))}
-                 </div>
+                     </div>
+                )}
             </div>
         </div>
         <Button variant="ghost" onClick={handleScrollToContent} className="absolute bottom-4 animate-bounce">
@@ -223,13 +231,13 @@ export function ProjectDetailClient({ project }: { project: Project }) {
                         <CardTitle>Links</CardTitle>
                     </CardHeader>
                     <CardContent className="flex flex-col space-y-3">
-                        <Button asChild className="w-full" size="lg">
+                        <Button asChild className="w-full" size="lg" variant="secondary">
                             <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
                             <FontAwesomeIcon icon={faGithub} className="mr-2" /> View Code
                             </a>
                         </Button>
                         {project.liveUrl && (
-                            <Button asChild variant="secondary" className="w-full" size="lg">
+                            <Button asChild className="w-full" size="lg">
                             <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
                                 <FontAwesomeIcon icon={faPlayCircle} className="mr-2" /> Live Demo
                             </a>
@@ -240,6 +248,6 @@ export function ProjectDetailClient({ project }: { project: Project }) {
             </aside>
         </div>
       </section>
-    </div>
+    </>
   );
 }
