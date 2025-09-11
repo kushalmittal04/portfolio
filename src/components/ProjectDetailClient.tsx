@@ -73,18 +73,17 @@ export function ProjectDetailClient({ project }: { project: Project }) {
             </Link>
         </Button>
 
-        {/* Header Section */}
-        <header className="text-center mb-12">
-            <h1 className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl text-foreground">
-            {project.name}
-            </h1>
-            <p className="mt-4 text-lg text-muted-foreground sm:text-xl max-w-3xl mx-auto">
-            {project.tagline}
-            </p>
-        </header>
-
-        {/* Media Carousel */}
+        {/* Header and Media Showcase */}
         <section className="mb-12">
+            <header className="text-center mb-12">
+                <h1 className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl text-foreground">
+                {project.name}
+                </h1>
+                <p className="mt-4 text-lg text-muted-foreground sm:text-xl max-w-3xl mx-auto">
+                {project.tagline}
+                </p>
+            </header>
+
             <Carousel setApi={setMainApi} className="w-full shadow-lg rounded-lg overflow-hidden border">
             <CarouselContent>
                 {media.map((item, index) => (
