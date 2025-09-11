@@ -38,8 +38,6 @@ const cardVariants = {
 
 const hoverEffect = {
   scale: 1.03,
-  rotateY: 5,
-  boxShadow: "0px 10px 30px -5px rgba(0, 0, 0, 0.3)",
   transition: { duration: 0.3 }
 };
 
