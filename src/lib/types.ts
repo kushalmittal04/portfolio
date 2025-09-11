@@ -67,7 +67,7 @@ export interface Achievement {
   description: string;
   imageUrl: string | null;
   dataAiHint: string;
-isFeatured: boolean;
+  isFeatured: boolean;
   icon: 'Award' | 'Star';
 }
 
