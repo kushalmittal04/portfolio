@@ -3,7 +3,6 @@
 
 import { useState, useMemo } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { Badge } from "@/components/ui/badge";
@@ -18,6 +17,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { ProjectCardCarousel } from "@/components/ProjectCardCarousel";
 
 const categories = ["All", ...Array.from(new Set(projectsData.flatMap(p => p.category)))];
 
@@ -68,20 +68,13 @@ export default function ProjectsPage() {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {filteredProjects.map((project) => (
           <Card key={project.id} className="flex flex-col overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
-            <Link href={`/projects/${project.slug}`} className="block relative aspect-video group">
-              <Image
-                  src={project.images[0].url}
-                  alt={project.name}
-                  fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
-                  data-ai-hint={project.images[0].dataAiHint}
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-              <div className="absolute bottom-4 left-4">
+            <Link href={`/projects/${project.slug}`} className="block relative group bg-muted">
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10"></div>
+              <div className="absolute bottom-4 left-4 z-20">
                   <h3 className="text-white font-bold text-lg">{project.name}</h3>
                   {project.tagline && <p className="text-primary-foreground/80 text-sm">{project.tagline}</p>}
               </div>
+              <ProjectCardCarousel project={project} />
             </Link>
             <CardContent className="pt-6 flex-grow flex flex-col">
               <div className="flex-grow space-y-3">
