@@ -265,6 +265,7 @@ const iconMap: Record<string, IconDefinition> = {
   "generative ai": faBrain,
   "agents": faBrain,
   "agentic ai": faBrain,
+  docker: faDocker,
 };
 
 export function TechIcon({ technology, className }: TechIconProps) {
