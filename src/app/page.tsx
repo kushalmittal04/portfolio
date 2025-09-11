@@ -1,10 +1,10 @@
 
 "use client";
 
-import { useRef, useEffect, useState } from "react";
+import { useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 import { format } from "date-fns";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight, faDownload, faPlayCircle } from "@fortawesome/free-solid-svg-icons";
@@ -31,11 +31,6 @@ import recentActivitiesConfig from "@/data/recent-activities.json";
 
 
 export default function Home() {
-  const [isMounted, setIsMounted] = useState(false);
-  useEffect(() => {
-    setIsMounted(true);
-  }, []);
-
   const featuredProjects = projectsData.filter((p) => p.isFeatured).slice(0, 3);
   const latestInternship = experienceData[0];
 
@@ -63,69 +58,79 @@ export default function Home() {
   }).filter((item): item is { id: string; name: string; description: string } => item !== null);
   
   const homeContent = content.home;
-
+  
   const heroRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: heroRef,
-    offset: ["start start", "end start"],
-  });
-
-  const textOpacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
-  const textTranslateY = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
-  const imageScale = useTransform(scrollYProgress, [0, 0.5], [1, 0.8]);
-
+  
   const sectionAnimation = {
     initial: { opacity: 0, y: 50 },
     whileInView: { opacity: 1, y: 0 },
     transition: { duration: 0.5, ease: "easeInOut" },
     viewport: { once: true, amount: 0.2 }
   };
+  
+  const heroVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.8,
+        ease: "easeOut",
+        staggerChildren: 0.2,
+      },
+    },
+  };
+  
+  const heroItemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
+  };
 
   return (
     <>
       {/* Hero Section */}
       <section ref={heroRef} className="relative flex h-screen items-center justify-center overflow-hidden">
-        {isMounted && (
-            <motion.div 
-                style={{ y: textTranslateY }}
-                className="container px-4 md:px-6"
-            >
-                <div className="flex flex-col items-center space-y-6 text-center">
-                    <motion.div style={{ scale: imageScale, opacity: textOpacity }}>
-                    <Image
-                        src="/images/profile_pics/pic_1.jpeg"
-                        alt="Kushal Mittal"
-                        width={150}
-                        height={150}
-                        className="rounded-full object-cover shadow-lg aspect-square"
-                        data-ai-hint="portrait professional"
-                        priority
-                    />
-                    </motion.div>
-                    <motion.div style={{ opacity: textOpacity }} className="space-y-2">
-                    <h1 className="text-5xl font-bold tracking-tighter sm:text-6xl">
+        <motion.div
+          className="container px-4 md:px-6"
+          variants={heroVariants}
+          initial="hidden"
+          animate="visible"
+        >
+            <div className="flex flex-col items-center space-y-6 text-center">
+                <motion.div variants={heroItemVariants}>
+                <Image
+                    src={homeContent.profilePicUrl}
+                    alt="Kushal Mittal"
+                    width={150}
+                    height={150}
+                    className="rounded-full object-cover shadow-lg aspect-square"
+                    data-ai-hint="portrait professional"
+                    priority
+                />
+                </motion.div>
+                <motion.div variants={heroVariants} className="space-y-2">
+                    <motion.h1 variants={heroItemVariants} className="text-5xl font-bold tracking-tighter sm:text-6xl">
                         {homeContent.title}
-                    </h1>
-                    <h2 className="text-xl font-semibold text-primary md:text-2xl">
+                    </motion.h1>
+                    <motion.h2 variants={heroItemVariants} className="text-xl font-semibold text-primary md:text-2xl">
                         {homeContent.subtitle}
-                    </h2>
-                    <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl">
+                    </motion.h2>
+                    <motion.p variants={heroItemVariants} className="mx-auto max-w-[700px] text-muted-foreground md:text-xl">
                         {homeContent.description}
-                    </p>
-                    </motion.div>
-                    <motion.div style={{ opacity: textOpacity }} className="flex flex-col gap-4 min-[400px]:flex-row">
-                    <Button asChild size="lg">
-                        <Link href="/projects">{homeContent.buttons.work}</Link>
-                    </Button>
-                    <Button asChild variant="secondary" size="lg">
-                        <a href="/pdfs/Kushal_Mittal_Resume.pdf" download="Kushal_Mittal_Resume.pdf" rel="noopener noreferrer">
-                        {homeContent.buttons.resume} <FontAwesomeIcon icon={faDownload} className="ml-2 h-4 w-4" />
-                        </a>
-                    </Button>
-                    </motion.div>
-                </div>
-            </motion.div>
-        )}
+                    </motion.p>
+                </motion.div>
+                <motion.div variants={heroItemVariants} className="flex flex-col gap-4 min-[400px]:flex-row">
+                <Button asChild size="lg">
+                    <Link href="/projects">{homeContent.buttons.work}</Link>
+                </Button>
+                <Button asChild variant="secondary" size="lg">
+                    <a href="/pdfs/Kushal_Mittal_Resume.pdf" download="Kushal_Mittal_Resume.pdf" rel="noopener noreferrer">
+                    {homeContent.buttons.resume} <FontAwesomeIcon icon={faDownload} className="ml-2 h-4 w-4" />
+                    </a>
+                </Button>
+                </motion.div>
+            </div>
+        </motion.div>
       </section>
 
       <div className="relative z-10 bg-background">

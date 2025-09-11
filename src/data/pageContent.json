@@ -4,6 +4,7 @@
     "title": "Kushal Mittal",
     "subtitle": "AI/ML, DS & Full-Stack Developer",
     "description": "Passionate about creating innovative solutions with modern technologies.",
+    "profilePicUrl": "/images/profile_pics/pic_1.jpeg",
     "buttons": {
       "work": "View My Work",
       "resume": "Download Resume"
@@ -38,8 +39,14 @@
     "technicalApproach": {
       "title": "My Technical Approach",
       "intro": "My work is driven by a deep curiosity for how things work and a commitment to building robust, efficient systems.",
-      "aiMl": "In <span class=\"font-semibold text-foreground/90\">AI/ML</span>, I specialize in building practical applications using large language models. I have hands-on experience with the LLM stack—including LangChain and LangGraph—for building context-aware agents, and I'm proficient in the entire data science pipeline: from data preprocessing and exploratory data analysis (EDA) to feature engineering and deploying supervised learning models for regression and classification tasks.",
-      "fullStack": "In <span class=\"font-semibold text-foreground/90\">Full-Stack Development</span>, I build seamless, end-to-end experiences. I develop RESTful APIs with Node.js and Express, create responsive frontends with React and Next.js, and manage data with both SQL (PostgreSQL, MySQL) and NoSQL (MongoDB) databases. I prioritize security and performance, implementing auth solutions like JWT and Clerk Authentication."
+      "aiMl": {
+        "title": "In AI/ML",
+        "content": ", I specialize in building practical applications using large language models. I have hands-on experience with the LLM stack—including LangChain and LangGraph—for building context-aware agents, and I'm proficient in the entire data science pipeline: from data preprocessing and exploratory data analysis (EDA) to feature engineering and deploying supervised learning models for regression and classification tasks."
+      },
+      "fullStack": {
+        "title": "In Full-Stack Development",
+        "content": ", I build seamless, end-to-end experiences. I develop RESTful APIs with Node.js and Express, create responsive frontends with React and Next.js, and manage data with both SQL (PostgreSQL, MySQL) and NoSQL (MongoDB) databases. I prioritize security and performance, implementing auth solutions like JWT and Clerk Authentication."
+      }
     },
     "coreStrengths": {
       "title": "My Core Strengths",
