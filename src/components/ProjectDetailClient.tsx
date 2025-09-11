@@ -144,7 +144,7 @@ export function ProjectDetailClient({ project }: { project: Project }) {
         >
             <CarouselContent className="items-center">
                 {media.map((item, index) => (
-                    <CarouselItem key={index} className="basis-1/4 sm:basis-1/5 lg:basis-1/6">
+                    <CarouselItem key={`thumb-${index}`} className="basis-1/4 sm:basis-1/5 lg:basis-1/6">
                         <CarouselThumb
                             onClick={() => onThumbClick(index)}
                             selected={index === selectedIndex}
@@ -232,7 +232,7 @@ export function ProjectDetailClient({ project }: { project: Project }) {
             <MotionCard variants={cardVariants} whileHover={hoverEffect} className="overflow-hidden">
                 <CardHeader>
                     <CardTitle>Links</CardTitle>
-                </CardHeader>
+                </Header>
                 <CardContent className="space-y-3">
                     <Button asChild className="w-full" size="lg">
                         <Link href={project.githubUrl} target="_blank" rel="noopener noreferrer">
