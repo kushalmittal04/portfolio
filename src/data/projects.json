@@ -2,107 +2,183 @@
 [
   {
     "id": 1,
-    "slug": "generative-ai-portfolio",
-    "name": "Generative AI Portfolio Website",
-    "tagline": "A dynamic personal portfolio built with Next.js and Generative AI.",
-    "overview": "This project is a modern, fully responsive portfolio website created using Next.js, React, and Tailwind CSS. It leverages the power of Google's Gemini Pro through Genkit to enable conversational edits and content updates, demonstrating a novel approach to website management. The entire user interface, data structure, and layout were designed and implemented by the AI.",
+    "slug": "rera-scraper",
+    "name": "RERA Projects Data Scraper",
+    "tagline": "Automated web scraping tool for real estate compliance data.",
+    "overview": "RERA Scraper is a Python-based automation tool designed to collect structured data from the Real Estate Regulatory Authority (RERA) portal. It simplifies the process of retrieving property, agent, and project registration details, making it easier for analysts and researchers to work with real-estate data. The tool eliminates manual data entry by automating data collection, cleaning, and exporting into structured formats.",
     "features": [
-      "Fully responsive design for all devices.",
-      "Built with Next.js App Router for optimal performance.",
-      "Styled with Tailwind CSS and ShadCN UI components.",
-      "Integrated with Genkit for AI-powered conversational development.",
-      "Dynamic data-driven content from JSON files."
+      "Automated scraping of property & project details from the RERA portal.",
+      "Handles pagination and multiple records efficiently.",
+      "Data cleaning and formatting for improved readability.",
+      "Robust error handling for missing or restricted data.",
+      "Exports data to CSV/Excel for further analysis."
     ],
     "challenges": [
       {
-        "challenge": "Structuring the entire application code and data schemas from scratch via AI prompts.",
-        "solution": "Iteratively defined types and components, guiding the AI to build a modular and scalable architecture."
+        "challenge": "The RERA portal used dynamic loading and hidden elements.",
+        "solution": "Used Selenium waits and advanced DOM traversal to reliably handle dynamic content."
       },
       {
-        "challenge": "Ensuring the AI could correctly modify and update complex, multi-file code structures.",
-        "solution": "Developed a robust XML-based change format that the AI could generate and the system could parse, ensuring atomic and accurate file updates."
+        "challenge": "Large datasets caused performance issues during scraping.",
+        "solution": "Implemented pagination handling and batched data exports to optimize memory usage."
+      },
+      {
+        "challenge": "Data fields were inconsistent across different state portals.",
+        "solution": "Applied Pandas preprocessing to standardize the output schema for consistent data."
       }
     ],
-    "technologies": ["Next.js", "React", "Tailwind CSS", "Genkit", "TypeScript", "Vercel"],
-    "skills": ["Full-Stack Development", "AI Integration", "Prompt Engineering", "UI/UX Design"],
-    "githubUrl": "https://github.com/kushalmittal04/my-portfolio",
-    "liveUrl": "https://kushalmittal.framer.website/",
-    "images": [
-      { "url": "https://picsum.photos/seed/101/1280/720", "dataAiHint": "website homepage" },
-      { "url": "https://picsum.photos/seed/102/1280/720", "dataAiHint": "code snippet" },
-      { "url": "https://picsum.photos/seed/103/1280/720", "dataAiHint": "project gallery" }
+    "technologies": [
+      "Python",
+      "Selenium",
+      "BeautifulSoup",
+      "Pandas"
     ],
-    "videoUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ",
-    "category": ["Web Application", "AI/ML"],
-    "isFeatured": true
+    "skills": [
+      "Web Scraping",
+      "Data Extraction",
+      "Data Cleaning",
+      "Automation",
+      "File Handling"
+    ],
+    "githubUrl": "https://github.com/kushalmittal04/rera_scraper",
+    "liveUrl": null,
+    "images": [
+      {
+        "url": "/images/projects/rera_scraper/screenshot1.png",
+        "dataAiHint": "data scraping code"
+      },
+      {
+        "url": "/images/projects/rera_scraper/screenshot2.png",
+        "dataAiHint": "scraped data table"
+      }
+    ],
+    "videoUrl": "https://www.youtube.com/embed/_a57UTiXiQQ",
+    "category": [
+      "Automation",
+      "Data Scraping"
+    ],
+    "isFeatured": false
   },
   {
     "id": 2,
     "slug": "restaurant-name-generator",
     "name": "Restaurant Name & Menu Generator",
     "tagline": "AI-powered tool to generate creative restaurant names and menu ideas instantly.",
-    "overview": "This AI-powered web app, built with LangChain and Streamlit, allows users to select a cuisine and instantly receive a creative restaurant name and AI-generated menu suggestions. It showcases the use of LLM chains and prompt engineering for a fun, interactive experience.",
+    "overview": "Restaurant Name Generator is an AI-powered web app built with LangChain, Streamlit, and Google Gemini API. It allows users to select a cuisine and instantly get a fancy restaurant name along with AI-generated menu suggestions. The project demonstrates the use of LLM chains, prompt engineering, and a simple Streamlit UI for interactive user experience.",
     "features": [
-      "Generates unique restaurant names based on cuisine.",
-      "Suggests multiple cuisine-specific menu items.",
-      "Interactive Streamlit web app.",
-      "Uses LangChain SequentialChain for multi-step AI reasoning."
+      "Generates a unique restaurant name based on the chosen cuisine.",
+      "Suggests multiple cuisine-specific menu items automatically.",
+      "Interactive Streamlit web app with sidebar selection.",
+      "Uses LangChain SequentialChain for multi-step AI reasoning.",
+      "Environment variable handling with dotenv for secure API keys."
     ],
     "challenges": [
       {
-        "challenge": "Designing prompts for consistent and creative names.",
-        "solution": "Applied prompt engineering techniques to refine outputs."
+        "challenge": "Designing prompts to ensure consistent and precise restaurant names.",
+        "solution": "Applied prompt engineering techniques and restricted outputs to single-name responses."
       },
       {
-        "challenge": "Managing API key security in a web application.",
-        "solution": "Used dotenv to load environment variables securely."
+        "challenge": "Maintaining API security when using Gemini API keys.",
+        "solution": "Used dotenv to load environment variables and keep credentials hidden."
+      },
+      {
+        "challenge": "Ensuring a smooth user experience in Streamlit UI.",
+        "solution": "Created a simple sidebar-based input with formatted AI responses."
       }
     ],
-    "technologies": ["Python", "LangChain", "Streamlit", "Google Gemini API"],
-    "skills": ["Prompt Engineering", "LLM Integration", "Web App Development"],
-    "githubUrl": "https://github.com/kushalmittal04/restaurant_name_generator",
+    "technologies": [
+      "Python",
+      "LangChain",
+      "Streamlit",
+      "Google Gemini API",
+      "dotenv"
+    ],
+    "skills": [
+      "Prompt Engineering",
+      "LLM Integration",
+      "Web App Development",
+      "AI Automation"
+    ],
+    "githubUrl": "https://github.com/kushalmittal04/restaurant-name-generator",
     "liveUrl": null,
     "images": [
-      { "url": "https://picsum.photos/seed/201/1280/720", "dataAiHint": "restaurant menu" },
-      { "url": "https://picsum.photos/seed/202/1280/720", "dataAiHint": "web app interface" }
+      {
+        "url": "/images/projects/restaurant_generator/screenshot1.png",
+        "dataAiHint": "Streamlit UI with generated restaurant name"
+      },
+      {
+        "url": "/images/projects/restaurant_generator/screenshot2.png",
+        "dataAiHint": "AI-generated menu items"
+      }
     ],
-    "videoUrl": "https://www.youtube.com/embed/LHJvOiIGtuc",
-    "category": ["AI/ML", "Web Application"],
-    "isFeatured": true
+    "videoUrl": null,
+    "category": [
+      "AI",
+      "Web App",
+      "LLM"
+    ],
+    "isFeatured": false
   },
   {
     "id": 3,
-    "slug": "topic-qa-chatbot",
+    "slug": "qa-chatbot",
     "name": "Topic-Specific QA Chatbot",
     "tagline": "An AI-powered chatbot for answering FAQs with context-based retrieval.",
-    "overview": "An intelligent, topic-specific assistant built with LangChain, Google Gemini API, and ChromaDB. It allows users to upload a document and ask questions, receiving accurate, context-driven answers. It uses embeddings for semantic search and a custom prompt to prevent hallucinations.",
+    "overview": "This QA Chatbot is an intelligent, topic-specific assistant built using LangChain, Google Gemini API, HuggingFace embeddings, and ChromaDB. It enables users to query a dataset of FAQs and receive accurate, context-driven answers. The system uses embeddings to create a searchable vector database and applies RetrievalQA with a custom prompt for reliable, non-hallucinated responses. The Streamlit frontend provides a simple and interactive interface for real-time Q&A.",
     "features": [
-      "Creates a local vector database from user-uploaded files.",
-      "Retrieval-Augmented Generation (RAG) powered by LangChain.",
+      "Creates a local vector database from FAQ CSV files.",
+      "RetrievalQA powered by LangChain with Google Gemini LLM.",
       "Uses HuggingFace embeddings for semantic search.",
-      "Streamlit frontend for real-time chatbot interaction."
+      "Streamlit frontend for real-time chatbot interaction.",
+      "Ensures safe responses by avoiding fabricated answers."
     ],
     "challenges": [
       {
-        "challenge": "Preventing the chatbot from generating fabricated answers.",
-        "solution": "Designed a strict custom prompt forcing the LLM to only use the provided context."
+        "challenge": "Preventing the chatbot from generating hallucinated answers.",
+        "solution": "Designed a strict custom prompt that forces the LLM to only use context or respond with 'I don't know.'"
       },
       {
-        "challenge": "Handling various document formats efficiently.",
-        "solution": "Integrated loaders for PDF and text files."
+        "challenge": "Handling large FAQ datasets efficiently.",
+        "solution": "Implemented ChromaDB for fast vector search and persistent storage."
+      },
+      {
+        "challenge": "Ensuring API key security.",
+        "solution": "Used dotenv to manage environment variables and hide sensitive credentials."
       }
     ],
-    "technologies": ["Python", "LangChain", "ChromaDB", "Streamlit", "HuggingFace"],
-    "skills": ["Vector Databases", "RAG", "LLM Integration", "Prompt Engineering"],
-    "githubUrl": "https://github.com/kushalmittal04/qa_chatbot",
+    "technologies": [
+      "Python",
+      "LangChain",
+      "Google Gemini API",
+      "HuggingFace Embeddings",
+      "ChromaDB",
+      "Streamlit"
+    ],
+    "skills": [
+      "Vector Databases",
+      "Semantic Search",
+      "LLM Integration",
+      "Prompt Engineering",
+      "Interactive UI Development"
+    ],
+    "githubUrl": "https://github.com/kushalmittal04/qa-chatbot",
     "liveUrl": null,
     "images": [
-      { "url": "https://picsum.photos/seed/301/1280/720", "dataAiHint": "chatbot interface" },
-      { "url": "https://picsum.photos/seed/302/1280/720", "dataAiHint": "data flow diagram" },
-      { "url": "https://picsum.photos/seed/303/1280/720", "dataAiHint": "code terminal" }
+      {
+        "url": "/images/projects/qa_chatbot/screenshot1.png",
+        "dataAiHint": "Streamlit chatbot interface"
+      },
+      {
+        "url": "/images/projects/qa_chatbot/screenshot2.png",
+        "dataAiHint": "Chroma vector database flow"
+      }
     ],
-    "videoUrl": "https://www.youtube.com/embed/gWiuK9U0s_A",
-    "category": ["AI/ML", "Chatbot"],
+    "videoUrl": null,
+    "category": [
+      "AI",
+      "Chatbot",
+      "LLM"
+    ],
     "isFeatured": true
   },
   {
@@ -487,38 +563,39 @@
   },
   {
     "id": 15,
-    "slug": "rera-projects-data-scraper",
-    "name": "RERA Projects Data Scraper",
-    "tagline": "Automated web scraping tool for real estate compliance data.",
-    "overview": "RERA Scraper is a Python-based automation tool designed to collect structured data from the Real Estate Regulatory Authority (RERA) portal. It simplifies the process of retrieving property, agent, and project registration details, making it easier for analysts and researchers to work with real-estate data. The tool eliminates manual data entry by automating data collection, cleaning, and exporting into structured formats.",
+    "slug": "generative-ai-portfolio",
+    "name": "Generative AI Portfolio Website",
+    "tagline": "A dynamic personal portfolio built with Next.js and Generative AI.",
+    "overview": "This project is a modern, fully responsive portfolio website created using Next.js, React, and Tailwind CSS. It leverages the power of Google's Gemini Pro through Genkit to enable conversational edits and content updates, demonstrating a novel approach to website management. The entire user interface, data structure, and layout were designed and implemented by the AI.",
     "features": [
-      "Automated scraping of property & project details from the RERA portal.",
-      "Handles pagination and multiple records efficiently.",
-      "Data cleaning and formatting for improved readability.",
-      "Robust error handling for missing or restricted data.",
-      "Exports data to CSV/Excel for further analysis."
+      "Fully responsive design for all devices.",
+      "Built with Next.js App Router for optimal performance.",
+      "Styled with Tailwind CSS and ShadCN UI components.",
+      "Integrated with Genkit for AI-powered conversational development.",
+      "Dynamic data-driven content from JSON files."
     ],
     "challenges": [
       {
-        "challenge": "The RERA portal used dynamic loading and hidden elements.",
-        "solution": "Used Selenium waits and advanced DOM traversal to reliably handle dynamic content."
+        "challenge": "Structuring the entire application code and data schemas from scratch via AI prompts.",
+        "solution": "Iteratively defined types and components, guiding the AI to build a modular and scalable architecture."
       },
       {
-        "challenge": "Large datasets caused performance issues during scraping.",
-        "solution": "Implemented pagination handling and batched data exports to optimize memory usage."
+        "challenge": "Ensuring the AI could correctly modify and update complex, multi-file code structures.",
+        "solution": "Developed a robust XML-based change format that the AI could generate and the system could parse, ensuring atomic and accurate file updates."
       }
     ],
-    "technologies": ["Python", "Selenium", "BeautifulSoup", "Pandas"],
-    "skills": ["Web Scraping", "Data Extraction", "Data Cleaning", "Automation", "File Handling"],
-    "githubUrl": "https://github.com/kushalmittal04/rera_scraper",
-    "liveUrl": null,
+    "technologies": ["Next.js", "React", "Tailwind CSS", "Genkit", "TypeScript", "Vercel"],
+    "skills": ["Full-Stack Development", "AI Integration", "Prompt Engineering", "UI/UX Design"],
+    "githubUrl": "https://github.com/kushalmittal04/my-portfolio",
+    "liveUrl": "https://kushalmittal.framer.website/",
     "images": [
-      { "url": "https://picsum.photos/seed/1501/1280/720", "dataAiHint": "data scraping code" },
-      { "url": "https://picsum.photos/seed/1502/1280/720", "dataAiHint": "data table" }
+      { "url": "https://picsum.photos/seed/101/1280/720", "dataAiHint": "website homepage" },
+      { "url": "https://picsum.photos/seed/102/1280/720", "dataAiHint": "code snippet" },
+      { "url": "https://picsum.photos/seed/103/1280/720", "dataAiHint": "project gallery" }
     ],
-    "videoUrl": "https://www.youtube.com/embed/_a57UTiXiQQ",
-    "category": ["Automation", "Data Scraping"],
-    "isFeatured": false
+    "videoUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    "category": ["Web Application", "AI/ML"],
+    "isFeatured": true
   },
   {
     "id": 16,
