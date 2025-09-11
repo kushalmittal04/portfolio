@@ -76,8 +76,8 @@ export default function ProjectsPage() {
               </div>
               <ProjectCardCarousel project={project} />
             </Link>
-            <CardContent className="pt-6 flex-grow flex flex-col">
-              <div className="flex-grow space-y-3">
+            <CardContent className="pt-6 flex-grow flex flex-col justify-between">
+              <div className="space-y-4">
                 <div>
                     <h4 className="text-xs uppercase font-semibold text-muted-foreground mb-2">Tech Stack</h4>
                     <div className="flex flex-wrap gap-1.5">
