@@ -20,7 +20,7 @@ export const CarouselThumb = ({ selected, onClick, item }: ThumbProps) => {
   return (
     <div
       className={cn(
-        "relative aspect-video h-full cursor-pointer overflow-hidden rounded-lg bg-background p-0 transition-opacity",
+        "relative aspect-video h-full w-full cursor-pointer overflow-hidden rounded-lg bg-background p-0 transition-opacity",
         !selected && "opacity-60 hover:opacity-100"
       )}
     >

@@ -5,11 +5,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState, useCallback, useEffect } from "react";
 import useEmblaCarousel, { type EmblaCarouselType } from "embla-carousel-react";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-} from "@/components/ui/carousel";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -20,7 +15,8 @@ import {
   faWrench,
   faBullseye,
   faTasks,
-  faCogs
+  faCogs,
+  faArrowDown
 } from "@fortawesome/free-solid-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 
@@ -28,12 +24,13 @@ import type { Project } from "@/lib/types";
 import { Badge } from "./ui/badge";
 import { Button } from "./ui/button";
 import { CarouselThumb } from "./CarouselThumb";
+import { cn } from "@/lib/utils";
 
 export function ProjectDetailClient({ project }: { project: Project }) {
-  const [selectedIndex, setSelectedIndex] = useState(0);
   const [mainApi, setMainApi] = useState<EmblaCarouselType>();
   const [thumbApi, setThumbApi] = useState<EmblaCarouselType>();
-
+  const [selectedIndex, setSelectedIndex] = useState(0);
+   
   const media = [
       ...(project.videoUrl ? [{ type: 'video' as const, url: project.videoUrl }] : []),
       ...project.images.map(img => ({ type: 'image' as const, ...img }))
@@ -54,7 +51,7 @@ export function ProjectDetailClient({ project }: { project: Project }) {
     if (thumbApi.scrollSnapList().length > newSelectedIndex) {
       thumbApi.scrollTo(newSelectedIndex);
     }
-  }, [mainApi, thumbApi, setSelectedIndex]);
+  }, [mainApi, thumbApi]);
 
   useEffect(() => {
     if (!mainApi) return;
@@ -63,82 +60,96 @@ export function ProjectDetailClient({ project }: { project: Project }) {
     mainApi.on("reInit", onSelect);
   }, [mainApi, onSelect]);
 
+  const handleScrollToContent = () => {
+    const contentElement = document.getElementById('project-content');
+    if (contentElement) {
+      contentElement.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
-    <div className="container mx-auto max-w-7xl px-4 py-8 sm:py-12 md:py-16">
-        <Button asChild variant="ghost" className="mb-8 -ml-4">
-            <Link href="/projects">
+    <div className="relative">
+      <div className="container mx-auto px-4">
+        <Button asChild variant="ghost" className="absolute top-4 left-4 z-20 bg-background/50 hover:bg-background/80">
+          <Link href="/projects">
             <FontAwesomeIcon icon={faArrowLeft} className="mr-2 h-4 w-4" />
-            Back to Projects
-            </Link>
+            Back
+          </Link>
         </Button>
-      
-        <section className="mb-12">
-            <header className="text-center mb-8">
-                <h1 className="text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl text-foreground">
+      </div>
+
+      <section className="relative flex h-screen w-full flex-col items-center justify-center bg-card text-card-foreground">
+        <div className="container text-center mb-4">
+            <h1 className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
                 {project.name}
-                </h1>
-                <p className="mt-3 text-base text-muted-foreground sm:text-lg max-w-3xl mx-auto">
+            </h1>
+            <p className="mt-3 text-lg text-muted-foreground sm:text-xl max-w-3xl mx-auto">
                 {project.tagline}
-                </p>
-            </header>
-
-            <Carousel setApi={setMainApi} className="w-full shadow-lg rounded-lg overflow-hidden border">
-            <CarouselContent>
-                {media.map((item, index) => (
-                <CarouselItem key={index}>
-                    {item.type === 'video' && item.url ? (
-                    <div className="aspect-video w-full bg-black">
-                        <iframe
-                        src={item.url}
-                        title={`${project.name} video`}
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowFullScreen
-                        className="h-full w-full"
-                        ></iframe>
-                    </div>
-                    ) : (
-                    <div className="relative aspect-video w-full bg-card">
-                        <Image
-                        src={item.url}
-                        alt={`${project.name} screenshot ${index + 1}`}
-                        fill
-                        className="object-contain"
-                        data-ai-hint={item.dataAiHint}
-                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 75vw, 60vw"
-                        priority={index === 0}
-                        />
-                    </div>
-                    )}
-                </CarouselItem>
-                ))}
-            </CarouselContent>
-            </Carousel>
-
+            </p>
+        </div>
+        
+        <div className="w-full max-w-7xl mx-auto px-4 flex-grow flex items-center justify-center gap-4">
             {media.length > 1 && (
-            <Carousel
-                setApi={setThumbApi}
-                opts={{
-                containScroll: 'keepSnaps',
-                dragFree: true,
-                }}
-                className="w-full mt-4"
-            >
-                <CarouselContent className="items-center -ml-2">
-                {media.map((item, index) => (
-                    <CarouselItem key={`thumb-${index}`} className="basis-1/4 sm:basis-1/5 lg:basis-1/6 pl-2">
-                    <CarouselThumb
-                        onClick={() => onThumbClick(index)}
-                        selected={index === selectedIndex}
-                        item={item}
-                    />
-                    </CarouselItem>
-                ))}
-                </CarouselContent>
-            </Carousel>
+                 <div className="h-full py-16 hidden md:block">
+                     <div
+                        ref={useEmblaCarousel({ axis: 'y', containScroll: 'keepSnaps', dragFree: true }, []).emblaRef}
+                        onMouseEnter={() => thumbApi?.reInit()}
+                        className="h-full overflow-hidden"
+                     >
+                        <div className="flex h-full flex-col gap-2">
+                        {media.map((item, index) => (
+                            <div key={`thumb-${index}`} className="basis-1/2 sm:basis-1/3 lg:basis-1/4 flex-shrink-0">
+                                <CarouselThumb
+                                    onClick={() => onThumbClick(index)}
+                                    selected={index === selectedIndex}
+                                    item={item}
+                                />
+                            </div>
+                        ))}
+                        </div>
+                     </div>
+                 </div>
             )}
-        </section>
+            <div ref={useEmblaCarousel({ loop: true }, []).emblaRef} onMouseEnter={() => mainApi?.reInit()} className="h-full w-full flex-1 overflow-hidden py-16">
+                 <div className="h-full">
+                    {media.map((item, index) => (
+                        <div className="h-full" key={index}>
+                             {item.type === 'video' && item.url ? (
+                                <div className="h-full w-full bg-black rounded-lg overflow-hidden">
+                                    <iframe
+                                    src={item.url}
+                                    title={`${project.name} video`}
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowFullScreen
+                                    className="h-full w-full"
+                                    ></iframe>
+                                </div>
+                                ) : (
+                                <div className="relative h-full w-full bg-muted rounded-lg overflow-hidden">
+                                    <Image
+                                    src={item.url}
+                                    alt={`${project.name} screenshot ${index + 1}`}
+                                    fill
+                                    className="object-contain"
+                                    data-ai-hint={item.dataAiHint}
+                                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 75vw, 60vw"
+                                    priority={index === 0}
+                                    />
+                                </div>
+                                )}
+                        </div>
+                    ))}
+                 </div>
+            </div>
+        </div>
+        <Button variant="ghost" onClick={handleScrollToContent} className="absolute bottom-4 animate-bounce">
+            <FontAwesomeIcon icon={faArrowDown} className="h-6 w-6" />
+            <span className="sr-only">Scroll down</span>
+        </Button>
+      </section>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 lg:gap-12 mt-16">
+      <section id="project-content" className="container mx-auto max-w-7xl px-4 py-16 sm:py-24">
+        <div className="grid grid-cols-1 lg:grid-cols-3 lg:gap-12">
             <div className="lg:col-span-2 space-y-12">
                 <section>
                     <h2 className="text-2xl sm:text-3xl font-bold mb-4 flex items-center gap-3">
@@ -228,6 +239,7 @@ export function ProjectDetailClient({ project }: { project: Project }) {
                 </Card>
             </aside>
         </div>
+      </section>
     </div>
   );
 }
