@@ -58,7 +58,7 @@ export function ProjectDetailClient({ project }: { project: Project }) {
     if (!mainApi) return;
     onSelect();
     mainApi.on("select", onSelect);
-    mainApi.on("reInit", onSelect);
+    main.on("reInit", onSelect);
   }, [mainApi, onSelect]);
 
   return (
