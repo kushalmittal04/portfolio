@@ -79,7 +79,7 @@ export default function AboutPage() {
             {categories.map((category) => (
               <Card key={category.name} className="shadow-lg transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
                  <CardHeader>
-                    <CardTitle className="text-xl text-primary">{category.name}</CardTitle>
+                    <CardTitle>{category.name}</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <div className="flex flex-wrap gap-4">

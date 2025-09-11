@@ -86,8 +86,8 @@ export function ProjectDetailClient({ project }: { project: Project }) {
                 </CarouselItem>
             ))}
             </CarouselContent>
-            <CarouselPrevious className="absolute left-0 top-1/2 -translate-y-1/2 h-full w-12 rounded-none border-none bg-black/20 text-white opacity-0 transition-opacity hover:bg-black/40 group-hover:opacity-100 disabled:opacity-0" />
-            <CarouselNext className="absolute right-0 top-1/2 -translate-y-1/2 h-full w-12 rounded-none border-none bg-black/20 text-white opacity-0 transition-opacity hover:bg-black/40 group-hover:opacity-100 disabled:opacity-0" />
+            <CarouselPrevious className="absolute left-0 top-1/2 -translate-y-1/2 h-10 w-10 rounded-full border-none bg-black/20 text-white opacity-0 transition-opacity hover:bg-black/40 group-hover:opacity-100 disabled:opacity-0" />
+            <CarouselNext className="absolute right-0 top-1/2 -translate-y-1/2 h-10 w-10 rounded-full border-none bg-black/20 text-white opacity-0 transition-opacity hover:bg-black/40 group-hover:opacity-100 disabled:opacity-0" />
         </Carousel>
       </section>
 

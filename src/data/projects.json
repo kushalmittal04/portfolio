@@ -589,9 +589,9 @@
     "githubUrl": "https://github.com/kushalmittal04/my-portfolio",
     "liveUrl": "https://kushalmittal.framer.website/",
     "images": [
-      { "url": "https://picsum.photos/seed/101/1280/720", "dataAiHint": "website homepage" },
-      { "url": "https://picsum.photos/seed/102/1280/720", "dataAiHint": "code snippet" },
-      { "url": "https://picsum.photos/seed/103/1280/720", "dataAiHint": "project gallery" }
+      { "url": "/images/projects/portfolio/screenshot1.png", "dataAiHint": "website homepage" },
+      { "url": "/images/projects/portfolio/screenshot2.png", "dataAiHint": "code snippet" },
+      { "url": "/images/projects/portfolio/screenshot3.png", "dataAiHint": "project gallery" }
     ],
     "videoUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ",
     "category": ["Web Application", "AI/ML"],

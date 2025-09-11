@@ -1,6 +1,6 @@
 
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { PT_Sans, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
@@ -8,7 +8,17 @@ import { Toaster } from "@/components/ui/toaster";
 import { cn } from "@/lib/utils";
 import { ThemeProvider } from "@/components/ThemeProvider";
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
+const ptSans = PT_Sans({ 
+  subsets: ["latin"], 
+  weight: ["400", "700"],
+  variable: "--font-body" 
+});
+
+const playfairDisplay = Playfair_Display({
+  subsets: ["latin"],
+  variable: "--font-headline",
+});
+
 
 export const metadata: Metadata = {
   title: "Kushal Mittal's Portfolio",
@@ -24,8 +34,9 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body
         className={cn(
-          "bg-background text-foreground font-sans antialiased",
-          inter.variable
+          "bg-background text-foreground font-body antialiased",
+          ptSans.variable,
+          playfairDisplay.variable
         )}
         suppressHydrationWarning={true}
       >

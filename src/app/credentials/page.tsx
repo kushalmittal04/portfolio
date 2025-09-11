@@ -125,9 +125,9 @@ export default function CredentialsPage() {
 
           <Card>
             <CardHeader>
-              <CardTitle>All Certifications</CardTitle>
+              <CardTitle>{credentialsContent.allCertifications}</CardTitle>
               <CardDescription>
-                Search and filter through all my certifications.
+                {credentialsContent.allCertificationsDescription}
               </CardDescription>
             </CardHeader>
             <CardContent>
@@ -227,7 +227,7 @@ export default function CredentialsPage() {
                     <FontAwesomeIcon icon={achievement.icon === 'Award' ? faAward : faStar} className="h-8 w-8 text-primary" />
                   </div>
                 <CardHeader>
-                  <CardTitle className="text-xl pr-12">{achievement.name}</CardTitle>
+                  <CardTitle>{achievement.name}</CardTitle>
                 </CardHeader>
                 <CardContent className="flex-grow">
                   <p className="text-muted-foreground">
