@@ -219,7 +219,7 @@ export function ProjectDetailClient({ project }: { project: Project }) {
              <MotionCard variants={cardVariants} whileHover={hoverEffect} className="overflow-hidden">
                 <CardHeader>
                     <CardTitle className="flex items-center gap-3 text-xl"><FontAwesomeIcon icon={faCogs} /> Skills Demonstrated</CardTitle>
-                </CardHeader>
+                </Header>
                 <CardContent className="flex flex-wrap gap-2">
                     {project.skills.map((skill) => (
                         <Badge key={skill} variant="outline" className="text-sm px-3 py-1">
