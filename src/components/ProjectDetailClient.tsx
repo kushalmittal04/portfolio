@@ -18,7 +18,6 @@ import {
   faCheckCircle,
   faLightbulb,
   faWrench,
-  faCogs,
   faBullseye,
   faTasks
 } from "@fortawesome/free-solid-svg-icons";
@@ -28,7 +27,6 @@ import type { Project } from "@/lib/types";
 import { Badge } from "./ui/badge";
 import { Button } from "./ui/button";
 import { CarouselThumb } from "./CarouselThumb";
-import { Separator } from "./ui/separator";
 
 export function ProjectDetailClient({ project }: { project: Project }) {
   const [selectedIndex, setSelectedIndex] = useState(0);
@@ -63,8 +61,7 @@ export function ProjectDetailClient({ project }: { project: Project }) {
   }, [mainApi, onSelect]);
 
   return (
-    <>
-      <div className="container mx-auto max-w-7xl px-4 py-16 animate-in fade-in-0 slide-in-from-bottom-8 duration-1000">
+    <div className="container mx-auto max-w-7xl px-4 py-16 animate-in fade-in-0 slide-in-from-bottom-8 duration-1000">
         <Button asChild variant="ghost" className="mb-8 -ml-4">
           <Link href="/projects">
             <FontAwesomeIcon icon={faArrowLeft} className="mr-2 h-4 w-4" />
@@ -72,24 +69,27 @@ export function ProjectDetailClient({ project }: { project: Project }) {
           </Link>
         </Button>
         
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-x-12">
-            <div className="lg:col-span-2 space-y-12">
-                <header className="space-y-4">
-                    <h1 className="text-4xl font-bold tracking-tight sm:text-5xl text-foreground">
-                    {project.name}
-                    </h1>
-                    <p className="text-xl text-muted-foreground font-medium">
-                    {project.tagline}
-                    </p>
-                </header>
+        <header className="mb-8">
+            <h1 className="text-4xl font-bold tracking-tight sm:text-5xl text-foreground">
+            {project.name}
+            </h1>
+            <p className="text-xl text-muted-foreground font-medium mt-2">
+            {project.tagline}
+            </p>
+        </header>
 
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
+            {/* Main Content */}
+            <div className="lg:col-span-2 space-y-12">
+
+                {/* Media Carousel */}
                 <div className="space-y-4">
                     <Carousel setApi={setMainApi} className="w-full">
                         <CarouselContent>
                             {media.map((item, index) => (
                             <CarouselItem key={index}>
                                 {item.type === 'video' && item.url ? (
-                                <div className="aspect-video w-full overflow-hidden rounded-lg border shadow-lg">
+                                <div className="aspect-video w-full overflow-hidden rounded-lg border bg-muted shadow-lg">
                                     <iframe
                                     src={item.url}
                                     title={`${project.name} video`}
@@ -99,7 +99,7 @@ export function ProjectDetailClient({ project }: { project: Project }) {
                                     ></iframe>
                                 </div>
                                 ) : (
-                                <div className="relative aspect-video w-full overflow-hidden rounded-lg border shadow-lg">
+                                <div className="relative aspect-video w-full overflow-hidden rounded-lg border bg-card shadow-lg">
                                     <Image
                                     src={item.url}
                                     alt={`${project.name} screenshot ${index + 1}`}
@@ -138,48 +138,22 @@ export function ProjectDetailClient({ project }: { project: Project }) {
                     </Carousel>
                 </div>
                 
-                <div className="space-y-8">
-                     <Card>
-                        <CardHeader>
-                            <CardTitle className="flex items-center gap-3 text-2xl"><FontAwesomeIcon icon={faWrench} /> Tech Stack</CardTitle>
-                        </CardHeader>
-                        <CardContent className="flex flex-wrap gap-2">
-                            {project.technologies.map((tech) => (
-                                <Badge key={tech} variant="secondary" className="text-sm px-3 py-1">
-                                {tech}
-                                </Badge>
-                            ))}
-                        </CardContent>
-                    </Card>
-                     <Card>
-                        <CardHeader>
-                            <CardTitle className="flex items-center gap-3 text-2xl"><FontAwesomeIcon icon={faCogs} /> Skills Demonstrated</CardTitle>
-                        </CardHeader>
-                        <CardContent className="flex flex-wrap gap-2">
-                            {project.skills.map((skill) => (
-                                <Badge key={skill} variant="outline" className="text-sm px-3 py-1">
-                                {skill}
-                                </Badge>
-                            ))}
-                        </CardContent>
-                    </Card>
-                </div>
-                
-                <Separator />
-                
+                {/* Project Details */}
                 <div className="space-y-12">
                     <section>
-                        <h2 className="text-3xl font-bold mb-4 flex items-center gap-3"><FontAwesomeIcon icon={faBullseye} /> Project Overview</h2>
-                        <p className="text-muted-foreground text-base leading-relaxed">{project.overview}</p>
+                        <h2 className="text-3xl font-bold mb-4 flex items-center gap-3"><FontAwesomeIcon icon={faBullseye} /> Overview</h2>
+                        <div className="prose prose-stone dark:prose-invert max-w-none text-muted-foreground text-base leading-relaxed">
+                            {project.overview}
+                        </div>
                     </section>
                     
                     <section>
-                        <h2 className="text-3xl font-bold mb-4 flex items-center gap-3"><FontAwesomeIcon icon={faTasks} /> Features</h2>
+                        <h2 className="text-3xl font-bold mb-4 flex items-center gap-3"><FontAwesomeIcon icon={faTasks} /> Key Features</h2>
                         <ul className="space-y-4 text-muted-foreground">
                             {project.features.map((feature, index) => (
-                                <li key={index} className="flex items-start gap-3">
-                                    <FontAwesomeIcon icon={faCheckCircle} className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
-                                    <p className="text-base">{feature}</p>
+                                <li key={index} className="flex items-start gap-4">
+                                    <FontAwesomeIcon icon={faCheckCircle} className="h-6 w-6 text-primary mt-1 flex-shrink-0" />
+                                    <span className="text-base">{feature}</span>
                                 </li>
                             ))}
                         </ul>
@@ -187,11 +161,11 @@ export function ProjectDetailClient({ project }: { project: Project }) {
 
                     <section>
                         <h2 className="text-3xl font-bold mb-4 flex items-center gap-3"><FontAwesomeIcon icon={faLightbulb} /> Challenges & Solutions</h2>
-                        <div className="space-y-6 text-muted-foreground">
+                        <div className="space-y-6">
                             {project.challenges.map((item, index) => (
-                                <div key={index} className="border-l-4 border-primary/50 pl-6">
+                                <div key={index} className="rounded-lg border bg-card/50 p-6 shadow-sm">
                                     <h4 className="font-semibold text-foreground text-lg">{item.challenge}</h4>
-                                    <p className="text-base mt-1">{item.solution}</p>
+                                    <p className="text-muted-foreground text-base mt-2">{item.solution}</p>
                                 </div>
                             ))}
                         </div>
@@ -199,29 +173,53 @@ export function ProjectDetailClient({ project }: { project: Project }) {
                 </div>
             </div>
 
-            <aside className="lg:sticky lg:top-24 self-start mt-12 lg:mt-0">
+            {/* Sidebar */}
+            <aside className="lg:sticky lg:top-24 self-start space-y-8">
                  <Card className="overflow-hidden">
                     <CardHeader>
-                        <CardTitle>Project Links</CardTitle>
+                        <CardTitle className="flex items-center gap-3"><FontAwesomeIcon icon={faPlayCircle}/> Links</CardTitle>
                     </CardHeader>
                     <CardContent className="space-y-3">
-                        <Button asChild className="w-full" size="lg">
+                        {project.liveUrl && (
+                            <Button asChild className="w-full" size="lg">
+                                <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
+                                    Live Demo
+                                </a>
+                            </Button>
+                        )}
+                        <Button asChild variant="secondary" className="w-full" size="lg">
                             <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
                                 <FontAwesomeIcon icon={faGithub} className="mr-2 h-4 w-4" /> GitHub Repository
                             </a>
                         </Button>
-                        {project.liveUrl && (
-                            <Button asChild variant="secondary" className="w-full" size="lg">
-                                <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
-                                    <FontAwesomeIcon icon={faPlayCircle} className="mr-2 h-4 w-4" /> Live Demo
-                                </a>
-                            </Button>
-                        )}
+                    </CardContent>
+                </Card>
+                 <Card>
+                    <CardHeader>
+                        <CardTitle className="flex items-center gap-3"><FontAwesomeIcon icon={faWrench} /> Tech Stack</CardTitle>
+                    </CardHeader>
+                    <CardContent className="flex flex-wrap gap-2">
+                        {project.technologies.map((tech) => (
+                            <Badge key={tech} variant="secondary" className="text-sm px-3 py-1">
+                            {tech}
+                            </Badge>
+                        ))}
+                    </CardContent>
+                </Card>
+                 <Card>
+                    <CardHeader>
+                        <CardTitle className="flex items-center gap-3"><FontAwesomeIcon icon={faTasks} /> Skills Demonstrated</CardTitle>
+                    </CardHeader>
+                    <CardContent className="flex flex-wrap gap-2">
+                        {project.skills.map((skill) => (
+                            <Badge key={skill} variant="outline" className="text-sm px-3 py-1">
+                            {skill}
+                            </Badge>
+                        ))}
                     </CardContent>
                 </Card>
             </aside>
         </div>
-      </div>
-    </>
+    </div>
   );
 }
