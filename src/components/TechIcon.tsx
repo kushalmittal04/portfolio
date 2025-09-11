@@ -210,7 +210,7 @@ const iconMap: Record<string, IconDefinition> = {
 
   // AI/ML
   langchain: faBrain,
-  langgraph: faBrain,
+  langgraph: faCodeBranch,
   pyspark: faChartSimple,
   "scikit-learn": faGear,
   pandas: faTable,
@@ -230,7 +230,7 @@ const iconMap: Record<string, IconDefinition> = {
   bootstrap: faBootstrap,
   "tailwind css": faWind,
   streamlit: faWind,
-  "beautifulsoup": faCode,
+  "beautifulsoup": faFileCode,
   selenium: faCode,
 
   // Databases
