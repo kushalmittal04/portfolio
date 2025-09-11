@@ -28,7 +28,6 @@ import type { Project } from "@/lib/types";
 import { Badge } from "./ui/badge";
 import { Button } from "./ui/button";
 import { CarouselThumb } from "./CarouselThumb";
-import { Separator } from "./ui/separator";
 
 export function ProjectDetailClient({ project }: { project: Project }) {
   const [selectedIndex, setSelectedIndex] = useState(0);
@@ -65,21 +64,20 @@ export function ProjectDetailClient({ project }: { project: Project }) {
   }, [mainApi, onSelect]);
 
   return (
-    <div className="container mx-auto max-w-7xl px-4 py-16 animate-in fade-in-0 slide-in-from-bottom-8 duration-1000">
+    <div className="container mx-auto max-w-7xl px-4 py-8 sm:py-12 md:py-16">
         <Button asChild variant="ghost" className="mb-8 -ml-4">
             <Link href="/projects">
             <FontAwesomeIcon icon={faArrowLeft} className="mr-2 h-4 w-4" />
             Back to Projects
             </Link>
         </Button>
-
-        {/* Header and Media Showcase */}
+      
         <section className="mb-12">
-            <header className="text-center mb-12">
-                <h1 className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl text-foreground">
+            <header className="text-center mb-8">
+                <h1 className="text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl text-foreground">
                 {project.name}
                 </h1>
-                <p className="mt-4 text-lg text-muted-foreground sm:text-xl max-w-3xl mx-auto">
+                <p className="mt-3 text-base text-muted-foreground sm:text-lg max-w-3xl mx-auto">
                 {project.tagline}
                 </p>
             </header>
@@ -140,15 +138,11 @@ export function ProjectDetailClient({ project }: { project: Project }) {
             )}
         </section>
 
-        <Separator className="my-16" />
-
-        {/* Main Content Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-            {/* Left Column: Project Narrative */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 lg:gap-12 mt-16">
             <div className="lg:col-span-2 space-y-12">
                 <section>
-                    <h2 className="text-3xl font-bold mb-4 flex items-center gap-3">
-                    <FontAwesomeIcon icon={faBullseye} className="text-primary" /> Project Overview
+                    <h2 className="text-2xl sm:text-3xl font-bold mb-4 flex items-center gap-3">
+                    <FontAwesomeIcon icon={faBullseye} className="text-primary h-6 w-6" /> Project Overview
                     </h2>
                     <div className="prose prose-stone dark:prose-invert max-w-none text-muted-foreground text-base leading-relaxed">
                     {project.overview}
@@ -156,13 +150,13 @@ export function ProjectDetailClient({ project }: { project: Project }) {
                 </section>
 
                 <section>
-                    <h2 className="text-3xl font-bold mb-4 flex items-center gap-3">
-                    <FontAwesomeIcon icon={faTasks} className="text-primary" /> Key Features
+                    <h2 className="text-2xl sm:text-3xl font-bold mb-4 flex items-center gap-3">
+                    <FontAwesomeIcon icon={faTasks} className="text-primary h-6 w-6" /> Key Features
                     </h2>
                     <ul className="space-y-4 text-muted-foreground">
                     {project.features.map((feature, index) => (
                         <li key={index} className="flex items-start gap-4">
-                        <FontAwesomeIcon icon={faCheckCircle} className="h-6 w-6 text-primary/80 mt-1 flex-shrink-0" />
+                        <FontAwesomeIcon icon={faCheckCircle} className="h-5 w-5 text-primary/80 mt-1 flex-shrink-0" />
                         <span className="text-base">{feature}</span>
                         </li>
                     ))}
@@ -170,25 +164,24 @@ export function ProjectDetailClient({ project }: { project: Project }) {
                 </section>
 
                 <section>
-                    <h2 className="text-3xl font-bold mb-4 flex items-center gap-3">
-                    <FontAwesomeIcon icon={faLightbulb} className="text-primary" /> Challenges & Solutions
+                    <h2 className="text-2xl sm:text-3xl font-bold mb-4 flex items-center gap-3">
+                    <FontAwesomeIcon icon={faLightbulb} className="text-primary h-6 w-6" /> Challenges & Solutions
                     </h2>
                     <div className="space-y-6">
                     {project.challenges.map((item, index) => (
-                        <div key={index} className="rounded-lg border bg-card/50 p-6 shadow-sm transition-all duration-300 hover:shadow-md hover:border-primary/20">
-                        <h4 className="font-semibold text-foreground text-lg">{item.challenge}</h4>
-                        <p className="text-muted-foreground text-base mt-2">{item.solution}</p>
+                        <div key={index} className="rounded-lg border bg-card/50 p-4 sm:p-6 shadow-sm transition-all duration-300 hover:shadow-md hover:border-primary/20">
+                        <h4 className="font-semibold text-foreground text-base sm:text-lg">{item.challenge}</h4>
+                        <p className="text-muted-foreground text-sm sm:text-base mt-2">{item.solution}</p>
                         </div>
                     ))}
                     </div>
                 </section>
             </div>
 
-            {/* Right Column: Key Details */}
-            <aside className="lg:sticky lg:top-24 self-start space-y-8">
-                <Card className="overflow-hidden shadow-lg">
+            <aside className="lg:sticky lg:top-24 self-start space-y-8 mt-12 lg:mt-0">
+                 <Card className="overflow-hidden shadow-md">
                     <CardHeader>
-                        <CardTitle className="flex items-center gap-3 text-2xl"><FontAwesomeIcon icon={faCogs} /> Tech Stack</CardTitle>
+                        <CardTitle className="flex items-center gap-3 text-xl sm:text-2xl"><FontAwesomeIcon icon={faCogs} /> Tech Stack</CardTitle>
                     </CardHeader>
                     <CardContent>
                         <div className="flex flex-wrap gap-2">
@@ -200,9 +193,9 @@ export function ProjectDetailClient({ project }: { project: Project }) {
                         </div>
                     </CardContent>
                 </Card>
-                <Card className="overflow-hidden shadow-lg">
+                <Card className="overflow-hidden shadow-md">
                     <CardHeader>
-                    <CardTitle className="flex items-center gap-3 text-2xl"><FontAwesomeIcon icon={faWrench} /> Skills Demonstrated</CardTitle>
+                    <CardTitle className="flex items-center gap-3 text-xl sm:text-2xl"><FontAwesomeIcon icon={faWrench} /> Skills Demonstrated</CardTitle>
                     </CardHeader>
                     <CardContent>
                     <div className="flex flex-wrap gap-2">
@@ -214,11 +207,11 @@ export function ProjectDetailClient({ project }: { project: Project }) {
                     </div>
                     </CardContent>
                 </Card>
-                 <Card className="overflow-hidden shadow-lg">
+                 <Card className="overflow-hidden shadow-md">
                     <CardHeader>
                         <CardTitle>Links</CardTitle>
                     </CardHeader>
-                    <CardContent className="space-y-3">
+                    <CardContent className="flex flex-col space-y-3">
                         <Button asChild className="w-full" size="lg">
                             <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
                             <FontAwesomeIcon icon={faGithub} className="mr-2" /> View Code
