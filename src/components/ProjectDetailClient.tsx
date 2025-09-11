@@ -44,7 +44,6 @@ export function ProjectDetailClient({ project }: { project: Project }) {
           Back
         </Link>
       </Button>
-
       <section className="container mx-auto max-w-7xl px-4 py-16 sm:py-24 animate-in fade-in-0 slide-in-from-bottom-8 duration-1000">
         <div className="text-center mb-8">
             <h1 className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
@@ -87,8 +86,8 @@ export function ProjectDetailClient({ project }: { project: Project }) {
                 </CarouselItem>
             ))}
             </CarouselContent>
-            <CarouselPrevious className="absolute left-2 top-1/2 -translate-y-1/2 h-full w-12 rounded-none border-none bg-black/20 text-white opacity-0 transition-opacity hover:bg-black/40 group-hover:opacity-100 disabled:opacity-0" />
-            <CarouselNext className="absolute right-2 top-1/2 -translate-y-1/2 h-full w-12 rounded-none border-none bg-black/20 text-white opacity-0 transition-opacity hover:bg-black/40 group-hover:opacity-100 disabled:opacity-0" />
+            <CarouselPrevious className="absolute left-0 top-1/2 -translate-y-1/2 h-full w-12 rounded-none border-none bg-black/20 text-white opacity-0 transition-opacity hover:bg-black/40 group-hover:opacity-100 disabled:opacity-0" />
+            <CarouselNext className="absolute right-0 top-1/2 -translate-y-1/2 h-full w-12 rounded-none border-none bg-black/20 text-white opacity-0 transition-opacity hover:bg-black/40 group-hover:opacity-100 disabled:opacity-0" />
         </Carousel>
       </section>
 
