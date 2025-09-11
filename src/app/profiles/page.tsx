@@ -39,14 +39,6 @@ const LucideIcon = ({
 
 const profileSections = [
   {
-    title: "Social & Contact",
-    platforms: ["LinkedIn", "WhatsApp", "Gmail"],
-  },
-  {
-    title: "Development & AI",
-    platforms: ["GitHub", "Kaggle", "Portfolio"],
-  },
-  {
     title: "Certifications & Learning",
     platforms: [
       "Microsoft Learn",
@@ -56,8 +48,16 @@ const profileSections = [
     ],
   },
   {
+    title: "Development & AI",
+    platforms: ["GitHub", "Kaggle", "Portfolio"],
+  },
+  {
     title: "Competitive Programming",
     platforms: ["LeetCode", "HackerRank", "GeeksforGeeks"],
+  },
+  {
+    title: "Social & Contact",
+    platforms: ["LinkedIn", "WhatsApp", "Gmail"],
   },
 ];
 
