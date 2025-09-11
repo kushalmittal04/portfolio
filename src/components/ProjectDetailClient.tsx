@@ -55,7 +55,7 @@ export function ProjectDetailClient({ project }: { project: Project }) {
             </p>
         </div>
 
-        <Carousel className="w-full max-w-5xl mx-auto relative" opts={{ loop: true }}>
+        <Carousel className="w-full max-w-5xl mx-auto relative group" opts={{ loop: true }}>
             <CarouselContent>
             {media.map((item, index) => (
                 <CarouselItem key={index}>
