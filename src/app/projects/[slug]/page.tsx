@@ -1,4 +1,6 @@
 
+"use client";
+
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import projectsData from "@/data/projects.json";
@@ -19,16 +21,34 @@ import {
   faCheckCircle,
   faLightbulb,
   faWrench,
-  faCogs
+  faCogs,
+  faBullseye,
+  faTasks
 } from "@fortawesome/free-solid-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 export async function generateStaticParams() {
   return projectsData.map((project) => ({
     slug: project.slug,
   }));
 }
+
+const MotionCard = motion(Card);
+
+const cardVariants = {
+  initial: { y: 20, opacity: 0 },
+  animate: { y: 0, opacity: 1, transition: { duration: 0.5, ease: "easeInOut" } },
+};
+
+const hoverEffect = {
+  scale: 1.03,
+  rotateY: 5,
+  boxShadow: "0px 10px 30px -5px rgba(0, 0, 0, 0.3)",
+  transition: { duration: 0.3 }
+};
+
 
 export default function ProjectDetailPage({
   params,
@@ -42,28 +62,38 @@ export default function ProjectDetailPage({
   }
 
   return (
-    <div className="container mx-auto max-w-5xl px-4 py-16 animate-in fade-in-0 slide-in-from-bottom-8 duration-1000">
+    <motion.div 
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, ease: "easeInOut" }}
+      className="container mx-auto max-w-6xl px-4 py-16"
+    >
       <Button asChild variant="ghost" className="mb-8">
         <Link href="/projects">
           <FontAwesomeIcon icon={faArrowLeft} className="mr-2 h-4 w-4" />
           Back to Projects
         </Link>
       </Button>
-      <header className="mb-8 text-center">
+      <header className="mb-12 text-center">
         <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">
           {project.name}
         </h1>
-        <p className="mt-2 text-xl text-primary font-semibold">
+        <p className="mt-3 text-xl text-primary font-semibold bg-primary/10 py-1 px-4 rounded-full inline-block">
           {project.tagline}
         </p>
       </header>
 
-      <div className="mb-12">
-        <Carousel className="w-full max-w-3xl mx-auto">
+      <motion.div 
+        initial={{ opacity: 0, scale: 0.95 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ delay: 0.2, duration: 0.5 }}
+        className="mb-12"
+      >
+        <Carousel className="w-full max-w-4xl mx-auto">
           <CarouselContent>
             {project.videoUrl && (
               <CarouselItem>
-                <div className="aspect-video w-full overflow-hidden rounded-lg border">
+                <div className="aspect-video w-full overflow-hidden rounded-lg border shadow-lg">
                   <iframe
                     src={project.videoUrl}
                     title={`${project.name} video`}
@@ -76,7 +106,7 @@ export default function ProjectDetailPage({
             )}
             {project.images.map((image, index) => (
               <CarouselItem key={index}>
-                <div className="relative aspect-video w-full overflow-hidden rounded-lg border">
+                <div className="relative aspect-video w-full overflow-hidden rounded-lg border shadow-lg">
                   <Image
                     src={image.url}
                     alt={`${project.name} screenshot ${index + 1}`}
@@ -84,6 +114,7 @@ export default function ProjectDetailPage({
                     className="object-cover"
                     data-ai-hint={image.dataAiHint}
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 75vw, 60vw"
+                    priority={index === 0}
                   />
                 </div>
               </CarouselItem>
@@ -92,99 +123,104 @@ export default function ProjectDetailPage({
           <CarouselPrevious className="-left-4 md:-left-12" />
           <CarouselNext className="-right-4 md:-right-12" />
         </Carousel>
-      </div>
+      </motion.div>
       
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
 
-        <div className="lg:col-span-2 space-y-12">
-          <Card>
+        <motion.div 
+           initial="initial"
+           animate="animate"
+           transition={{ staggerChildren: 0.1 }}
+           className="lg:col-span-2 space-y-12"
+        >
+          <MotionCard variants={cardVariants} whileHover={hoverEffect} className="overflow-hidden">
             <CardHeader>
-                <CardTitle>Project Overview</CardTitle>
+                <CardTitle className="flex items-center gap-3 text-2xl"><FontAwesomeIcon icon={faBullseye} /> Project Overview</CardTitle>
             </CardHeader>
             <CardContent>
-                <p className="text-muted-foreground">{project.overview}</p>
+                <p className="text-muted-foreground text-base leading-relaxed">{project.overview}</p>
             </CardContent>
-          </Card>
+          </MotionCard>
           
-          <Card>
+          <MotionCard variants={cardVariants} whileHover={hoverEffect} className="overflow-hidden">
             <CardHeader>
-                <CardTitle className="flex items-center gap-2"><FontAwesomeIcon icon={faCheckCircle} /> Features</CardTitle>
-            </CardHeader>
-             <CardContent className="space-y-3 text-muted-foreground">
-                {project.features.map((feature, index) => (
-                    <div key={index} className="flex items-start gap-3">
-                        <FontAwesomeIcon icon={faCheckCircle} className="h-4 w-4 text-primary mt-1 flex-shrink-0" />
-                        <p>{feature}</p>
-                    </div>
-                ))}
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader>
-                <CardTitle className="flex items-center gap-2"><FontAwesomeIcon icon={faLightbulb} /> Challenges & Solutions</CardTitle>
+                <CardTitle className="flex items-center gap-3 text-2xl"><FontAwesomeIcon icon={faTasks} /> Features</CardTitle>
             </CardHeader>
              <CardContent className="space-y-4 text-muted-foreground">
-                {project.challenges.map((item, index) => (
-                    <div key={index}>
-                        <h4 className="font-semibold text-foreground">{item.challenge}</h4>
-                        <p>{item.solution}</p>
+                {project.features.map((feature, index) => (
+                    <div key={index} className="flex items-start gap-3">
+                        <FontAwesomeIcon icon={faCheckCircle} className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
+                        <p className="text-base">{feature}</p>
                     </div>
                 ))}
             </CardContent>
-          </Card>
-        </div>
+          </MotionCard>
+
+          <MotionCard variants={cardVariants} whileHover={hoverEffect} className="overflow-hidden">
+            <CardHeader>
+                <CardTitle className="flex items-center gap-3 text-2xl"><FontAwesomeIcon icon={faLightbulb} /> Challenges & Solutions</CardTitle>
+            </CardHeader>
+             <CardContent className="space-y-6 text-muted-foreground">
+                {project.challenges.map((item, index) => (
+                    <div key={index} className="border-l-4 border-primary/50 pl-4">
+                        <h4 className="font-semibold text-foreground text-lg">{item.challenge}</h4>
+                        <p className="text-base mt-1">{item.solution}</p>
+                    </div>
+                ))}
+            </CardContent>
+          </MotionCard>
+        </motion.div>
 
         <div className="space-y-8 lg:sticky lg:top-24 self-start">
-             <Card>
+             <MotionCard variants={cardVariants} whileHover={hoverEffect} className="overflow-hidden">
                 <CardHeader>
-                    <CardTitle className="flex items-center gap-2"><FontAwesomeIcon icon={faWrench} /> Tech Stack</CardTitle>
+                    <CardTitle className="flex items-center gap-3 text-xl"><FontAwesomeIcon icon={faWrench} /> Tech Stack</CardTitle>
                 </CardHeader>
                 <CardContent className="flex flex-wrap gap-2">
                     {project.technologies.map((tech) => (
-                        <Badge key={tech} variant="secondary" className="text-sm">
+                        <Badge key={tech} variant="secondary" className="text-sm px-3 py-1">
                         {tech}
                         </Badge>
                     ))}
                 </CardContent>
-            </Card>
+            </MotionCard>
 
-             <Card>
+             <MotionCard variants={cardVariants} whileHover={hoverEffect} className="overflow-hidden">
                 <CardHeader>
-                    <CardTitle className="flex items-center gap-2"><FontAwesomeIcon icon={faCogs} /> Skills Demonstrated</CardTitle>
+                    <CardTitle className="flex items-center gap-3 text-xl"><FontAwesomeIcon icon={faCogs} /> Skills Demonstrated</CardTitle>
                 </CardHeader>
                 <CardContent className="flex flex-wrap gap-2">
                     {project.skills.map((skill) => (
-                        <Badge key={skill} variant="outline" className="text-sm">
+                        <Badge key={skill} variant="outline" className="text-sm px-3 py-1">
                         {skill}
                         </Badge>
                     ))}
                 </CardContent>
-            </Card>
+            </MotionCard>
 
-            <Card>
+            <MotionCard variants={cardVariants} whileHover={hoverEffect} className="overflow-hidden">
                 <CardHeader>
                     <CardTitle>Links</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-3">
-                    <Button asChild className="w-full">
+                    <Button asChild className="w-full" size="lg">
                         <Link href={project.githubUrl} target="_blank" rel="noopener noreferrer">
                             <FontAwesomeIcon icon={faGithub} className="mr-2 h-4 w-4" /> GitHub Repository
                         </Link>
                     </Button>
                      {project.liveUrl && (
-                        <Button asChild variant="secondary" className="w-full">
+                        <Button asChild variant="secondary" className="w-full" size="lg">
                             <Link href={project.liveUrl} target="_blank" rel="noopener noreferrer">
                                 <FontAwesomeIcon icon={faPlayCircle} className="mr-2 h-4 w-4" /> Live Demo
                             </Link>
                         </Button>
                     )}
                 </CardContent>
-            </Card>
+            </MotionCard>
         </div>
 
       </div>
 
-    </div>
+    </motion.div>
   );
 }

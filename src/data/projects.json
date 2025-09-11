@@ -2,7 +2,7 @@
 [
   {
     "id": 1,
-    "slug": "rera-projects-data-scraper",
+    "slug": "rera-scraper",
     "name": "RERA Projects Data Scraper",
     "tagline": "Automated web scraping tool for real estate compliance data.",
     "overview": "RERA Scraper is a Python-based automation tool designed to collect structured data from the Real Estate Regulatory Authority (RERA) portal. It simplifies the process of retrieving property, agent, and project registration details, making it easier for analysts and researchers to work with real-estate data. The tool eliminates manual data entry by automating data collection, cleaning, and exporting into structured formats.",
@@ -35,10 +35,118 @@
       {
         "url": "/images/projects/rera_scraper/screenshot1.png",
         "dataAiHint": "data scraping code"
+      },
+      {
+        "url": "/images/projects/rera_scraper/screenshot2.png",
+        "dataAiHint": "data scraping result"
       }
     ],
-    "videoUrl": "https://www.youtube.com/embed/your_video_id_here",
+    "videoUrl": "https://www.youtube.com/embed/_a57UTiXiQQ",
     "category": ["Automation", "Data Scraping"],
     "isFeatured": false
-  }
+  },
+  {
+    "id": 2,
+    "slug": "restaurant-name-generator",
+    "name": "Restaurant Name & Menu Generator",
+    "tagline": "AI-powered tool to generate creative restaurant names and menu ideas instantly.",
+    "overview": "Restaurant Name Generator is an AI-powered web app built with LangChain, Streamlit, and Google Gemini API. It allows users to select a cuisine and instantly get a fancy restaurant name along with AI-generated menu suggestions. The project demonstrates the use of LLM chains, prompt engineering, and a simple Streamlit UI for interactive user experience.",
+    "features": [
+      "Generates a unique restaurant name based on the chosen cuisine.",
+      "Suggests multiple cuisine-specific menu items automatically.",
+      "Interactive Streamlit web app with sidebar selection.",
+      "Uses LangChain SequentialChain for multi-step AI reasoning.",
+      "Environment variable handling with dotenv for secure API keys."
+    ],
+    "challenges": [
+      {
+        "challenge": "Designing prompts to ensure consistent and precise restaurant names.",
+        "solution": "Applied prompt engineering techniques and restricted outputs to single-name responses."
+      },
+      {
+        "challenge": "Maintaining API security when using Gemini API keys.",
+        "solution": "Used dotenv to load environment variables and keep credentials hidden."
+      },
+      {
+        "challenge": "Ensuring a smooth user experience in Streamlit UI.",
+        "solution": "Created a simple sidebar-based input with formatted AI responses."
+      }
+    ],
+    "technologies": ["Python", "LangChain", "Streamlit", "Google Gemini API", "dotenv"],
+    "skills": ["Prompt Engineering", "LLM Integration", "Web App Development", "AI Automation"],
+    "githubUrl": "https://github.com/kushalmittal04/restaurant_name_generator",
+    "liveUrl": null,
+    "images": [
+      {
+        "url": "/images/projects/restaurant_name_generator/screenshot1.png",
+        "dataAiHint": "code base of restaurant name generator"
+      },
+      {
+        "url": "/images/projects/restaurant_name_generator/screenshot2.png",
+        "dataAiHint": "AI-generated menu items"
+      }
+    ],
+    "videoUrl": "https://www.youtube.com/embed/LHJvOiIGtuc",
+    "category": ["AI", "Web App", "LLM"],
+    "isFeatured": true
+  },
+  {
+    "id": 3,
+    "slug": "qa-chatbot",
+    "name": "Topic-Specific QA Chatbot",
+    "tagline": "An AI-powered chatbot for answering FAQs with context-based retrieval.",
+    "overview": "This QA Chatbot is an intelligent, topic-specific assistant built using LangChain, Google Gemini API, HuggingFace embeddings, and ChromaDB. It enables users to query a dataset of FAQs and receive accurate, context-driven answers. The system uses embeddings to create a searchable vector database and applies RetrievalQA with a custom prompt for reliable, non-hallucinated responses. The Streamlit frontend provides a simple and interactive interface for real-time Q&A.",
+    "features": [
+      "Creates a local vector database from FAQ CSV files.",
+      "RetrievalQA powered by LangChain with Google Gemini LLM.",
+      "Uses HuggingFace embeddings for semantic search.",
+      "Streamlit frontend for real-time chatbot interaction.",
+      "Ensures safe responses by avoiding fabricated answers."
+    ],
+    "challenges": [
+      {
+        "challenge": "Preventing the chatbot from generating hallucinated answers.",
+        "solution": "Designed a strict custom prompt that forces the LLM to only use context or respond with 'I don't know.'"
+      },
+      {
+        "challenge": "Handling large FAQ datasets efficiently.",
+        "solution": "Implemented ChromaDB for fast vector search and persistent storage."
+      },
+      {
+        "challenge": "Ensuring API key security.",
+        "solution": "Used dotenv to manage environment variables and hide sensitive credentials."
+      }
+    ],
+    "technologies": [
+      "Python",
+      "LangChain",
+      "Google Gemini API",
+      "HuggingFace Embeddings",
+      "ChromaDB",
+      "Streamlit"
+    ],
+    "skills": [
+      "Vector Databases",
+      "Semantic Search",
+      "LLM Integration",
+      "Prompt Engineering",
+      "Interactive UI Development"
+    ],
+    "githubUrl": "https://github.com/kushalmittal04/qa_chatbot",
+    "liveUrl": null,
+    "images": [
+      {
+        "url": "/images/projects/qa_chatbot/screenshot1.png",
+        "dataAiHint": "Streamlit chatbot interface"
+      },
+      {
+        "url": "/images/projects/qa_chatbot/screenshot2.png",
+        "dataAiHint": "Chroma vector database flow"
+      }
+    ],
+    "videoUrl": null,
+    "category": ["AI", "Chatbot", "LLM"],
+    "isFeatured": true
+  }  
+
 ]
