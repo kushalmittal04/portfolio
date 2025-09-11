@@ -207,15 +207,15 @@ export function ProjectDetailClient({ project }: { project: Project }) {
                 </Header>
                 <CardContent className="space-y-3">
                     <Button asChild className="w-full" size="lg">
-                        <Link href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+                        <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
                             <FontAwesomeIcon icon={faGithub} className="mr-2 h-4 w-4" /> GitHub Repository
-                        </Link>
+                        </a>
                     </Button>
                      {project.liveUrl && (
                         <Button asChild variant="secondary" className="w-full" size="lg">
-                            <Link href={project.liveUrl} target="_blank" rel="noopener noreferrer">
+                            <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
                                 <FontAwesomeIcon icon={faPlayCircle} className="mr-2 h-4 w-4" /> Live Demo
-                            </Link>
+                            </a>
                         </Button>
                     )}
                 </CardContent>
