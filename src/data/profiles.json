@@ -54,10 +54,10 @@
     "id": 13,
     "platform": "Portfolio",
     "username": "kushalmittal.framer.website",
-    "url": "https://kushalmittal.framer.website",
+    "url": "https://kushalmittal.vercel.app",
     "stats": [
       { "label": "Status", "value": "Live" },
-      { "label": "Framework", "value": "Framer" }
+      { "label": "Framework", "value": "NextJS" }
     ]
   },
   {
