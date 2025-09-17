@@ -32,7 +32,7 @@ import recentActivitiesConfig from "@/data/recent-activities.json";
 
 export default function Home() {
   const featuredProjects = projectsData.filter((p) => p.isFeatured).slice(0, 3);
-  const latestInternship = experienceData[0];
+  const latestInternship = [...experienceData].sort((a, b) => b.id - a.id)[0];
 
   const recentActivities = recentActivitiesConfig.map(activity => {
     if (activity.type === 'certificate') {
