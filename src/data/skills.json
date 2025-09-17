@@ -37,12 +37,14 @@
         "Node.js",
         "Express.js",
         "Bootstrap",
-        "Tailwind CSS"
+        "Tailwind CSS",
+        "Django",
+        "Streamlit"
       ]
     },
     {
       "name": "Databases",
-      "skills": ["MySQL", "MongoDB", "PostgreSQL"]
+      "skills": ["MySQL", "MongoDB", "PostgreSQL", "ChromaDB", "Faiss"]
     },
     {
       "name": "Tools & Platforms",

@@ -237,6 +237,7 @@ const iconMap: Record<string, IconDefinition> = {
   mongodb: faDatabase,
   postgresql: faDatabase,
   chromadb: faDatabase,
+  faiss: faDatabase,
 
   // Tools
   git: faCodeBranch,
@@ -259,7 +260,7 @@ const iconMap: Record<string, IconDefinition> = {
   "agile": faTerminal,
   "rest apis": faServer,
   "machine learning": faBrain,
-  "django": faCode,
+  django: faCode,
   "data analysis": faChartSimple,
   "generative ai": faBrain,
   "agents": faBrain,
