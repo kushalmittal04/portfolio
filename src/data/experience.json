@@ -67,20 +67,17 @@
     "position": "ML Intern",
     "location": "Lucknow, Uttar Pradesh, India",
     "duration": "May 2025 – Jul 2025",
-    "startDate": "2025-05-05",
-    "endDate": "2025-07-04",
+    "startDate": "2025-05-01",
+    "endDate": "2025-07-01",
     "period": "2 months",
     "companyUrl": "https://www.nic.gov.in/",
     "gmapUrl": "https://www.google.com/maps/search/?api=1&query=RWQV+6W7, Sarojini Naidu Marg, Block A, Raj Bhavan Colony, Hasanganj, Lucknow, Uttar Pradesh 226001",
     "logoUrl": "/images/experiences/logos/nic.jpg",
     "dataAiHint": "logo government",
-    "certificateUrl": "/images/experiences/nic/0.jpg",
+    "certificateUrl": "/images/experiences/nic/0.jpeg",
     "workImages": [
-      { "url": "/images/experiences/nic/1.jpg", "dataAiHint": "office workspace" },
-      { "url": "/images/experiences/nic/2.jpg", "dataAiHint": "team meeting" },
-      { "url": "/images/experiences/nic/3.jpg", "dataAiHint": "code screen" },
-      { "url": "/images/experiences/nic/4.jpg", "dataAiHint": "presentation slide" },
-      { "url": "/images/experiences/nic/5.jpg", "dataAiHint": "whiteboard diagram" }
+      { "url": "/images/experiences/nic/1.jpeg", "dataAiHint": "office passes" },
+      { "url": "/images/experiences/nic/2.jpeg", "dataAiHint": "office workspace" }
     ],
     "description": [
       "Automated the <strong>extraction and transformation</strong> of 10,000+ unstructured emails into structured data using Python and Pandas, demonstrating meticulous attention to detail and creating a clean dataset for analysis.",
