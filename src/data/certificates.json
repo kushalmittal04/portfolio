@@ -311,5 +311,16 @@
     "issueDate": "2025-09-08",
     "isFeatured": true,
     "featuredImageUrl": "/images/credentials/featured/ai900.png"
+  },
+  {
+    "id": 32,
+    "name": "Explore Generative AI with the Vertex AI Gemini API Skill Badge",
+    "issuer": "Google Cloud",
+    "type": "Badge",
+    "skills": ["Gemini", "Generative AI", "Vertex AI", "Python"],
+    "fileUrl": "/images/credentials/certifications/20250918_Explore_Generative_AI_with_the_Gemini_API_in_Vertex_AI.pdf",
+    "issueDate": "2025-09-18",
+    "isFeatured": true,
+    "featuredImageUrl": "/images/credentials/featured/genAIwithVertexAIAPI.png"
   }
 ]
