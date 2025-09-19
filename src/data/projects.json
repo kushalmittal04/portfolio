@@ -442,5 +442,72 @@
       "Automation"
     ],
     "isFeatured": false
+  },
+  {
+    "id": 8,
+    "slug": "atliq-tshirts-database-qa",
+    "name": "AtliQ T-Shirts Database Q&A",
+    "tagline": "An interactive Streamlit app powered by LangChain and Gemini that answers natural language queries over a MySQL retail database.",
+    "overview": "The AtliQ T-Shirts Database Q&A project allows users to query a retail database using natural language. It integrates LangChain with Google’s Gemini LLM to dynamically generate SQL queries, fetch results from MySQL, and display them in a user-friendly Streamlit interface. The project also features a custom discount-aware agent for accurate revenue and pricing calculations.",
+    "features": [
+      "Ask natural language questions about stock, sales, discounts, and inventory.",
+      "Streamlit interface for real-time Q&A with a retail database.",
+      "LangChain SQL Agent integration with Gemini for dynamic query generation.",
+      "Custom prefix logic for accurate discount and revenue calculations.",
+      "Secure environment variable management with dotenv for API keys and DB credentials."
+    ],
+    "challenges": [
+      {
+        "challenge": "Generating accurate SQL queries from natural language with complex discount logic.",
+        "solution": "Implemented a discount-aware agent with strict step-by-step SQL instructions to ensure correct revenue calculations."
+      },
+      {
+        "challenge": "Ensuring secure database access without exposing credentials.",
+        "solution": "Stored sensitive information in a `.env` file and a separate `database_credentials` module excluded from version control."
+      },
+      {
+        "challenge": "Making results interpretable for end users in a simple interface.",
+        "solution": "Used Streamlit to build a clean and interactive front-end for displaying query answers."
+      }
+    ],
+    "technologies": [
+      "Python",
+      "LangChain",
+      "Google Gemini LLM",
+      "Streamlit",
+      "MySQL",
+      "SQLAlchemy",
+      "dotenv"
+    ],
+    "skills": [
+      "LLM-Powered Applications",
+      "LangChain Agent Development",
+      "SQL Query Generation",
+      "Streamlit App Development",
+      "Database Integration"
+    ],
+    "githubUrl": "https://github.com/kushalmittal04/retail_insights_generator",
+    "liveUrl": null,
+    "images": [
+      {
+        "url": "/images/projects/atliq_tshirts/streamlit_ui.png",
+        "dataAiHint": "Streamlit interface showing a user query and database answer"
+      },
+      {
+        "url": "/images/projects/atliq_tshirts/query_flow.png",
+        "dataAiHint": "Workflow diagram of natural language input → SQL query generation → database results"
+      },
+      {
+        "url": "/images/projects/atliq_tshirts/discount_logic.png",
+        "dataAiHint": "Discount-aware SQL calculation logic for revenue estimation"
+      }
+    ],
+    "videoUrl": null,
+    "category": [
+      "AI/ML",
+      "Database",
+      "LLM Applications"
+    ],
+    "isFeatured": true
   }  
 ]
