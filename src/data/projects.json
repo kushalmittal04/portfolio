@@ -121,8 +121,8 @@
   },
   {
     "id": 3,
-    "slug": "qa-chatbot",
-    "name": "Topic-Specific QA Chatbot",
+    "slug": "specific-qa-chatbot",
+    "name": "Specific QA Chatbot",
     "tagline": "An AI-powered chatbot for answering FAQs with context-based retrieval.",
     "overview": "This QA Chatbot is an intelligent, topic-specific assistant built using LangChain, Google Gemini API, HuggingFace embeddings, and ChromaDB. It enables users to query a dataset of FAQs and receive accurate, context-driven answers. The system uses embeddings to create a searchable vector database and applies RetrievalQA with a custom prompt for reliable, non-hallucinated responses. The Streamlit frontend provides a simple and interactive interface for real-time Q&A.",
     "features": [
@@ -161,7 +161,7 @@
       "Prompt Engineering",
       "Interactive UI Development"
     ],
-    "githubUrl": "https://github.com/kushalmittal04/qa-chatbot",
+    "githubUrl": "https://github.com/kushalmittal04/specific_qa_chatbot",
     "liveUrl": null,
     "images": [
       {
@@ -179,6 +179,130 @@
       "Chatbot",
       "LLM"
     ],
+    "isFeatured": true
+  },
+  {
+    "id": 4,
+    "slug": "portfolio-website",
+    "name": "Personal Portfolio Website",
+    "tagline": "A modern, full-stack portfolio website showcasing my skills, projects, and achievements.",
+    "overview": "This is a modern, full-stack personal portfolio website built with Next.js and Tailwind CSS. It showcases my skills, professional experience, projects, and credentials in a clean and structured manner. The site is designed to be scalable, maintainable, and visually engaging, serving as a central hub for my work and achievements.",
+    "features": [
+      "Dynamic page structure for Home, About, Experience, Projects, Credentials, Education, Profiles, and Contact.",
+      "Multi-theme support with Light, Dark, Gray, and Black themes.",
+      "Responsive design optimized for all devices.",
+      "Filterable project gallery with detailed description pages.",
+      "Functional contact form with Nodemailer integration."
+    ],
+    "challenges": [
+      {
+        "challenge": "Managing content updates without affecting core logic.",
+        "solution": "Implemented data-driven content using JSON files under /src/data for separation of concerns."
+      },
+      {
+        "challenge": "Ensuring consistent UI/UX across multiple themes.",
+        "solution": "Used ShadCN UI components with Tailwind CSS and Next-Themes for theming."
+      },
+      {
+        "challenge": "Maintaining accessibility and performance.",
+        "solution": "Followed best practices like semantic HTML, ARIA attributes, and Next.js App Router with server components."
+      }
+    ],
+    "technologies": [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "ShadCN UI",
+      "Tailwind CSS",
+      "Nodemailer",
+      "Vercel"
+    ],
+    "skills": [
+      "Frontend Development",
+      "Full-Stack Development",
+      "UI/UX Design",
+      "Responsive Web Design",
+      "Theming & Styling"
+    ],
+    "githubUrl": "https://github.com/kushalmittal04/portfolio",
+    "liveUrl": "https://kushalmittal.vercel.app",
+    "images": [
+      {
+        "url": "/images/projects/portfolio_website/screenshot1.png",
+        "dataAiHint": "Portfolio homepage"
+      },
+      {
+        "url": "/images/projects/portfolio_website/screenshot2.png",
+        "dataAiHint": "Project gallery page"
+      }
+    ],
+    "videoUrl": null,
+    "category": ["Web Development", "Portfolio"],
+    "isFeatured": true
+  },
+  {
+    "id": 5,
+    "slug": "rawg-gamehub",
+    "name": "GameHub using RAWG API & Clerk",
+    "tagline": "A responsive game discovery platform with authentication, filtering, and bookmarking features.",
+    "overview": "This is a front-end web application built using React, designed to fetch and display game data from the RAWG Video Games Database API. It demonstrates the ability to build a responsive, feature-rich, and user-authenticated application using modern technologies.",
+    "features": [
+      "Main page layout with header, search bar, sidebar filters, and game grid.",
+      "Filtering by categories, tags, release year, and popularity (rating).",
+      "Real-time search bar with instant result updates.",
+      "Game detail page with full description, screenshots, ratings, system requirements, and price info.",
+      "Pagination for browsing large game datasets efficiently.",
+      "Authentication using Clerk for sign-up, login, logout, and managing bookmarks.",
+      "Redux-powered state management with persistence for bookmarks.",
+      "Mobile-first responsive design with dark mode styling."
+    ],
+    "challenges": [
+      {
+        "challenge": "Efficiently handling large game datasets.",
+        "solution": "Implemented pagination and filtering with Redux state management."
+      },
+      {
+        "challenge": "Securing user authentication and bookmarks.",
+        "solution": "Integrated Clerk authentication with protected routes and localStorage persistence."
+      },
+      {
+        "challenge": "Maintaining responsive UI across devices.",
+        "solution": "Used React-Bootstrap, Bootstrap, and custom CSS for adaptive layouts."
+      }
+    ],
+    "technologies": [
+      "React",
+      "Redux Toolkit",
+      "Clerk Auth",
+      "React-Bootstrap",
+      "Bootstrap",
+      "Vanilla CSS"
+    ],
+    "skills": [
+      "Frontend Development",
+      "State Management",
+      "Authentication",
+      "Responsive Design",
+      "API Integration"
+    ],
+    "githubUrl": "https://github.com/kushalmittal04/rawg-gamehub/",
+    "liveUrl": "https://rawg-gamehub-mwjs.vercel.app/",
+    "images": [
+      {
+        "url": "/images/projects/gamehub/screenshot1.png",
+        "dataAiHint": "GameHub homepage"
+      },
+      {
+        "url": "/images/projects/gamehub/screenshot2.png",
+        "dataAiHint": "Game detail page"
+      },
+      {
+        "url": "/images/projects/gamehub/screenshot3.png",
+        "dataAiHint": "Bookmarks/library section"
+      }
+    ],
+    "videoUrl": null,
+    "category": ["Web Development", "Gaming"],
     "isFeatured": true
   }
 ]
