@@ -375,6 +375,72 @@
       "Django",
       "Database"
     ],
-    "isFeatured": true
-  }
+    "isFeatured": false
+  },
+  {
+    "id": 7,
+    "slug": "gmail-email-classifier",
+    "name": "Gmail Email Classifier",
+    "tagline": "A zero-shot learning powered Gmail email classifier with automatic labeling.",
+    "overview": "The Gmail Email Classifier is a Python project that fetches emails from Gmail, classifies them into categories using zero-shot learning with Hugging Face transformers, and optionally applies labels directly in Gmail. It leverages Google OAuth for authentication, integrates with the Gmail API, and provides a structured workflow to analyze and organize emails efficiently.",
+    "features": [
+      "Fetch emails from Gmail using the Gmail API and OAuth 2.0 authentication.",
+      "Classify emails into categories using zero-shot learning with Hugging Face transformers.",
+      "Option to apply classification labels directly to emails in Gmail.",
+      "Export classified email data into structured CSV files.",
+      "Configurable date range for fetching emails."
+    ],
+    "challenges": [
+      {
+        "challenge": "Integrating Gmail API authentication securely.",
+        "solution": "Configured OAuth 2.0 flow with credential storage in a secure directory excluded from version control."
+      },
+      {
+        "challenge": "Classifying diverse email content without pre-labeled data.",
+        "solution": "Used Hugging Face's zero-shot classification pipeline to dynamically assign labels without supervised training."
+      },
+      {
+        "challenge": "Efficiently processing large sets of emails.",
+        "solution": "Implemented progress tracking with tqdm and CSV exports for structured analysis."
+      }
+    ],
+    "technologies": [
+      "Python",
+      "Google API Client",
+      "Hugging Face Transformers",
+      "PyTorch",
+      "NLTK",
+      "Pandas"
+    ],
+    "skills": [
+      "API Integration",
+      "Natural Language Processing",
+      "Zero-Shot Learning",
+      "OAuth 2.0 Authentication",
+      "Data Preprocessing"
+    ],
+    "githubUrl": "https://github.com/kushalmittal04/gmail_classifier",
+    "liveUrl": null,
+    "images": [
+      {
+        "url": "/images/projects/gmail_classifier/overview.png",
+        "dataAiHint": "High-level workflow of Gmail email classification and labeling"
+      },
+      {
+        "url": "/images/projects/gmail_classifier/auth.png",
+        "dataAiHint": "Google OAuth consent screen for Gmail API access"
+      },
+      {
+        "url": "/images/projects/gmail_classifier/output.png",
+        "dataAiHint": "Sample CSV output with classified emails and labels"
+      }
+    ],
+    "videoUrl": null,
+    "category": [
+      "ML",
+      "NLP",
+      "Automation"
+    ],
+    "isFeatured": false
+  }  
 ]
