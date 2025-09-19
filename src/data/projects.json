@@ -189,7 +189,7 @@
     "overview": "This is a modern, full-stack personal portfolio website built with Next.js and Tailwind CSS. It showcases my skills, professional experience, projects, and credentials in a clean and structured manner. The site is designed to be scalable, maintainable, and visually engaging, serving as a central hub for my work and achievements.",
     "features": [
       "Dynamic page structure for Home, About, Experience, Projects, Credentials, Education, Profiles, and Contact.",
-      "Multi-theme support with Light, Dark, Gray, and Black themes.",
+      "Multi-theme support with Light and Dark themes.",
       "Responsive design optimized for all devices.",
       "Filterable project gallery with detailed description pages.",
       "Functional contact form with Nodemailer integration."
@@ -303,6 +303,78 @@
     ],
     "videoUrl": null,
     "category": ["Web Development", "Gaming"],
+    "isFeatured": true
+  },
+  {
+    "id": 6,
+    "slug": "admission-management-system",
+    "name": "Django Admission Management System",
+    "tagline": "A full-featured admission form and management system with validation, reporting, and PDF generation.",
+    "overview": "The Admission Management System is a Django-based web application designed to streamline student admissions. It features a dynamic admission form with validation, state-district auto-population, an advanced admin dashboard with preview and PDF printing, and reporting tools for analyzing admission statistics. The project is built with Django, PostgreSQL, and modern best practices for scalability and maintainability.",
+    "features": [
+      "Dynamic admission form with validations for mobile number, WhatsApp number, and pincode.",
+      "Automatic district loading based on selected state and UT detection.",
+      "Custom Django admin with preview and one-click PDF print button.",
+      "Statistics dashboard with filters by state, district, course, and gender.",
+      "PDF export for admission details using xhtml2pdf.",
+      "PostgreSQL database integration for scalability.",
+      "Reusable validators and clean, modular code structure."
+    ],
+    "challenges": [
+      {
+        "challenge": "Validating mobile numbers, WhatsApp numbers, and pincodes consistently across the app.",
+        "solution": "Implemented regex validators in forms and suggested reusable model-level validators for consistent validation."
+      },
+      {
+        "challenge": "Enabling dynamic district population based on selected state, including UTs.",
+        "solution": "Created an AJAX-powered endpoint that auto-populates district options depending on state and UT logic."
+      },
+      {
+        "challenge": "Providing user-friendly admin features for admission management.",
+        "solution": "Added preview and print buttons in Django admin with custom admin views for PDF generation."
+      },
+      {
+        "challenge": "Generating admission reports with useful breakdowns.",
+        "solution": "Implemented StatsView with filtering and aggregation using Django ORM's Count and Q objects."
+      }
+    ],
+    "technologies": [
+      "Django",
+      "PostgreSQL",
+      "xhtml2pdf",
+      "JavaScript (AJAX)",
+      "Bootstrap",
+      "HTML5/CSS3"
+    ],
+    "skills": [
+      "Backend Development",
+      "Form Validation",
+      "Django Admin Customization",
+      "Reporting & Analytics",
+      "Database Design"
+    ],
+    "githubUrl": "https://github.com/kushalmittal04/admission-management-system",
+    "liveUrl": null,
+    "images": [
+      {
+        "url": "/images/projects/admission_management_system/form.png",
+        "dataAiHint": "Admission form with dynamic state-district loading"
+      },
+      {
+        "url": "/images/projects/admission_management_system/admin.png",
+        "dataAiHint": "Custom Django admin with preview and PDF print button"
+      },
+      {
+        "url": "/images/projects/admission_management_system/stats.png",
+        "dataAiHint": "Statistics dashboard showing admission counts by course"
+      }
+    ],
+    "videoUrl": null,
+    "category": [
+      "Web Development",
+      "Django",
+      "Database"
+    ],
     "isFeatured": true
   }
 ]
