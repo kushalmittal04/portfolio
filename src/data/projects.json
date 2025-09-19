@@ -103,15 +103,15 @@
     "liveUrl": null,
     "images": [
       {
-        "url": "/images/projects/restaurant_generator/screenshot1.png",
+        "url": "/images/projects/restaurant_name_generator/screenshot1.png",
         "dataAiHint": "Streamlit UI with generated restaurant name"
       },
       {
-        "url": "/images/projects/restaurant_generator/screenshot2.png",
+        "url": "/images/projects/restaurant_name_generator/screenshot2.png",
         "dataAiHint": "AI-generated menu items"
       }
     ],
-    "videoUrl": null,
+    "videoUrl": "https://youtu.be/LHJvOiIGtuc",
     "category": [
       "AI",
       "Web App",
