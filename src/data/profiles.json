@@ -6,8 +6,8 @@
     "username": "kushalmittal04",
     "url": "http://www.linkedin.com/in/kushalmittal04",
     "stats": [
-      { "label": "Connections", "value": "500+" },
-      { "label": "Profile Views", "value": "250/mo" }
+      { "label": "Connections", "value": "1200+" },
+      { "label": "Profile Views", "value": "480+/mo" }
     ]
   },
   {
@@ -36,8 +36,8 @@
     "username": "kushalmittal04",
     "url": "https://github.com/kushalmittal04",
     "stats": [
-      { "label": "Repositories", "value": "50+" },
-      { "label": "Followers", "value": "1.2k" }
+      { "label": "Repositories", "value": "18+" },
+      { "label": "Live Projects", "value": "3+" }
     ]
   },
   {
@@ -46,8 +46,8 @@
     "username": "kushalmittal04",
     "url": "https://www.kaggle.com/kushalmittal04",
     "stats": [
-      { "label": "Competitions", "value": "5" },
-      { "label": "Highest Rank", "value": "Top 10%" }
+      { "label": "Badges", "value": "Python Coder" },
+      { "label": "Contributions", "value": "3+ Dataset" }
     ]
   },
   {
@@ -66,8 +66,8 @@
     "username": "kushalmittal04",
     "url": "https://learn.microsoft.com/en-us/users/kushalmittal04",
     "stats": [
-      { "label": "XP", "value": "50,000+" },
-      { "label": "Trophies", "value": "25" }
+      { "label": "XP", "value": "18,500+" },
+      { "label": "Trophies", "value": "1+" }
     ]
   },
   {
@@ -76,8 +76,8 @@
     "username": "kushal-cloud",
     "url": "https://www.cloudskillsboost.google/public_profiles/7cdfd28a-e14f-4cd2-b0bc-7072f989cfb1",
     "stats": [
-        { "label": "Quests Completed", "value": "20+" },
-        { "label": "Badges Earned", "value": "30+" }
+        { "label": "Skills Badges", "value": "2+" },
+        { "label": "Completion Badges", "value": "5+" }
     ]
   },
   {
@@ -87,7 +87,7 @@
     "url": "https://developers.google.com/profile/u/kushalmittal04",
     "stats": [
         { "label": "Contributions", "value": "Active" },
-        { "label": "Joined", "value": "2023" }
+        { "label": "Joined", "value": "2025" }
     ]
   },
   {
@@ -96,8 +96,8 @@
     "username": "kushalmittal04",
     "url": "https://www.credly.com/users/kushalmittal04",
     "stats": [
-      { "label": "Badges", "value": "15" },
-      { "label": "Skills", "value": "Cloud, AI" }
+      { "label": "Badges", "value": "3+" },
+      { "label": "Skills", "value": "AI, DS" }
     ]
   },
   {
@@ -106,8 +106,8 @@
     "username": "kushalmittal04",
     "url": "https://leetcode.com/u/kushalmittal04/",
     "stats": [
-      { "label": "Problems Solved", "value": "500+" },
-      { "label": "Contest Rating", "value": "1800+" }
+      { "label": "Problems Solved", "value": "210+" },
+      { "label": "Contest Rating", "value": "1445+" }
     ]
   },
   {
@@ -116,8 +116,8 @@
     "username": "kushalmittal04",
     "url": "https://www.hackerrank.com/profile/kushalmittal04",
     "stats": [
-        { "label": "Stars", "value": "5" },
-        { "label": "Skills", "value": "Java, Python" }
+        { "label": "Stars", "value": "4" },
+        { "label": "Skills", "value": "C, C++, Python, SQL" }
     ]
   },
   {
@@ -126,7 +126,7 @@
     "username": "kushal04",
     "url": "https://www.geeksforgeeks.org/user/kushal04/",
     "stats": [
-        { "label": "Coding Score", "value": "1500+" },
+        { "label": "Coding Score", "value": "410+" },
         { "label": "Problems Solved", "value": "300+" }
     ]
   }
