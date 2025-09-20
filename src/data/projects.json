@@ -357,19 +357,23 @@
     "liveUrl": null,
     "images": [
       {
-        "url": "/images/projects/admission_management_system/form.png",
+        "url": "/images/projects/admission_management_system/1.png",
         "dataAiHint": "Admission form with dynamic state-district loading"
       },
       {
-        "url": "/images/projects/admission_management_system/admin.png",
+        "url": "/images/projects/admission_management_system/2.png",
         "dataAiHint": "Custom Django admin with preview and PDF print button"
       },
       {
-        "url": "/images/projects/admission_management_system/stats.png",
+        "url": "/images/projects/admission_management_system/3.png",
         "dataAiHint": "Statistics dashboard showing admission counts by course"
+      },
+      {
+        "url": "/images/projects/admission_management_system/4.png",
+        "dataAiHint": "Codebase setup"
       }
     ],
-    "videoUrl": null,
+    "videoUrl": "https://www.youtube.com/embed/8y-wZ72yI7U",
     "category": [
       "Web Development",
       "Django",
