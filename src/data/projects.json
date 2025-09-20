@@ -165,15 +165,15 @@
     "liveUrl": null,
     "images": [
       {
-        "url": "/images/projects/qa_chatbot/screenshot1.png",
+        "url": "/images/projects/specific_qa_chatbot/1.png",
         "dataAiHint": "Streamlit chatbot interface"
       },
       {
-        "url": "/images/projects/qa_chatbot/screenshot2.png",
+        "url": "/images/projects/specific_qa_chatbot/2.png",
         "dataAiHint": "Chroma vector database flow"
       }
     ],
-    "videoUrl": null,
+    "videoUrl": "https://www.youtube.com/embed/hV76G6W4ZhU",
     "category": [
       "AI",
       "Chatbot",
