@@ -490,24 +490,24 @@
     "liveUrl": null,
     "images": [
       {
-        "url": "/images/projects/atliq_tshirts/streamlit_ui.png",
+        "url": "/images/projects/atliq_tshirts/1.png",
         "dataAiHint": "Streamlit interface showing a user query and database answer"
       },
       {
-        "url": "/images/projects/atliq_tshirts/query_flow.png",
+        "url": "/images/projects/atliq_tshirts/2.png",
         "dataAiHint": "Workflow diagram of natural language input → SQL query generation → database results"
       },
       {
-        "url": "/images/projects/atliq_tshirts/discount_logic.png",
+        "url": "/images/projects/atliq_tshirts/3.png",
         "dataAiHint": "Discount-aware SQL calculation logic for revenue estimation"
       }
     ],
-    "videoUrl": null,
+    "videoUrl": "https://www.youtube.com/embed3dRnvyCqj7E",
     "category": [
-      "AI/ML",
+      "AI",
       "Database",
-      "LLM Applications"
+      "LLM"
     ],
-    "isFeatured": true
+    "isFeatured": false
   }  
 ]
