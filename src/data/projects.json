@@ -423,19 +423,23 @@
     "liveUrl": null,
     "images": [
       {
-        "url": "/images/projects/gmail_classifier/overview.png",
+        "url": "/images/projects/gmail_classifier/1.png",
         "dataAiHint": "High-level workflow of Gmail email classification and labeling"
       },
       {
-        "url": "/images/projects/gmail_classifier/auth.png",
+        "url": "/images/projects/gmail_classifier/2.png",
         "dataAiHint": "Google OAuth consent screen for Gmail API access"
       },
       {
-        "url": "/images/projects/gmail_classifier/output.png",
+        "url": "/images/projects/gmail_classifier/3.png",
+        "dataAiHint": "Sample CSV output with classified emails and labels"
+      },
+      {
+        "url": "/images/projects/gmail_classifier/4.png",
         "dataAiHint": "Sample CSV output with classified emails and labels"
       }
     ],
-    "videoUrl": null,
+    "videoUrl": "https://www.youtube.com/embed/1HHhCkQsaKM",
     "category": [
       "ML",
       "NLP",
