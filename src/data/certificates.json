@@ -326,7 +326,7 @@
   {
     "id": 33,
     "name": "Microsoft Certified: Azure Data Fundamentals",
-    "issuer": "Microsoft",
+    "issuer": "Microsoft Learn",
     "type": "Certification",
     "skills": [
       "Azure Data Services",
@@ -343,7 +343,7 @@
   {
     "id": 34,
     "name": "Saviynt Identity Security for AI Age",
-    "issuer": "Saviynt",
+    "issuer": "Saviynt University",
     "type": "Certification",
     "skills": [
       "Cybersecurity Fundamentals",
