@@ -322,5 +322,39 @@
     "issueDate": "2025-09-18",
     "isFeatured": true,
     "featuredImageUrl": "/images/credentials/featured/genAIwithVertexAIAPI.png"
+  },
+  {
+    "id": 33,
+    "name": "Microsoft Certified: Azure Data Fundamentals",
+    "issuer": "Microsoft",
+    "type": "Certification",
+    "skills": [
+      "Azure Data Services",
+      "Relational Data",
+      "Non-Relational Data",
+      "Data Analytics",
+      "Power BI"
+    ],
+    "fileUrl": "/images/credentials/certifications/20251212_Azure_Data_Fundamentals.pdf",
+    "issueDate": "2025-12-12",
+    "isFeatured": true,
+    "featuredImageUrl": "/images/credentials/featured/dp900.png"
+  },
+  {
+    "id": 34,
+    "name": "Saviynt Identity Security for AI Age",
+    "issuer": "Saviynt",
+    "type": "Certification",
+    "skills": [
+      "Cybersecurity Fundamentals",
+      "Saviynt IGA",
+      "Saviynt PAM",
+      "Saviynt AAG",
+      "Saviynt EIM"
+    ],
+    "fileUrl": "/images/credentials/certifications/20251217_Saviynt_Identity_Security_for_AI_Age_(ISAA).pdf",
+    "issueDate": "2025-12-17",
+    "isFeatured": true,
+    "featuredImageUrl": "/images/credentials/featured/SaviyntIdentitySecurityForAIAge.png"
   }
 ]
