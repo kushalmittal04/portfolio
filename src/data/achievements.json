@@ -35,5 +35,14 @@
     "dataAiHint": "certificate document",
     "isFeatured": true,
     "icon": "Award"
+  },
+  {
+    "id": 5,
+    "name": "2nd Year Batch Topper",
+    "description": "Awarded a Silver Medal and a cash prize of INR 2100 for being the topper of B.Tech. Second Year (session 2023-24) in the Artificial Intelligence & Data Science branch at Poornima College of Engineering.",
+    "imageUrl": "/images/credentials/achievements/20251002_2nd_Year_Batch_Topper.pdf",
+    "dataAiHint": "award certificate",
+    "isFeatured": true,
+    "icon": "Award"
   }
 ]
