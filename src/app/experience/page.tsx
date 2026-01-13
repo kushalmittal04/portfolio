@@ -1,7 +1,7 @@
 
 "use client";
 
-import { motion, useScroll, useSpring } from "framer-motion";
+import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -28,11 +28,14 @@ export default function ExperiencePage() {
     target: contentRef,
     offset: ["start center", "end end"],
   });
+
   const scaleY = useSpring(scrollYProgress, {
     stiffness: 100,
     damping: 30,
     restDelta: 0.001,
   });
+
+  const top = useTransform(scrollYProgress, (v) => `calc(${v * 100}% - 8px)`);
 
   return (
     <div className="container mx-auto max-w-5xl px-4 py-16 animate-in fade-in-0 slide-in-from-bottom-8 duration-1000">
@@ -56,7 +59,7 @@ export default function ExperiencePage() {
             <motion.div
               className="absolute w-4 h-4 rounded-full bg-primary ring-4 ring-background"
               style={{
-                top: scrollYProgress.to(v => `calc(${v * 100}% - 8px)`),
+                top,
                 left: "50%",
                 translateX: "-50%",
               }}
