@@ -9,6 +9,7 @@ import { format } from "date-fns";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight, faDownload, faPlayCircle } from "@fortawesome/free-solid-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import { ChevronDown } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -130,6 +131,14 @@ export default function Home() {
                 </Button>
                 </motion.div>
             </div>
+        </motion.div>
+        <motion.div
+          variants={heroItemVariants}
+          className="absolute bottom-10 left-1/2 -translate-x-1/2"
+        >
+          <div className="text-muted-foreground animate-bounce">
+            <ChevronDown className="h-8 w-8" />
+          </div>
         </motion.div>
       </section>
 
