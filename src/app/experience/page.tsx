@@ -46,7 +46,6 @@ export default function ExperiencePage() {
       </div>
 
       <div ref={contentRef} className="relative">
-        {/* Timeline Line & Progress Dot */}
         <div className="absolute left-4 top-0 h-full w-0.5 bg-border md:left-1/2 md:-translate-x-px">
            <motion.div 
               className="absolute top-0 left-0 w-full h-full origin-top bg-primary" 
@@ -54,13 +53,12 @@ export default function ExperiencePage() {
             />
         </div>
         <div className="absolute left-4 top-0 h-full w-0.5 md:left-1/2 md:-translate-x-px">
-            <motion.div 
-              className="w-4 h-4 rounded-full bg-primary ring-4 ring-background absolute"
+            <motion.div
+              className="absolute w-4 h-4 rounded-full bg-primary ring-4 ring-background"
               style={{
-                top: `calc(${scrollYProgress.get() * 100}% - 8px)`,
-                left: '50%',
-                transform: 'translateX(-50%)',
-                y: scrollYProgress,
+                top: scrollYProgress.to(v => `calc(${v * 100}% - 8px)`),
+                left: "50%",
+                translateX: "-50%",
               }}
             />
         </div>
@@ -68,7 +66,6 @@ export default function ExperiencePage() {
         <div className="space-y-12">
           {sortedExperience.map((exp, index) => (
             <div key={exp.id} className="relative pl-12 md:pl-0">
-              {/* Timeline Dot */}
               <div className="absolute left-4 top-6 h-8 w-8 -translate-x-1/2 rounded-full bg-primary flex items-center justify-center ring-8 ring-background md:left-1/2">
                 <FontAwesomeIcon icon={faBriefcase} className="h-5 w-5 text-primary-foreground" />
               </div>

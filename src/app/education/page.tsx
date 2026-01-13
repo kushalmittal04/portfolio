@@ -37,21 +37,20 @@ export default function EducationPage() {
         </p>
       </div>
       <div ref={contentRef} className="relative">
-        {/* Timeline Line & Progress Dot */}
         <div className="absolute left-4 top-0 h-full w-0.5 bg-border md:left-1/2 md:-translate-x-px">
           <motion.div 
             className="absolute top-0 left-0 w-full h-full origin-top bg-primary" 
             style={{ scaleY }} 
           />
         </div>
+        
         <div className="absolute left-4 top-0 h-full w-0.5 md:left-1/2 md:-translate-x-px">
-            <motion.div 
-              className="w-4 h-4 rounded-full bg-primary ring-4 ring-background absolute"
+            <motion.div
+              className="absolute w-4 h-4 rounded-full bg-primary ring-4 ring-background"
               style={{
-                top: `calc(${scrollYProgress.get() * 100}% - 8px)`,
-                left: '50%',
-                transform: 'translateX(-50%)',
-                y: scrollYProgress,
+                top: scrollYProgress.to(v => `calc(${v * 100}% - 8px)`),
+                left: "50%",
+                translateX: "-50%",
               }}
             />
         </div>
@@ -59,7 +58,6 @@ export default function EducationPage() {
         <div className="space-y-12">
           {sortedEducation.map((edu, index) => (
             <div key={edu.id} className="relative pl-12 md:pl-0">
-              {/* Timeline Dot */}
               <div className="absolute left-4 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-8 h-8 bg-primary rounded-full flex items-center justify-center ring-8 ring-background md:left-1/2">
                 <FontAwesomeIcon icon={faGraduationCap} className="h-5 w-5 text-primary-foreground" />
               </div>
