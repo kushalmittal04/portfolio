@@ -46,25 +46,25 @@ export default function ExperiencePage() {
       </div>
 
       <div ref={contentRef} className="relative">
-        {/* Timeline Line */}
+        {/* Timeline Line & Progress Dot */}
         <div className="absolute left-4 top-0 h-full w-0.5 bg-border md:left-1/2 md:-translate-x-px">
            <motion.div 
               className="absolute top-0 left-0 w-full h-full origin-top bg-primary" 
               style={{ scaleY }} 
             />
-            <div 
-              className="sticky top-1/2"
-            >
-              <div className="relative">
-                <motion.div 
-                className="w-4 h-4 rounded-full bg-primary ring-4 ring-background absolute -translate-y-1/2 -translate-x-1/2"
-                style={{
-                    y: `calc(${scrollYProgress.get() * 100}% - 50%)`,
-                }}
-                />
-              </div>
-            </div>
         </div>
+        <div className="absolute left-4 top-0 h-full w-0.5 md:left-1/2 md:-translate-x-px">
+            <motion.div 
+              className="w-4 h-4 rounded-full bg-primary ring-4 ring-background absolute"
+              style={{
+                top: `calc(${scrollYProgress.get() * 100}% - 8px)`,
+                left: '50%',
+                transform: 'translateX(-50%)',
+                y: scrollYProgress,
+              }}
+            />
+        </div>
+
         <div className="space-y-12">
           {sortedExperience.map((exp, index) => (
             <div key={exp.id} className="relative pl-12 md:pl-0">
