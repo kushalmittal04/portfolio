@@ -47,16 +47,14 @@ export default function EducationPage() {
           />
         </div>
         
-        <div className="absolute left-4 top-0 h-full w-0.5 md:left-1/2 md:-translate-x-px">
-            <motion.div
-              className="absolute w-4 h-4 rounded-full bg-primary ring-4 ring-background"
-              style={{
-                top,
-                left: "50%",
-                translateX: "-50%",
-              }}
-            />
-        </div>
+        <motion.div
+            className="absolute w-4 h-4 rounded-full bg-primary ring-4 ring-background"
+            style={{
+            top,
+            left: "50%",
+            translateX: "-50%",
+            }}
+        />
         
         <div className="space-y-12">
           {sortedEducation.map((edu, index) => (

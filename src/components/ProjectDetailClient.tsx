@@ -96,7 +96,7 @@ export function ProjectDetailClient({ project }: { project: Project }) {
             <div className="lg:col-span-2 space-y-12">
                 <Card className="shadow-md transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
                     <CardHeader>
-                        <CardTitle className="text-2xl sm:text-3xl font-bold flex items-center gap-3">
+                        <CardTitle className="flex items-center gap-3">
                             <FontAwesomeIcon icon={faBullseye} className="text-primary h-6 w-6" /> Project Overview
                         </CardTitle>
                     </CardHeader>
@@ -109,7 +109,7 @@ export function ProjectDetailClient({ project }: { project: Project }) {
 
                 <Card className="shadow-md transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
                     <CardHeader>
-                        <CardTitle className="text-2xl sm:text-3xl font-bold flex items-center gap-3">
+                        <CardTitle className="flex items-center gap-3">
                             <FontAwesomeIcon icon={faTasks} className="text-primary h-6 w-6" /> Key Features
                         </CardTitle>
                     </CardHeader>
@@ -127,7 +127,7 @@ export function ProjectDetailClient({ project }: { project: Project }) {
 
                 <Card className="shadow-md transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
                     <CardHeader>
-                        <CardTitle className="text-2xl sm:text-3xl font-bold flex items-center gap-3">
+                        <CardTitle className="flex items-center gap-3">
                         <FontAwesomeIcon icon={faLightbulb} className="text-primary h-6 w-6" /> Challenges & Solutions
                         </CardTitle>
                     </CardHeader>
@@ -147,7 +147,9 @@ export function ProjectDetailClient({ project }: { project: Project }) {
             <aside className="lg:sticky lg:top-24 self-start space-y-8">
                  <Card className="overflow-hidden shadow-md transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
                     <CardHeader>
-                        <CardTitle className="flex items-center gap-3 text-xl sm:text-2xl"><FontAwesomeIcon icon={faCogs} /> Tech Stack</CardTitle>
+                        <CardTitle className="flex items-center gap-3">
+                            <FontAwesomeIcon icon={faCogs} /> Tech Stack
+                        </CardTitle>
                     </CardHeader>
                     <CardContent>
                         <div className="flex flex-wrap gap-2">
@@ -161,7 +163,9 @@ export function ProjectDetailClient({ project }: { project: Project }) {
                 </Card>
                 <Card className="overflow-hidden shadow-md transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
                     <CardHeader>
-                    <CardTitle className="flex items-center gap-3 text-xl sm:text-2xl"><FontAwesomeIcon icon={faWrench} /> Skills Demonstrated</CardTitle>
+                    <CardTitle className="flex items-center gap-3">
+                        <FontAwesomeIcon icon={faWrench} /> Skills Demonstrated
+                    </CardTitle>
                     </CardHeader>
                     <CardContent>
                     <div className="flex flex-wrap gap-2">
