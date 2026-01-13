@@ -198,6 +198,13 @@ export default function Home() {
                         </Card>
                     ))}
                     </div>
+                    <div className="mt-12 text-center">
+                        <Button asChild variant="outline">
+                            <Link href="/projects">
+                                View All Projects <FontAwesomeIcon icon={faArrowRight} className="ml-2 h-4 w-4" />
+                            </Link>
+                        </Button>
+                    </div>
                 </motion.div>
             </motion.section>
             )}
@@ -226,6 +233,13 @@ export default function Home() {
                     </div>
                 ))}
                 </div>
+            </div>
+            <div className="mt-12 text-center">
+                <Button asChild variant="outline">
+                    <Link href="/about">
+                        View All Skills <FontAwesomeIcon icon={faArrowRight} className="ml-2 h-4 w-4" />
+                    </Link>
+                </Button>
             </div>
             </motion.section>
 
@@ -260,9 +274,9 @@ export default function Home() {
                             <CardTitle className="text-xl">
                             {latestInternship.position}
                             </CardTitle>
-                            <CardDescription className="text-sm sm:text-base">
+                            <div className="text-sm sm:text-base text-muted-foreground">
                             {latestInternship.company} &middot; {latestInternship.duration} &middot; {latestInternship.location}
-                            </CardDescription>
+                            </div>
                             <div className="mt-4 text-muted-foreground line-clamp-3 sm:line-clamp-2" dangerouslySetInnerHTML={{ __html: latestInternship.description[0] }}/>
                             <div className="flex flex-wrap gap-2 mt-4">
                             {latestInternship.technologies.map((tech) => (
@@ -307,13 +321,20 @@ export default function Home() {
                         <CardTitle className="text-lg">{item.name}</CardTitle>
                         </CardHeader>
                         <CardContent>
-                        <p className="text-muted-foreground text-sm line-clamp-3">
+                        <div className="text-muted-foreground text-sm line-clamp-3">
                             {item.description}
-                        </p>
+                        </div>
                         </CardContent>
                     </Card>
                     )
                 ))}
+                </div>
+                 <div className="mt-12 text-center">
+                    <Button asChild variant="outline">
+                        <Link href="/credentials">
+                            View All Credentials <FontAwesomeIcon icon={faArrowRight} className="ml-2 h-4 w-4" />
+                        </Link>
+                    </Button>
                 </div>
             </motion.section>
             )}
@@ -324,3 +345,5 @@ export default function Home() {
     </>
   );
 }
+
+    
