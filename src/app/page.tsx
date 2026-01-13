@@ -222,10 +222,7 @@ export default function Home() {
             <motion.section 
                 id="skills" 
                 className="container"
-                initial="initial"
-                whileInView="whileInView"
-                transition={{ duration: 0.5, ease: "easeInOut" }}
-                viewport={{ once: true, amount: 0.2 }}
+                {...sectionAnimation}
             >
             <div className="text-center mb-8">
                 <h2 className="text-3xl font-bold">{homeContent.sections.skills.title}</h2>
@@ -257,10 +254,7 @@ export default function Home() {
             <motion.section 
                 id="latest-internship" 
                 className="container"
-                initial="initial"
-                whileInView="whileInView"
-                transition={{ duration: 0.5, ease: "easeInOut" }}
-                viewport={{ once: true, amount: 0.2 }}
+                {...sectionAnimation}
             >
                 <div className="text-center mb-8">
                 <h2 className="text-3xl font-bold">
@@ -313,10 +307,7 @@ export default function Home() {
             <motion.section 
                 id="achievements" 
                 className="container"
-                initial="initial"
-                whileInView="whileInView"
-                transition={{ duration: 0.5, ease: "easeInOut" }}
-                viewport={{ once: true, amount: 0.2 }}
+                {...sectionAnimation}
             >
                 <div className="text-center mb-8">
                 <h2 className="text-3xl font-bold">
