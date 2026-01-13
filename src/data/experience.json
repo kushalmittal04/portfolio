@@ -102,11 +102,10 @@
     "logoUrl": "/images/experiences/logos/ey.jpg",
     "dataAiHint": "logo professional services",
     "description": [
-      "Developed an <strong>AI-powered ML Evaluation Framework</strong> using <strong>LangChain and Google Gemini API</strong> to automate Forecast Accuracy (FA) and Forecast Bias (FB) analysis, enabling stakeholders to query forecasting performance through natural language interactions without technical expertise.",
-      "Engineered <strong>PySpark data processing pipelines</strong> for sales forecasting datasets (8,500+ rows), implementing robust solutions for data quality issues including initial zero removal, missing week interpolation, and product transition management across multiple data sources (RTVA, ESRA).",
-      "Built <strong>3 RAG-based AI applications</strong> demonstrating advanced prompt engineering and vector database integration with <strong>ChromaDB and HuggingFace Embeddings</strong>, including a natural language to SQL chatbot and an intelligent FAQ assistant with hallucination prevention.",
-      "Mastered the complete <strong>Forecast Engine Utility (FEU) cycle</strong> across Gen 2-4 implementations, understanding end-to-end ML workflows from EDA and feature engineering through back-testing, parallel runs, and production deployment to Kinaxis and TPM systems.",
-      "Earned <strong>6 professional certifications</strong> during internship: Microsoft Azure Fundamentals (871/1000), Azure Data Fundamentals (940/1000), Azure AI Fundamentals (850/1000), Saviynt Identity Security, and 2 Google Cloud Vertex AI certifications."
+      "Developed an <strong>AI-powered chatbot prototype</strong> for the <strong>LensAI ML Evaluation Framework</strong> using <strong>LangChain and Google Gemini API</strong>, achieving 75% completion in automating Forecast Accuracy (FA) and Forecast Bias (FB) analysis for sales forecasting data.",
+      "Engineered <strong>PySpark data processing pipelines</strong> handling 8,500+ row datasets, implementing robust solutions for data quality issues including initial zero removal, missing week interpolation, and product transition/delisting management.",
+      "Gained comprehensive understanding of the <strong>Forecast Engine Utility (FEU) cycle</strong> across Gen 2-4 implementations, working with multi-source data integration (RTVA, ESRA) and complete ML workflows from EDA through feature engineering, back-testing, and production deployment.",
+      "Built an <strong>intelligent querying system</strong> enabling stakeholders to identify products/periods not meeting FA (>60%) and FB (<10%) criteria through conversational AI, democratizing access to forecasting performance metrics without requiring technical expertise in data analysis."
     ],
     "technologies": [
       "PySpark",
