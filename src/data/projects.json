@@ -453,7 +453,7 @@
       "NLP",
       "Automation"
     ],
-    "isFeatured": false
+    "isFeatured": true
   },
   {
     "id": 8,
@@ -520,6 +520,6 @@
       "Database",
       "LLM"
     ],
-    "isFeatured": false
+    "isFeatured": true
   }  
 ]
