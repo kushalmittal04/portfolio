@@ -1,4 +1,7 @@
 
+"use client";
+
+import { motion, useScroll, useSpring } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -14,10 +17,19 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import experienceData from "@/data/experience.json";
 import content from "@/data/pageContent.json";
+import { useRef } from "react";
 
 export default function ExperiencePage() {
   const experienceContent = content.experience;
   const sortedExperience = [...experienceData].sort((a, b) => b.id - a.id);
+  
+  const contentRef = useRef(null);
+  const { scrollYProgress } = useScroll({ container: contentRef });
+  const scaleY = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001,
+  });
 
   return (
     <div className="container mx-auto max-w-5xl px-4 py-16 animate-in fade-in-0 slide-in-from-bottom-8 duration-1000">
@@ -30,9 +42,11 @@ export default function ExperiencePage() {
         </p>
       </div>
 
-      <div className="relative">
+      <div ref={contentRef} className="relative">
         {/* Timeline Line */}
-        <div className="absolute left-4 md:left-1/2 top-0 h-full w-0.5 -translate-x-1/2 bg-border"></div>
+        <div className="absolute left-4 top-0 h-full w-0.5 -translate-x-1/2 bg-border md:left-1/2">
+           <motion.div className="absolute top-0 left-0 w-full h-full origin-top bg-primary" style={{ scaleY }} />
+        </div>
         <div className="space-y-12">
           {sortedExperience.map((exp, index) => (
             <div key={exp.id} className="relative pl-12 md:pl-0">

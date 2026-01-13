@@ -1,4 +1,7 @@
 
+"use client";
+
+import { motion, useScroll, useSpring } from "framer-motion";
 import educationData from "@/data/education.json";
 import { ImageDialog } from "@/components/ImageDialog";
 import { Button } from "@/components/ui/button";
@@ -6,10 +9,19 @@ import { Card, CardContent } from "@/components/ui/card";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faGraduationCap, faMapMarkerAlt } from "@fortawesome/free-solid-svg-icons";
 import content from "@/data/pageContent.json";
+import { useRef } from "react";
 
 export default function EducationPage() {
   const educationContent = content.education;
   const sortedEducation = [...educationData].sort((a, b) => b.id - a.id);
+  
+  const contentRef = useRef(null);
+  const { scrollYProgress } = useScroll({ container: contentRef });
+  const scaleY = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001,
+  });
 
   return (
     <div className="container mx-auto max-w-5xl px-4 py-16 animate-in fade-in-0 slide-in-from-bottom-8 duration-1000">
@@ -21,9 +33,12 @@ export default function EducationPage() {
           {educationContent.description}
         </p>
       </div>
-      <div className="relative">
-        {/* Timeline Line */}
-        <div className="absolute left-4 md:left-1/2 transform md:-translate-x-1/2 h-full w-0.5 bg-border"></div>
+      <div ref={contentRef} className="relative">
+        {/* Timeline Line & Progress Dot */}
+        <div className="absolute left-4 top-0 h-full w-0.5 -translate-x-1/2 bg-border md:left-1/2">
+          <motion.div className="absolute top-0 left-0 w-full h-full origin-top bg-primary" style={{ scaleY }} />
+        </div>
+        
         <div className="space-y-12">
           {sortedEducation.map((edu, index) => (
             <div key={edu.id} className="relative pl-12 md:pl-0">
