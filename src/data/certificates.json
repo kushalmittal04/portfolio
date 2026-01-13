@@ -304,7 +304,7 @@
   {
     "id": 31,
     "name": "Microsoft Certified: Azure AI Fundamentals",
-    "issuer": "Microsoft Learn",
+    "issuer": "Microsoft",
     "type": "Certification",
     "skills": ["Azure Bot Services", "Azure Machine Learning", "Cognitive Services"],
     "fileUrl": "/images/credentials/certifications/20250908_Azure_AI_Fundamentals.pdf",
@@ -326,14 +326,31 @@
   {
     "id": 33,
     "name": "Microsoft Certified: Azure Data Fundamentals",
-    "issuer": "Microsoft Learn",
+    "issuer": "Microsoft",
     "type": "Certification",
     "skills": [
-      "Azure Data Services",
-      "Relational Data",
-      "Non-Relational Data",
+      "Azure",
+      "Azure Cosmos DB",
+      "Azure Data Analyst",
+      "Azure Database Administrator",
+      "Azure Databricks",
+      "Azure Data Engineer",
+      "Azure Data Warehouse",
+      "Azure SQL Database",
+      "Azure SQL Data Warehouse",
+      "Azure Synapse Analytics",
+      "Cloud",
+      "Cloud Data",
+      "Cloud Data Services",
       "Data Analytics",
-      "Power BI"
+      "Data Processing",
+      "Data Visualization",
+      "MariaDB",
+      "MySQL",
+      "PostgreSQL",
+      "Power BI",
+      "SQL Server On Azure Virtual Machines",
+      "Virtualization"
     ],
     "fileUrl": "/images/credentials/certifications/20251212_Azure_Data_Fundamentals.pdf",
     "issueDate": "2025-12-12",
@@ -343,18 +360,40 @@
   {
     "id": 34,
     "name": "Saviynt Identity Security for AI Age",
-    "issuer": "Saviynt University",
+    "issuer": "Saviynt",
     "type": "Certification",
     "skills": [
       "Cybersecurity Fundamentals",
       "Saviynt IGA",
       "Saviynt PAM",
       "Saviynt AAG",
-      "Saviynt EIM"
+      "Saviynt EIM",
+      "Saviynt Intelligence",
+      "Common use-cases",
+      "Important case studies"
     ],
     "fileUrl": "/images/credentials/certifications/20251217_Saviynt_Identity_Security_for_AI_Age_(ISAA).pdf",
     "issueDate": "2025-12-17",
     "isFeatured": true,
     "featuredImageUrl": "/images/credentials/featured/SaviyntIdentitySecurityForAIAge.png"
+  },
+  {
+    "id": 35,
+    "name": "Microsoft Certified: Azure Fundamentals",
+    "issuer": "Microsoft",
+    "type": "Certification",
+    "skills": [
+      "Azure",
+      "Cloud Data",
+      "Cloud Networking",
+      "Cloud Security",
+      "Cloud Services",
+      "Cloud Storage",
+      "Virtualization"
+    ],
+    "fileUrl": "/images/credentials/certifications/20260112_Azure_Fundamentals.pdf",
+    "issueDate": "2026-01-12",
+    "isFeatured": true,
+    "featuredImageUrl": "/images/credentials/featured/az900.png"
   }
 ]
