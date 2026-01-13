@@ -16,7 +16,10 @@ export default function EducationPage() {
   const sortedEducation = [...educationData].sort((a, b) => b.id - a.id);
   
   const contentRef = useRef(null);
-  const { scrollYProgress } = useScroll({ container: contentRef });
+  const { scrollYProgress } = useScroll({ 
+    target: contentRef,
+    offset: ["start center", "end center"],
+  });
   const scaleY = useSpring(scrollYProgress, {
     stiffness: 100,
     damping: 30,
@@ -36,7 +39,14 @@ export default function EducationPage() {
       <div ref={contentRef} className="relative">
         {/* Timeline Line & Progress Dot */}
         <div className="absolute left-4 top-0 h-full w-0.5 -translate-x-1/2 bg-border md:left-1/2">
-          <motion.div className="absolute top-0 left-0 w-full h-full origin-top bg-primary" style={{ scaleY }} />
+          <motion.div 
+            className="absolute top-0 left-0 w-full h-full origin-top bg-primary" 
+            style={{ scaleY }} 
+          />
+           <motion.div 
+            className="sticky top-1/2 -translate-y-1/2 -translate-x-[calc(50%-1px)] w-4 h-4 rounded-full bg-primary ring-4 ring-background"
+            style={{ scale: scaleY }}
+          />
         </div>
         
         <div className="space-y-12">
