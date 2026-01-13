@@ -285,15 +285,17 @@ export default function Home() {
                                 </Badge>
                             ))}
                             </div>
-                            <Button asChild variant="link" className="px-0 mt-4">
-                            <Link href="/experience">
-                                View All Experience <FontAwesomeIcon icon={faArrowRight} className="ml-2 h-4 w-4" />
-                            </Link>
-                            </Button>
                         </div>
                     </div>
                 </CardContent>
                 </Card>
+                <div className="mt-12 text-center">
+                    <Button asChild variant="outline">
+                        <Link href="/experience">
+                            View All Experience <FontAwesomeIcon icon={faArrowRight} className="ml-2 h-4 w-4" />
+                        </Link>
+                    </Button>
+                </div>
             </motion.section>
             )}
 
@@ -345,5 +347,3 @@ export default function Home() {
     </>
   );
 }
-
-    
