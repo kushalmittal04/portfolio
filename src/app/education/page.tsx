@@ -18,7 +18,7 @@ export default function EducationPage() {
   const contentRef = useRef(null);
   const { scrollYProgress } = useScroll({ 
     target: contentRef,
-    offset: ["start center", "end center"],
+    offset: ["start center", "end end"],
   });
   const scaleY = useSpring(scrollYProgress, {
     stiffness: 100,
@@ -44,9 +44,19 @@ export default function EducationPage() {
             style={{ scaleY }} 
           />
            <motion.div 
-            className="sticky top-1/2 -translate-y-1/2 -translate-x-[calc(50%-1px)] w-4 h-4 rounded-full bg-primary ring-4 ring-background"
-            style={{ scale: scaleY }}
-          />
+            className="sticky top-1/2 -translate-y-1/2 -translate-x-[calc(50%-1px)]"
+            style={{ 
+              height: `calc(100% - 100px)`,
+             }}
+          >
+            <motion.div 
+              className="w-4 h-4 rounded-full bg-primary ring-4 ring-background"
+              style={{
+                translateY: `calc(${scrollYProgress.get() * 100}% - 50%)`,
+                y: scrollYProgress,
+              }}
+             />
+          </motion.div>
         </div>
         
         <div className="space-y-12">
