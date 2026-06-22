@@ -1,6 +1,6 @@
-
 "use client";
 
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
@@ -36,7 +36,11 @@ const socialLinks = [
 
 
 export function Footer() {
-  const currentYear = new Date().getFullYear();
+  const [currentYear, setCurrentYear] = useState<number | null>(null);
+
+  useEffect(() => {
+    setCurrentYear(new Date().getFullYear());
+  }, []);
 
   const half = Math.ceil(navLinks.length / 2);
   const firstHalf = navLinks.slice(0, half);
@@ -110,7 +114,7 @@ export function Footer() {
 
         <div className="mt-8 border-t pt-6 text-center">
           <p className="text-xs text-muted-foreground">
-            &copy; {currentYear} Portfolio. All rights reserved.
+            &copy; {currentYear || 2025} Portfolio. All rights reserved.
           </p>
         </div>
       </div>

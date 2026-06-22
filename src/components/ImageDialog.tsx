@@ -1,4 +1,3 @@
-
 "use client";
 
 import Image from "next/image";
@@ -21,6 +20,8 @@ export function ImageDialog({
   return (
     <Dialog>
       <DialogTrigger asChild>{children}</DialogTrigger>
+      {/* Explicitly setting aria-describedby to undefined to silence the warning if we don't need a visible description, 
+          but we keep DialogDescription for accessibility. */}
       <DialogContent 
         className="w-full max-w-4xl p-2"
         aria-describedby={undefined}

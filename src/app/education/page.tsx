@@ -1,4 +1,3 @@
-
 "use client";
 
 import { motion, useScroll, useSpring, useTransform } from "framer-motion";
@@ -27,7 +26,7 @@ export default function EducationPage() {
     restDelta: 0.001,
   });
 
-  const top = useTransform(scrollYProgress, (v) => `calc(${v * 100}% - 8px)`);
+  const top = useTransform(scrollYProgress, (v) => `${v * 100}%`);
 
   return (
     <div className="container mx-auto max-w-5xl px-4 py-16 animate-in fade-in-0 slide-in-from-bottom-8 duration-1000">
@@ -40,21 +39,22 @@ export default function EducationPage() {
         </p>
       </div>
       <div ref={contentRef} className="relative">
+        {/* Progress Line Track */}
         <div className="absolute left-4 top-0 h-full w-0.5 bg-border md:left-1/2 md:-translate-x-px">
           <motion.div 
             className="absolute top-0 left-0 w-full h-full origin-top bg-primary" 
             style={{ scaleY }} 
           />
-        </div>
-        
-        <motion.div
-            className="absolute w-4 h-4 rounded-full bg-primary ring-4 ring-background z-10"
+          {/* Animated Progress Dot */}
+          <motion.div
+            className="absolute w-4 h-4 rounded-full bg-primary ring-4 ring-background z-10 -translate-x-1/2"
             style={{
               top,
               left: "50%",
-              translateX: "-50%",
+              marginTop: "-8px" // Centering correction for the dot height
             }}
-        />
+          />
+        </div>
         
         <div className="space-y-12">
           {sortedEducation.map((edu, index) => (
