@@ -20,15 +20,13 @@ export function ImageDialog({
   return (
     <Dialog>
       <DialogTrigger asChild>{children}</DialogTrigger>
-      {/* Explicitly setting aria-describedby to undefined to silence the warning if we don't need a visible description, 
-          but we keep DialogDescription for accessibility. */}
       <DialogContent 
         className="w-full max-w-4xl p-2"
         aria-describedby={undefined}
       >
         <DialogHeader>
             <DialogTitle className="sr-only">{alt}</DialogTitle>
-            <DialogDescription className="sr-only">A larger, zoomable view of the image: {alt}</DialogDescription>
+            <DialogDescription className="sr-only">A larger view of the image: {alt}</DialogDescription>
         </DialogHeader>
         <div className="relative aspect-[4/3] md:aspect-[16/9]">
           <Image

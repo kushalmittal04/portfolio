@@ -34,7 +34,7 @@ export default function ExperiencePage() {
     restDelta: 0.001,
   });
 
-  const top = useTransform(scrollYProgress, (v) => `${v * 100}%`);
+  const topValue = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
 
   return (
     <div className="container mx-auto max-w-5xl px-4 py-16 animate-in fade-in-0 slide-in-from-bottom-8 duration-1000">
@@ -58,9 +58,9 @@ export default function ExperiencePage() {
             <motion.div
               className="absolute w-4 h-4 rounded-full bg-primary ring-4 ring-background z-10 -translate-x-1/2"
               style={{
-                top,
+                top: topValue,
                 left: "50%",
-                marginTop: "-8px" // Centering correction for the dot height
+                marginTop: "-8px"
               }}
             />
         </div>
@@ -84,7 +84,7 @@ export default function ExperiencePage() {
                         alt={`${exp.company} logo`}
                         width={56}
                         height={56}
-                        style={{ height: "auto" }}
+                        style={{ width: 'auto', height: 'auto' }}
                         className="rounded-lg border"
                         data-ai-hint={exp.dataAiHint}
                       />

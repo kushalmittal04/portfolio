@@ -1,4 +1,3 @@
-
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
@@ -49,7 +48,7 @@ export default async function ExperienceDetailPage({
             alt={`${experience.company} logo`}
             width={80}
             height={80}
-            style={{ height: "auto" }}
+            style={{ width: 'auto', height: 'auto' }}
             className="rounded-lg"
             data-ai-hint={experience.dataAiHint}
             priority
