@@ -105,6 +105,7 @@ export default function Home() {
                     width={150}
                     height={150}
                     className="rounded-full object-cover shadow-lg aspect-square"
+                    style={{ height: "auto" }}
                     data-ai-hint="portrait professional"
                     priority
                 />
@@ -270,6 +271,7 @@ export default function Home() {
                             alt={`${latestInternship.company} logo`}
                             width={48}
                             height={48}
+                            style={{ height: "auto" }}
                             className="rounded-lg"
                             data-ai-hint={latestInternship.dataAiHint}
                         />

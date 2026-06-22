@@ -1,4 +1,6 @@
 
+"use client";
+
 import {
   Card,
   CardContent,
@@ -25,6 +27,7 @@ export default function AboutPage() {
               alt="Kushal Mittal"
               width={300}
               height={300}
+              style={{ height: "auto" }}
               className="rounded-full object-cover aspect-square shadow-lg"
               data-ai-hint="portrait professional"
               priority

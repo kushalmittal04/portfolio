@@ -49,8 +49,8 @@ export default async function ExperienceDetailPage({
             alt={`${experience.company} logo`}
             width={80}
             height={80}
+            style={{ height: "auto" }}
             className="rounded-lg"
-            style={{ height: 'auto' }}
             data-ai-hint={experience.dataAiHint}
             priority
           />

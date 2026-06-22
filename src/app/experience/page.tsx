@@ -83,8 +83,8 @@ export default function ExperiencePage() {
                         alt={`${exp.company} logo`}
                         width={56}
                         height={56}
+                        style={{ height: "auto" }}
                         className="rounded-lg border"
-                        style={{ height: 'auto' }}
                         data-ai-hint={exp.dataAiHint}
                       />
                       <div>
