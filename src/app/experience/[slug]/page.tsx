@@ -88,13 +88,13 @@ export default function ExperienceDetailPage({
                     {experience.certificateUrl && (
                          <ImageDialog
                             imageUrl={experience.certificateUrl}
-                            alt="Internship Certificate"
-                            dataAiHint="certificate document"
+                            alt="Experience Verification"
+                            dataAiHint="verification document"
                         >
                             <div className="relative aspect-video cursor-pointer group overflow-hidden rounded-lg">
-                                <Image src={experience.certificateUrl} alt="Internship Certificate" fill className="object-cover group-hover:scale-105 transition-transform" data-ai-hint="certificate document"/>
+                                <Image src={experience.certificateUrl} alt="Experience Verification" fill className="object-cover group-hover:scale-105 transition-transform" data-ai-hint="verification document"/>
                                 <div className="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                                    <p className="text-white font-bold">View Certificate</p>
+                                    <p className="text-white font-bold">View Verification</p>
                                 </div>
                             </div>
                         </ImageDialog>

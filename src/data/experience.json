@@ -101,6 +101,7 @@
     "gmapUrl": "https://www.google.com/maps/search/?api=1&query=1st, 8th & 16th Floor, Ernst & Young, TOWER-A, PRESTIGE SHANTINIKETAN, ITPL Main Rd, Hudi, Thigalarapalya, Krishnarajapuram, Bengaluru, Karnataka 560107",
     "logoUrl": "/images/experiences/logos/ey.jpg",
     "dataAiHint": "logo professional services",
+    "certificateUrl": "/images/experiences/ey/0.png",
     "description": [
       "Developed an <strong>AI-powered chatbot prototype</strong> for the <strong>LensAI ML Evaluation Framework</strong> using <strong>LangChain and Google Gemini API</strong>, achieving 75% completion in automating Forecast Accuracy (FA) and Forecast Bias (FB) analysis for sales forecasting data.",
       "Engineered <strong>PySpark data processing pipelines</strong> handling 8,500+ row datasets, implementing robust solutions for data quality issues including initial zero removal, missing week interpolation, and product transition/delisting management.",
@@ -124,7 +125,6 @@
       "Machine Learning",
       "Data Engineering"
     ],
-    "certificateUrl": null,
     "workImages": null
   },
   {
@@ -139,7 +139,7 @@
     "period": "6 Months",
     "companyUrl": "https://www.crashplan.com/",
     "gmapUrl": "https://www.google.com/maps/search/?api=1&query=WJ6V+XM3, 17th Cross Rd, Sector 4, HSR Layout, Bengaluru, Karnataka 560102",
-    "logoUrl": "/images/experiences/logos/crashplan.jpg",
+    "logoUrl": "/images/experiences/logos/crashplan.webp",
     "dataAiHint": "logo corporate tech",
     "description": [
       "Architected and built a <strong>production-grade, graph-based RAG Pipeline Engine</strong> from scratch using Flask and Python, capable of executing user-defined DAG pipelines for document ingestion and intelligent retrieval-augmented generation.",
@@ -147,7 +147,7 @@
       "Implemented <strong>level-parallel DAG execution</strong> using Kahn's topological sort and ThreadPoolExecutor, with a consumer-count memory manager that freed embedding tensors between levels, cutting peak RAM usage significantly.",
       "Designed a <strong>dual-collection MongoDB run store</strong> (30-day TTL), a blue-green deployment lifecycle system, and an LRU runner cache — enabling zero-downtime pipeline deployments and sub-millisecond runner resolution.",
       "Built a <strong>swagger_query_flow pipeline</strong> using OpenAI gpt-4o-mini that converts natural language API queries into deterministic Rete.js-compatible DAGs with resolved variables and per-step execution graphs.",
-      "Integrated <strong>Elasticsearch (kNN dense vector search), ChromaDB, Azure Blob Storage, Apache Tika (1000+ formats), spaCy NER/POS, and HuggingFace Transformers</strong> into a unified, interchangeable node ecosystem.",
+      "Integrated <strong>Elasticsearch (kNN dense vector search), ChromaDB, Azure Blob Storage, Apache Tika (1000+ formats), spaCy NER/POS, HuggingFace Transformers</strong> into a unified, interchangeable node ecosystem.",
       "Delivered structured JSON logging with per-node log routing, Prometheus metrics, PII scrubbing, async background indexing with crash recovery, and automatic 30-day log cleanup."
     ],
     "technologies": ["Python", "Flask", "Gunicorn", "OpenAI API", "Google Gemini API", "LangChain", "Elasticsearch", "ChromaDB", "MongoDB", "MySQL", "Azure Blob Storage", "Apache Tika", "sentence-transformers", "HuggingFace Transformers", "TensorFlow", "TF-Hub", "spaCy", "scikit-learn", "NLTK", "Prometheus", "pypdf", "python-docx", "PyTorch", "REST API Design", "DAG Execution", "RAG", "Vector Search"]
