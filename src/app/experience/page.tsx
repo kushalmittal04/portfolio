@@ -23,7 +23,7 @@ export default function ExperiencePage() {
   const experienceContent = content.experience;
   const sortedExperience = [...experienceData].sort((a, b) => b.id - a.id);
   
-  const contentRef = useRef(null);
+  const contentRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({ 
     target: contentRef,
     offset: ["start center", "end end"],
@@ -56,11 +56,11 @@ export default function ExperiencePage() {
             />
         </div>
         <motion.div
-            className="absolute w-4 h-4 rounded-full bg-primary ring-4 ring-background"
+            className="absolute w-4 h-4 rounded-full bg-primary ring-4 ring-background z-10"
             style={{
-            top,
-            left: "50%",
-            translateX: "-50%",
+              top,
+              left: "50%",
+              translateX: "-50%",
             }}
         />
 
@@ -84,6 +84,7 @@ export default function ExperiencePage() {
                         width={56}
                         height={56}
                         className="rounded-lg border"
+                        style={{ height: 'auto' }}
                         data-ai-hint={exp.dataAiHint}
                       />
                       <div>

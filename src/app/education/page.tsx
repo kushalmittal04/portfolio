@@ -15,7 +15,7 @@ export default function EducationPage() {
   const educationContent = content.education;
   const sortedEducation = [...educationData].sort((a, b) => b.id - a.id);
   
-  const contentRef = useRef(null);
+  const contentRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({ 
     target: contentRef,
     offset: ["start center", "end end"],
@@ -48,11 +48,11 @@ export default function EducationPage() {
         </div>
         
         <motion.div
-            className="absolute w-4 h-4 rounded-full bg-primary ring-4 ring-background"
+            className="absolute w-4 h-4 rounded-full bg-primary ring-4 ring-background z-10"
             style={{
-            top,
-            left: "50%",
-            translateX: "-50%",
+              top,
+              left: "50%",
+              translateX: "-50%",
             }}
         />
         
@@ -63,7 +63,7 @@ export default function EducationPage() {
                 <FontAwesomeIcon icon={faGraduationCap} className="h-5 w-5 text-primary-foreground" />
               </div>
               <div
-                className={`w-full flex md:justify-start ${
+                className={`w-full flex ${
                   index % 2 !== 0 ? "md:justify-start" : "md:justify-end"
                 }`}
               >

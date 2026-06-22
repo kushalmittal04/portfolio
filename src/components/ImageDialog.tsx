@@ -19,6 +19,7 @@ export function ImageDialog({
   children,
   dataAiHint,
 }: ImageDialogProps) {
+  const titleId = useId();
   const descriptionId = useId();
 
   return (
@@ -26,10 +27,11 @@ export function ImageDialog({
       <DialogTrigger asChild>{children}</DialogTrigger>
       <DialogContent 
         className="w-full max-w-4xl p-2"
+        aria-labelledby={titleId}
         aria-describedby={descriptionId}
       >
         <DialogHeader>
-            <DialogTitle className="sr-only">{alt}</DialogTitle>
+            <DialogTitle id={titleId} className="sr-only">{alt}</DialogTitle>
             <DialogDescription id={descriptionId} className="sr-only">A larger, zoomable view of the image: {alt}</DialogDescription>
         </DialogHeader>
         <div className="relative aspect-[4/3] md:aspect-[16/9]">
@@ -38,7 +40,7 @@ export function ImageDialog({
             alt={alt}
             fill
             className="rounded-md object-contain"
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 70vw"
             data-ai-hint={dataAiHint}
           />
         </div>

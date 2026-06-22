@@ -22,12 +22,13 @@ export async function generateStaticParams() {
   }));
 }
 
-export default function ExperienceDetailPage({
+export default async function ExperienceDetailPage({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
-  const experience = experienceData.find((exp) => exp.slug === params.slug);
+  const { slug } = await params;
+  const experience = experienceData.find((exp) => exp.slug === slug);
 
   if (!experience) {
     notFound();
@@ -49,6 +50,7 @@ export default function ExperienceDetailPage({
             width={80}
             height={80}
             className="rounded-lg"
+            style={{ height: 'auto' }}
             data-ai-hint={experience.dataAiHint}
             priority
           />
@@ -92,9 +94,16 @@ export default function ExperienceDetailPage({
                             dataAiHint="verification document"
                         >
                             <div className="relative aspect-video cursor-pointer group overflow-hidden rounded-lg">
-                                <Image src={experience.certificateUrl} alt="Experience Verification" fill className="object-cover group-hover:scale-105 transition-transform" data-ai-hint="verification document"/>
+                                <Image 
+                                  src={experience.certificateUrl} 
+                                  alt="Experience Verification" 
+                                  fill 
+                                  className="object-cover group-hover:scale-105 transition-transform" 
+                                  data-ai-hint="verification document"
+                                  sizes="(max-width: 768px) 50vw, 33vw"
+                                />
                                 <div className="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                                    <p className="text-white font-bold">View Verification</p>
+                                    <p className="text-white font-bold text-xs text-center px-2">View Verification</p>
                                 </div>
                             </div>
                         </ImageDialog>
@@ -107,7 +116,14 @@ export default function ExperienceDetailPage({
                             dataAiHint={image.dataAiHint}
                         >
                             <div className="relative aspect-video cursor-pointer group overflow-hidden rounded-lg">
-                                <Image src={image.url} alt={`Work image ${index + 1}`} fill className="object-cover group-hover:scale-105 transition-transform" data-ai-hint={image.dataAiHint}/>
+                                <Image 
+                                  src={image.url} 
+                                  alt={`Work image ${index + 1}`} 
+                                  fill 
+                                  className="object-cover group-hover:scale-105 transition-transform" 
+                                  data-ai-hint={image.dataAiHint}
+                                  sizes="(max-width: 768px) 50vw, 33vw"
+                                />
                             </div>
                         </ImageDialog>
                     ))}

@@ -77,7 +77,7 @@ export function ProjectDetailClient({ project }: { project: Project }) {
                         fill
                         className="object-contain"
                         data-ai-hint={item.dataAiHint}
-                        sizes="(max-width: 768px) 100vw, 75vw"
+                        sizes="(max-width: 768px) 100vw, 80vw"
                         priority={index === 0}
                         />
                     </div>
