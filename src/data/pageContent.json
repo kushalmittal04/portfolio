@@ -2,8 +2,8 @@
 {
   "home": {
     "title": "Kushal Mittal",
-    "subtitle": "AI/ML, DS & Full-Stack Developer",
-    "description": "Passionate about creating innovative solutions with modern technologies.",
+    "subtitle": "AI/ML Engineer & Full-Stack Developer",
+    "description": "Architecting production-grade AI systems and robust full-stack solutions with a focus on RAG and agentic workflows.",
     "profilePicUrl": "/images/profile_pics/pic_1.jpeg",
     "buttons": {
       "work": "View My Work",
@@ -12,46 +12,46 @@
     "sections": {
       "featuredProjects": {
         "title": "Featured Projects",
-        "description": "Some of my recent work"
+        "description": "A showcase of my recent engineering work"
       },
       "skills": {
         "title": "Technical Skills",
-        "description": "Technologies I work with"
+        "description": "Technologies and frameworks I master"
       },
       "latestExperience": {
         "title": "Latest Experience",
-        "description": "Recent internship and work experience"
+        "description": "Recent professional work and internships"
       },
       "recentActivities": {
         "title": "Recent Activities",
-        "description": "Latest achievements and updates"
+        "description": "Latest achievements and professional updates"
       }
     }
   },
   "about": {
     "title": "About Me",
-    "description": "A little bit about my journey and what drives me.",
+    "description": "Architecting the future of AI through robust system design.",
     "profilePicUrl": "/images/profile_pics/pic_2.jpeg",
     "whoAmI": {
       "title": "Who I Am",
-      "content": "I am Kushal Mittal, a final-year B.Tech student specializing in Artificial Intelligence and Data Science. I describe myself as a Stackless Engineer—a problem-solver first and a technologist second. My focus isn't on any single framework but on selecting the best tools for the task, whether that's building a predictive model or a full-stack application."
+      "content": "I am Kushal Mittal, a B.Tech graduate specializing in Artificial Intelligence and Data Science. I describe myself as a Stackless Engineer—a problem-solver first and a technologist second. My focus isn't on any single framework but on selecting the best tools for the task, whether that's architecting a production-grade RAG engine, building parallel DAG execution pipelines, or developing seamless full-stack applications."
     },
     "technicalApproach": {
       "title": "My Technical Approach",
-      "intro": "My work is driven by a deep curiosity for how things work and a commitment to building robust, efficient systems.",
+      "intro": "My work is driven by a deep curiosity for system architecture and a commitment to building robust, high-performance AI-driven systems.",
       "aiMl": {
         "title": "In AI/ML",
-        "content": ", I specialize in building practical applications using large language models. I have hands-on experience with the LLM stack—including LangChain and LangGraph—for building context-aware agents, and I'm proficient in the entire data science pipeline: from data preprocessing and exploratory data analysis (EDA) to feature engineering and deploying supervised learning models for regression and classification tasks."
+        "content": ", I specialize in building practical, production-ready applications using LLMs and graph-based architectures. I have extensive experience architecting RAG pipelines from scratch, implementing level-parallel execution engines, and managing complex ML lifecycles. I'm proficient in the entire AI stack—from LangChain and LangGraph for agentic workflows to vector search optimization with Elasticsearch and ChromaDB."
       },
       "fullStack": {
         "title": "In Full-Stack Development",
-        "content": ", I build seamless, end-to-end experiences. I develop RESTful APIs with Node.js and Express, create responsive frontends with React and Next.js, and manage data with both SQL (PostgreSQL, MySQL) and NoSQL (MongoDB) databases. I prioritize security and performance, implementing auth solutions like JWT and Clerk Authentication."
+        "content": ", I build seamless, scalable end-to-end experiences. I develop high-performance RESTful APIs with Flask and Node.js, implement robust backend logic with parallel processing, and create responsive frontends with React and Next.js. I prioritize system observability, implementing structured logging, Prometheus metrics, and secure authentication solutions."
       }
     },
     "coreStrengths": {
       "title": "My Core Strengths",
-      "paragraph1": "Beyond technical skills, I bring a strong foundation in analytical reasoning and critical thinking to every project. I am a proactive team collaborator who values clear communication and thrives in agile environments. My ability to quickly adapt to new technologies and manage my time effectively allows me to take ideas from concept to deployment efficiently.",
-      "paragraph2": "I am actively seeking opportunities where I can apply my diverse skill set to create impactful solutions and continue growing as an engineer."
+      "paragraph1": "Beyond technical skills, I bring a strong foundation in architectural reasoning and system design to every project. I am a proactive team collaborator who values clear communication and thrives in agile, high-stakes environments. My ability to quickly adapt to new technologies and manage complex resource constraints—like optimizing peak RAM usage for large-scale document processing—allows me to take ideas from concept to production efficiently.",
+      "paragraph2": "I am committed to creating impactful, data-driven solutions that bridge the gap between advanced technical research and operational business strategy."
     },
     "skillsTitle": "My Skills"
   },
@@ -61,11 +61,11 @@
   },
   "experience": {
     "title": "Work Experience",
-    "description": "My journey through the tech industry as an intern."
+    "description": "My professional journey through the tech industry."
   },
   "projects": {
     "title": "My Projects",
-    "description": "A collection of my work, from web apps to machine learning models."
+    "description": "A collection of my work, from production-grade AI engines to full-stack web apps."
   },
   "credentials": {
     "title": "My Credentials",
@@ -90,7 +90,7 @@
     "resumeTitle": "Download Resume",
     "resumeDescription": "Get a copy of my detailed resume",
     "buttons": {
-        "download": "Download Resume"
+      "download": "Download Resume"
     }
   }
 }
