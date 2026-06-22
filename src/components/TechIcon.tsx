@@ -220,12 +220,17 @@ const iconMap: Record<string, IconDefinition> = {
   opencv: faCameraRetro,
   "google gemini api": faGoogle,
   "huggingface embeddings": faBrain,
+  "pytorch": faBrain,
+  "rag": faBrain,
+  "vector search": faDatabase,
 
   // Frontend & Web
   react: faReact,
   "next.js": faCode,
   "node.js": faNodeJs,
   "express.js": faServer,
+  "flask": faServer,
+  "gunicorn": faServer,
   bootstrap: faBootstrap,
   "tailwind css": faWind,
   streamlit: faWind,
@@ -238,6 +243,7 @@ const iconMap: Record<string, IconDefinition> = {
   postgresql: faDatabase,
   chromadb: faDatabase,
   faiss: faDatabase,
+  elasticsearch: faDatabase,
 
   // Tools
   git: faCodeBranch,
@@ -265,6 +271,9 @@ const iconMap: Record<string, IconDefinition> = {
   "generative ai": faBrain,
   "agents": faBrain,
   "agentic ai": faBrain,
+  "microsoft azure": faCloud,
+  "azure blob storage": faCloud,
+  "prometheus": faChartBar,
 };
 
 export function TechIcon({ technology, className }: TechIconProps) {
